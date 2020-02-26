@@ -43,34 +43,17 @@ int yylex();
 
 %%
 
-goal:
-  command_list
-  ;
 
-command_line:
+goal: command_list;
 
-pipe_list io_modifier_list
-background_optional NEWLINE
-| NEWLINE /*accept empty cmd line*/
-| error NEWLINE{yyerrok;}
-/*error recovery*/
-;
-
-
-command_list:
-
-command_line |
-command_list command_line
-;
-/* command loop*/
-
-cmd_and_args:
-WORD arg_list
-;
 
 arg_list:
 arg_list WORD
 | /*empty*/
+;
+
+cmd_and_args:
+WORD arg_list
 ;
 
 pipe_list:
@@ -89,16 +72,29 @@ GREATGREAT WORD
 ;
 
 io_modifier_list:
-
-io_modifier_list io_modifier
-| /*empty*/
-;
+  io_modifier_list io_modifier
+    | /*empty*/
+    ;
 
 background_optional:
-
 AMPERSAND
 | /*empty*/
 ;
+
+command_line:
+
+pipe_list io_modifier_list
+background_opt NEWLINE
+| NEWLINE /*accept empty cmd line*/
+| error NEWLINE{yyerrok;}
+;
+/*error recovery*/
+
+command_list:
+command_line |
+command_list command_line
+;
+/* command loop*/
 
 %%
 
