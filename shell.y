@@ -56,7 +56,7 @@ command: simple_command
 ;
 
 simple_command:	
-  command_and_args io_modifier_list NEWLINE {
+  cmd_and_args io_modifier_list NEWLINE {
     printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
