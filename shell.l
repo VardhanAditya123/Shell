@@ -53,7 +53,7 @@ void myunputc(int c) {
   return GREATAMPERSAND;
 }
 
-"|"{
+"|" {
   return PIPE;
 }
 
