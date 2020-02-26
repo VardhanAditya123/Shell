@@ -23,7 +23,7 @@
 
 %union
 {
-  char *string_val;
+  char        *string_val;
   // Example of using a c++ type in yacc
   std::string *cpp_string;
 }
@@ -44,20 +44,20 @@ int yylex();
 %%
 
 goal:
-  command_list
+  commands
   ;
 
-command_list:
+commands:
   command
-  | command_list command
+  | commands command
   ;
 
 command: simple_command
-;
+       ;
 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
-    //printf("   Yacc: Execute command\n");
+    printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
   | NEWLINE 
@@ -66,14 +66,10 @@ simple_command:
 
 command_and_args:
   command_word argument_list {
-    Shell::_currentCommand.insertSimpleCommand( Command::_currSimpleCommand );
+    Shell::_currentCommand.
+    insertSimpleCommand( Command::_currSimpleCommand );
   }
   ;
-pipe_list:
-pipe_list PIPE cmd_and_args
-| cmd_and_args
-;
-
 
 argument_list:
   argument_list argument
@@ -102,12 +98,6 @@ iomodifier_opt:
   }
   | /* can be empty */ 
   ;
-
-io_modifier_list:
-
-io_modifier_list io_modifier
-| /*empty*/
-;
 
 %%
 
