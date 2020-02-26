@@ -77,7 +77,7 @@ arg_list WORD{Command: _currSimpleCommand->insertArgument($2)}
 
 pipe_list:
   pipe_list PIPE cmd_and_args
-  | cmd_and_args
+   | cmd_and_args
   ;
 
 
