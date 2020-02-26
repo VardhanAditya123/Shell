@@ -44,17 +44,27 @@ int yylex();
 %%
 
 goal:
-  commands
+  command_list
   ;
 
-commands:
-  command
-  | commands command
-  ;
 
-command: simple_command
-       ;
+command_list:
+  command_line |
+  command_list command_line
+;
+/* command loop*/
 
+command_line:
+  pipe_list io_modifier_list background_opt NEWLINE
+  | NEWLINE /*accept empty cmd line*/ | error NEWLINE{yyerrok;}
+; /*error recovery*/
+
+
+command_line: simple_command
+ ;
+
+
+// ls a b > 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
     printf("   Yacc: Execute command\n");
@@ -64,18 +74,21 @@ simple_command:
   | error NEWLINE { yyerrok; }
   ;
 
-command_and_args:
+// ls a b
+command_and_args:  
   command_word argument_list {
     Shell::_currentCommand.
     insertSimpleCommand( Command::_currSimpleCommand );
   }
   ;
 
+// a b
 argument_list:
   argument_list argument
   | /* can be empty */
   ;
 
+// a
 argument:
   WORD {
     printf("   Yacc: insert argument \"%s\"\n", $1->c_str());

@@ -53,10 +53,11 @@ commands:
   ;
 
 command: simple_command
-       ;
+;
+
 
 simple_command:	
-  command_and_args iomodifier_opt NEWLINE {
+  command_and_args iomodifier_opt NEWLINE {  
     printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
@@ -71,10 +72,19 @@ command_and_args:
   }
   ;
 
+iomodifier_opt:
+  GREAT WORD {
+    printf("   Yacc: insert output \"%s\"\n", $2->c_str());
+    Shell::_currentCommand._outFileName = $2;
+  }
+  | /* can be empty */ 
+  ;
+
 argument_list:
   argument_list argument
   | /* can be empty */
   ;
+
 
 argument:
   WORD {
@@ -91,13 +101,6 @@ command_word:
   }
   ;
 
-iomodifier_opt:
-  GREAT WORD {
-    printf("   Yacc: insert output \"%s\"\n", $2->c_str());
-    Shell::_currentCommand._outFileName = $2;
-  }
-  | /* can be empty */ 
-  ;
 
 %%
 
