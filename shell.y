@@ -38,11 +38,12 @@
 
 void yyerror(const char * s);
 int yylex();
-
+Command::_currSimpleCommand = new SimpleCommand();
 %}
 
 %%
-Command::_currSimpleCommand = new SimpleCommand();
+
+
 goal:
   command_list
   ;
