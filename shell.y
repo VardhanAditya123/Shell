@@ -44,27 +44,24 @@ int yylex();
 %%
 
 goal:
-  commands
+  command_list
   ;
 
-commands:
-  commands command
-  | 
-  ;
+command_line:
 
-command: simple_command
+pipe_list io_modifier_list
+background_optional NEWLINE
+| NEWLINE /*accept empty cmd line*/
+| error NEWLINE{yyerrok;}
+/*error recovery*/
+
+
+
+command_list :
+command_line |
+command_list command_line
 ;
-
-simple_command:	
-  cmd_and_args io_modifier_list NEWLINE {
-    printf("   Yacc: Execute command\n");
-    Shell::_currentCommand.execute();
-  }
-  | NEWLINE 
-  | error NEWLINE { yyerrok; }
-  ;
-
-
+/* command loop*/
 
 cmd_and_args:
 WORD arg_list
@@ -79,32 +76,6 @@ pipe_list:
   pipe_list PIPE cmd_and_args
    | cmd_and_args
   ;
-
-
-argument:
-  WORD {
-    printf("   Yacc: insert argument \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand->insertArgument( $1 );\
-  }
-  ;
-
-command_line:
-
-pipe_list io_modifier_list
-background_optional NEWLINE
-| NEWLINE /*accept empty cmd line*/
-| error NEWLINE{yyerrok;}
-
-/*error recovery*/
-
-
-command_list :
-
-command_line |
-command_list command_line
-;
-/* command loop*/
-
 
 io_modifier:
 
