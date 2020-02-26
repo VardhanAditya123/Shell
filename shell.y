@@ -48,12 +48,12 @@ goal:
   ;
 
 commands:
-  command
-  | commands command
+  commands command
+  | 
   ;
 
 command: simple_command
-       ;
+;
 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
@@ -64,17 +64,22 @@ simple_command:
   | error NEWLINE { yyerrok; }
   ;
 
-command_and_args:
-  command_word argument_list {
-    Shell::_currentCommand.
-    insertSimpleCommand( Command::_currSimpleCommand );
-  }
-  ;
+
+
+cmd_and_args:
+WORD arg_list
+;
 
 arg_list:
-arg_list WORD
+arg_list WORD{Command: _currSimpleCommand->insertArgument($2)}
 | /*empty*/
 ;
+
+pipe_list:
+  pipe_list PIPE cmd_and_args
+  | cmd_and_args
+  ;
+
 
 argument:
   WORD {
@@ -83,21 +88,45 @@ argument:
   }
   ;
 
-command_word:
-  WORD {
-    printf("   Yacc: insert command \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand = new SimpleCommand();
-    Command::_currSimpleCommand->insertArgument( $1 );
-  }
-  ;
+command_line:
 
-iomodifier_opt:
-  GREAT WORD {
-    printf("   Yacc: insert output \"%s\"\n", $2->c_str());
-    Shell::_currentCommand._outFileName = $2;
-  }
-  | /* can be empty */ 
-  ;
+pipe_list io_modifier_list
+background_opt NEWLINE
+| NEWLINE /*accept empty cmd line*/
+| error NEWLINE{yyerrok;}
+
+/*error recovery*/
+
+
+command_list :
+
+command_line |
+command_list command_line
+;
+/* command loop*/
+
+
+io_modifier:
+
+GREATGREAT Word
+| GREAT Word
+| GREATGREATAMPERSAND Word
+| GREATAMPERSAND Word
+| LESS Word
+
+;
+
+io_modifier_list:
+
+io_modifier_list io_modifier
+| /*empty*/
+;
+
+background_optional:
+
+AMPERSAND
+| /*empty*/
+;
 
 %%
 
