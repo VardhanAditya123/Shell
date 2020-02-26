@@ -44,12 +44,12 @@ int yylex();
 %%
 
 goal:
-  commands
+  command_list
   ;
 
-commands:
+command_list:
   command
-  | commands command
+  | command_list command
   ;
 
 command: simple_command
@@ -69,6 +69,11 @@ command_and_args:
     Shell::_currentCommand.insertSimpleCommand( Command::_currSimpleCommand );
   }
   ;
+pipe_list:
+pipe_list PIPE cmd_and_args
+| cmd_and_args
+;
+
 
 argument_list:
   argument_list argument
@@ -97,6 +102,12 @@ iomodifier_opt:
   }
   | /* can be empty */ 
   ;
+
+io_modifier_list:
+
+io_modifier_list io_modifier
+| /*empty*/
+;
 
 %%
 
