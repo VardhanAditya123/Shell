@@ -89,8 +89,7 @@ command_and_args:
 
 // a b
 argument_list:
-  argument_list argument{
-    Command::_currSimpleCommand->insertArgument($1);}
+   argument{ Command::_currSimpleCommand->insertArgument($1);}
   | /* can be empty */
   ;
 
