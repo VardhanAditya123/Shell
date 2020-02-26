@@ -57,7 +57,8 @@ background_optional NEWLINE
 ;
 
 
-command_list :
+command_list:
+
 command_line |
 command_list command_line
 ;
