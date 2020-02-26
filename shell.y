@@ -56,7 +56,7 @@ command: simple_command
 ;
 
 simple_command:	
-  command_and_args iomodifier_opt NEWLINE {
+  command_and_args io_modifier_list NEWLINE {
     printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
@@ -91,7 +91,7 @@ argument:
 command_line:
 
 pipe_list io_modifier_list
-background_opt NEWLINE
+background_optional NEWLINE
 | NEWLINE /*accept empty cmd line*/
 | error NEWLINE{yyerrok;}
 
