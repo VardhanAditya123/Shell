@@ -54,7 +54,7 @@ background_optional NEWLINE
 | NEWLINE /*accept empty cmd line*/
 | error NEWLINE{yyerrok;}
 /*error recovery*/
-
+;
 
 
 command_list:
@@ -70,7 +70,7 @@ WORD arg_list
 
 arg_list:
 arg_list WORD
-{
+{Command: _currSimpleCommand->insertArgument($2)}
 | /*empty*/
 ;
 
