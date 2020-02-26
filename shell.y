@@ -71,10 +71,10 @@ command_and_args:
   }
   ;
 
-argument_list:
-  argument_list argument
-  | /* can be empty */
-  ;
+arg_list:
+arg_list WORD
+| /*empty*/
+;
 
 argument:
   WORD {
