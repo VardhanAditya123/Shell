@@ -68,7 +68,7 @@ WORD arg_list
 ;
 
 arg_list:
-arg_list WORD{Command: _currSimpleCommand->insertArgument($2)}
+arg_list WORD
 | /*empty*/
 ;
 
