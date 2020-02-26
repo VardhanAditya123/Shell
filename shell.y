@@ -106,7 +106,7 @@ argument:
 command_word:
   WORD {
     printf("   Yacc: insert command \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand = new SimpleCommand();
+    // Command::_currSimpleCommand = new SimpleCommand();
     Command::_currSimpleCommand->insertArgument($1);
   }
   ;
