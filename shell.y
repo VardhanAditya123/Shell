@@ -23,7 +23,7 @@
 
 %union
 {
-  char        *string_val;
+  char *string_val;
   // Example of using a c++ type in yacc
   std::string *cpp_string;
 }
@@ -53,11 +53,11 @@ commands:
   ;
 
 command: simple_command
-       ;
+;
 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
-    printf("   Yacc: Execute command\n");
+    //printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
   | NEWLINE 
@@ -66,8 +66,7 @@ simple_command:
 
 command_and_args:
   command_word argument_list {
-    Shell::_currentCommand.
-    insertSimpleCommand( Command::_currSimpleCommand );
+    Shell::_currentCommand.insertSimpleCommand( Command::_currSimpleCommand );
   }
   ;
 
