@@ -89,8 +89,8 @@ command_and_args:
 
 // a b
 argument_list:
-  argument_list argument
-  | /* can be empty */
+  argument_list argument { Command::_currSimpleCommand->insertArgument( $1 );}
+  | 
   ;
 
 
@@ -98,14 +98,14 @@ argument_list:
 argument:
   WORD {
     // printf("   Yacc: insert argument \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand->insertArgument( $1 );\
+    Command::_currSimpleCommand->insertArgument( $1 );
   }
   ;
 
 // ls
 command_word:
   WORD {
-    // printf("   Yacc: insert command \"%s\"\n", $1->c_str());
+    // printf("  Yacc: insert command \"%s\"\n", $1->c_str());
     Command::_currSimpleCommand = new SimpleCommand();
     Command::_currSimpleCommand->insertArgument( $1 );
   }
