@@ -61,12 +61,12 @@ command_line: simple_command
 // ls a b > 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
-    printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
   | NEWLINE 
   | error NEWLINE { yyerrok; }
   ;
+
 
 // >
 iomodifier_opt:
@@ -77,6 +77,7 @@ iomodifier_opt:
   | /* can be empty */ 
   ;
 
+
 // ls a b
 command_and_args:  
   command_word argument_list {
@@ -85,11 +86,13 @@ command_and_args:
   }
   ;
 
+
 // a b
 argument_list:
   argument_list argument
   | /* can be empty */
   ;
+
 
 // a
 argument:
@@ -98,6 +101,7 @@ argument:
     Command::_currSimpleCommand->insertArgument( $1 );\
   }
   ;
+
 // ls
 command_word:
   WORD {
