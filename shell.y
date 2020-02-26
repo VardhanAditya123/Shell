@@ -54,14 +54,8 @@ command_list:
 ;
 /* command loop*/
 
-command_line:
-  pipe_list io_modifier_list background_opt NEWLINE
-  | NEWLINE /*accept empty cmd line*/ | error NEWLINE{yyerrok;}
-; /*error recovery*/
-
-
 command_line: simple_command
- ;
+;
 
 
 // ls a b > 
@@ -72,6 +66,15 @@ simple_command:
   }
   | NEWLINE 
   | error NEWLINE { yyerrok; }
+  ;
+
+// >
+iomodifier_opt:
+  GREAT WORD {
+    printf("   Yacc: insert output \"%s\"\n", $2->c_str());
+    Shell::_currentCommand._outFileName = $2;
+  }
+  | /* can be empty */ 
   ;
 
 // ls a b
@@ -95,7 +98,7 @@ argument:
     Command::_currSimpleCommand->insertArgument( $1 );\
   }
   ;
-
+// ls
 command_word:
   WORD {
     printf("   Yacc: insert command \"%s\"\n", $1->c_str());
@@ -104,13 +107,6 @@ command_word:
   }
   ;
 
-iomodifier_opt:
-  GREAT WORD {
-    printf("   Yacc: insert output \"%s\"\n", $2->c_str());
-    Shell::_currentCommand._outFileName = $2;
-  }
-  | /* can be empty */ 
-  ;
 
 %%
 
