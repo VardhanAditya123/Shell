@@ -70,7 +70,7 @@ WORD arg_list
 
 arg_list:
 arg_list WORD
-{Command: SimpleCommand->insertArgument($2)}
+{}
 | /*empty*/
 ;
 
