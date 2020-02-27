@@ -49,17 +49,17 @@ goal: command_list;
 // ls -l | grep a
 command_list:
 command_line |
-command_list command_line{Shell::_currentCommand.
-    insertSimpleCommand( Command::_currSimpleCommand );}
+command_list command_line{
+    Shell::_currentCommand.execute();
+  }
 ;
 /* command loop*/
 
 
 command_line:
 pipe_list io_modifier_list
-background_optional NEWLINE {
-    Shell::_currentCommand.execute();
-  }
+background_optional NEWLINE {Shell::_currentCommand.
+    insertSimpleCommand( Command::_currSimpleCommand );}
 | NEWLINE 
 | error NEWLINE{yyerrok;}
 ;
