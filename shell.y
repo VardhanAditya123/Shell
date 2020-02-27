@@ -87,7 +87,7 @@ command_and_args:
   ;
 
 pipe_list:
-pipe_list PIPE cmd_and_args
+pipe_list PIPE command_and_args
 | command_and_args
 ;
 
