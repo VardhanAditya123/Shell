@@ -107,21 +107,22 @@ void Command::execute() {
  // Create a new process
 
 int ret;
-for ( int i = 0;i < _numberOfSimpleCommands;i++ ) {
+for ( int i = 0;i < ;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
 execvp(sCom[i]->_args[0],
 sCom[i]->_args);
-
 perror("execvp");
 _exit(1);
 }
+
 
 else if (ret < 0) {
 perror("fork");
 return;
 }
+
 // Parent shell continue
 } // for
 if (!background) {
