@@ -51,7 +51,7 @@ arg_list Word
 ;
 
 cmd_and_args:
-WORD arg_list
+Word arg_list
 ;
 
 pipe_list:
