@@ -48,7 +48,9 @@ goal: command_list;
 
 // ls -l | grep a
 command_list:
-command_line{printf("HELLO");} |
+command_line{
+    Shell::_currentCommand.execute();
+  } |
 command_list command_line{
     Shell::_currentCommand.execute();
   }
@@ -91,7 +93,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 
 cmd_and_args:
 
-Word{printf("Yacc: insert argument \"%s\"\n", $1->c_str());Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
 ;
 
 
