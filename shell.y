@@ -57,6 +57,10 @@ command_list:
 command_line: simple_command
 ;
 
+pipe_list:
+pipe_list PIPE cmd_and_args
+| cmd_and_args
+;
 
 // ls a b > 
 simple_command:	
@@ -98,7 +102,6 @@ argument_list:
 argument:
   WORD {
     printf("   Yacc: insert argument \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand = new SimpleCommand();
     Command::_currSimpleCommand->insertArgument( $1 );
   }
   ;
