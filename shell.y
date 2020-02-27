@@ -83,7 +83,7 @@ AMPERSAND
 
 command_line:
 pipe_list io_modifier_list
-background_opt NEWLINE
+background_optional NEWLINE
 | NEWLINE /*accept empty cmd line*/
 | error NEWLINE{yyerrok;}
 ;
