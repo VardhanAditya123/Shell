@@ -44,19 +44,32 @@ int yylex();
 %%
 
 goal: command_list;
-arg_list:
 
-arg_list Word
-| /*empty*/
+// ls -l | greap a
+command_list:
+command_line |
+command_list command_line
 ;
+/* command loop*/
 
-cmd_and_args:
-Word arg_list
+command_line:
+pipe_list io_modifier_list
+background_optional NEWLINE
+| NEWLINE /*accept empty cmd line*/
+| error NEWLINE{yyerrok;}
 ;
+/*error recovery*/
+
 
 pipe_list:
 pipe_list PIPE cmd_and_args
 | cmd_and_args
+;
+
+
+io_modifier_list:
+io_modifier_list io_modifier
+| /*empty*/
 ;
 
 // >
@@ -69,32 +82,24 @@ GREATGREAT Word
 
 ;
 
-io_modifier_list:
+//ls -a -l
+cmd_and_args:
+Word arg_list
+;
 
-io_modifier_list io_modifier
+
+//-a -l
+arg_list:
+arg_list Word
 | /*empty*/
 ;
+
+
 
 background_optional:
 AMPERSAND
 | /*empty*/
 ;
-
-
-command_line:
-pipe_list io_modifier_list
-background_optional NEWLINE
-| NEWLINE /*accept empty cmd line*/
-| error NEWLINE{yyerrok;}
-;
-/*error recovery*/
-
-
-command_list:
-command_line |
-command_list command_line
-;
-/* command loop*/
 
 
 %%
