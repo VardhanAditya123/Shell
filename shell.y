@@ -48,7 +48,7 @@ goal: command_list;
 
 // ls -l | grep a
 command_list:
-command_line |
+command_line{print("HELLO")} |
 command_list command_line{
     Shell::_currentCommand.execute();
   }
@@ -96,7 +96,7 @@ Word{printf("Yacc: insert argument \"%s\"\n", $1->c_str());Command::_currSimpleC
 
 
 arg_list:
-arg_list Word{printf("hello"); Command::_currSimpleCommand->insertArgument($2);}
+arg_list Word{Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
 ;
 
