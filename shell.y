@@ -84,7 +84,7 @@ io_modifier:
 GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 | GREAT Word{Shell::_currentCommand._outFileName = $2;}
 | GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2}
-| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._errFileName = $2}
+| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._errFileName = $2;}
 | LESS Word{Shell::_currentCommand._inFileName = $2;}
 
 ;
