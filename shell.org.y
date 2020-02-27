@@ -97,7 +97,7 @@ argument_list:
 // a
 argument:
   WORD {
-    printf("   Yacc: insert argument \"%s\"\n", $1->c_str());
+    printf("Yacc: insert argument \"%s\"\n", $1->c_str());
     Command::_currSimpleCommand->insertArgument( $1 );
   }
   ;
