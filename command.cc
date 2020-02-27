@@ -18,7 +18,7 @@
 #include <cstdlib>
 
 #include <iostream>
-
+#include <stdlib.h>
 #include "command.hh"
 #include "shell.hh"
 
@@ -106,7 +106,7 @@ void Command::execute() {
 
  // Create a new process
 
-    int ret = fork();
+  int ret = fork();
   if (ret == 0) {
     // Child process.
     execvp(Shell::_currSimpleCommand[0], Shell::_currSimpleCommand);
