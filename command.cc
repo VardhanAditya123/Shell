@@ -19,7 +19,9 @@
 #include <iostream>
 #include "command.hh"
 #include "shell.hh"
-
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 Command::Command() {
   // Initialize a new vector of Simple Commands
