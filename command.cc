@@ -107,7 +107,7 @@ void Command::execute() {
  // Create a new process
 
   int ret = fork();
-  /*if (ret == 0) {
+  if (ret == 0) {
     // Child process.
     execvp(Shell::_currSimpleCommand[0], Shell::_currSimpleCommand);
     // There was an error
@@ -125,7 +125,7 @@ void Command::execute() {
     // ret is the pid of the child
     // Wait until the child exits
     waitpid(ret, NULL);
-  } // end if'*/
+  } // end if'
 
 
   // Clear to prepare for next command
