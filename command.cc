@@ -106,26 +106,28 @@ void Command::execute() {
 
  // Create a new process
 
-  int ret = fork();
-  if (ret == 0) {
-    // Child process.
-    execvp(Shell::_currentCommand, Shell::_currentCommand);
-    // There was an error
-    perror("execvp");
-    _exit(1);
-  }
+int ret;
+for ( int i = 0;i < _numberOfSimpleCommands;i++ ) {
+ret = fork();
+if (ret == 0) {
+//child
+execvp(sCom[i]->_args[0],
+sCom[i]->_args);
 
-  else if (ret < 0) {
-    // There was an error in fork
-    perror("fork");
-    exit(2);
-  }
-  else {
-    // This is the parent process
-    // ret is the pid of the child
-    // Wait until the child exits
-    waitpid(ret, NULL);
-  } // end if'
+perror(“execvp”);
+_exit(1);
+}
+
+else if (ret < 0) {
+perror(“fork”);
+return;
+}
+// Parent shell continue
+} // for
+if (!background) {
+// wait for last process
+waitpid(ret, NULL);
+}
 
 
   // Clear to prepare for next command
