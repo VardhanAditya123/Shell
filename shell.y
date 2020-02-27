@@ -85,7 +85,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 | GREAT Word{Shell::_currentCommand._outFileName = $2;}
 | GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;}
 | GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;}
-| LESS Word{Shell::_currentCommand._outFileName = $2;}
+| LESS Word{Shell::_currentCommand._inFileName = $2;}
 
 ;
 
@@ -93,7 +93,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 
 cmd_and_args:
 
-Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand.insertArgument($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
 ;
 
 
