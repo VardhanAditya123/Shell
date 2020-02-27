@@ -102,7 +102,7 @@ Command::_currSimpleCommand->insertArgument($1);} arg_list
 arg_list:
 
 arg_list Word{
-  printf("Yacc: insert argument \"%s\"\n", $1->c_str());
+ printf("Yacc: insert argument \"%s\"\n", $1->c_str());
   Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
 ;
