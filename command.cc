@@ -110,13 +110,13 @@ void Command::execute() {
     // Child process.
     execvp(Shell::_currSimpleCommand[0], Shell::_currSimpleCommand);
     // There was an error
-    perror(“execvp”);
+    perror("execvp");
     _exit(1);
   }
 
   else if (ret < 0) {
     // There was an error in fork
-    perror(“fork”);
+    perror("fork");
     exit(2);
   }
   else {
