@@ -24,90 +24,114 @@
 
 
 Command::Command() {
-    // Initialize a new vector of Simple Commands
-    _simpleCommandsArray = std::vector<SimpleCommand *>();
-    _outFileName = NULL;
-    _inFileName = NULL;
-    _errFileName = NULL;
-    _backgnd = false;
+  // Initialize a new vector of Simple Commands
+  _simpleCommandsArray = std::vector<SimpleCommand *>();
+  _outFileName = NULL;
+  _inFileName = NULL;
+  _errFileName = NULL;
+  _backgnd = false;
 }
 
 void Command::insertSimpleCommand( SimpleCommand * simpleCommand ) {
-    // add the simple command to the vector
-    _simpleCommandsArray.push_back(simpleCommand);
+  // add the simple command to the vector
+  _simpleCommandsArray.push_back(simpleCommand);
 }
 
 void Command::clear() {
-    // deallocate all the simple commands in the command vector
-    for (auto simpleCommand : _simpleCommandsArray) {
-        delete simpleCommand;
-    }   
-     // remove all references to the simple commands we've deallocated
-    // (basically just sets the size to 0)
-    _simpleCommandsArray.clear();
+  // deallocate all the simple commands in the command vector
+  for (auto simpleCommand : _simpleCommandsArray) {
+    delete simpleCommand;
+  }   
+  // remove all references to the simple commands we've deallocated
+  // (basically just sets the size to 0)
+  _simpleCommandsArray.clear();
 
-    if ( _outFileName==NULL ) {
-        delete _outFileName;
-    }
-    _outFileName = NULL;
+  if ( _outFileName==NULL ) {
+    delete _outFileName;
+  }
+  _outFileName = NULL;
 
-    if ( _inFileName==NULL ) {
-        delete _inFileName;
-    }
-    _inFileName = NULL;
+  if ( _inFileName==NULL ) {
+    delete _inFileName;
+  }
+  _inFileName = NULL;
 
-    if ( _errFileName==NULL ) {
-        delete _errFileName;
-    }
-    _errFileName = NULL;
+  if ( _errFileName==NULL ) {
+    delete _errFileName;
+  }
+  _errFileName = NULL;
 
-    _backgnd = false;
+  _backgnd = false;
 }
 
 void Command::print() {
-    printf("\n\n");
-    printf("              COMMAND TABLE                \n");
-    printf("\n");
-    printf("  #   Simple Commands\n");
-    printf("  --- ----------------------------------------------------------\n");
+  printf("\n\n");
+  printf("              COMMAND TABLE                \n");
+  printf("\n");
+  printf("  #   Simple Commands\n");
+  printf("  --- ----------------------------------------------------------\n");
 
-    int i = 0;
-    // iterate over the simple commands and print them nicely
-    for ( auto & simpleCommand : _simpleCommandsArray ) {
-        printf("  %-3d ", i++ );
-        simpleCommand->print();
-    }
+  int i = 0;
+  // iterate over the simple commands and print them nicely
+  for ( auto & simpleCommand : _simpleCommandsArray ) {
+    printf("  %-3d ", i++ );
+    simpleCommand->print();
+  }
 
-    printf( "\n\n" );
-    printf( "  Output       Input        Error        Background\n" );
-    printf( "  ------------ ------------ ------------ ------------\n" );
-    printf( "  %-12s %-12s %-12s %-12s\n",
-            _outFileName?_outFileName->c_str():"default",
-            _inFileName?_inFileName->c_str():"default",
-            _errFileName?_errFileName->c_str():"default",
-            _backgnd?"YES":"NO");
-    printf( "\n\n" );
+  printf( "\n\n" );
+  printf( "  Output       Input        Error        Background\n" );
+  printf( "  ------------ ------------ ------------ ------------\n" );
+  printf( "  %-12s %-12s %-12s %-12s\n",
+      _outFileName?_outFileName->c_str():"default",
+      _inFileName?_inFileName->c_str():"default",
+      _errFileName?_errFileName->c_str():"default",
+      _backgnd?"YES":"NO");
+  printf( "\n\n" );
 }
 
 void Command::execute() {
-    // Don't do anything if there are no simple commands
-    if ( _simpleCommandsArray.size() == 0 ) {
-        Shell::prompt();
-        return;
-    }
-
-    // Print contents of Command data structure
-    print();
-
-    // Add execution here
-    // For every simple command fork a new process
-    // Setup i/o redirection
-    // and call exec
-    // Clear to prepare for next command
-    clear();
-
-    // Print new prompt
+  // Don't do anything if there are no simple commands
+  if ( _simpleCommandsArray.size() == 0 ) {
     Shell::prompt();
+    return;
+  }
+
+  // Print contents of Command data structure
+  print();
+
+  // Add execution here
+  // For every simple command fork a new process
+  // Setup i/o redirection
+  // and call exec
+
+  Create a new process
+    int ret = fork();
+  if (ret == 0) {
+    // Child process.
+    execvp(Shell::_currSimpleCommand[0], Shell::_currSimpleCommand);
+    // There was an error
+    perror(“execvp”);
+    _exit(1);
+  }
+
+  else if (ret < 0) {
+    // There was an error in fork
+    perror(“fork”);
+    exit(2);
+  }
+  else {
+    // This is the parent process
+    // ret is the pid of the child
+    // Wait until the child exits
+    waitpid(ret, NULL);
+  } // end if'
+
+
+  // Clear to prepare for next command
+  clear();
+
+  // Print new prompt
+  Shell::prompt();
 }
 
 SimpleCommand * Command::_currSimpleCommand;
