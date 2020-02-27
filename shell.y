@@ -68,7 +68,7 @@ background_optional NEWLINE {Shell::_currentCommand.insertSimpleCommand( Command
 
 
 pipe_list:
-pipe_list PIPE{Command::insertSimpleCommand(_currSimpleCommand);Command::_currSimpleCommand = NULL} cmd_and_args
+pipe_list PIPE{Command::insertSimpleCommand(_currSimpleCommand);Command::_currSimpleCommand = NULL;} cmd_and_args
 | cmd_and_args
 ;
 
