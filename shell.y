@@ -46,7 +46,7 @@ int yylex();
 goal: command_list;
 arg_list:
 
-arg_list WORD
+arg_list Word
 | /*empty*/
 ;
 
