@@ -85,7 +85,8 @@ GREATGREAT Word
 
 //ls -a -l
 cmd_and_args:
-Word{Command::_currSimpleCommand = new SimpleCommand(); 
+Word{
+Command::_currSimpleCommand = new SimpleCommand(); 
 Command::_currSimpleCommand->insertArgument($1);} arg_list
 ;
 
