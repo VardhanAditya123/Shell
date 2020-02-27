@@ -40,24 +40,23 @@ void Command::insertSimpleCommand( SimpleCommand * simpleCommand ) {
 void Command::clear() {
     // deallocate all the simple commands in the command vector
     for (auto simpleCommand : _simpleCommandsArray) {
-        if(simpleCommand != NULL)
         delete simpleCommand;
     }   
      // remove all references to the simple commands we've deallocated
     // (basically just sets the size to 0)
     _simpleCommandsArray.clear();
 
-    if ( _outFileName ) {
+    if ( _outFileName!=NULL ) {
         delete _outFileName;
     }
     _outFileName = NULL;
 
-    if ( _inFileName ) {
+    if ( _inFileName!=NULL ) {
         delete _inFileName;
     }
     _inFileName = NULL;
 
-    if ( _errFileName ) {
+    if ( _errFileName!=NULL ) {
         delete _errFileName;
     }
     _errFileName = NULL;
