@@ -105,7 +105,7 @@ arg_list Word{Command::_currSimpleCommand->insertArgument($2);}
 
 
 background_optional:
-AMPERSAND
+AMPERSAND{{Shell::_currentCommand._outFileName = "YES";}
 | /*empty*/
 ;
 
