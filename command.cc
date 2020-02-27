@@ -107,7 +107,7 @@ void Command::execute() {
   // and call exec
 
  // Create a new process
-cout<<_simpleCommandsArray[0]->_argumentsArray.print()<< endl;
+cout<<_simpleCommandsArray->_argumentsArray.print()<< endl;
 
 /*int ret;
 for ( int i = 0;i < _simpleCommandsArray.size() ;i++ ) {
