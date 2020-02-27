@@ -44,34 +44,31 @@ int yylex();
 %%
 
 goal:
-  commands
+  command_list
   ;
 
-commands:
-  command
-  | commands command
-  ;
 
-command: simple_command
+command_list:
+  command_line |
+  command_list command_line
+;
+/* command loop*/
+
+command_line: simple_command
 ;
 
 
+// ls a b > 
 simple_command:	
   command_and_args iomodifier_opt NEWLINE {
-    printf("   Yacc: Execute command\n");
     Shell::_currentCommand.execute();
   }
   | NEWLINE 
   | error NEWLINE { yyerrok; }
   ;
 
-command_and_args:
-  command_word argument_list {
-    Shell::_currentCommand.
-    insertSimpleCommand( Command::_currSimpleCommand );
-  }
-  ;
 
+// >
 iomodifier_opt:
   GREAT WORD {
     printf("   Yacc: insert output \"%s\"\n", $2->c_str());
@@ -80,24 +77,37 @@ iomodifier_opt:
   | /* can be empty */ 
   ;
 
+
+// ls a b
+command_and_args:  
+  command_word argument_list {
+    Shell::_currentCommand.
+    insertSimpleCommand( Command::_currSimpleCommand );
+  }
+  ;
+
+
+// a b
 argument_list:
   argument_list argument
   | /* can be empty */
   ;
 
 
+// a
 argument:
   WORD {
     printf("   Yacc: insert argument \"%s\"\n", $1->c_str());
-    Command::_currSimpleCommand->insertArgument( $1 );\
+    Command::_currSimpleCommand->insertArgument( $1 );
   }
   ;
 
+// ls
 command_word:
   WORD {
     printf("   Yacc: insert command \"%s\"\n", $1->c_str());
     Command::_currSimpleCommand = new SimpleCommand();
-    Command::_currSimpleCommand->insertArgument( $1 );
+    Command::_currSimpleCommand->insertArgument($1);
   }
   ;
 
