@@ -16,9 +16,6 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
-SimpleCommand:: firstCommand() {
-retutrn _argumentsArray[0];
-}
 
 void SimpleCommand::insertArgument( std::string * argument ) {
   // simply add the argument to the vector
