@@ -87,19 +87,15 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 
 ;
 
-//ls -a -l
+
+
 cmd_and_args:
 
-Word{
-printf("Yacc: insert argument \"%s\"\n", $1->c_str());
-Command::_currSimpleCommand = new SimpleCommand(); 
-Command::_currSimpleCommand->insertArgument($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
 ;
 
 
-//-a -l
 arg_list:
-
 arg_list Word{ 
   Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
