@@ -76,11 +76,11 @@ io_modifier_list io_modifier
 
 // >
 io_modifier:
-GREATGREAT Word
-| GREAT Word
-| GREATGREATAMPERSAND Word
-| GREATAMPERSAND Word
-| LESS Word
+GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
+| GREAT Word{Shell::_currentCommand._outFileName = $2;}
+| GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;}
+| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2;}
+| LESS Word{Shell::_currentCommand._outFileName = $2;}
 
 ;
 
