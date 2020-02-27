@@ -28,7 +28,7 @@
   std::string *cpp_string;
 }
 
-%token <cpp_string> WORD
+%token <cpp_string> Word
 %token NOTOKEN GREAT NEWLINE LESS GREATGREAT GREATGREATAMPERSAND GREATAMPERSAND PIPE AMPERSAND
 
 %{
