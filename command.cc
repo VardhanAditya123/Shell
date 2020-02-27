@@ -110,4 +110,4 @@ void Command::execute() {
     Shell::prompt();
 }
 
-SimpleCommand * Command::_currSimpleCommands;
+SimpleCommand * Command::_currSimpleCommand;
