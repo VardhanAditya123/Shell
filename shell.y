@@ -100,8 +100,10 @@ Command::_currSimpleCommand->insertArgument($1);} arg_list
 
 //-a -l
 arg_list:
-printf("Yacc: insert argument \"%s\"\n", $1->c_str());
-arg_list Word{Command::_currSimpleCommand->insertArgument($2);}
+
+arg_list Word{
+  printf("Yacc: insert argument \"%s\"\n", $1->c_str());
+  Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
 ;
 
