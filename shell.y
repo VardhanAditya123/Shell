@@ -45,12 +45,13 @@ int yylex();
 
 goal: command_list;
 
-// ls -l | greap a
+// ls -l | grep a
 command_list:
 command_line |
 command_list command_line
 ;
 /* command loop*/
+
 
 command_line:
 pipe_list io_modifier_list
@@ -84,7 +85,7 @@ GREATGREAT Word
 
 //ls -a -l
 cmd_and_args:
-Word arg_list
+Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list
 ;
 
 
