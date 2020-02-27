@@ -104,7 +104,8 @@ void Command::execute() {
   // Setup i/o redirection
   // and call exec
 
-  Create a new process
+ // Create a new process
+
     int ret = fork();
   if (ret == 0) {
     // Child process.
