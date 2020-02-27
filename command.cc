@@ -107,7 +107,7 @@ void Command::execute() {
   // and call exec
 
  // Create a new process
-cout<<Command::_simpleCommandsArray[0]-> SimpleCommand::_argumentsArray[0] << endl;
+cout<<Command::_simpleCommandsArray[0]->print() << endl;
 // printf("%s", Command::_simpleCommandsArray[0]-> SimpleCommand::_argumentsArray[0]);
 
 /*int ret;
