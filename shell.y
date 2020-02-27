@@ -93,7 +93,7 @@ cmd_and_args:
 Word{
 printf("Yacc: insert argument \"%s\"\n", $1->c_str());
 Command::_currSimpleCommand = new SimpleCommand(); 
-Command::_currSimpleCommand->insertArgument($1);} arg_list
+Command::_currSimpleCommand->insertArgument($1);} arg_list  
 ;
 
 
