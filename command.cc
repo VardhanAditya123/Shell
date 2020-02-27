@@ -42,7 +42,7 @@ void Command::clear() {
     for (auto simpleCommand : _simpleCommandsArray) {
         if(simpleCommand != NULL)
         delete simpleCommand;
-    }
+    }   
      // remove all references to the simple commands we've deallocated
     // (basically just sets the size to 0)
     _simpleCommandsArray.clear();
