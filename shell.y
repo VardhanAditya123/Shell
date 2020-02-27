@@ -59,8 +59,8 @@ command_list command_line{
 command_line:
 pipe_list io_modifier_list
 background_optional NEWLINE {Shell::_currentCommand.
-    insertSimpleCommand( Command::_currSimpleCommand );Shell::_currentCommand.execute();}
-| NEWLINE 
+    insertSimpleCommand( Command::_currSimpleCommand );}
+| NEWLINE {Shell::_currentCommand.insertSimpleCommand( Command::_currSimpleCommand );}
 | error NEWLINE{yyerrok;}
 ;
 /*error recovery*/
