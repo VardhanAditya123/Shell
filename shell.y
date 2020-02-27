@@ -94,7 +94,7 @@ Command::_currSimpleCommand->insertArgument($1);} arg_list
 
 //-a -l
 arg_list:
-arg_list Word
+arg_list Word{_currSimpleCommand->insertArgument($2)}
 | /*empty*/
 ;
 
