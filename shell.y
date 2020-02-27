@@ -48,7 +48,7 @@ goal: command_list;
 
 // ls -l | grep a
 command_list:
-command_line{print("HELLO");} |
+command_line{printf("HELLO");} |
 command_list command_line{
     Shell::_currentCommand.execute();
   }
