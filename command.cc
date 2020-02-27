@@ -109,7 +109,7 @@ void Command::execute() {
   int ret = fork();
   if (ret == 0) {
     // Child process.
-    execvp(Shell::_currSimpleCommand[0], Shell::_currSimpleCommand);
+    execvp(Shell::_currentCommand[0], Shell::_currentCommand);
     // There was an error
     perror("execvp");
     _exit(1);
