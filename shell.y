@@ -96,7 +96,7 @@ Word{printf("Yacc: insert argument \"%s\"\n", $1->c_str());Command::_currSimpleC
 
 
 arg_list:
-arg_list Word{ printf("Yacc: insert argument \"%s\"\n", $1->c_str());Command::_currSimpleCommand->insertArgument($2);}
+arg_list Word{Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
 ;
 
