@@ -57,10 +57,6 @@ command_list:
 command_line: simple_command
 ;
 
-pipe_list:
-pipe_list PIPE cmd_and_args
-| cmd_and_args
-;
 
 // ls a b > 
 simple_command:	
@@ -90,6 +86,10 @@ command_and_args:
   }
   ;
 
+pipe_list:
+pipe_list PIPE cmd_and_args
+| command_and_args
+;
 
 // a b
 argument_list:
