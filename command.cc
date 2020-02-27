@@ -107,7 +107,8 @@ void Command::execute() {
   // and call exec
 
  // Create a new process
-cout << _simpleCommandsArray[0]->c_str << endl;
+cout << _simpleCommandsArray[0]<< endl;
+printf("%s",_simpleCommandsArray[0])
 /*int ret;
 for ( int i = 0;i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
