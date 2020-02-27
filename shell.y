@@ -56,8 +56,10 @@ command_list command_line
 
 command_line:
 pipe_list io_modifier_list
-background_optional NEWLINE
-| NEWLINE /*accept empty cmd line*/
+background_optional NEWLINE {
+    Shell::_currentCommand.execute();
+  }
+| NEWLINE 
 | error NEWLINE{yyerrok;}
 ;
 /*error recovery*/
