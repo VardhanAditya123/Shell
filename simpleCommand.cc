@@ -16,7 +16,7 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
-SimpleCommand:: firstCommand(){
+SimpleCommand:: firstCommand() {
 retutrn _argumentsArray[0];
 }
 
