@@ -49,7 +49,8 @@ goal: command_list;
 // ls -l | grep a
 command_list:
 command_line |
-command_list command_line
+command_list command_line{Shell::_currentCommand.
+    insertSimpleCommand( Command::_currSimpleCommand );}
 ;
 /* command loop*/
 
