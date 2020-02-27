@@ -22,6 +22,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <iostream>
+using namespace std;
 
 Command::Command() {
   // Initialize a new vector of Simple Commands
