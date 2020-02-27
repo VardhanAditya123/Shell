@@ -90,13 +90,13 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
 
 //ls -a -l
 cmd_and_args:
-Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list
+Word{ Command::_currSimpleCommand->insertArgument($1);} arg_list
 ;
 
 
 //-a -l
 arg_list:
-arg_list Word{Command::_currSimpleCommand->insertArgument($2);}
+arg_list Word{Command::_currSimpleCommand = new SimpleCommand();Command::_currSimpleCommand->insertArgument($2);}
 | /*empty*/
 ;
 
