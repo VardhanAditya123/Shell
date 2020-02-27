@@ -45,6 +45,7 @@ int yylex();
 
 goal: command_list;
 
+
 // ls -l | grep a
 command_list:
 command_line |
