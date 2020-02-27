@@ -106,7 +106,7 @@ void Command::execute() {
 
  // Create a new process
 
-int ret;
+/*int ret;
 for ( int i = 0;i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 if (ret == 0) {
@@ -127,7 +127,7 @@ return;
 if (!background) {
 // wait for last process
 waitpid(ret, NULL);
-}
+}*/
 
 
   // Clear to prepare for next command
