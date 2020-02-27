@@ -114,12 +114,12 @@ if (ret == 0) {
 execvp(sCom[i]->_args[0],
 sCom[i]->_args);
 
-perror(“execvp”);
+perror("execvp");
 _exit(1);
 }
 
 else if (ret < 0) {
-perror(“fork”);
+perror("fork");
 return;
 }
 // Parent shell continue
