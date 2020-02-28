@@ -162,7 +162,7 @@ if (_backgnd) {
 waitpid(getpid(),&ret, 0);
 }
 
-
+cout << "HELLO"<<endl;
   // Clear to prepare for next command
   clear();
 
