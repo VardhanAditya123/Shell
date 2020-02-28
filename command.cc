@@ -116,12 +116,14 @@ for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 
 vector<char* const* >arr ;
-for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) 
+for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
+ cout << *arr[j] << endl;
+ }
  
 char*const* v = (char*const*)(&arr[0]) ;
 
- cout << *arr[0] << endl;
+
 
 if (ret == 0) {
 //child
