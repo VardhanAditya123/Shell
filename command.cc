@@ -151,12 +151,11 @@ perror("fork");
 return;
 }
 // Parent shell continue
-} // for
 
-else {
+if (_backgnd) {
 // wait for last process
 cout << "WORKS" << endl;
-waitpid(getpid(),&ret, NULL);
+waitpid(getpid(),&ret, 0);
 }
 
   // Clear to prepare for next command
@@ -164,6 +163,7 @@ waitpid(getpid(),&ret, NULL);
 
   // Print new prompt
   Shell::prompt();
-}
+}// for
+} 
 
 SimpleCommand * Command::_currSimpleCommand;
