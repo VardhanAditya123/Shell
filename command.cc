@@ -98,6 +98,11 @@ void Command::execute() {
     return;
   }
 
+void change_type( vector<string*>v , char** final){
+for(unsigned i =0 ; i < v.size();i++){
+  final[i] = const_cast<char*>((char*) v.at(i).c_str);
+}
+}
   // Print contents of Command data structure
   print();
 
@@ -125,6 +130,7 @@ for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
 }
 
 change_type(v, final );
+
 
 if (ret == 0) {
 //child
