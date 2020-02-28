@@ -118,8 +118,7 @@ ret = fork();
 vector<char* const* >arr ;
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
-
- arr.push_back("NULL");
+ arr.push_back("\0");
 char*const* v = (char*const*)(&arr[0]) ;
 
 
