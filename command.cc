@@ -115,19 +115,19 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 
-vector< string > arr ;
-for ( unsigned int j = 0; j < (_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
- arr.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
- cout << arr[j] << endl;
+vector<char* const* >arr ;
+for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
+ arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
+//  cout << *arr[j] << endl;
  }
  
-  char* v = (arr[0]) ;
-//  cout << v[0] <<"lol"<< endl;
+char*const* v = (&arr[0]) ;
+//  cout << *v[0] <<"lol"<< endl;
 
 
 if (ret == 0) {
 //child
-// execvp(a , v);
+execvp(a , v);
 perror("execvp");
 _exit(1);
 }
