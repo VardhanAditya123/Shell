@@ -155,6 +155,7 @@ return;
 
 if (_backgnd) {
 // wait for last process
+cout << "WORKS" << endl;
 waitpid(-1,&ret, 0);
 }
 
