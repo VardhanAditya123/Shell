@@ -114,12 +114,12 @@ char *a = &(s[0]);
 int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
-vector<char* const* >arr ;
+
 
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
 
-char*const* v = (arr[0])->_argumentsArray;
+char*const* v = (arr[0])->_argumentsArray ;
 
 if (ret == 0) {
 //child
