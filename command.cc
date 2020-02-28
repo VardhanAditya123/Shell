@@ -154,7 +154,7 @@ return;
 
 else{
 // wait for last process
-waitpid(getpid(),&ret, -1);
+waitpid(-1,&ret, -0);
 }
 
   // Clear to prepare for next command
