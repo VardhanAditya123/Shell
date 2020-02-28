@@ -23,6 +23,10 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <iostream>
+#include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+ 
 using namespace std;
 
 Command::Command() {
