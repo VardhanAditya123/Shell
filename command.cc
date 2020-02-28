@@ -117,20 +117,19 @@ for ( int i = 0;i < _numberOfSimpleCommands;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
-execvp(sCom[i]->_args[0],
-sCom[i]->_args);
+execvp(_simpleCommandsArray[i]->_args[0],_simpleCommandsArray[i]->_args);
 
-perror(“execvp”);
+perror("execvp");
 _exit(1);
 }
 
 else if (ret < 0) {
-perror(“fork”);
+perror("fork");
 return;
 }
 // Parent shell continue
 } // for
-if (!background) {
+if (_backgnd) {
 // wait for last process
 waitpid(ret, NULL);
 }
