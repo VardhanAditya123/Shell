@@ -110,6 +110,7 @@ void Command::execute() {
 _simpleCommandsArray[0]->print() ;
 cout<< *(_simpleCommandsArray[0]->_argumentsArray[0]) <<endl;
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+cout << s << endl
 
 
 /*int ret;
