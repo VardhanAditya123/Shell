@@ -119,7 +119,7 @@ vector<char* const* >arr ;
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
 
-const* char* v = &arr[0];
+const*char* v = &arr[0];
 
 if (ret == 0) {
 //child
