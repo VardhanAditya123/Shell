@@ -134,7 +134,7 @@ return;
 // Parent shell continue
 } // for
 
-if (!background) {
+if (!_backgnd) {
 // wait for last process
 waitpid(ret, NULL);
 }
