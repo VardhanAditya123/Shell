@@ -129,12 +129,7 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 
 std::vector <string*> v ;
-std::vector <char*> c ;
-
 char **final  = new char*[100];
-
-
-
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   v.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
@@ -159,7 +154,7 @@ return;
 
 if (_backgnd) {
 // wait for last process
-waitpid(getpid(),&ret, 0);
+waitpid(getpid(),&ret, -1);
 }
 
   // Clear to prepare for next command
