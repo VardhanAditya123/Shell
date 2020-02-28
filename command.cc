@@ -124,7 +124,7 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
 
 if (ret == 0) {
 //child
-execvp(a , arr);
+execvp(a , (char* const*)arr);
 perror("execvp");
 _exit(1);
 }
