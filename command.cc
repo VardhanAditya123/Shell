@@ -108,7 +108,7 @@ void Command::execute() {
 
  // Create a new process
 
-_simpleCommandsArray[0]->print() ;
+
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 
@@ -117,6 +117,7 @@ char *a = &(s[0]);
 int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
+
 if (ret == 0) {
 //child
 execvp(a , _simpleCommandsArray[i]);
@@ -132,6 +133,7 @@ return;
 
 // Parent shell continue
 } // for
+
 if (!background) {
 // wait for last process
 waitpid(ret, NULL);
