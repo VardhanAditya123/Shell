@@ -117,7 +117,7 @@ ret = fork();
 
 vector <char* > arr ;
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
- arr.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
+ arr.push_back((char*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
   cout << *arr[0] << endl;
  }
  
