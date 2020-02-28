@@ -117,7 +117,7 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
-const char*arr[_simpleCommandsArray[i].size()];
+const char*arr[(_simpleCommandsArray[i]->_argumentsArray).size()];
 if (ret == 0) {
 //child
 execvp(a,_simpleCommandsArray[i]->_argumentsArray);
