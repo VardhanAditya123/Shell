@@ -120,7 +120,7 @@ ret = fork();
 
 if (ret == 0) {
 //child
-execvp(a , NULL);
+execvp(a , {"ls,NULL"});
 perror("execvp");
 _exit(1);
 }
