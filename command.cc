@@ -118,6 +118,9 @@ for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
 std::string <char*> v ;
+for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
+        v.push_back(_simpleCommandsArray[i]->_argumentsArray[j]); 
+}
 
 if (ret == 0) {
 //child
