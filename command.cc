@@ -109,7 +109,8 @@ void Command::execute() {
  // Create a new process
 _simpleCommandsArray[0]->print() ;
 cout<< *(_simpleCommandsArray[0]->_argumentsArray[0]) <<endl;
-printf("%c",(char*)(_simpleCommandsArray[0]->_argumentsArray[0]) );
+string s = *(_simpleCommandsArray[0]->_argumentsArray[0])
+
 
 /*int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
