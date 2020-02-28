@@ -119,13 +119,13 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
-for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
+for ( auto simpleCommand : _simpleCommandsArray ) {
 cout << "HELLO" << endl;
 std::vector <string*> v ;
 char **final  = new char*[100];
 
-for(unsigned j = 0 ; j < _simpleCommandsArray[i]->_argumentsArray.size();j++){
-  v.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
+for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
+  v.push_back((simpleCommand->_argumentsArray[j])); 
 }
 
 
