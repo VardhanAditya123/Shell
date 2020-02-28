@@ -125,7 +125,7 @@ cout << *arr[1] << endl;
 
 if (ret == 0) {
 //child
-execvp(a , v);
+execvp(a , arr);
 perror("execvp");
 _exit(1);
 }
