@@ -98,8 +98,9 @@ void Command::print() {
 void change_type( vector <string*> v , char** final){
 
 for(unsigned int i = 0 ; i < v.size();i++){
+  final[i]= malloc(8000);
   cout << v.at(i)->c_str() << endl;
-  strdup(final[i],const_cast<char*>((char*)v.at(i)->c_str() ));
+  final[i]=const_cast<char*>((char*)v.at(i)->c_str() ;
 }
 
 }
