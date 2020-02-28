@@ -118,7 +118,7 @@ for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
-execvp(string, _simpleCommandsArray[i]);
+execvp(string , _simpleCommandsArray[i]);
 perror("execvp");
 _exit(1);
 }
