@@ -130,7 +130,7 @@ char **final  = new char*[100];
 
 for(auto word : simpleCommand->_argumentsArray){
   cout << *word << endl;
-  v.push_back((*word)); 
+  v.push_back((word)); 
 }
 
 
