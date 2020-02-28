@@ -118,7 +118,7 @@ string sarr[] = _simpleCommandsArray[0]->_argumentsArray
 int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
-vector<char* const*>arr ;
+vector<char* const* >arr ;
 
 for (int i=0; i<_simpleCommandsArray.size(); i++) 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[0])); 
