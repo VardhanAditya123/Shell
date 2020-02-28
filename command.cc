@@ -122,7 +122,7 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
  }
  
 char*const* v[arr.size()];
-std::copy(arr.begin(),arr.end(),);
+std::copy(arr.begin(),arr.end(),v);
 
  
 if (ret == 0) {
