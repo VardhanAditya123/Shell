@@ -118,13 +118,13 @@ ret = fork();
 vector<char* const* >arr ;
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
- cout << *arr[j] << endl;
+ cout << *arr[0] << endl;
  }
  
-char* const* v[arr.size()];
-std::copy(arr.begin(),arr.end(),v);
+char*const* v = (char*const*)(&arr[0]) ;
 
- 
+
+
 if (ret == 0) {
 //child
 execvp(a , v);
