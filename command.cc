@@ -99,12 +99,12 @@ void change_type( vector <string*> v , char** final){
 for(unsigned i =0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
 
-  final[i] = strdup(const_cast<char*>((char*) v.at(i)->c_str()));
+  strcpy(final[i], (const_cast<char*>((char*) v.at(i)->c_str())));
 }
 }
 void Command::execute() {
   // Don't do anything if there are no simple commands
-  if ( _simpleCommandsArray.size() == 0 ) {
+  if ( _simpleCommandsArray.size() == 0 ) { 
     Shell::prompt();
     return;
   }
