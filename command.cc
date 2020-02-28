@@ -117,7 +117,7 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
-const char*arr[(_simpleCommandsArray[0]->_argumentsArray).size()];
+std::string <char*> v ;
 
 if (ret == 0) {
 //child
