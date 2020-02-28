@@ -16,12 +16,6 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
-void SimpleCommand::change_type( vector<string*>v , char** final){
-for(unsigned i =0 ; i < v.size();i++){
-  final[i] = const_cast<char*>((char*) v.at(i).c_str);
-}
-}
-
 void SimpleCommand::insertArgument( std::string * argument ) {
   // simply add the argument to the vector
   _argumentsArray.push_back(argument);
