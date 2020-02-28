@@ -133,7 +133,7 @@ ret = fork();
 std::vector <string*> v ;
 std::vector <char*> c ;
 
-char **final;
+char **final  = new char*[100];
 
 
 
