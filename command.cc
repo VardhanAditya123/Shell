@@ -107,18 +107,18 @@ void Command::execute() {
   // and call exec
 
  // Create a new process
+
 _simpleCommandsArray[0]->print() ;
-cout<< *(_simpleCommandsArray[0]->_argumentsArray[0]) <<endl;
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-cout << s << endl;
 
 
-/*int ret;
+
+int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
-execvp((_simpleCommandsArray[0]->_argumentsArray[0]), _simpleCommandsArray[i]);
+execvp(string, _simpleCommandsArray[i]);
 perror("execvp");
 _exit(1);
 }
@@ -134,7 +134,7 @@ return;
 if (!background) {
 // wait for last process
 waitpid(ret, NULL);
-}*/
+}
 
 
   // Clear to prepare for next command
