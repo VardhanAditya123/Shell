@@ -120,11 +120,10 @@ ret = fork();
 std::vector <string*> v ;
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
-  cout<< (string*) (_simpleCommandsArray[i]->_argumentsArray[j]) <<endl;
   v.push_back((string*) &(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
-char* const* v1 = (char*const*)(v.data());
+char* const* v1 = change_type(string*v,char**final )
 
 if (ret == 0) {
 //child
