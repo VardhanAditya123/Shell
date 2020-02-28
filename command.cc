@@ -113,15 +113,7 @@ void Command::execute() {
 
   // Print contents of Command data structure
   print();
-
-  // Add execution here
-  // For every simple command fork a new process
-  // Setup i/o redirection
-  // and call exec
-
- // Create a new process
-
-
+  
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
