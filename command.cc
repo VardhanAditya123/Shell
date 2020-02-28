@@ -119,7 +119,7 @@ ret = fork();
 
 std::vector <char*> v ;
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
-        v.push_back(_simpleCommandsArray[i]->_argumentsArray[j]); 
+        v.push_back((char*)(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
 if (ret == 0) {
