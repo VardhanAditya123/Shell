@@ -121,8 +121,8 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
  cout << *arr[j] << endl;
  }
  
-char*const* v;
-std::copy(arr.begin(),arr.end(),v);
+char*const* v[arr.size()];
+std::copy(arr.begin(),arr.end(),);
 
  
 if (ret == 0) {
