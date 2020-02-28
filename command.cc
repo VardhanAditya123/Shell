@@ -119,7 +119,7 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
-for ( auto simpleCommand : _simpleCommandsArray ) {
+for ( auto &simpleCommand : _simpleCommandsArray ) {
 
 
 std::vector <string*> v ;
