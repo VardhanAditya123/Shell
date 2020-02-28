@@ -99,7 +99,7 @@ void change_type( vector <string*> v , char** final){
 for(unsigned i =0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
 
-  strcpy(final[i], (const_cast<char*>((char*) v.at(i)->c_str())));
+  final[i] = (const_cast<char*>((char*) v.at(i)->c_str()));
 }
 }
 void Command::execute() {
