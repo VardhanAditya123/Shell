@@ -91,6 +91,11 @@ void Command::print() {
   printf( "\n\n" );
 }
 
+void change_type( vector<string*>v , char** final){
+for(unsigned i =0 ; i < v.size();i++){
+  final[i] = const_cast<char*>((char*) v.at(i).c_str);
+}
+}
 void Command::execute() {
   // Don't do anything if there are no simple commands
   if ( _simpleCommandsArray.size() == 0 ) {
@@ -98,11 +103,7 @@ void Command::execute() {
     return;
   }
 
-void change_type( vector<string*>v , char** final){
-for(unsigned i =0 ; i < v.size();i++){
-  final[i] = const_cast<char*>((char*) v.at(i).c_str);
-}
-}
+
   // Print contents of Command data structure
   print();
 
