@@ -96,10 +96,12 @@ void Command::print() {
 }
 
 void change_type( vector <string*> v , char** final){
+
 for(unsigned int i = 0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
-
+  strdup(final[i],const_cast<char*>((char*)v.at(i)->c_str() ))
 }
+
 }
 
 void Command::execute() {
@@ -132,6 +134,7 @@ std::vector <string*> v ;
 std::vector <char*> c ;
 
 char **final;
+final = malloc(8*(_simpleCommandsArray).size());
 
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
