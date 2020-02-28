@@ -115,7 +115,7 @@ char *a = &(s[0]);
 
 
 int ret;
-for ( int i = 0; i < _simpleCommandsArray.size ;i++ ) {
+for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 
 if (ret == 0) {
