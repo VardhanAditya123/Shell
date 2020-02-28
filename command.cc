@@ -119,9 +119,8 @@ vector<char* const* >arr ;
 
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
-
 char*const* v = (char*const*)(&arr[0]) ;
-cout << v[1] << endl;
+
 
 if (ret == 0) {
 //child
