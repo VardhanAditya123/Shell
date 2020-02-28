@@ -122,7 +122,7 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
  }
  
 char*const* v = (char*const*)(&arr[0]) ;
- cout << *v[0] << endl;
+ cout << *v[0] <<"lol"<< endl;
 
 
 if (ret == 0) {
