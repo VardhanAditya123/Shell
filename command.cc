@@ -99,7 +99,7 @@ void change_type( vector <string*> v , char** final){
 
 for(unsigned int i = 0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
-  strdup(final[i],const_cast<char*>((char*)v.at(i)->c_str() ))
+  strdup(final[i],const_cast<char*>((char*)v.at(i)->c_str() ));
 }
 
 }
