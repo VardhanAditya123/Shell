@@ -127,7 +127,6 @@ char *a = &(s[0]);
 int ret;
 
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
-ret = fork();
 
 std::vector <string*> v ;
 std::vector <char*> c ;
@@ -143,7 +142,7 @@ for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
 
  change_type(v, final );
 
-
+ret = fork();
 if (ret == 0) {
 //child
 execvp(a, final);
