@@ -152,10 +152,10 @@ return;
 // Parent shell continue
 } // for
 
-if (_backgnd) {
+// if (_backgnd) {
 // wait for last process
 waitpid(getpid(),&ret, -1);
-}
+// }
 
   // Clear to prepare for next command
   clear();
