@@ -113,8 +113,11 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 cout << s << endl;
 char *a = &(s[0]);
 int ret;
+
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
+
+const char*[_simpleCommandsArray.size()];
 if (ret == 0) {
 //child
 execvp(a,_simpleCommandsArray[i]->_argumentsArray);
