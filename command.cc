@@ -152,7 +152,7 @@ return;
 }
 // Parent shell continue
 
-if (_backgnd) {
+else{
 // wait for last process
 cout << "WORKS" << endl;
 waitpid(getpid(),&ret, 0);
