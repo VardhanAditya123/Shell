@@ -121,7 +121,7 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
  arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
 
 char*const* v = (char*const*)(arr[0]) ;
-cout << arr[0] << endl;
+cout << *arr[0] << endl;
 
 if (ret == 0) {
 //child
