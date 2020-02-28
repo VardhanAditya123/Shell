@@ -128,7 +128,7 @@ char **final  = new char*[100];
 // for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
 
 
-for(auto word : simpleCommand->_argumentsArray){
+for(auto & word : simpleCommand->_argumentsArray){
   cout << *word << endl;
   v.push_back((word)); 
 }
