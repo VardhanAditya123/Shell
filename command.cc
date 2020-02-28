@@ -120,7 +120,7 @@ char *a = &(s[0]);
 int ret;
 
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
-
+cout << "HELLO" << endl;
 std::vector <string*> v ;
 char **final  = new char*[100];
 
