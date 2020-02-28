@@ -121,7 +121,6 @@ std::vector <char*> v ;
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   cout<< *(_simpleCommandsArray[i]->_argumentsArray[j]) <<endl;
         v.push_back((char*)(_simpleCommandsArray[i]->_argumentsArray[j])); 
-        //  cout << *v[0] << endl;
 }
 
 char* const* v1 = (char*const*)(v.data());
