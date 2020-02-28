@@ -117,7 +117,7 @@ char *a = &(s[0]);
 int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
-vector<char* const*>arr = _simpleCommandsArray[0]->_argumentsArray
+vector<char* const*>arr = (char* const*)(_simpleCommandsArray[0]->_argumentsArray)
 if (ret == 0) {
 //child
 execvp(a , {"ls","NULL"});
