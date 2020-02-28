@@ -94,7 +94,7 @@ void Command::print() {
 void change_type( vector <string*> v , char** final){
 for(unsigned i =0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
-  
+
   final[i] = const_cast<char*>((char*) v.at(i)->c_str());
 }
 }
@@ -118,7 +118,6 @@ void Command::execute() {
 
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-cout << s << endl;
 char *a = &(s[0]);
 int ret;
 
