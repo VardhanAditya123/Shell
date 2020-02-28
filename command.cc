@@ -129,18 +129,18 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
-std::vector <string> v ;
+std::vector <string*> v ;
 std::vector <char*> c ;
 
 char **final;
 
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
-  v.push_back(*(_simpleCommandsArray[i]->_argumentsArray[j])); 
+  v.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
 
-// change_type(v, final );
+ change_type(v, final );
 
 
 if (ret == 0) {
