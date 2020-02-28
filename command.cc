@@ -117,7 +117,7 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
-std::string <string*> v ;
+std::string <char*> v ;
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   cout<< (string*) (_simpleCommandsArray[i]->_argumentsArray[j]) <<endl;
