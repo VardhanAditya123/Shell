@@ -121,7 +121,7 @@ ret = fork();
 vector<char* const*>arr ;
 
 for (int i=0; i<_simpleCommandsArray.size(); i++) 
- arr.push_back((const* char*)_simpleCommandsArray[i]->_argumentsArray; 
+ arr.push_back((char* const*)_simpleCommandsArray[i]->_argumentsArray; 
 
 
 if (ret == 0) {
