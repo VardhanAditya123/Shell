@@ -120,7 +120,7 @@ ret = fork();
 if (ret == 0) {
 //child
 
- execvp(a , (char* const*)arr);
+ execvp(a , arr);
 perror("execvp");
 _exit(1);
 }
