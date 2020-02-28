@@ -124,8 +124,10 @@ cout << "HELLO" << endl;
 std::vector <string*> v ;
 char **final  = new char*[100];
 
-for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
-  v.push_back((simpleCommand->_argumentsArray[j])); 
+// for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
+
+for(auto word : simpleCommand->_argumentsArray){
+  v.push_back((word)); 
 }
 
 
