@@ -115,9 +115,9 @@ int ret;
 for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 
-vector< char* >arr ;
+vector< char* > arr ;
 for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
- arr.push_back((const char*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
+ arr.push_back(( char*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
 //  cout << *arr[j] << endl;
  }
  
