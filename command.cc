@@ -112,19 +112,14 @@ void Command::execute() {
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
+
 for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 
-vector <char* > arr ;
-for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); j++) {
- arr.push_back((char*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
-  cout << *arr <<"Hello"<< endl;
- }
- 
-
 if (ret == 0) {
 //child
-// execvp(a , (char* const*)arr);
+
+ execvp(a , (char* const*)arr);
 perror("execvp");
 _exit(1);
 }
