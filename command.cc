@@ -130,6 +130,7 @@ for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 
 std::vector <string*> v ;
 char **final  = new char*[100];
+
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   v.push_back((_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
@@ -152,10 +153,10 @@ return;
 // Parent shell continue
 } // for
 
-// if (_backgnd) {
+if (_backgnd) {
 // wait for last process
 waitpid(getpid(),&ret, -1);
-// }
+}
 
   // Clear to prepare for next command
   clear();
