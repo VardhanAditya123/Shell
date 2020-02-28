@@ -118,12 +118,13 @@ for ( unsigned int i = 0; i < _simpleCommandsArray.size(); i++ ) {
 ret = fork();
 
 std::vector <string*> v ;
+char**final;
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   v.push_back((string*) &(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
-char* const* v1 = change_type(string*v,char**final )
+char* const* v1 = change_type(v, final )
 
 if (ret == 0) {
 //child
