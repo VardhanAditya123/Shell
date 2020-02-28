@@ -122,7 +122,7 @@ for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
         v.push_back((char*)(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
-char* const* v1 = v1.data();
+char* const* v1 = (char*const*)v1.data();
 
 if (ret == 0) {
 //child
