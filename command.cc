@@ -131,7 +131,7 @@ return;
 } // for
 if (_backgnd) {
 // wait for last process
-waitpid(getpid(),ret, NULL);
+waitpid(getpid(),&ret, NULL);
 }
 
 
