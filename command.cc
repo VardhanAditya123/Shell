@@ -110,6 +110,7 @@ void Command::execute() {
 
 _simpleCommandsArray[0]->print() ;
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+char *a = &(s[0]);
 
 
 
@@ -118,7 +119,7 @@ for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
-execvp(string , _simpleCommandsArray[i]);
+execvp(a , _simpleCommandsArray[i]);
 perror("execvp");
 _exit(1);
 }
