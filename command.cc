@@ -124,7 +124,7 @@ for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
   v.push_back((string*) &(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
-change_type(v, final )
+change_type(v, final );
 
 if (ret == 0) {
 //child
