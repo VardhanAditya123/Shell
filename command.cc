@@ -113,31 +113,26 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 cout << s << endl;
 char *a = &(s[0]);
 int ret;
-
-for ( unsigned int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
+for ( int i = 0;i < _numberOfSimpleCommands;i++ ) {
 ret = fork();
-
 if (ret == 0) {
 //child
+execvp(sCom[i]->_args[0],
+sCom[i]->_args);
 
- execvp(a , arr);
-perror("execvp");
+perror(“execvp”);
 _exit(1);
 }
 
-
 else if (ret < 0) {
-perror("fork");
+perror(“fork”);
 return;
 }
-
 // Parent shell continue
 } // for
-
-if (!_backgnd) {
+if (!background) {
 // wait for last process
-
-waitpid(getpid(),&ret, NULL);
+waitpid(ret, NULL);
 }
 
 
