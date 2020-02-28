@@ -165,7 +165,6 @@ waitpid(getpid(),&ret, 0);
   // Clear to prepare for next command
   clear();
 
-cout << "HELLO"<<endl;
   // Print new prompt
   Shell::prompt();
 }
