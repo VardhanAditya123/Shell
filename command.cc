@@ -121,9 +121,9 @@ for ( unsigned int j = 0; j <(_simpleCommandsArray[i]->_argumentsArray).size(); 
  cout << *arr[j] << endl;
  }
  
-char*const v = arr.data();
+char*const* v = arr.data();
 
-
+ 
 if (ret == 0) {
 //child
 execvp(a , v);
