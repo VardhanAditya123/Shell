@@ -111,16 +111,17 @@ void Command::execute() {
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
+string sarr[] = _simpleCommandsArray[0]->_argumentsArray;
 
 
 
 int ret;
 for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
-vector<char* const*>arr = (char* const*)(_simpleCommandsArray[0]->_argumentsArray);
+
 if (ret == 0) {
 //child
-execvp(a , {"ls","NULL"});
+execvp(a , sarr);
 perror("execvp");
 _exit(1);
 }
