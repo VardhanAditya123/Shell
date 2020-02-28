@@ -93,7 +93,7 @@ void Command::print() {
 
 void change_type( vector<string*>v , char** final){
 for(unsigned i =0 ; i < v.size();i++){
-  final[i] = const_cast<char*>((char*) v.at(i).c_str);
+  final[i] = const_cast<char*>((char*) v.at(i)->c_str);
 }
 }
 void Command::execute() {
