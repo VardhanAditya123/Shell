@@ -120,7 +120,7 @@ ret = fork();
 
 if (ret == 0) {
 //child
-execvp(a , _simpleCommandsArray[i]);
+execvp(a , (char* const*)_simpleCommandsArray[i]);
 perror("execvp");
 _exit(1);
 }
