@@ -96,10 +96,10 @@ void Command::print() {
 }
 
 void change_type( vector <string*> v , char** final){
-for(unsigned i =0 ; i < v.size();i++){
+for(unsigned int i =0 ; i < v.size();i++){
   cout << v.at(i)->c_str() << endl;
 
-  cout<< (const_cast<char*>((char*) v.at(i)->c_str()))<< endl;
+  final[i] = (const_cast<char*>((char*) v.at(i)->c_str()));
 }
 }
 void Command::execute() {
