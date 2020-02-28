@@ -156,7 +156,7 @@ return;
 if (_backgnd) {
 // wait for last process
 cout << "WORKS" << endl;
-waitpid(-1,&ret, 0);
+waitpid(ret, NULL);
 }
 
   // Clear to prepare for next command
