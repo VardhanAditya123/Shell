@@ -154,8 +154,7 @@ return;
 
 else{
 // wait for last process
-cout << "WORKS" << endl;
-waitpid(getpid(),&ret, 0);
+waitpid(getpid(),&ret, -1);
 }
 
   // Clear to prepare for next command
