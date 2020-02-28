@@ -119,7 +119,7 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
-for ( auto &simpleCommand : _simpleCommandsArray ) {
+for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
 std::vector <string*> v ;
@@ -130,7 +130,7 @@ char **final  = new char*[100];
 
 for(auto word : simpleCommand->_argumentsArray){
   cout << *word << endl;
-  v.push_back((word)); 
+  v.push_back((*word)); 
 }
 
 
