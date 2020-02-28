@@ -120,7 +120,7 @@ ret = fork();
 std::vector <string*> v ;
 
 for(unsigned j = 0 ; j < (_simpleCommandsArray[i]->_argumentsArray).size();j++){
-  cout<< (string*) (_simpleCommandsArray[i]->_argumentsArray[j]) <<endl;
+  cout<< (string*) (_simpleCommandsArray[i]->_argumentsArray) <<endl;
   v.push_back((string*) &(_simpleCommandsArray[i]->_argumentsArray[j])); 
 }
 
