@@ -120,8 +120,8 @@ for ( int i = 0; i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 vector<char* const* >arr ;
 
-for (int i=0; i<_simpleCommandsArray.size(); i++) 
- arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[0])); 
+for (int j = 0; j <_simpleCommandsArray->_argumentsArray.size(); j++) 
+ arr.push_back((char* const*) (_simpleCommandsArray[i]->_argumentsArray[j])); 
 
 
 if (ret == 0) {
