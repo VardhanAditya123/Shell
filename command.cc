@@ -111,12 +111,12 @@ _simpleCommandsArray[0]->print() ;
 cout<< *(_simpleCommandsArray[0]->_argumentsArray[0]) <<endl;
 // printf("%s", Command::_simpleCommandsArray[0]-> SimpleCommand::_argumentsArray[0]);
 
-/*int ret;
+int ret;
 for ( int i = 0;i < _simpleCommandsArray.size() ;i++ ) {
 ret = fork();
 if (ret == 0) {
 //child
-execvp(_simpleCommandsArray[i]->_argumentsArray[0], _simpleCommandsArray[i]->_argumentsArray);
+execvp(*(_simpleCommandsArray[i]->_argumentsArray[0]), _simpleCommandsArray[i]->_argumentsArray);
 perror("execvp");
 _exit(1);
 }
@@ -132,7 +132,7 @@ return;
 if (!background) {
 // wait for last process
 waitpid(ret, NULL);
-}*/
+}
 
 
   // Clear to prepare for next command
