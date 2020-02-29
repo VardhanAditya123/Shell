@@ -95,14 +95,6 @@ void Command::print() {
   printf( "\n\n" );
 }
 
-void change_type( vector <string*> v , char** final){
-
-for(unsigned int i = 0 ; i < v.size();i++){
-  // cout << v.at(i)->c_str() << endl;
-  final[i]=const_cast<char*>((char*)v.at(i)->c_str());
-}
-
-}
 
 void Command::execute() {
   // Don't do anything if there are no simple commands
@@ -121,7 +113,6 @@ int ret;
 
 char **final  = new char*[100];
 for ( auto & simpleCommand : _simpleCommandsArray ) {
-// for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
 
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
@@ -153,7 +144,7 @@ waitpid(-1,&ret, -0);
 }
 */
   // Clear to prepare for next command
-  clear();
+  // clear();
 
   // Print new prompt
   Shell::prompt();
