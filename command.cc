@@ -114,17 +114,17 @@ int ret;
 
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 char **final  = new char*[100];
+
+
+
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
-  cout << *word << endl;
   final[c]=const_cast<char*>((word->c_str()));
   c=c+1;
 }
 
 
-// change_type(v, final );
-
-/*ret = fork();
+ret = fork();
 if (ret == 0) {
 //child
 execvp(a, final);
@@ -142,7 +142,7 @@ else{
 // wait for last process
 waitpid(-1,&ret, -0);
 }
-*/
+
   // Clear to prepare for next command
   
 }// for
