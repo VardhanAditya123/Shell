@@ -153,7 +153,7 @@ return;
 else{
 // wait for last process
 waitpid(-1,&ret, -0);
-}simpleCommand
+}
 
   // Clear to prepare for next command
   clear();
