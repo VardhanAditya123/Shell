@@ -126,7 +126,7 @@ for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 for(auto & word : simpleCommand->_argumentsArray){
   cout << *word << endl;
-  final[i]=const_cast<char*>((word->c_str());
+  final[i]=const_cast<char*>((word->c_str()));
 }
 
 
