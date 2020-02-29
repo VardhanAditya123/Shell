@@ -119,22 +119,18 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
-for ( auto & simpleCommand : _simpleCommandsArray ) {
-
-
-std::vector <string*> v ;
 char **final  = new char*[100];
-
+for ( auto & simpleCommand : _simpleCommandsArray ) {
 // for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
 
 
-for(auto  word : simpleCommand->_argumentsArray){
+for(auto & word : simpleCommand->_argumentsArray){
   cout << *word << endl;
-  v.push_back((word)); 
+  final[i]=const_cast<char*>((word->c_str());
 }
 
 
-change_type(v, final );
+// change_type(v, final );
 
 /*ret = fork();
 if (ret == 0) {
