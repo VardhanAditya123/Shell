@@ -123,10 +123,11 @@ char **final  = new char*[100];
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 // for(unsigned j = 0 ; j < simpleCommand->_argumentsArray.size();j++){
 
-
+int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   cout << *word << endl;
-  final[i]=const_cast<char*>((word->c_str()));
+  final[c]=const_cast<char*>((word->c_str()));
+  c=c+1;
 }
 
 
