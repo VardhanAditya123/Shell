@@ -111,9 +111,9 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
-char **final  = new char*[100];
-for ( auto & simpleCommand : _simpleCommandsArray ) {
 
+for ( auto & simpleCommand : _simpleCommandsArray ) {
+char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   cout << *word << endl;
