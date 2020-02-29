@@ -144,10 +144,10 @@ waitpid(-1,&ret, -0);
 }
 */
   // Clear to prepare for next command
-  //  clear();
+    clear();
 
   // Print new prompt
-   Shell::prompt();
+  //  Shell::prompt();
 }// for
 } 
 
