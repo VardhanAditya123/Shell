@@ -134,9 +134,9 @@ for(auto & word : simpleCommand->_argumentsArray){
 }
 
 
- change_type(v, final );
+/change_type(v, final );
 
-ret = fork();
+/*ret = fork();
 if (ret == 0) {
 //child
 execvp(a, final);
@@ -154,7 +154,7 @@ else{
 // wait for last process
 waitpid(-1,&ret, -0);
 }
-
+*/
   // Clear to prepare for next command
   clear();
 
