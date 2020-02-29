@@ -144,11 +144,12 @@ waitpid(-1,&ret, -0);
 }
 */
   // Clear to prepare for next command
-    clear();
+    
 
   // Print new prompt
   //  Shell::prompt();
 }// for
+clear();
 } 
 
 SimpleCommand * Command::_currSimpleCommand;
