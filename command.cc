@@ -147,7 +147,7 @@ waitpid(-1,&ret, -0);
   // clear();
 
   // Print new prompt
-  Shell::prompt();
+  // Shell::prompt();
 }// for
 } 
 
