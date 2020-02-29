@@ -134,7 +134,7 @@ for(auto & word : simpleCommand->_argumentsArray){
 }
 
 
-/change_type(v, final );
+change_type(v, final );
 
 /*ret = fork();
 if (ret == 0) {
