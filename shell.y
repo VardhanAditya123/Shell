@@ -27,7 +27,7 @@
   // Example of using a c++ type in yacc
   std::string *cpp_string;
 }
-
+int ambig_count;
 %token <cpp_string> Word
 %token NOTOKEN GREAT NEWLINE LESS GREATGREAT GREATGREATAMPERSAND GREATAMPERSAND PIPE AMPERSAND TWOGREAT
 
@@ -81,12 +81,12 @@ io_modifier_list io_modifier
 
 // >
 io_modifier:
-GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._append=true;}
-| GREAT Word{Shell::_currentCommand._outFileName = $2;}
-| GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;}
-| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;}
-| LESS Word{Shell::_currentCommand._inFileName = $2;}
-| TWOGREAT Word{Shell::_currentCommand._outFileName = $2;}
+GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._append=true;ambig_count+=1;}
+| GREAT Word{Shell::_currentCommand._outFileName = $2;ambig_count+=1;}
+| GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;ambig_count+=1;}
+| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;ambig_count+=1;}
+| LESS Word{Shell::_currentCommand._inFileName = $2;ambig_count+=1;}
+| TWOGREAT Word{Shell::_currentCommand._outFileName = $2;ambig_count+=1;}
 
 ;
 

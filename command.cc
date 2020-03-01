@@ -71,6 +71,7 @@ void Command::clear() {
   
   _append = false;
   _backgnd = false;
+  ambig_count = 0;
 }
 
 void Command::print() {
@@ -110,7 +111,10 @@ void Command::execute() {
   // Print contents of Command data structure
   // print();
 
-
+if(ambig_count > 1){
+  cout<< "Ambiguous output redirect." <<endl;
+  exit(1);
+}
 int ret;
 
 //save in/out
@@ -152,7 +156,6 @@ close(fderr);
 
 
 unsigned int count = 0;
-int ambig_count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
@@ -163,10 +166,6 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
-ambig_count = ambig_count + 1;
-if(ambig_count > 1){
-  cout<<"Ambiguous output redirect."<<endl;
-}
 if(_append){
 fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
 }
