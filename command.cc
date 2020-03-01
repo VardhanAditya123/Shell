@@ -118,7 +118,7 @@ int tmpout=dup(1);
 //set the initial input
 int fdin;
 if (_inFileName) {
-fdin = open(const_cast<char*>((_inFileName->c_str())), O_RDONLY);
+fdin = open(_inFileName->c_str(), O_RDONLY);
 }
 else {
 // Use default input
@@ -140,7 +140,7 @@ if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
  cout << "coorect" << endl;
-fdout=open(const_cast<char*>((_outFileName) ,O_WRONLY);
+fdout=open(_outFileName->c_str() ,O_WRONLY);
 }
 else {
 // Use default output
