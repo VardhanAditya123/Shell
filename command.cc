@@ -108,7 +108,7 @@ void Command::execute() {
 
 
   // Print contents of Command data structure
-  print();
+  // print();
 
 
 int ret;
@@ -127,7 +127,7 @@ int fderr;
 if (_inFileName) {
 fdin = open(_inFileName->c_str(), O_RDONLY,0666);
 if(fdin == -1){
-  cout << "File" << _inFileName->c_str() <<" cannot be opened " << endl;
+  // cout << "File" << _inFileName->c_str() <<" cannot be opened " << endl;
   exit(1);
 }
 }
