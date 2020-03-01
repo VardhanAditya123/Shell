@@ -158,7 +158,7 @@ for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 dup2(fdin, 0);
 close(fdin);
-if(simpleCommand.ambig_count > 1){
+if(simpleCommand->ambig_count > 1){
   cout<< "Ambiguous output redirect." <<endl;
   exit(1);
 }
