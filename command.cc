@@ -189,17 +189,16 @@ perror("fork");
 return;
 }
 // Parent shell continue
-
+dup2(tmpin,0);
+dup2(tmpout,1);
+close(tmpin);
+close(tmpout);
 else{
 // wait for last process
 waitpid(ret ,NULL, 0);
 }
  
  //restore in/out defaults
-dup2(tmpin,0);
-dup2(tmpout,1);
-close(tmpin);
-close(tmpout);
 count += 1;
 }
 
