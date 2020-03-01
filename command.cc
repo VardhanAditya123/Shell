@@ -143,7 +143,7 @@ fderr=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
 }
 else {
 // Use default output
-fderr=dup(tmpout);
+fderr=dup(tmperr);
 }
 dup2(fderr,2);
 close(fderr);
