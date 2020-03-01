@@ -140,7 +140,7 @@ if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
  cout << "coorect" << endl;
-fdout=open(_outFileName ,O_WRONLY);
+fdout=open(const_cast<char*>((_outFileName) ,O_WRONLY);
 }
 else {
 // Use default output
