@@ -68,7 +68,7 @@ void Command::clear() {
     delete _errFileName;
   }
   _errFileName = NULL;
-
+  
   _backgnd = false;
 }
 
@@ -139,7 +139,7 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
-fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT);
+fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_APPEND);
 }
 else {
 // Use default output
@@ -172,7 +172,7 @@ for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>((word->c_str()));
   c=c+1;
 }
-// final[c]=const_cast<char*>("NULL");
+
 
 
 ret = fork();

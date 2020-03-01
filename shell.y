@@ -81,7 +81,7 @@ io_modifier_list io_modifier
 
 // >
 io_modifier:
-GREATGREAT Word{Shell::_currentCommand._outFileName = $2;}
+GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.append=true;}
 | GREAT Word{Shell::_currentCommand._outFileName = $2;}
 | GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;}
 | GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;}
