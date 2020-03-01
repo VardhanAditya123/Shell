@@ -128,7 +128,7 @@ fdin=dup(tmpin);
 int fdout;
 
 
-int count = 0;
+unsigned int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
