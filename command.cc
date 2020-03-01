@@ -162,7 +162,7 @@ dup2(fdout,1);
 close(fdout);
 
 
-string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+string s = *(simpleCommand->_argumentsArray[0]);
 char *a = &(s[0]);
 
 
