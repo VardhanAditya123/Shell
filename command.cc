@@ -181,7 +181,7 @@ if (ret == 0) {
 //child
 execvp(a, final);
 perror("execvp");
-_exit(1);
+_exit(1); 
 }
 
 else if (ret < 0) {
