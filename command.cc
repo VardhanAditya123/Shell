@@ -119,7 +119,7 @@ int tmpout=dup(1);
 //set the initial input
 int fdin;
 if (_inFileName) {
-fdin = open(_inFileName->c_str(), O_RDONLY);
+fdin = open(_inFileName->c_str(), O_RDONLY, 0400);
 }
 else {
 // Use default input
@@ -141,9 +141,9 @@ if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
 if(_append)
-fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_APPEND);
+fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_APPEND, 0600);
 else
-fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_TRUNC);
+fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_TRUNC, 0600);
 }
 else {
 // Use default output
