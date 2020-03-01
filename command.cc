@@ -68,6 +68,7 @@ void Command::clear() {
     delete _errFileName;
   }
   _errFileName = NULL;
+  
   _append = false;
   _backgnd = false;
 }
@@ -139,7 +140,10 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
+if(_append)
 fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_APPEND);
+else
+fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_TRUNC);
 }
 else {
 // Use default output
