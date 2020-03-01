@@ -135,7 +135,7 @@ for ( auto & simpleCommand : _simpleCommandsArray ) {
 dup2(fdin, 0);
 close(fdin);
 //setup output
-if (count == -_simpleCommandsArray.size()-1){
+if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
 fdout=open(_outFileName,......);
