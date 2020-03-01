@@ -143,7 +143,7 @@ if(_outFileName){
 if(_append)
 fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
 else
-fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_TRUNC,0666);
+fdout=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
 }
 else {
 // Use default output
