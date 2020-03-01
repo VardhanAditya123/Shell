@@ -189,10 +189,7 @@ perror("fork");
 return;
 }
 // Parent shell continue
-dup2(tmpin,0);
-dup2(tmpout,1);
-close(tmpin);
-close(tmpout);
+
 else{
 // wait for last process
 waitpid(ret ,NULL, 0);
@@ -200,10 +197,18 @@ waitpid(ret ,NULL, 0);
  
  //restore in/out defaults
 count += 1;
+} // for
+
+dup2(tmpin,0);
+dup2(tmpout,1);
+close(tmpin);
+close(tmpout);
+
+if (!background) {
+// Wait for last command
+waitpid(ret, NULL,0 );
 }
 
-
-// for
 clear();
 Shell::prompt();
 } 
