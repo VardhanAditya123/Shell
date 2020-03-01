@@ -5,6 +5,10 @@
 int yyparse(void);
 
 void Shell::prompt() {
+  if ( isatty(0) ) {
+  Print prompt
+}
+
   printf("myshell>");
   fflush(stdout);
 }
