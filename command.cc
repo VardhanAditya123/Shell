@@ -119,7 +119,7 @@ int tmpout=dup(1);
 //set the initial input
 int fdin;
 if (_inFileName) {
-fdin = open(_inFileName, ......);
+fdin = open(_inFileName, O_READ);
 }
 else {
 // Use default input
@@ -138,7 +138,7 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
-fdout=open(_outFileName,......);
+fdout=open(_outFileName, ,â€¦â€¦);
 }
 else {
 // Use default output
