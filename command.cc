@@ -170,7 +170,6 @@ char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>((word->c_str()));
-  // cout << final[c] << endl;
   c=c+1;
 }
 
@@ -193,7 +192,7 @@ return;
 
 else{
 // wait for last process
-waitpid(-1,&ret, -0);
+waitpid(ret ,NULL, 0);
 }
  
  //restore in/out defaults
