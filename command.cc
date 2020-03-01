@@ -119,7 +119,7 @@ int tmpout=dup(1);
 //set the initial input
 int fdin;
 if (_inFileName) {
-fdin = open(_inFileName,......);
+fdin = open(_inFileName, ......);
 }
 else {
 // Use default input
