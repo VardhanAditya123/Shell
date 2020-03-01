@@ -107,7 +107,7 @@ void Command::execute() {
 
 
   // Print contents of Command data structure
-  print();
+  // print();
 
 
 int ret;
