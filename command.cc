@@ -133,7 +133,7 @@ unsigned int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
-/dup2(fdin, 0);
+dup2(fdin, 0);
 close(fdin);
 //setup output
 
