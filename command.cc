@@ -138,7 +138,7 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
-fdout=open(const_cast<char*>((_outFileName->c_str())) ,O_WRITE);
+fdout=open(const_cast<char*>((_outFileName->c_str())) ,O_RDWR);
 }
 else {
 // Use default output
