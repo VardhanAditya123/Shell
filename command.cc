@@ -172,7 +172,7 @@ for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>((word->c_str()));
   c=c+1;
 }
-
+final[c]="NULL";
 
 
 ret = fork();
