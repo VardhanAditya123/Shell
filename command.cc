@@ -152,7 +152,7 @@ close(fderr);
 
 
 unsigned int count = 0;
-
+int ambig_count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
@@ -163,8 +163,13 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
-if(_append)
+if(_append){
+ambig_count = ambig_count + 1;
+if(ambig_count > 1){
+  cout<<"Ambiguous output redirect."<<endl;
+}
 fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
+}
 else
 fdout=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
 }
