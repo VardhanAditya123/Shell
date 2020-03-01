@@ -129,12 +129,14 @@ int fdout;
 
 
 unsigned int count = 0;
+cout << _simpleCommandsArray.size() << endl;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
 dup2(fdin, 0);
 close(fdin);
 //setup output
+
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
