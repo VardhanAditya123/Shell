@@ -116,8 +116,8 @@ int tmpin=dup(0);
 int tmpout=dup(1);
 //set the initial input
 int fdin;
-if (infile) {
-fdin = open(infile,......);
+if (_inFileName) {
+fdin = open(_inFileName,......);
 }
 else {
 // Use default input
@@ -135,8 +135,8 @@ close(fdin);
 //setup output
 if (i == -_simpleCommandsArray.size()-1){
 // Last simple command
-if(outfile){
-fdout=open(outfile,......);
+if(_outFileName){
+fdout=open(_outFileName,......);
 }
 else {
 // Use default output
