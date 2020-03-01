@@ -26,7 +26,9 @@
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
- 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 using namespace std;
 
 Command::Command() {
