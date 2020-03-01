@@ -116,16 +116,38 @@ int ret;
 //save in/out
 int tmpin=dup(0);
 int tmpout=dup(1);
+int tmperr=dup(2);
+
+
 //set the initial input
 int fdin;
+int fdout;
+int fderr;
+
 if (_inFileName) {
 fdin = open(_inFileName->c_str(), O_RDONLY,0666);
+if(fdin == -1){
+  exit(1);
+}
 }
 else {
 // Use default input
 fdin=dup(tmpin);
 }
-int fdout;
+
+if(_errFileName){
+if(_append)
+fderr=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
+else
+fderr=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+}
+else {
+// Use default output
+fderr=dup(tmpout);
+}
+dup2(fderr,2);
+close(fderr);
+
 
 
 unsigned int count = 0;
