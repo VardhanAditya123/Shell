@@ -86,7 +86,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 | GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;}
 | GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;}
 | LESS Word{Shell::_currentCommand._inFileName = $2;}
-| TWOGREAT Word{Shell::_currentCommand._outFileName = $2}
+| TWOGREAT Word{Shell::_currentCommand._outFileName = $2;}
 
 ;
 
