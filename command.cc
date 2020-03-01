@@ -128,8 +128,6 @@ int fdout;
 
 
 unsigned int count = 0;
-string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-char *a = &(s[0]);
 
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
@@ -164,6 +162,8 @@ dup2(fdout,1);
 close(fdout);
 
 
+string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+char *a = &(s[0]);
 
 
 char **final  = new char*[100];
