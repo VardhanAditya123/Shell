@@ -139,7 +139,6 @@ close(fdin);
 if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
- cout << "coorect" << endl;
 fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT);
 }
 else {
