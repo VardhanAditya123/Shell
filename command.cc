@@ -141,7 +141,7 @@ if (count == _simpleCommandsArray.size()-1){
 // Last simple command
 if(_outFileName){
 if(_append)
-fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT | O_RDONLY,0666);
+fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT ,0666);
 else
 fdout=open(_outFileName->c_str() ,O_WRONLY | O_CREAT | O_TRUNC,0666);
 }
