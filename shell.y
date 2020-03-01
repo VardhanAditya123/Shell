@@ -81,12 +81,12 @@ io_modifier_list io_modifier
 
 // >
 io_modifier:
-GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._append=true;_currSimpleCommand.ambig_count+=1;}
-| GREAT Word{Shell::_currentCommand._outFileName = $2;_currSimpleCommand.ambig_count+=1;}
-| GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;_currSimpleCommand.ambig_count+=1;}
-| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;_currSimpleCommand.ambig_count+=1;}
-| LESS Word{Shell::_currentCommand._inFileName = $2;_currSimpleCommand.ambig_count+=1;}
-| TWOGREAT Word{Shell::_currentCommand._outFileName = $2;_currSimpleCommand.ambig_count+=1;}
+GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand._append=true;Command::_currSimpleCommand.ambig_count+=1;}
+| GREAT Word{Shell::_currentCommand._outFileName = $2;Command::_currSimpleCommand.ambig_count+=1;}
+| GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;Command::_currSimpleCommand.ambig_count+=1;}
+| GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;Command::_currSimpleCommand.ambig_count+=1;}
+| LESS Word{Shell::_currentCommand._inFileName = $2;Command::_currSimpleCommand.ambig_count+=1;}
+| TWOGREAT Word{Shell::_currentCommand._outFileName = $2;Command::_currSimpleCommand.ambig_count+=1;}
 
 ;
 
