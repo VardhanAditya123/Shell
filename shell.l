@@ -40,6 +40,10 @@ void myunputc(int c) {
   return LESS;
 }
 
+"2>" {
+  return TWOGREAT;
+}
+
 ">>" {
   return GREATGREAT;
 }

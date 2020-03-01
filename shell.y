@@ -29,7 +29,7 @@
 }
 
 %token <cpp_string> Word
-%token NOTOKEN GREAT NEWLINE LESS GREATGREAT GREATGREATAMPERSAND GREATAMPERSAND PIPE AMPERSAND
+%token NOTOKEN GREAT NEWLINE LESS GREATGREAT GREATGREATAMPERSAND GREATAMPERSAND PIPE AMPERSAND TWOGREAT
 
 %{
 //#define yylex yylex
@@ -86,6 +86,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 | GREATGREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2; Shell::_currentCommand._errFileName = $2;Shell::_currentCommand._append=true;}
 | GREATAMPERSAND Word{Shell::_currentCommand._outFileName = $2 ;Shell::_currentCommand._errFileName = $2;}
 | LESS Word{Shell::_currentCommand._inFileName = $2;}
+| TWOGREAT Word{Shell::_currentCommand._outFileName = $2}
 
 ;
 
