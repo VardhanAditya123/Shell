@@ -114,7 +114,7 @@ char *a = &(s[0]);
 int ret;
 
 //save in/out
-/*int tmpin=dup(0);
+int tmpin=dup(0);
 int tmpout=dup(1);
 //set the initial input
 int fdin;
@@ -125,7 +125,7 @@ else {
 // Use default input
 fdin=dup(tmpin);
 }
-int fdout;*/
+int fdout;
 
 
 unsigned int count = 0;
@@ -133,7 +133,7 @@ unsigned int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 
-/*dup2(fdin, 0);
+/dup2(fdin, 0);
 close(fdin);
 //setup output
 
@@ -160,7 +160,7 @@ fdin=fdpipe[0];
 
 // Redirect output
 dup2(fdout,1);
-close(fdout);*/
+close(fdout);
 
 
 
@@ -196,11 +196,11 @@ waitpid(-1,&ret, -0);
 }
  
  //restore in/out defaults
-/*dup2(tmpin,0);
+dup2(tmpin,0);
 dup2(tmpout,1);
 close(tmpin);
 close(tmpout);
-count += 1;*/
+count += 1;
 }
 
 
