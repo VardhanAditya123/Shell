@@ -204,7 +204,7 @@ dup2(tmpout,1);
 close(tmpin);
 close(tmpout);
 
-if (!background) {
+if (_backgnd) {
 // Wait for last command
 waitpid(ret, NULL,0 );
 }
