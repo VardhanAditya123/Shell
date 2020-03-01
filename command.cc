@@ -111,15 +111,63 @@ string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 char *a = &(s[0]);
 int ret;
 
+//save in/out
+int tmpin=dup(0);
+int tmpout=dup(1);
+//set the initial input
+int fdin;
+if (infile) {
+fdin = open(infile,......);
+}
+else {
+// Use default input
+fdin=dup(tmpin);
+}
+int fdout;
 
+
+int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
-char **final  = new char*[100];
 
+
+dup2(fdin, 0);
+close(fdin);
+//setup output
+if (i == numsimplecommands-1){
+// Last simple command
+if(outfile){
+fdout=open(outfile,......);
+}
+else {
+// Use default output
+fdout=dup(tmpout);
+}
+}
+
+else {
+// Not last
+//simple command
+//create pipe
+int fdpipe[2];
+pipe(fdpipe);
+fdout=fdpipe[1];
+fdin=fdpipe[0];
+}// if/else
+
+// Redirect output
+dup2(fdout,1);
+close(fdout);
+
+
+
+
+char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>((word->c_str()));
   c=c+1;
 }
+
 
 
 ret = fork();
@@ -141,9 +189,15 @@ else{
 waitpid(-1,&ret, -0);
 }
  
-  // Clear to prepare for next command
-  
-}// for
+ //restore in/out defaults
+dup2(tmpin,0);
+dup2(tmpout,1);
+close(tmpin);
+close(tmpout);
+count += 1;
+}
+
+// for
 clear();
 Shell::prompt();
 } 
