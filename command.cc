@@ -71,7 +71,7 @@ void Command::clear() {
   
   _append = false;
   _backgnd = false;
-  ambig_count = 0;
+   
 }
 
 void Command::print() {
@@ -111,10 +111,7 @@ void Command::execute() {
   // Print contents of Command data structure
   // print();
 
-if(ambig_count > 1){
-  cout<< "Ambiguous output redirect." <<endl;
-  exit(1);
-}
+
 int ret;
 
 //save in/out
@@ -161,6 +158,10 @@ for ( auto & simpleCommand : _simpleCommandsArray ) {
 
 dup2(fdin, 0);
 close(fdin);
+if(simpleCommand.ambig_count > 1){
+  cout<< "Ambiguous output redirect." <<endl;
+  exit(1);
+}
 //setup output
 
 if (count == _simpleCommandsArray.size()-1){
