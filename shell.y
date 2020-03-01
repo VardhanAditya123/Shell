@@ -27,7 +27,7 @@
   // Example of using a c++ type in yacc
   std::string *cpp_string;
 }
-int ambig_count;
+
 %token <cpp_string> Word
 %token NOTOKEN GREAT NEWLINE LESS GREATGREAT GREATGREATAMPERSAND GREATAMPERSAND PIPE AMPERSAND TWOGREAT
 
