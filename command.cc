@@ -108,7 +108,6 @@ void Command::execute() {
   }
 string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
-cout << s1 << endl;
 if(s1.compare(s2) == 0){
   exit(0);
 }
