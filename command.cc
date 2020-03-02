@@ -138,9 +138,9 @@ fdin=dup(tmpin);
 
 if(_errFileName){
 if(_append)
-fderr=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
+fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
 else
-fderr=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+fderr=open(_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
 }
 else {
 // Use default output
