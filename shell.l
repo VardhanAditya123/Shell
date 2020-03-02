@@ -64,7 +64,9 @@ void myunputc(int c) {
   return AMPERSAND;
 }
 
-
+"\"" {
+  return QUOTE;
+}
 
 [^ \t\n][^ \t\n]*  {
   /* Assume that file names have only alpha chars */

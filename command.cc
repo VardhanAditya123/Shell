@@ -109,6 +109,7 @@ void Command::execute() {
 string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
 if(s1.compare(s2) == 0){
+  cout << "Good bye!!" << endl;
   exit(0);
 }
   // Print contents of Command data structure
