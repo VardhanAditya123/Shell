@@ -107,7 +107,7 @@ void Command::execute() {
     return;
   }
 
-if((_simpleCommandsArray[0]->_argumentsArray[0])->c_str().compare("exit") == 0){
+if(((_simpleCommandsArray[0]->_argumentsArray[0])->c_str()).compare("exit") == 0){
   exit(0);
 }
   // Print contents of Command data structure
