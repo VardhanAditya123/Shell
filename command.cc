@@ -106,8 +106,9 @@ void Command::execute() {
     Shell::prompt();
     return;
   }
-
-if(((_simpleCommandsArray[0]->_argumentsArray[0])->c_str()).compare("exit") == 0){
+string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+cout << s1 << endl;
+if(s1.compare("exit") == 0){
   exit(0);
 }
   // Print contents of Command data structure
