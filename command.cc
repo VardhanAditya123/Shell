@@ -136,7 +136,7 @@ if(s1.compare(s2) == 0){
 
 if(s1.compare("printenv")==0){
   char* n=0 ;
-  strcpy(n,"NULL");
+  strcpy(n,"NULL\0");
   for(int i = 0 ;; i++){
     if(strcmp(environ[i],n )==0){
      Shell::prompt();
