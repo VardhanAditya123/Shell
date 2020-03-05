@@ -103,6 +103,10 @@ void Command::print() {
 
 char* esc(char* str) {
 
+  //   /// lol
+  //   /
+
+
 char* dst = (char*)malloc(strlen(str)+1);
 int c = 0;
 for(unsigned int i = 0 ; i <strlen(str)-1;i++ ){
