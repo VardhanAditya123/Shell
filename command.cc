@@ -201,7 +201,7 @@ close(fdout);
 
 string s = *(simpleCommand->_argumentsArray[0]);
 char *a = &(s[0]);
-std::string char = "\\";
+std::string chars = "\\";
 
 
 char **final  = new char*[100];
@@ -210,7 +210,7 @@ for(auto & word : simpleCommand->_argumentsArray){
   string temp = word->c_str();
   final[c]=const_cast<char*>((word->c_str()));
   
-  for(char c1: char){
+  for(char c1: chars){
   temp.erase(std::remove(temp.begin(),temp.end(),c),temp.end());
   }
 
