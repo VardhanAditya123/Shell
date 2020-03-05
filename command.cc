@@ -101,6 +101,22 @@ void Command::print() {
   printf( "\n\n" );
 }
 
+char* Command::esc(char*str){
+  char* dst = malloc(strlen(str)+1);
+int c = 0;
+for(int i = 0 ; i <strlen(str)-1;i++ ){
+  if(*(str+i)=='\\' ){
+    *(dst + c) = *(str+i+1;)
+      c+=1;
+      i+=1;
+  }
+  else{
+    *(dst + c) = *(str+i);
+      c+=1;
+  }
+}
+return dst;
+}
 
 void Command::execute() {
   // Don't do anything if there are no simple commands
@@ -201,14 +217,12 @@ close(fdout);
 
 string s = *(simpleCommand->_argumentsArray[0]);
 char *a = &(s[0]);
-std::string chars = "\\";
 
-
+char* temp = (word->c_str());
 char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>(word->c_str());
-  
   c=c+1;
 }
 
