@@ -101,7 +101,7 @@ void Command::print() {
   printf( "\n\n" );
 }
 
-char* Command::esc(char* str) {
+char* esc(char* str) {
   char* dst = malloc(strlen(str)+1);
 int c = 0;
 for(int i = 0 ; i <strlen(str)-1;i++ ){
