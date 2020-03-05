@@ -116,6 +116,7 @@ for(unsigned int i = 0 ; i <strlen(str)-1;i++ ){
       c+=1;
   }
 }
+cout << *dst << endl;
 return dst;
 }
 
