@@ -105,7 +105,6 @@ char* esc(char* str) {
 
 char* dst = (char*)malloc(strlen(str)+1);
 int c = 0;
-cout << *str <<"source"<< endl;
 for(unsigned int i = 0 ; i <strlen(str)-1;i++ ){
   if(*(str+i)=='\\' ){
     *(dst + c) = *(str+i+1);
@@ -117,7 +116,6 @@ for(unsigned int i = 0 ; i <strlen(str)-1;i++ ){
       c+=1;
   }
 }
-cout << *dst <<" hello"<< endl;
 return dst;
 }
 
