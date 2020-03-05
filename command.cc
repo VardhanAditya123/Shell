@@ -102,11 +102,12 @@ void Command::print() {
 }
 
 char* esc(char* str) {
-  char* dst = malloc(strlen(str)+1);
+
+char* dst = malloc(strlen(str)+1);
 int c = 0;
 for(int i = 0 ; i <strlen(str)-1;i++ ){
   if(*(str+i)=='\\' ){
-    *(dst + c) = *(str+i+1;)
+    *(dst + c) = *(str+i+1);
       c+=1;
       i+=1;
   }
