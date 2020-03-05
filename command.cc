@@ -207,7 +207,7 @@ char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   string temp = word->c_str();
-  replace(temp.begin(),temp.end(),'\\','');
+  replace(temp.begin(),temp.end(),'\\','\0');
   final[c]=const_cast<char*>((word->c_str()));
   cout << final[c] << endl;
   c=c+1;
