@@ -66,10 +66,10 @@ void myunputc(int c) {
 }
 
 \"[^ \t\n][^ \t\n]*\" {
-   std::string s = new std::string(yytext);
+   std::string s = yytext;
    s.replace(0,1,"");
    s.pop_back();
-   yylval.cpp_string = &s;
+   yylval.cpp_string = new std::string(yytext);
    return Word;
 }
 
