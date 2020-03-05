@@ -70,7 +70,7 @@ void myunputc(int c) {
    s.replace(0,1,"");
    s.replace(s.length()-1,1,"");
    yylval.cpp_string = new std::string(s);
-  return QUOTE;
+  return Word;
 }
 
 [^ \t\n][^ \t\n]*  {
