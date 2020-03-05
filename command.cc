@@ -135,9 +135,9 @@ if(s1.compare(s2) == 0){
   // print();
 
 if(s1.compare("printenv")==0){
-  
+  char* n = "NULL\0";
   for(int i = 0 ;; i++){
-    if(strcmp(&environ[i], "NULL\0")==0){
+    if(strcmp(environ[i],n )==0){
      Shell::prompt();
      clear();
      return;
