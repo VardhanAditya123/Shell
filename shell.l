@@ -65,7 +65,8 @@ void myunputc(int c) {
   return AMPERSAND;
 }
 
-"\"" {
+"\""[^ \t\n][^ \t\n]*"\"" {
+   yylval.cpp_string = new std::string(yytext);
   return QUOTE;
 }
 
