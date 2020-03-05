@@ -134,9 +134,16 @@ if(s1.compare(s2) == 0){
 }
   // print();
 
-if(s1.compare("printenv")){
+if(s1.compare("printenv")==0){
   
-  for(int i = 0 ; i < environ.length(); i++){
+  for(int i = 0 ;; i++){
+    if(environ[i].compare("\0")==0){
+     Shell::prompt();
+     clear();
+     return;
+     }
+    
+    else
     cout << *(environ + i) << endl;
   }
 
