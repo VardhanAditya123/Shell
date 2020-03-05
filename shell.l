@@ -66,7 +66,7 @@ void myunputc(int c) {
 }
 
 "\""[^ \t\n][^ \t\n]*"\"" {
-  string s = yytext;
+  std::string s = yytext;
    yylval.cpp_string = new std::string(yytext);
   return QUOTE;
 }
