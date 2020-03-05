@@ -207,7 +207,7 @@ std::string chars = "\\";
 char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
-  string temp = word->c_str();
+  string *temp = word->c_str();
   final[c]=const_cast<char*>(((&temp)->c_str()));
   
   c=c+1;
