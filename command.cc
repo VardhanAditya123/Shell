@@ -135,9 +135,10 @@ if(s1.compare(s2) == 0){
   // print();
 
 if(s1.compare("printenv")==0){
-  char *n = (char*)malloc(strlen("NULL")+1);
+ 
+ string env = environ[i];
   for(int i = 0 ;; i++){
-    if(strcmp(environ[i],n )==0){
+    if(env.compare("NULL")){
      Shell::prompt();
      clear();
      return;
