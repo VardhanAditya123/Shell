@@ -212,8 +212,7 @@ for(auto & word : simpleCommand->_argumentsArray){
   temp.erase(std::remove(temp.begin(),temp.end(),c1),temp.end());
   }
   temp = temp.c_str();
-  // cout << temp <<" " ;
-  final[c]=const_cast<char*>((word->c_str()));
+  final[c]=const_cast<char*>((temp->c_str()));
   
   c=c+1;
 }
