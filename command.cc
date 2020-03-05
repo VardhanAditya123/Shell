@@ -204,7 +204,7 @@ char *a = &(s[0]);
 char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
-  cout<<final[c]=const_cast<char*>((word->c_str()));<<endl;
+  cout<<final[c]=const_cast<char*>((word->c_str())) <<endl;
   c=c+1;
 }
 
