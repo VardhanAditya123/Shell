@@ -137,7 +137,7 @@ if(s1.compare(s2) == 0){
 if(s1.compare("printenv")==0){
   
   for(int i = 0 ;; i++){
-    if(environ[i] == "NULL"){
+    if(strcmp(environ[i], "NULL")==0){
      Shell::prompt();
      clear();
      return;
