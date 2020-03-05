@@ -102,11 +102,6 @@ void Command::print() {
 }
 
 char* esc(char* str) {
-
-  //   /// lol
-  //   /
-
-
 char* dst = (char*)malloc(strlen(str)+1);
 int c = 0;
 for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -131,12 +126,22 @@ void Command::execute() {
   }
 string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
+
+
 if(s1.compare(s2) == 0){
   cout << "Good bye!!" << endl;
   exit(0);
 }
-  // Print contents of Command data structure
   // print();
+
+if(s1.compare("printenv")){
+  
+  for(int i = 0 ; i < environ.length(); i){
+    cout << *(environ + i) << endl;
+  }
+
+
+}
 
 
 int ret;
@@ -227,7 +232,6 @@ char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   char*str = esc((char*)word->c_str());
-  // final[c]=const_cast<char*>(word->c_str());
    final[c]=const_cast<char*>(str);
   c=c+1;
 }
