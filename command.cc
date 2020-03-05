@@ -136,8 +136,9 @@ if(s1.compare(s2) == 0){
 
 if(s1.compare("printenv")==0){
  
- string env = environ[i];
+
   for(int i = 0 ;; i++){
+   string env = environ[i];
     if(env.compare("NULL")){
      Shell::prompt();
      clear();
