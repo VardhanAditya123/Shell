@@ -135,7 +135,7 @@ if(s1.compare(s2) == 0){
   // print();
 
 if(s1.compare("printenv")==0){
-  char* n=0 ;
+  char* n=malloc(strlen("NULL")+1) ;
   strcpy(n,"NULL\0");
   for(int i = 0 ;; i++){
     if(strcmp(environ[i],n )==0){
