@@ -206,6 +206,7 @@ int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   final[c]=const_cast<char*>((word->c_str()));
   cout << final[c] << endl;
+  final[c].replace("\\","");
   c=c+1;
 }
 
