@@ -137,8 +137,7 @@ if(s1.compare(s2) == 0){
 if(s1.compare("printenv")==0){
   
   for(int i = 0 ;; i++){
-    if(environ[i][0] == '\0'){
-      cout<< "ENDDDDDDDDDDD" << endl;
+    if(environ[i] == "NULL"){
      Shell::prompt();
      clear();
      return;
