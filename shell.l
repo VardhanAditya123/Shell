@@ -9,9 +9,22 @@
 
 %{
 
-#include <cstring>
-#include "y.tab.hh"
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include "command.hh"
+#include "shell.hh"
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <iostream>
 #include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+using namespace std;
 
 static  void yyunput (int c,char *buf_ptr  );
 
