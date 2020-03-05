@@ -208,7 +208,7 @@ int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   string str = word->c_str();
   str.erase(std::remove(str.begin(), str.end(), '\\'), str.end());
-  final[c]=const_cast<char*>((temp->c_str()));
+  final[c]=const_cast<char*>((str->c_str()));
   c=c+1;
 }
 
