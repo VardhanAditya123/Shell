@@ -208,8 +208,7 @@ int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   string temp = word->c_str();
   replace(temp.begin(),temp.end(),'\\','\0');
-  final[c]=const_cast<char*>((word->c_str()));
-  cout << final[c] << endl;
+  final[c]=const_cast<char*>((temp.c_str()));
   c=c+1;
 }
 
