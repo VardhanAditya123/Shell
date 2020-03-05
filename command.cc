@@ -201,6 +201,7 @@ close(fdout);
 
 string s = *(simpleCommand->_argumentsArray[0]);
 char *a = &(s[0]);
+std::string char = "";
 
 
 char **final  = new char*[100];
