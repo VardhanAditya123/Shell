@@ -206,7 +206,7 @@ char *a = &(s[0]);
 char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
- std::replace( word->begin(), word->end(), '\\', "" );
+  word = word->c_str();
   final[c]=const_cast<char*>((word->c_str()));
   cout << final[c] << endl;
   c=c+1;
