@@ -67,7 +67,7 @@ void myunputc(int c) {
 
 \"[^ \t\n]*\" {
    std::string s = yytext;
-   s.erase(std::remove(s.begin(), s.end(),'"' ), s.end());
+   s.erase(remove(s.begin(), s.end(),'"' ), s.end());
    yylval.cpp_string = new std::string(s);
    return Word;
 }
