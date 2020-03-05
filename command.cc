@@ -109,7 +109,7 @@ char* esc(char* str) {
 
 char* dst = (char*)malloc(strlen(str)+1);
 int c = 0;
-for(unsigned int i = 0 ; i <strlen(str);i++ ){
+for(unsigned int i = 0 ; i < strlen(str);i++ ){
   if(*(str+i)=='\\' ){
     *(dst + c) = *(str+i+1);
       c+=1;
@@ -227,7 +227,6 @@ char **final  = new char*[100];
 int c =0;
 for(auto & word : simpleCommand->_argumentsArray){
   char*str = esc((char*)word->c_str());
-  cout << str << endl;
   final[c]=const_cast<char*>(word->c_str());
   // final[c]=const_cast<char*>(str);
   c=c+1;
