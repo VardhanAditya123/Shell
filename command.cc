@@ -103,7 +103,7 @@ void Command::print() {
 
 char* esc(char* str) {
 
-char* dst = malloc(strlen(str)+1);
+char* dst = (char*)malloc(strlen(str)+1);
 int c = 0;
 for(int i = 0 ; i <strlen(str)-1;i++ ){
   if(*(str+i)=='\\' ){
