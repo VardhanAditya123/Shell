@@ -213,7 +213,8 @@ for(auto & word : simpleCommand->_argumentsArray){
   }
   temp = temp.c_str();
   // cout << temp <<" " ;
-  final[c]=const_cast<char*>(temp);
+  // final[c]=const_cast<char*>((word->c_str()));
+  final[c] = temp;
   
   c=c+1;
 }
