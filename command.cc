@@ -142,7 +142,7 @@ if(s1.compare("printenv")==0){
   }
   clear();
 Shell::prompt();
-
+exit(0);
 
 }
 
@@ -240,18 +240,10 @@ for(auto & word : simpleCommand->_argumentsArray){
 }
 
 
+
 ret = fork();
 
-if (ret == 0 && s1.compare("printenv")==0) {
-//child
-for(int i = 0 ;environ[i]!=NULL; i++){
-
-  cout << *(environ+i)<<endl;  
-  }
-_exit(0); 
-}
-
-else if (ret == 0 && s1.compare("printenv")!=0) {
+if (ret == 0) {
 //child
 execvp(a, final);
 perror("execvp");
