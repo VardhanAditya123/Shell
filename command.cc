@@ -164,7 +164,7 @@ if(s.compare("cd") == 0){
     if ( ret == -1){
       dup2(fderr,2);
       close(fderr);
-      fprintf(stderr,"\"cd: can’t cd to %s\"\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
+      fprintf(stderr,"cd: can’t cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
         dup2(tmperr,2);
         close(tmperr);
     }
