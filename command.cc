@@ -257,6 +257,7 @@ for(auto & word : simpleCommand->_argumentsArray){
   char*str = esc((char*)word->c_str());
    final[c]=const_cast<char*>(str);
   c=c+1;
+  simpleCommand->number_agrs = c;
 }
 
 
