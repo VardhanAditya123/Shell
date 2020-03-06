@@ -223,7 +223,7 @@ if(s.compare("cd") == 0){
     }
     }
     
-		 return;
+		
     }
 
 unsigned int count = 0;
