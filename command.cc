@@ -141,7 +141,7 @@ if(s1.compare("printenv")==0){
   cout << *(environ+i)<<endl;  
     
   }
-
+return;
 
 }
 
