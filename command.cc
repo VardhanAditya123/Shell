@@ -153,7 +153,7 @@ if(s.compare("cd") == 0){
     else{
     int ret  = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
-      cout << "cd: can’t cd to "<< (_simpleCommandsArray[0]->_argumentsArray[1])->c_str(); << endl;
+      cout << "cd: can’t cd to "<< (_simpleCommandsArray[0]->_argumentsArray[1])->c_str() << endl;
     }
     }
 		clear();
