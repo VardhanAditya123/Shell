@@ -158,7 +158,7 @@ if(s.compare("cd") == 0){
     
     int tmperr=dup(2);
     int fderr;
-    // print();
+     print();
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
     dup2(fderr,2);
     close(fderr);
