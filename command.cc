@@ -136,17 +136,16 @@ if(s1.compare(s2) == 0){
 
 if(s1.compare("printenv")==0){
  
-
   for(int i = 0 ;; i++){
    string env = environ[i];
+
+    cout << *(environ + i) << endl;
     if(env.compare("NULL")){
      Shell::prompt();
      clear();
      return;
      }
     
-    else
-    cout << *(environ + i) << endl;
   }
 
 
