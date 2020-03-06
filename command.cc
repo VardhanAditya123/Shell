@@ -123,6 +123,9 @@ int Command::commandCheck(){
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
 
+
+
+
 if(s.compare(s2) == 0){
   cout << "Good bye!!" << endl;
   exit(0);
@@ -141,17 +144,43 @@ if(s.compare("unsetenv") == 0){
 		return 1 ;
 }
 
+if(s.compare("cd") == 0){
+  // print();
+    string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
+    
+    if((_simpleCommandsArray[0]->number_args == 1))
+    chdir(getenv("HOME"));
 
+    else if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
+    chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    
+    
+    else{
+    // cout << "FUCK" << endl;
+    int tmperr=dup(2);
+    int fderr;
+    fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
+    int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    if ( ret == -1){
+      dup2(fderr,2);
+      close(fderr);
+      perror("cd: can’t cd to notfound");
+       dup2(tmperr,2);
+       close(tmperr);
+    }
+    
+		 return 1;
+    }
 
-		return 0;
+		return 1;
 }
  
-
+ return 0;
+}
 
 
 
 void Command::execute() {
-  
   // Don't do anything if there are no simple commands
   if ( _simpleCommandsArray.size() == 0 ) { 
     Shell::prompt();
@@ -167,7 +196,6 @@ if(check_fun == 1){
 }
 int ret;
 
-string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 
 //save in/out
 int tmpin=dup(0);
@@ -204,27 +232,7 @@ fderr=dup(tmperr);
 dup2(fderr,2);
 close(fderr);
 
-if(s.compare("cd") == 0){
-  // print();
-    string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
-    
-    if((_simpleCommandsArray[0]->number_args == 1))
-    chdir(getenv("HOME"));
 
-    else if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
-    chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-    
-    
-    else{
-    // cout << "FUCK" << endl;
-    int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-    if ( ret == -1){
-      perror("cd: can’t cd to notfound");
-    }
-    }
-    
-		
-    }
 
 unsigned int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
