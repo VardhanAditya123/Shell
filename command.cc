@@ -156,7 +156,7 @@ if(s.compare("cd") == 0){
     
     
     else{
-    
+    cout << "FUCK" << endl;
     int tmperr=dup(2);
     int fderr;
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
