@@ -74,7 +74,7 @@ void myunputc(int c) {
    return Word;
 }
 
-"echo"\$\([^\n]*\) {
+"echo "\$\([^\n]*\) {
   std::string s = yytext;
    s.replace(0,1,"");
    s.pop_back();
