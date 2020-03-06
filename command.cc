@@ -151,7 +151,7 @@ void Command::execute() {
   }
   // print();
 
-
+Command::commandCheck();
 int ret;
 
 //save in/out
