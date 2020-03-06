@@ -135,14 +135,12 @@ if(s.compare("setenv") == 0){
 
    setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
     const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
-		clear();
 		return 1 ;
 }
 
 if(s.compare("unsetenv") == 0){
 
    unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-		clear();
 		return 1 ;
 }
 
@@ -170,11 +168,9 @@ if(s.compare("cd") == 0){
      dup2(tmperr,2);
      close(tmperr);
      cout << "HERE2" << endl;
-     	clear();
-		return 1;
+		 return 1;
     }
 
-		clear();
 		return 1;
 }
  
@@ -192,10 +188,14 @@ void Command::execute() {
   // print();
 
 int check_fun = Command::commandCheck();
+cout << "SUPER" <<
 if(check_fun == 1){
   return;
 }
+clear();
+Shell::prompt();
 int ret;
+
 
 //save in/out
 int tmpin=dup(0);
