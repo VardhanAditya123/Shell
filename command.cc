@@ -118,31 +118,38 @@ for(unsigned int i = 0 ; i < strlen(str);i++ ){
 return dst;
 }
 
+void commandCheck(){
+
+string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+string s2 = "exit";
+
+
+
+if(s.compare(s2) == 0){
+  cout << "Good bye!!" << endl;
+  exit(0);
+}
+
+if(s.compare("setenv") == 0){
+   setenv(_simpleCommands[0]->_arguments[], _simpleCommands[0]->_arguments[2], 1);
+		clear();
+		print();
+		return ;
+}
+
+}
+
+
+
 void Command::execute() {
   // Don't do anything if there are no simple commands
   if ( _simpleCommandsArray.size() == 0 ) { 
     Shell::prompt();
     return;
   }
-string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-string s2 = "exit";
-
-
-
-if(s1.compare(s2) == 0){
-  cout << "Good bye!!" << endl;
-  exit(0);
-}
   // print();
 
-
-
-if(s.compare("setenv") == 0){
-   setenv(_simpleCommands[i]->_arguments[1], _simpleCommands[i]->_arguments[2], 1);
-		clear();
-		print();
-		return ;
-}
+commandCheck();
 int ret;
 
 //save in/out
