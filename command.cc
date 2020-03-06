@@ -188,7 +188,6 @@ void Command::execute() {
   // print();
 
 int check_fun = Command::commandCheck();
-cout << "SUPER" <<
 if(check_fun == 1){
   return;
 }
