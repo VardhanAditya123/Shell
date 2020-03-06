@@ -286,6 +286,3 @@ elif [[ $opt == "p2" ]]; then
 else
     printf "Part 3 Total:            %03.1f%s%03.1f\n" $total " of " $totalmax > testall.out
 fi
-
-echo $total `date` >> ../testpassed.txt
-
