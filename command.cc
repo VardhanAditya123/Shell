@@ -148,7 +148,7 @@ void Command::execute() {
   }
   // print();
 
-commandCheck();
+Command::commandCheck();
 int ret;
 
 //save in/out
