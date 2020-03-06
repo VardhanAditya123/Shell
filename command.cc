@@ -188,8 +188,6 @@ close(fderr);
 
 unsigned int count = 0;
 for ( auto & simpleCommand : _simpleCommandsArray ) {
-
-
 dup2(fdin, 0);
 close(fdin);
 if(simpleCommand->ambig_count > 1){
@@ -244,7 +242,7 @@ for(auto & word : simpleCommand->_argumentsArray){
 ret = fork();
 
 if (ret == 0) {
-if(strcmp(_simpleCommands[0]->_arguments[0], "printenv") == 0){
+if(strcmp(s, "printenv") == 0){
   for(int i = 0 ;environ[i]!=NULL; i++){
 
   cout << *(environ+i)<<endl;  
