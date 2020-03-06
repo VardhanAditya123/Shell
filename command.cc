@@ -155,15 +155,10 @@ if(s.compare("cd") == 0){
     
     
     else{
-    // int tmperr=dup(2);
+    
+    int tmperr=dup(2);
     int fderr;
-    if((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()){
-      fderr=open((_simpleCommandsArray[0]->_argumentsArray[2])->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
-    }
-
-    else {
-    fderr=dup(tmperr);
-    }
+    fderr=open((_simpleCommandsArray[0]->_argumentsArray[3])->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
     dup2(2,fderr);
     close(fderr);
 
