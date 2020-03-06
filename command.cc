@@ -242,7 +242,7 @@ for(auto & word : simpleCommand->_argumentsArray){
 ret = fork();
 
 if (ret == 0) {
-if(strcmp(s, "printenv") == 0){
+if(s.compare("printenv") == 0){
   for(int i = 0 ;environ[i]!=NULL; i++){
 
   cout << *(environ+i)<<endl;  
