@@ -147,7 +147,7 @@ if(s.compare("unsetenv") == 0){
 }
 
 if(s.compare("cd") == 0){
-    // int tmperr=dup(2);
+    int tmperr=dup(2);
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
     
     if((_simpleCommandsArray[0]->number_args == 1))
@@ -158,7 +158,7 @@ if(s.compare("cd") == 0){
     int fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
     int ret  = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
-      dup2(fderr,2);
+      dup2(fderr,1);
       perror( "cd: can’t cd to notfound");
       close(fderr);
     }
