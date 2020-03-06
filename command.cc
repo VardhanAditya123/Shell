@@ -167,7 +167,6 @@ if(s.compare("cd") == 0){
       cout << "HERE" << endl;
       perror( "cd: can’t cd to notfound" );
     }
-     cout << "HERE2" << endl;
      dup2(tmperr,2);
      close(tmperr);
      	clear();
@@ -175,6 +174,7 @@ if(s.compare("cd") == 0){
     }
 
 		clear();
+    cout << "HERE2" << endl;
 		return 1;
 }
  
