@@ -222,6 +222,7 @@ if(s.compare("cd") == 0){
     if ( ret == -1){
       perror("cd: can’t cd to notfuound");
     }
+    }
     
 		 return;
     }
