@@ -169,12 +169,12 @@ if(s.compare("cd") == 0){
     }
      dup2(tmperr,2);
      close(tmperr);
+     cout << "HERE2" << endl;
      	clear();
 		return 1;
     }
 
 		clear();
-    cout << "HERE2" << endl;
 		return 1;
 }
  
