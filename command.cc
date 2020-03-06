@@ -252,7 +252,7 @@ if(s.compare("printenv") == 0){
 
   cout << *(environ+i)<<endl;  
   }
-  exit(0);
+  exit(1);
 }
 else{
 execvp(a, final);
