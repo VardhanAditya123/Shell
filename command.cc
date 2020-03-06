@@ -166,9 +166,10 @@ if(s.compare("cd") == 0){
     if ( ret == -1){
     perror( "cd: can’t cd to notfound" );
     }
-    // dup2(tmperr,2);
-    // close(tmperr);
-
+     dup2(tmperr,2);
+     close(tmperr);
+     	clear();
+		return 1;
     }
 
 		clear();
