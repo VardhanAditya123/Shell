@@ -147,15 +147,15 @@ if(s.compare("unsetenv") == 0){
 }
 
 if(s.compare("cd") == 0){
-    // int tmperr=dup(2);
+     int tmperr=dup(2);
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
     if((_simpleCommandsArray[0]->number_args == 1))
     chdir(getenv("HOME"));
     else{
     int fderr  = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( fderr == -1){
-      perror( "cd: can’t cd to notfound");
       dup2(fderr,2);
+      perror( "cd: can’t cd to notfound");
       close(fderr);
     }
     }
