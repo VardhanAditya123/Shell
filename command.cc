@@ -184,7 +184,7 @@ int Command::subShell(){
   
   if(s.compare("echo" != 0))
   return 0 ;
- 
+return 0;
 }
 
 
