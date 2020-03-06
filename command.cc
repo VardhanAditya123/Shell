@@ -180,7 +180,7 @@ if(s.compare("cd") == 0){
 
 
 int Command::subShell(){
-  
+ return 0; 
 }
 
 
