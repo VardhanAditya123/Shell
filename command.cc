@@ -145,7 +145,7 @@ if(s.compare("unsetenv") == 0){
 }
 
 if(s.compare("cd") == 0){
-  print();
+  // print();
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
     
     if((_simpleCommandsArray[0]->number_args == 1))
