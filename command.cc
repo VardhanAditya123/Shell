@@ -139,8 +139,11 @@ if(s1.compare("printenv")==0){
  for(int i = 0 ;environ[i]!=NULL; i++){
 
   cout << *(environ+i)<<endl;  
+  
     
   }
+  clear();
+Shell::prompt();
 return;
 
 }
