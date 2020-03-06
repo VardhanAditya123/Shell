@@ -223,7 +223,7 @@ if(s.compare("cd") == 0){
       perror("cd: can’t cd to notfuound");
     }
     
-		 return 1;
+		 return;
     }
 
 unsigned int count = 0;
