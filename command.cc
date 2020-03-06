@@ -118,7 +118,7 @@ for(unsigned int i = 0 ; i < strlen(str);i++ ){
 return dst;
 }
 
-void commandCheck(){
+void Command::commandCheck(){
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
