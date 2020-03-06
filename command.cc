@@ -132,7 +132,7 @@ if(s.compare(s2) == 0){
 
 if(s.compare("setenv") == 0){
 
-   setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()), const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])),1);
+   setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()), const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
 		clear();
 		return ;
 }
