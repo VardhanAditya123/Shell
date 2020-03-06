@@ -25,6 +25,10 @@ void myunputc(int c) {
 
 %%
 
+"cd\n[^ \t\n][^ \t\n]*" {
+  return CDNEWLINE;
+}
+
 \n {
   return NEWLINE;
 }
