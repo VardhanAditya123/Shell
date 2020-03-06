@@ -26,7 +26,8 @@ void myunputc(int c) {
 %%
 
 "cd\n[^ \t\n][^ \t\n]*" {
-  return CDNEWLINE;
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
 }
 
 \n {
