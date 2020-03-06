@@ -150,7 +150,7 @@ if(s.compare("cd") == 0){
     if((_simpleCommandsArray[0]->number_args == 1))
     chdir(getenv("HOME"));
 
-    else if((_simpleCommandsArray[0]->number_args == 1))
+    else if((_simpleCommandsArray[0]->number_args == 2))
     chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     
     
