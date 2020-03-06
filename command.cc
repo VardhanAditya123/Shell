@@ -123,9 +123,6 @@ int Command::commandCheck(){
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
 
-
-
-
 if(s.compare(s2) == 0){
   cout << "Good bye!!" << endl;
   exit(0);
@@ -146,11 +143,10 @@ if(s.compare("unsetenv") == 0){
 
 
 
-		return 1;
+		return 0;
 }
  
- return 0;
-}
+
 
 
 
