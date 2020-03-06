@@ -196,7 +196,7 @@ if(check_fun == 1){
   Shell::prompt();
   return;
 }
-
+cout <<"THIS IS FUCKED" << endl;
 int ret;
 
 
