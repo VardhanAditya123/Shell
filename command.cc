@@ -142,7 +142,7 @@ if(s1.compare("printenv")==0){
   }
   clear();
 Shell::prompt();
-exit(0);
+
 
 }
 
