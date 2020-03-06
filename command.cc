@@ -155,7 +155,7 @@ if(s.compare("cd") == 0){
     
     
     else{
-    int tmperr=dup(2);
+    // int tmperr=dup(2);
     int fderr;
     _errFileName = (_simpleCommandsArray[0]->_argumentsArray[2])->c_str();
     if(_errFileName){
