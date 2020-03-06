@@ -251,7 +251,7 @@ for(int i = 0 ;environ[i]!=NULL; i++){
 _exit(0); 
 }
 
-if (ret == 0) {
+else if (ret == 0) {
 //child
 execvp(a, final);
 perror("execvp");
