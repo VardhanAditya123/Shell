@@ -136,7 +136,7 @@ if(s1.compare(s2) == 0){
 
 if(s1.compare("printenv")==0){
  
- for(int i = 0 ;; i++){
+ for(int i = 0 ;environ[i]!=NULL; i++){
 
   cout << *(environ+i)<<endl;  
     
