@@ -20,6 +20,7 @@ struct Command {
   void print();
   void execute();
   int commandCheck();
+  int subShell();
 
   static SimpleCommand *_currSimpleCommand;
 };
