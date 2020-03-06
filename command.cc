@@ -164,6 +164,7 @@ if(s.compare("cd") == 0){
 
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
+      cout << "HERE" << endl;
     perror( "cd: can’t cd to notfound" );
     }
      dup2(tmperr,2);
