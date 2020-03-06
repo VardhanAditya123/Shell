@@ -156,7 +156,7 @@ if(s.compare("cd") == 0){
     
     
     else{
-    cout << "FUCK" << endl;
+    // cout << "FUCK" << endl;
     int tmperr=dup(2);
     int fderr;
     fderr=open(_errFileName->c_str() , O_CREAT |O_RDWR ,0666);
@@ -196,7 +196,6 @@ if(check_fun == 1){
   Shell::prompt();
   return;
 }
-cout <<"THIS IS FUCKED" << endl;
 int ret;
 
 
