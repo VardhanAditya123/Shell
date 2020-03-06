@@ -166,6 +166,7 @@ if(s.compare("cd") == 0){
       close(fderr);
       perror("cd: can’t cd to notfound");
       perror("SIT");
+      perror("SIToo");
         dup2(tmperr,2);
         close(tmperr);
     }
