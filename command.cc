@@ -164,7 +164,7 @@ if(s.compare("cd") == 0){
     else {
     fderr=dup(tmperr);
     }
-    dup2(fderr,stderr);
+    dup2(2,fderr);
     close(fderr);
 
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
