@@ -25,10 +25,6 @@ void myunputc(int c) {
 
 %%
 
-"cd\n[^ \t\n]*" {
-   yylval.cpp_string = new std::string(yytext);
-   return Word;
-}
 
 \n {
   return NEWLINE;
