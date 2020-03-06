@@ -164,7 +164,7 @@ if(s.compare("cd") == 0){
     if ( ret == -1){
       dup2(fderr,2);
       close(fderr);
-      fprintf(stderr,"cd: can’t cd to notfound");
+      fprintf(stderr,"cd: can’t cd to notfound\n");
         dup2(tmperr,2);
         close(tmperr);
     }
