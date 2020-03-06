@@ -149,6 +149,9 @@ if(s.compare("cd") == 0){
     
     if((_simpleCommandsArray[0]->number_args == 1))
     chdir(getenv("HOME"));
+
+    else if((_simpleCommandsArray[0]->number_args == 1))
+    chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     
     
     else{
@@ -188,7 +191,7 @@ void Command::execute() {
 int check_fun = Command::commandCheck();
 if(check_fun == 1){
   clear();
-Shell::prompt();
+  Shell::prompt();
   return;
 }
 
