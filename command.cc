@@ -133,7 +133,6 @@ if(s.compare(s2) == 0){
 if(s.compare("setenv") == 0){
    setenv(_simpleCommands[0]->_arguments[], _simpleCommands[0]->_arguments[2], 1);
 		clear();
-		print();
 		return ;
 }
 
