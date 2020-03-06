@@ -160,15 +160,15 @@ if(s.compare("cd") == 0){
     int fderr;
      print();
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
-    dup2(fderr,2);
-    close(fderr);
+    // dup2(fderr,2);
+    // close(fderr);
 
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
       perror("cd: can’t cd to notfound");
     }
-     dup2(tmperr,2);
-     close(tmperr);
+    //  dup2(tmperr,2);
+    //  close(tmperr);
 		 return 1;
     }
 
