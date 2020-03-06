@@ -159,7 +159,7 @@ if(s.compare("cd") == 0){
     int fderr;
     print();
     // cout <<(_simpleCommandsArray[0]->_argumentsArray[2])->c_str() << endl;
-    fderr=open((_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+    fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
     dup2(2,fderr);
     close(fderr);
 
