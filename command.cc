@@ -118,7 +118,7 @@ for(unsigned int i = 0 ; i < strlen(str);i++ ){
 return dst;
 }
 
-void Command::commandCheck(){
+int Command::commandCheck(){
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
@@ -136,14 +136,14 @@ if(s.compare("setenv") == 0){
    setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
     const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
 		clear();
-		return ;
+		return 1 ;
 }
 
 if(s.compare("unsetenv") == 0){
 
    unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
 		clear();
-		return ;
+		return 1 ;
 }
 
 if(s.compare("cd") == 0){
@@ -157,7 +157,7 @@ if(s.compare("cd") == 0){
     
     int tmperr=dup(2);
     int fderr;
-    print();
+    // print();
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
     dup2(fderr,2);
     close(fderr);
@@ -172,9 +172,9 @@ if(s.compare("cd") == 0){
     }
 
 		clear();
-		return ;
+		return 1;
 }
-
+ return 0;
 }
 
 
@@ -187,7 +187,10 @@ void Command::execute() {
   }
   // print();
 
-Command::commandCheck();
+int check_fun = Command::commandCheck();
+if(check_fun == 1){
+  return;
+}
 int ret;
 
 //save in/out
