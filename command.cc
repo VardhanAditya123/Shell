@@ -155,13 +155,15 @@ if(s.compare("cd") == 0){
     
     
     else{
+    
     int fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
-    int ret  = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
       dup2(fderr,2);
-      printf( "cd: can’t cd to notfound");
       close(fderr);
+      printf( "cd: can’t cd to notfound");
     }
+
     }
 
 		clear();
