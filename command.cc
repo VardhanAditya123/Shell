@@ -217,7 +217,6 @@ if(s.compare("cd") == 0){
     
     else{
     // cout << "FUCK" << endl;
-    fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
       perror("cd: can’t cd to notfound");
