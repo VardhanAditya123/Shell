@@ -19,7 +19,6 @@ struct Command {
   void clear();
   void print();
   void execute();
-  void commandCheck();
 
   static SimpleCommand *_currSimpleCommand;
 };
