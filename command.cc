@@ -118,17 +118,7 @@ for(unsigned int i = 0 ; i < strlen(str);i++ ){
 return dst;
 }
 
-
-
-
-void Command::execute() {
-  // Don't do anything if there are no simple commands
-  if ( _simpleCommandsArray.size() == 0 ) { 
-    Shell::prompt();
-    return;
-  }
-  // print();
-
+void Command::commandCheck(){
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
@@ -141,10 +131,22 @@ if(s.compare(s2) == 0){
 }
 
 if(s.compare("setenv") == 0){
-   setenv(_simpleCommands[1]->_arguments[1], _simpleCommands[2]->_arguments[2], 1);
+   setenv(_simpleCommandsArray[1]->_arguments[1], _simpleCommandsArray[2]->_arguments[2], 1);
 		clear();
 		return ;
 }
+
+}
+
+
+
+void Command::execute() {
+  // Don't do anything if there are no simple commands
+  if ( _simpleCommandsArray.size() == 0 ) { 
+    Shell::prompt();
+    return;
+  }
+  // print();
 
 
 int ret;
