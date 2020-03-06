@@ -138,13 +138,13 @@ if(s1.compare("printenv")==0){
  
   for(int i = 0 ;; i++){
    string env = environ[i];
-
-    cout << *(environ + i) << endl;
-    if(env.compare("NULL")){
+    if(env.compare("NULL")==0){
      Shell::prompt();
      clear();
      return;
      }
+    cout << *(environ + i) << endl;
+    
     
   }
 
