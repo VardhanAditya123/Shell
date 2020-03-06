@@ -180,6 +180,7 @@ if(s.compare("cd") == 0){
 
 
 int Command::subShell(){
+  string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
  return 0; 
 }
 
