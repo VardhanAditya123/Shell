@@ -139,6 +139,13 @@ if(s.compare("setenv") == 0){
 		return ;
 }
 
+if(s.compare("unsetenv") == 0){
+
+   unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+		clear();
+		return ;
+}
+
 }
 
 
