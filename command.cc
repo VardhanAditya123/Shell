@@ -159,9 +159,7 @@ if(s.compare("cd") == 0){
     // cout << "FUCK" << endl;
     int tmperr=dup(2);
     int fderr;
-    fderr=open(_errFileName->c_str() , O_CREAT |O_RDWR ,0666);
-    
-
+    fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     if ( ret == -1){
       dup2(fderr,2);
