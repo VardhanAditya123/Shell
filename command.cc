@@ -120,7 +120,7 @@ return dst;
 
 void Command::commandCheck(){
 
-string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
 cout << s << " testing " << endl;
 string s2 = "exit";
 
