@@ -160,7 +160,7 @@ if(s.compare("cd") == 0){
     print();
     // cout <<(_simpleCommandsArray[0]->_argumentsArray[2])->c_str() << endl;
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
-    dup2(2,fderr);
+    dup2(fderr,2);
     close(fderr);
 
     int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
