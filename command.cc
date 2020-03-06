@@ -244,10 +244,18 @@ for(auto & word : simpleCommand->_argumentsArray){
 ret = fork();
 
 if (ret == 0) {
-//child
+if(strcmp(_simpleCommands[i]->_arguments[0], "printenv") == 0){
+  for(int i = 0 ;environ[i]!=NULL; i++){
+
+  cout << *(environ+i)<<endl;  
+  }
+}
+else{
 execvp(a, final);
 perror("execvp");
 _exit(1); 
+}
+
 }
 
 else if (ret < 0) {
