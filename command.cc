@@ -131,7 +131,7 @@ if(s.compare(s2) == 0){
 }
 
 if(s.compare("setenv") == 0){
-   setenv(_simpleCommandsArray[1]->_arguments[1], _simpleCommandsArray[2]->_arguments[2], 1);
+   setenv(_simpleCommandsArray[1]->_argumentsArray[1], _simpleCommandsArray[2]->_argumentsArray[2], 1);
 		clear();
 		return ;
 }
