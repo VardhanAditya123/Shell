@@ -148,7 +148,7 @@ if(s.compare("unsetenv") == 0){
 
 if(s.compare("cd") == 0){
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
-    if((_simpleCommandsArray[0]->number_args == 1)
+    if((_simpleCommandsArray[0]->number_args == 1))
     chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     else
     chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
