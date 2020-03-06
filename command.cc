@@ -155,7 +155,7 @@ if(s.compare("cd") == 0){
     
     else{
     
-    // int tmperr=dup(2);
+    int tmperr=dup(2);
     int fderr;
     print();
     fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
@@ -166,6 +166,8 @@ if(s.compare("cd") == 0){
     if ( ret == -1){
     perror( "cd: can’t cd to notfound" );
     }
+    dup2(tmperr,2);
+    close(tmperr);
 
     }
 
