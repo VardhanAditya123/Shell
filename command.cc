@@ -128,6 +128,7 @@ string s1 = *(_simpleCommandsArray[0]->_argumentsArray[0]);
 string s2 = "exit";
 
 
+
 if(s1.compare(s2) == 0){
   cout << "Good bye!!" << endl;
   exit(0);
@@ -135,6 +136,13 @@ if(s1.compare(s2) == 0){
   // print();
 
 
+
+if(s.compare("setenv") == 0){
+   setenv(_simpleCommands[i]->_arguments[1], _simpleCommands[i]->_arguments[2], 1);
+		clear();
+		prompt();
+		return ;
+}
 int ret;
 
 //save in/out
