@@ -121,7 +121,6 @@ return dst;
 void Command::commandCheck(){
 
 string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-cout << s << " testing " << endl;
 string s2 = "exit";
 
 
@@ -149,7 +148,6 @@ if(s.compare("unsetenv") == 0){
 
 if(s.compare("cd") == 0){
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
-    cout << str << endl;
     chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
 		clear();
 		return ;
