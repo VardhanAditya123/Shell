@@ -140,7 +140,7 @@ if(s1.compare(s2) == 0){
 if(s.compare("setenv") == 0){
    setenv(_simpleCommands[i]->_arguments[1], _simpleCommands[i]->_arguments[2], 1);
 		clear();
-		prompt();
+		print();
 		return ;
 }
 int ret;
