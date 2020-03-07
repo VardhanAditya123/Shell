@@ -180,10 +180,14 @@ if(s.compare("cd") == 0){
 
 
 int Command::subShell(){
+
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-  
-  if(s.compare("echo")!=0)
-  return 0 ;
+  if(s.at(0).compare("$") == 0){
+  s.replace(0,2,"");
+  s.pop_back();
+  cout << s << endl;
+ }
+
 return 0;
 }
 
