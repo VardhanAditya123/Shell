@@ -74,10 +74,12 @@ void myunputc(int c) {
    return Word;
 }
 
-\$[^\n]* {
+\$[^ \n]* {
    std::string s = yytext;
    s.replace(0,2,"");
    s.pop_back();
+   yylval.cpp_string = new std::string(s);
+   return Word;
 }
 
 [^ \t\n][^ \t\n]*  {
