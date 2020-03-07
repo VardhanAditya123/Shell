@@ -194,7 +194,7 @@ int Command::subShell(){
 
     int pin[2];
     int pout[2];
-  
+    
     pipe(pin); 
     pipe(pout);
     int fd0;
@@ -203,7 +203,7 @@ int Command::subShell(){
     if(ret == 0){
       fd0 = pin[0];
       fd1 = pout[1];
-      execvp("/proc/self/exe");
+      execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
       fd0 = pin[1];
