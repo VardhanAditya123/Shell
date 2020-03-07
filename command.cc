@@ -191,8 +191,8 @@ int Command::subShell(){
   int ret = fork();
   int fd0 , fd1;
   if(ret == 0){
-     fd0 = pin[0];
-     fd1 = pout[1];
+     fd[0] = pin[0];
+     fd[1] = pout[1];
     execvp("/proc/self/exe",NULL);
   }
   else if(ret > 0){
