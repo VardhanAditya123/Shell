@@ -186,6 +186,9 @@ int Command::subShell(){
   s.replace(0,2,"");
   s.pop_back();
   cout << s << endl;
+  int pin[2], pout[2];
+  pipe(pin); 
+  pipe(pout);
   return 1;
  }
 
