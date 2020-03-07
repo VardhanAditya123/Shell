@@ -78,7 +78,6 @@ void myunputc(int c) {
    std::string s = yytext;
    s.replace(0,2,"");
    s.pop_back();
-   unput;
 }
 
 [^ \t\n][^ \t\n]*  {
