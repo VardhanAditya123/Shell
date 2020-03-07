@@ -208,6 +208,7 @@ if(check_fun == 1){
   return;
 }
 int ret;
+subShell();
 
 
 //save in/out
