@@ -194,7 +194,7 @@ int Command::subShell(){
 
     int pin[2];
     int pout[2];
-    pipe(fd);
+  
     pipe(pin); 
     pipe(pout);
     int fd0;
