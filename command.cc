@@ -194,13 +194,14 @@ int tmpout=dup(1);
 
 
   int fd[2];
-  pipe(fd);
-  fd[0]=dup(0);
-  fd[1]=dup[1];
   int pin[2], pout[2];
+  pipe(fd);
   pipe(pin); 
   pipe(pout);
  
+  fd[0]=dup[0];
+  fd[1]=dup[1];
+
   int ret = fork();
    if(ret == 0){
      fd[0] = pin[0];
