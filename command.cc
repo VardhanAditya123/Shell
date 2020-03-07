@@ -182,15 +182,27 @@ if(s.compare("cd") == 0){
 int Command::subShell(){
 
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+  
+  
   if(s.at(0) == '$'){
   s.replace(0,2,"");
   s.pop_back();
+ 
+      /save in/out
+int tmpin=dup(0);
+int tmpout=dup(1);
+
+
+  int fd[2];
+  pipe(fd);
+  fd[0]=dup(0);
+  fd[1]=dup[1];
   int pin[2], pout[2];
   pipe(pin); 
   pipe(pout);
+ 
   int ret = fork();
-  int fd0 , fd1;
-  if(ret == 0){
+   if(ret == 0){
      fd[0] = pin[0];
      fd[1] = pout[1];
     execvp("/proc/self/exe",NULL);
