@@ -197,9 +197,9 @@ int Command::subShell(){
     execvp("/proc/self/exe",NULL);
   }
   else if(ret > 0){
-    fd1 = pipe_in[1];
-    fd0 = pipe_out[0];
-    
+    fd1 = pin[1];
+    fd0 = pout[0];
+
   }
   return 1;
  }
