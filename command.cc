@@ -186,6 +186,7 @@ int Command::subShell(){
   s.replace(0,2,"");
   s.pop_back();
   cout << s << endl;
+  return 1;
  }
 
 return 0;
@@ -208,7 +209,12 @@ if(check_fun == 1){
   return;
 }
 int ret;
-subShell();
+int check_sub = subShell();
+if(check_sub == 1){
+  clear();
+  Shell::prompt();
+  return;
+}
 
 
 //save in/out
