@@ -70,10 +70,10 @@ void Command::clear() {
     delete _errFileName;
   }
   _errFileName = NULL;
-  
+
   _append = false;
   _backgnd = false;
-   
+
 }
 
 void Command::print() {
@@ -102,121 +102,118 @@ void Command::print() {
 }
 
 char* esc(char* str) {
-char* dst = (char*)malloc(strlen(str)+1);
-int c = 0;
-for(unsigned int i = 0 ; i < strlen(str);i++ ){
-  if(*(str+i)=='\\' ){
-    *(dst + c) = *(str+i+1);
+  char* dst = (char*)malloc(strlen(str)+1);
+  int c = 0;
+  for(unsigned int i = 0 ; i < strlen(str);i++ ){
+    if(*(str+i)=='\\' ){
+      *(dst + c) = *(str+i+1);
       c+=1;
       i+=1;
-  }
-  else{
-    *(dst + c) = *(str+i);
+    }
+    else{
+      *(dst + c) = *(str+i);
       c+=1;
+    }
   }
-}
-return dst;
+  return dst;
 }
 
 int Command::commandCheck(){
 
-string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-string s2 = "exit";
+  string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+  string s2 = "exit";
 
 
 
 
-if(s.compare(s2) == 0){
-  cout << "Good bye!!" << endl;
-  exit(0);
-}
+  if(s.compare(s2) == 0){
+    cout << "Good bye!!" << endl;
+    exit(0);
+  }
 
-if(s.compare("setenv") == 0){
+  if(s.compare("setenv") == 0){
 
-   setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
-    const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
-		return 1 ;
-}
+    setenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
+        const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
+    return 1 ;
+  }
 
-if(s.compare("unsetenv") == 0){
+  if(s.compare("unsetenv") == 0){
 
-   unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-		return 1 ;
-}
+    unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    return 1 ;
+  }
 
-if(s.compare("cd") == 0){
-  // print();
+  if(s.compare("cd") == 0){
+    // print();
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
-    
+
     if((_simpleCommandsArray[0]->number_args == 1))
-    chdir(getenv("HOME"));
+      chdir(getenv("HOME"));
 
     else if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
-    chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-    
-    
+      chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+
+
     else{
-    // cout << "FUCK" << endl;
-    int tmperr=dup(2);
-    int fderr;
-    fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
-    int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-    if ( ret == -1){
-      dup2(fderr,2);
-      close(fderr);
-      fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
+      // cout << "FUCK" << endl;
+      int tmperr=dup(2);
+      int fderr;
+      fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
+      int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+      if ( ret == -1){
+        dup2(fderr,2);
+        close(fderr);
+        fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
         dup2(tmperr,2);
         close(tmperr);
-    }
-    
-		 return 1;
+      }
+
+      return 1;
     }
 
-		return 1;
-}
- 
- return 0;
+    return 1;
+  }
+
+  return 0;
 }
 
 
 int Command::subShell(){
 
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-  
-  
+
+
   if(s.at(0) == '$'){
-  s.replace(0,2,"");
-  s.pop_back();
- 
-
-int tmpin=dup(0);
-int tmpout=dup(1);
+    s.replace(0,2,"");
+    s.pop_back();
 
 
-  int fd[2];
-  int pin[2], pout[2];
-  pipe(fd);
-  pipe(pin); 
-  pipe(pout);
- 
-  fd[0]=dup(0);
-  fd[1]=dup(1);
+    int tmpin=dup(0);
+    int tmpout=dup(1);
 
-  int ret = fork();
-   if(ret == 0){
-     fd[0] = pin[0];
-     fd[1] = pout[1];
-    execvp("/proc/self/exe",NULL);
+    int pin[2];
+    int pout[2];
+    pipe(fd);
+    pipe(pin); 
+    pipe(pout);
+    int fd0;
+    int fd1;
+    int ret = fork();
+    if(ret == 0){
+      fd0 = pin[0];
+      fd1 = pout[1];
+      execvp("/proc/self/exe",NULL);
+    }
+    else if(ret > 0){
+      fd0 = pin[1];
+      fd1 = pout[0];
+
+    }
+    return 1;
   }
-  else if(ret > 0){
-    fd[0] = pin[1];
-    fd[1] = pout[0];
 
-  }
-  return 1;
- }
-
-return 0;
+  return 0;
 }
 
 
@@ -229,158 +226,158 @@ void Command::execute() {
   }
   // print();
 
-int check_fun = Command::commandCheck();
-if(check_fun == 1){
-  clear();
-  Shell::prompt();
-  return;
-}
-int ret;
-int check_sub = subShell();
-if(check_sub == 1){
-  clear();
-  Shell::prompt();
-  return;
-}
-
-
-//save in/out
-int tmpin=dup(0);
-int tmpout=dup(1);
-int tmperr=dup(2);
-
-
-//set the initial input
-int fdin;
-int fdout;
-int fderr;
-
-if (_inFileName) {
-fdin = open(_inFileName->c_str(), O_RDONLY,0666);
-if(fdin == -1){
-  exit(1);
-}
-}
-else {
-// Use default input
-fdin=dup(tmpin);
-}
-
-if(_errFileName){
-if(_append)
-fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
-else
-fderr=open(_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
-}
-else {
-// Use default output
-fderr=dup(tmperr);
-}
-dup2(fderr,2);
-close(fderr);
-
-
-
-unsigned int count = 0;
-for ( auto & simpleCommand : _simpleCommandsArray ) {
-dup2(fdin, 0);
-close(fdin);
-if(simpleCommand->ambig_count > 1){
-  cout<< "Ambiguous output redirect." <<endl;
-  exit(1);
-}
-//setup output
-
-if (count == _simpleCommandsArray.size()-1){
-// Last simple command
-if(_outFileName){
-if(_append){
-fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
-}
-else
-fdout=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
-}
-else {
-// Use default output
-fdout=dup(tmpout);
-}
-}
-
-else {
-// Not last
-//simple command
-//create pipe
-int fdpipe[2];
-pipe(fdpipe);
-fdout=fdpipe[1];
-fdin=fdpipe[0];
-}// if/else
-
-// Redirect output
-dup2(fdout,1);
-close(fdout);
-
-
-string s = *(simpleCommand->_argumentsArray[0]);
-char *a = &(s[0]);
-
-char **final  = new char*[100];
-int c =0;
-for(auto & word : simpleCommand->_argumentsArray){
-  char*str = esc((char*)word->c_str());
-  //  cout << str << endl;
-   final[c]=const_cast<char*>(str);
-  c=c+1;
-}
-
-
-
-ret = fork();
-
-if (ret == 0) {
-if(s.compare("printenv") == 0){
-  for(int i = 0 ;environ[i]!=NULL; i++){
-
-  cout << *(environ+i)<<endl;  
+  int check_fun = Command::commandCheck();
+  if(check_fun == 1){
+    clear();
+    Shell::prompt();
+    return;
   }
-  exit(1);
-}
-else{
-execvp(a, final);
-perror("execvp");
-_exit(1); 
-}
+  int ret;
+  int check_sub = subShell();
+  if(check_sub == 1){
+    clear();
+    Shell::prompt();
+    return;
+  }
 
-}
 
-else if (ret < 0) {
-perror("fork");
-return;
-}
-// Parent shell continue
+  //save in/out
+  int tmpin=dup(0);
+  int tmpout=dup(1);
+  int tmperr=dup(2);
 
-else{
-// wait for last process
-waitpid(ret ,NULL, 0);
-}
- 
- //restore in/out defaults
-count += 1;
-} // for
 
-dup2(tmpin,0);
-dup2(tmpout,1);
-close(tmpin);
-close(tmpout);
+  //set the initial input
+  int fdin;
+  int fdout;
+  int fderr;
 
-if (_backgnd) {
-// Wait for last command
-_backgnd = true;
-waitpid(ret, NULL,0 );
-}
+  if (_inFileName) {
+    fdin = open(_inFileName->c_str(), O_RDONLY,0666);
+    if(fdin == -1){
+      exit(1);
+    }
+  }
+  else {
+    // Use default input
+    fdin=dup(tmpin);
+  }
 
-clear();
-Shell::prompt();
+  if(_errFileName){
+    if(_append)
+      fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
+    else
+      fderr=open(_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+  }
+  else {
+    // Use default output
+    fderr=dup(tmperr);
+  }
+  dup2(fderr,2);
+  close(fderr);
+
+
+
+  unsigned int count = 0;
+  for ( auto & simpleCommand : _simpleCommandsArray ) {
+    dup2(fdin, 0);
+    close(fdin);
+    if(simpleCommand->ambig_count > 1){
+      cout<< "Ambiguous output redirect." <<endl;
+      exit(1);
+    }
+    //setup output
+
+    if (count == _simpleCommandsArray.size()-1){
+      // Last simple command
+      if(_outFileName){
+        if(_append){
+          fdout=open(_outFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
+        }
+        else
+          fdout=open(_outFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+      }
+      else {
+        // Use default output
+        fdout=dup(tmpout);
+      }
+    }
+
+    else {
+      // Not last
+      //simple command
+      //create pipe
+      int fdpipe[2];
+      pipe(fdpipe);
+      fdout=fdpipe[1];
+      fdin=fdpipe[0];
+    }// if/else
+
+    // Redirect output
+    dup2(fdout,1);
+    close(fdout);
+
+
+    string s = *(simpleCommand->_argumentsArray[0]);
+    char *a = &(s[0]);
+
+    char **final  = new char*[100];
+    int c =0;
+    for(auto & word : simpleCommand->_argumentsArray){
+      char*str = esc((char*)word->c_str());
+      //  cout << str << endl;
+      final[c]=const_cast<char*>(str);
+      c=c+1;
+    }
+
+
+
+    ret = fork();
+
+    if (ret == 0) {
+      if(s.compare("printenv") == 0){
+        for(int i = 0 ;environ[i]!=NULL; i++){
+
+          cout << *(environ+i)<<endl;  
+        }
+        exit(1);
+      }
+      else{
+        execvp(a, final);
+        perror("execvp");
+        _exit(1); 
+      }
+
+    }
+
+    else if (ret < 0) {
+      perror("fork");
+      return;
+    }
+    // Parent shell continue
+
+    else{
+      // wait for last process
+      waitpid(ret ,NULL, 0);
+    }
+
+    //restore in/out defaults
+    count += 1;
+  } // for
+
+  dup2(tmpin,0);
+  dup2(tmpout,1);
+  close(tmpin);
+  close(tmpout);
+
+  if (_backgnd) {
+    // Wait for last command
+    _backgnd = true;
+    waitpid(ret, NULL,0 );
+  }
+
+  clear();
+  Shell::prompt();
 } 
 
 SimpleCommand * Command::_currSimpleCommand;
