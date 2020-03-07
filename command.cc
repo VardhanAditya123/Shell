@@ -189,8 +189,7 @@ int Command::subShell(){
     s.pop_back();
 
 
-    int tmpin=dup(0);
-    int tmpout=dup(1);
+  
 
     int pin[2];
     int pout[2];
