@@ -208,7 +208,6 @@ int Command::subShell(){
     else if(ret > 0){
       fd0 = pin[1];
       fd1 = pout[0];
-
     }
     return 1;
   }
