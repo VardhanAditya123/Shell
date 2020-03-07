@@ -208,8 +208,8 @@ int tmpout=dup(1);
     execvp("/proc/self/exe",NULL);
   }
   else if(ret > 0){
-    fd1 = pin[1];
-    fd0 = pout[0];
+    fd[0] = pin[1];
+    fd[1] = pout[0];
 
   }
   return 1;
