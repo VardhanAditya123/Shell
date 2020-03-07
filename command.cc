@@ -188,7 +188,7 @@ int Command::subShell(){
   s.replace(0,2,"");
   s.pop_back();
  
-      /save in/out
+
 int tmpin=dup(0);
 int tmpout=dup(1);
 
