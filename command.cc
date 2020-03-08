@@ -231,7 +231,6 @@ int Command::subShell(){
       read(out[0],str,1000);
       s = str;
       for(int i = s.length() -1  ; i >= 0;i--){
-      exit(0);
       myunputc(s.at(i));
       }
 
