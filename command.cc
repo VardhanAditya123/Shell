@@ -184,6 +184,11 @@ int Command::subShell(){
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
   int flag = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
+    for(auto & word : simpleCommand->_argumentsArray){
+      if(word.at(0))
+      flag = 1;
+    }
+  }
   cout << s << endl;
 
   if(s.at(0) == '$'){
