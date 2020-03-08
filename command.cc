@@ -200,6 +200,7 @@ int Command::subShell(){
     if(ret == 0){
       dup2(in[0],0);
       dup2(out[1],1);
+       cout << "LOLOL" << endl;
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
@@ -218,7 +219,6 @@ int Command::subShell(){
       }
 
     }
-    cout << "LOLOL" << endl;
     dup2(tmpin,0);
     dup2(tmpout,1);
     close(tmpin);
