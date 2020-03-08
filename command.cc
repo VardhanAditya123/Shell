@@ -216,9 +216,7 @@ int Command::subShell(){
     else if(ret > 0){
       dup2(fd1,in[1]);
       dup2(fd0,out[0]);
-      
       char str[1000];
-     
       cout << s << endl;
       write(out[1],str,1000);
       wait(NULL);
