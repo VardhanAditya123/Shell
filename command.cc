@@ -210,13 +210,13 @@ int Command::subShell(){
     
     int ret = fork();
     if(ret == 0){
-      dup2(fd0,in[0]);
-      dup2(fd1,out[1]);
+      dup2(in[0],fd0);
+      dup2(out[1],fd1);
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      dup2(fd1,in[1]);
-      dup2(fd0,out[0]);
+      dup2(in[1],fd1);
+      dup2(out[0],fd0);
       char str[1000];
       // cout << s << endl;
       write(out[1],str,1000);
