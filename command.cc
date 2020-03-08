@@ -195,6 +195,7 @@ int Command::subShell(){
   if(flag==1){
     s.replace(0,2,"");
     s.pop_back();
+    
 
     int in[2];
     int out[2];
@@ -212,17 +213,17 @@ int Command::subShell(){
     if(ret == 0){
       dup2(in[0],0);
       dup2(out[1], 1); 
+      
       execvp("/proc/self/exe",NULL);
       
     }
     else if(ret > 0){
-     
+      s.append("\nexit\n");
       char str[1000];
       // cout << s << endl;
-      write(in[1],str,1000);
+      write(in[1],s,1000);
       wait(NULL);
       read(out[0],str,1000);
-      s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
