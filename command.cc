@@ -186,7 +186,7 @@ int Command::subShell(){
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     for(auto & word : simpleCommand->_argumentsArray){
       if(word->at(0) =='$'){
-      strcpy(s, word->c_str());
+      s=*word;
       flag = 1;
       }
     }
