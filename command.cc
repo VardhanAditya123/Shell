@@ -202,7 +202,7 @@ int Command::subShell(){
     int fd0;
     int fd1;
     dup2(fd0,0);
-    dup2(fd1,,1);
+    dup2(fd1,1);
     int ret = fork();
     if(ret == 0){
       fd[0]=in[0];
