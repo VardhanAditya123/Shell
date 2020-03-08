@@ -213,7 +213,7 @@ int Command::subShell(){
       write(in[0],s,1000);
       wait(NULL);
       read(stdout,s,1000);
-      s._append("\nexit\n");
+      s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
       unput(s.at(i));
       }
