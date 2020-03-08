@@ -205,13 +205,13 @@ int Command::subShell(){
    
     int fd0 = 0;
     int fd1 = 1;
-    dup2(fd0,0);
-    dup2(fd1,1);
+    dup2(0,fd0);
+    dup2(1,fd1);
     
     int ret = fork();
     if(ret == 0){
-      dup2(in[0],fd0);
-      dup2(out[1],fd1);
+      dup2(fd0,in[0]);
+      dup2(fd1,out[1]);
       execvp("/proc/self/exe",NULL);
       exit(1);
     }
