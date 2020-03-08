@@ -210,7 +210,8 @@ int Command::subShell(){
     
     int ret = fork();
     if(ret == 0){
-     
+      dup2(in[0],0);
+      dup2(out[1], 1); 
       execvp("/proc/self/exe",NULL);
       exit(1);
     }
