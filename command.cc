@@ -225,13 +225,13 @@ int Command::subShell(){
       write(in[1],"\n",1000);
       write(in[1],"exit\n",1000);
       wait(NULL);
-      cout << "DEBUG "<<endl;
       close(in[0]);
       close(out[1]);
      
       read(out[0],str,1000);
       s = str;
       for(int i = s.length() -1  ; i >= 0;i--){
+      exit(0);
       myunputc(s.at(i));
       }
 
