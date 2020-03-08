@@ -182,7 +182,7 @@ int Command::commandCheck(){
 int Command::subShell(){
 
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
-
+  cout << s << endl;
 
   if(s.at(0) == '$'){
     s.replace(0,2,"");
