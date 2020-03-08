@@ -199,16 +199,17 @@ int Command::subShell(){
     pipe(in); 
     pipe(out);
     pipe(fd);
+    dup2(fd[0],0);
+    dup2(fd[1],1);
     int ret = fork();
     if(ret == 0){
-      //  cout << "LOLOL" << endl;
-      dup2(in[0],0);
-      dup2(out[1],1);
+      fd[0]=in[0];
+      fd[1]=out[1];
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      dup2(in[1],1);
-      dup2(out[0],0);
+      fd[1]=in[1];
+      out[0]=fd[0];
       
       char str[1000];
       strcpy(str,s.c_str()); 
