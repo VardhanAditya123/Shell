@@ -223,6 +223,7 @@ int Command::subShell(){
       
       write(in[1],str,1000);
       write(in[1],"\n",1000);
+       write(in[1],"exit\n",1000);
       wait(NULL);
       cout << "DEBUG "<<endl;
       close(in[0]);
