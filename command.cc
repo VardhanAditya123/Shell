@@ -191,24 +191,22 @@ int Command::subShell(){
 
   
 
-    int pin[2];
-    int pout[2];
+    int in[2];
+    int out[2];
     
-    pipe(pin); 
-    pipe(pout);
+    pipe(in); 
+    pipe(out);
 
-    dup2(pout[0],1);
-    dup2(pin[1],0);
+    dup2(in[1],0); //stdin
+    dup2(out[0],1); //stdout
     
     int ret = fork();
     if(ret == 0){
-      fd0 = pin[0];
-      fd1 = pout[1];
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      fd0 = pin[1];
-      fd1 = pout[0];
+      fd0 = in[1];
+      fd1 = out[0];
     }
     return 1;
   }
