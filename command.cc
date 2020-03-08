@@ -181,7 +181,7 @@ int Command::commandCheck(){
 
 int Command::subShell(){
 
-  
+  string s;
   int flag = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     for(auto & word : simpleCommand->_argumentsArray){
