@@ -216,7 +216,7 @@ int Command::subShell(){
       s.append("\nexit\n");
       char str[1000];
       strcpy(str,s.c_str());
-      // cout << s << endl;
+       cout << str << endl;
       write(in[1],str,1000);
       wait(NULL);
       
