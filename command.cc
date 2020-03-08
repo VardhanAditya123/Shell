@@ -190,8 +190,8 @@ int Command::subShell(){
 
     int in[2];
     int out[2];
-    // int tmpin=dup(0);
-    // int tmpout=dup(1);
+    int tmpin=dup(0);
+    int tmpout=dup(1);
     
     
     pipe(in); 
@@ -218,6 +218,11 @@ int Command::subShell(){
       }
 
     }
+    dup2(tmpin,0);
+    dup2(tmpout,1);
+    close(tmpin);
+    close(tmpout);
+
     return 1;
   }
 
