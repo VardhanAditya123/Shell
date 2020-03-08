@@ -194,7 +194,6 @@ int Command::subShell(){
     int tmpout=dup(1);
     pipe(in); 
     pipe(out);
-    // pipe(fd);
     int fd0 = 0;
     int fd1 = 1;
     dup2(fd0,0);
@@ -211,7 +210,7 @@ int Command::subShell(){
       
       char str[1000];
       strcpy(str,s.c_str()); 
-      // cout << str << endl;
+      cout << s << endl;
       write(out[1],str,1000);
       wait(NULL);
       read(out[0],str,1000);
