@@ -226,6 +226,7 @@ int Command::subShell(){
       cout << "DEBUG "<<endl;
       close(in[0]);
       close(out[1]);
+     
       read(out[0],str,1000);
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
