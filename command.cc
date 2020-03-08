@@ -227,7 +227,8 @@ int Command::subShell(){
       close(in[0]);
       close(out[1]);
      
-      read(out[0],str,1000);
+       read(out[0],str,1000);
+      s = str;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
