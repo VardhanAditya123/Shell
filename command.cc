@@ -214,7 +214,7 @@ int Command::subShell(){
     }
     else if(ret > 0){
       
-      s.append("\nexit\n");
+      s.append("\nexit");
       char str[1000];
       strcpy(str,s.c_str());
       cout<< s << endl;
