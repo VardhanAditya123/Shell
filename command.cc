@@ -186,7 +186,7 @@ int Command::subShell(){
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     for(auto & word : simpleCommand->_argumentsArray){
       if(word->at(0) =='$'){
-      strcpy(s, word->c_str());
+      strcpy(s, word->c_str);
       flag = 1;
       }
     }
@@ -218,7 +218,7 @@ int Command::subShell(){
       dup2(fd0,out[0]);
       
       char str[1000];
-      strcpy(str,s.c_str()); 
+      strcpy(str,const_cast<char*>s.c_str()); 
       cout << s << endl;
       write(out[1],str,1000);
       wait(NULL);
