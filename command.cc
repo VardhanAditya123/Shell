@@ -231,7 +231,7 @@ int Command::subShell(){
     dup2(tmpin,0);
     dup2(tmpout,1);
     close(fd1);
-    close(fd2);
+    close(fd0);
     close(tmpin);
     close(tmpout);
 
