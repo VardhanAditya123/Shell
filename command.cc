@@ -205,8 +205,8 @@ int Command::subShell(){
     else if(ret > 0){
       dup2(in[1],1);
       dup2(out[0],0);
-      int n = s.length();
-      char str[n+1];
+      
+      char str[1000];
       strcpy(str,s.c_str()); 
   
       write(in[0],str,1000);
