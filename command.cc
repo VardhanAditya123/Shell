@@ -217,13 +217,12 @@ int Command::subShell(){
       s.append("\nexit");
       char str[1000];
       strcpy(str,s.c_str());
-      cout<< s << endl;
+      cout<< str << endl;
       dup2(in[1],1);
       dup2(out[0], 0); 
       
       write(in[1],str,1000);
       wait(NULL);
-            dup2(tmpin,0);
       cout << "DEBUG "<<endl;
       close(in[0]);
       close(out[1]);
