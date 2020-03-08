@@ -199,10 +199,7 @@ int Command::subShell(){
 
     dup2(in[1],0); //stdin
     dup2(out[0],1); //stdout
-    s._append("\nexit\n");
-    for(int i = s.length() -1  ; i >= 0;i--){
-      unput(s.at(i));
-    }
+    
 
     int ret = fork();
     if(ret == 0){
@@ -215,7 +212,12 @@ int Command::subShell(){
       dup2(out[0],0);
       write(in[0],s,1000);
       wait(NULL);
-      read(stdout,)
+      read(stdout,s,1000);
+      s._append("\nexit\n");
+      for(int i = s.length() -1  ; i >= 0;i--){
+      unput(s.at(i));
+      }
+
     }
     return 1;
   }
