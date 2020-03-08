@@ -191,22 +191,25 @@ int Command::subShell(){
     int in[2];
     int out[2];
     
+    
     pipe(in); 
     pipe(out);
 
     dup2(in[1],0); //stdin
     dup2(out[0],1); //stdout
+    s._append("\nexit\n");
     for(int i = s.length() -1  ; i >= 0;i--){
       unput(s.at(i));
     }
 
     int ret = fork();
     if(ret == 0){
+      dup2(in[0],0);
+      dup2(out[1],1);
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      fd0 = in[1];
-      fd1 = out[0];
+      
     }
     return 1;
   }
