@@ -216,10 +216,10 @@ int Command::subShell(){
       s.append("\nexit\n");
       char str[1000];
       strcpy(str,s.c_str());
-       cout << str << endl;
+      //  cout << str << endl;
       write(in[1],str,1000);
       wait(NULL);
-      
+      cout << "DEBUG "<<endl;
       read(out[0],str,1000);
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
