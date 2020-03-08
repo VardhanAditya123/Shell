@@ -210,9 +210,9 @@ int Command::subShell(){
     else if(ret > 0){
       dup2(in[1],1);
       dup2(out[0],0);
-      write(in[0],s,1000);
+      write(in[0],s.c_str(),1000);
       wait(NULL);
-      read(stdout,s,1000);
+      read(stdout,s.c_str(),1000);
       s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
       yy_unputc(s.at(i));
