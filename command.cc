@@ -215,7 +215,7 @@ int Command::subShell(){
       read(stdout,s,1000);
       s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
-      myunput(s.at(i));
+      myunputc(s.at(i));
       }
 
     }
