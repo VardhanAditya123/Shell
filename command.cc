@@ -210,7 +210,7 @@ int Command::subShell(){
     else if(ret > 0){
       dup2(in[1],1);
       dup2(out[0],0);
-      write(in[0],s,1000);
+      write(in[0],(char*)s,1000);
       wait(NULL);
       read(stdout,s,1000);
       s.append("\nexit\n");
