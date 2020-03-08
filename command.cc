@@ -201,17 +201,17 @@ int Command::subShell(){
     dup2(fd1,1);
     int ret = fork();
     if(ret == 0){
-      fd0=in[0];
-      fd1=out[1];
+      dup2(fd0,in[0]);
+      dup2(fd1,out[1]);
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      fd1=in[1];
-      fd0=out[0];
+      dup2(fd1,in[1]);
+      dup2(fd0,out[0]);
       
       char str[1000];
       strcpy(str,s.c_str()); 
-      cout << str << endl;
+      // cout << str << endl;
       write(out[1],str,1000);
       wait(NULL);
       read(out[0],str,1000);
