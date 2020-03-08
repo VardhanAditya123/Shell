@@ -198,7 +198,7 @@ int Command::subShell(){
     pipe(out);
     int ret = fork();
     if(ret == 0){
-       cout << "LOLOL" << endl;
+      //  cout << "LOLOL" << endl;
       dup2(in[0],0);
       dup2(out[1],1);
       execvp("/proc/self/exe",NULL);
