@@ -220,7 +220,7 @@ int Command::subShell(){
       dup2(out[0],fd0);
       char str[1000];
       // cout << s << endl;
-      write(out[1],str,1000);
+      write(in[0],str,1000);
       wait(NULL);
       read(out[0],str,1000);
       s.append("\nexit\n");
