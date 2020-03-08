@@ -213,10 +213,14 @@ int Command::subShell(){
       
     }
     else if(ret > 0){
+      
       s.append("\nexit\n");
       char str[1000];
       strcpy(str,s.c_str());
-      //  cout << str << endl;
+
+      dup2(in[1],1);
+      dup2(out[0], 0); 
+      
       write(in[1],str,1000);
       wait(NULL);
       cout << "DEBUG "<<endl;
