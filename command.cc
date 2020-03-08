@@ -200,7 +200,7 @@ int Command::subShell(){
     if(ret == 0){
       dup2(in[0],0);
       dup2(out[1],1);
-      execvp("/proc/self/exe",1);
+      execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
       dup2(in[1],1);
