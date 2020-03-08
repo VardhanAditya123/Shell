@@ -196,11 +196,6 @@ int Command::subShell(){
     
     pipe(in); 
     pipe(out);
-
-    dup2(in[1],0); //stdin
-    dup2(out[0],1); //stdout
-    
-
     int ret = fork();
     if(ret == 0){
       dup2(in[0],0);
