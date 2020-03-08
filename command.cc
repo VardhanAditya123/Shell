@@ -199,8 +199,8 @@ int Command::subShell(){
     pipe(in); 
     pipe(out);
     // pipe(fd);
-    int fd0;
-    int fd1;
+    int fd0 = 0;
+    int fd1 = 1;
     dup2(fd0,0);
     dup2(fd1,1);
     int ret = fork();
