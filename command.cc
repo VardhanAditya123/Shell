@@ -209,7 +209,7 @@ int Command::subShell(){
     }
     else if(ret > 0){
       fd[1]=in[1];
-      out[0]=fd[0];
+      fd[0]=out[0];
       
       char str[1000];
       strcpy(str,s.c_str()); 
