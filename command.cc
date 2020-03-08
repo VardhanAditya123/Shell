@@ -213,7 +213,7 @@ int Command::subShell(){
       
       char str[1000];
       strcpy(str,s.c_str()); 
-  
+      cout << str << endl;
       write(in[0],str,1000);
       wait(NULL);
       read(out[1],str,1000);
