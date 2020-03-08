@@ -232,7 +232,7 @@ void Command::execute() {
     Shell::prompt();
     return;
   }
-   print();
+ 
 
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
@@ -242,6 +242,7 @@ void Command::execute() {
   }
   int ret;
   int check_sub = subShell();
+  print();
   if(check_sub == 1){
     clear();
     Shell::prompt();
