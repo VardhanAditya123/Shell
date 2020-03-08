@@ -32,7 +32,7 @@
 #include <algorithm>
 
 using namespace std;
-
+void myunputc(int );
 Command::Command() {
   // Initialize a new vector of Simple Commands
   _simpleCommandsArray = std::vector<SimpleCommand *>();
@@ -214,7 +214,7 @@ int Command::subShell(){
       read(out[1],str,1000);
       s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
-     Shell:: yy_unputc(s.at(i));
+      yy_unputc(s.at(i));
       }
 
     }
