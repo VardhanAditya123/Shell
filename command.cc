@@ -205,7 +205,7 @@ int Command::subShell(){
     if(ret == 0){
       fd[0]=in[0];
       fd[1]=out[1];
-      execvp("/proc/self/exe",NULL,1);
+      execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
       fd[1]=in[1];
