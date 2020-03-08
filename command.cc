@@ -248,7 +248,7 @@ void Command::execute() {
   }
   int ret;
   int check_sub = subShell();
-  print();
+  // print();
   if(check_sub == 1){
     clear();
     Shell::prompt();
