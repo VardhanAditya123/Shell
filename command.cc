@@ -218,7 +218,7 @@ int Command::subShell(){
       dup2(fd0,out[0]);
       
       char str[1000];
-      strcpy(str,const_cast<char*>(s); 
+     
       cout << s << endl;
       write(out[1],str,1000);
       wait(NULL);
