@@ -217,7 +217,7 @@ int Command::subShell(){
       s.append("\nexit\n");
       char str[1000];
       strcpy(str,s.c_str());
-
+      cout<< s << endl;
       dup2(in[1],1);
       dup2(out[0], 0); 
       
