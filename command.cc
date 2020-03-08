@@ -205,8 +205,8 @@ int Command::subShell(){
    
     int fd0 = 0;
     int fd1 = 1;
-    dup2(0,fd0);
-    dup2(1,fd1);
+    dup2(fd0,0);
+    dup2(fd1,1);
     
     int ret = fork();
     if(ret == 0){
@@ -220,7 +220,7 @@ int Command::subShell(){
       dup2(out[0],fd0);
       char str[1000];
       // cout << s << endl;
-      write(in[0],str,1000);
+      write(in[1],str,1000);
       wait(NULL);
       read(out[0],str,1000);
       s.append("\nexit\n");
