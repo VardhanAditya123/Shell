@@ -185,7 +185,7 @@ int Command::subShell(){
   int flag = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     for(auto & word : simpleCommand->_argumentsArray){
-      if(word->at(0))
+      if(word->at(0) =='$')
       flag = 1;
     }
   }
