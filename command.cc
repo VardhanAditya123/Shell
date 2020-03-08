@@ -191,7 +191,7 @@ int Command::subShell(){
   }
   cout << s << endl;
 
-  if(s.at(0) == '$'){
+  if(flag==1){
     s.replace(0,2,"");
     s.pop_back();
 
