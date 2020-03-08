@@ -204,11 +204,6 @@ int Command::subShell(){
     pipe(in); 
     pipe(out);
    
-    // int fd0 = 0;
-    // int fd1 = 1;
-    // dup2(0,fd0);
-    // dup2(1,fd1);
-    
     int ret = fork();
     if(ret == 0){
       dup2(in[0],0);
@@ -220,6 +215,7 @@ int Command::subShell(){
     else if(ret > 0){
       s.append("\nexit\n");
       char str[1000];
+      strcpy(str,s);
       // cout << s << endl;
       write(in[1],str,1000);
       wait(NULL);
