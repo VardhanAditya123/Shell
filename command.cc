@@ -182,6 +182,8 @@ int Command::commandCheck(){
 int Command::subShell(){
 
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+  int flag = 0;
+  for ( auto & simpleCommand : _simpleCommandsArray ) {
   cout << s << endl;
 
   if(s.at(0) == '$'){
