@@ -198,9 +198,8 @@ int Command::subShell(){
     pipe(pout);
 
     dup2(pout[0],1);
-    dup2(pin[1],1);
-    int fd0 = dup(0);
-    int fd1 = dup(1);
+    dup2(pin[1],0);
+    
     int ret = fork();
     if(ret == 0){
       fd0 = pin[0];
