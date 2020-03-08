@@ -214,9 +214,9 @@ int Command::subShell(){
       char str[1000];
       strcpy(str,s.c_str()); 
       cout << str << endl;
-      write(in[0],str,1000);
+      write(out[1],str,1000);
       wait(NULL);
-      read(out[1],str,1000);
+      read(out[0],str,1000);
       s.append("\nexit\n");
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
