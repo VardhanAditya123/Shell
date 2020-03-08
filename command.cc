@@ -188,9 +188,6 @@ int Command::subShell(){
     s.replace(0,2,"");
     s.pop_back();
 
-
-  
-
     int in[2];
     int out[2];
     
@@ -202,7 +199,7 @@ int Command::subShell(){
     for(int i = s.length() -1  ; i >= 0;i--){}
       unput(s.at(i));
     }
-    
+
     int ret = fork();
     if(ret == 0){
       execvp("/proc/self/exe",NULL);
