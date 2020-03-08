@@ -190,6 +190,8 @@ int Command::subShell(){
 
     int in[2];
     int out[2];
+    int tmpin=dup(0);
+    int tmpout=dup(1);
     
     
     pipe(in); 
@@ -209,7 +211,11 @@ int Command::subShell(){
       execvp("/proc/self/exe",NULL);
     }
     else if(ret > 0){
-      
+      dup2(in[1],1);
+      dup2(out[0],0);
+      write(in[0],s,1000);
+      wait(NULL);
+      read(stdout,)
     }
     return 1;
   }
