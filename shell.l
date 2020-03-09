@@ -157,13 +157,7 @@ void myunputc(int c) {
       }
 
     }
-   
-     
 
-  
-  //  std::string s = yytext;
-  //  yylval.cpp_string = new std::string(s);
-  //  return Word;
 }
 
 [^ \t\n][^ \t\n]*  {
