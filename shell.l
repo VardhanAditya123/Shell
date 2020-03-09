@@ -122,7 +122,7 @@ void myunputc(int c) {
     int ret = fork();
     if(ret == 0){
       execvp("/proc/self/exe",NULL);
-      exit(0);
+      // exit(0);
       
     }
     
