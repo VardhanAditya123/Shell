@@ -114,6 +114,7 @@ void myunputc(int c) {
       dup2(out[1], 1); 
       
       execvp("/proc/self/exe",NULL);
+      exit(0);
       
     }
     else if(ret > 0){
