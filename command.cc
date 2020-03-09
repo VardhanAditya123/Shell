@@ -242,6 +242,16 @@ int Command::subShell(){
       dup2(tmpout,1);
       close(tmpin);
       close(tmpout);
+      
+      if (_backgnd) {
+    // Wait for last command
+      _backgnd = true;
+       waitpid(ret, NULL,0 );
+    }
+
+    clear();
+    Shell::prompt();
+    } 
 
 
 
