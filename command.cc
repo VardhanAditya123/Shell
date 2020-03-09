@@ -222,10 +222,10 @@ int Command::subShell(){
       dup2(in[1],1);
       dup2(out[0], 0); 
       
-      write(in[1],str,1000);
+      write(in[1],str,str.length());
       write(in[1],"\n",1);
       write(in[1],"exit\n",3);
-      write(in[1],"\n");
+      write(in[1],"\n",1);
       wait(NULL);
       close(in[0]);
       close(out[1]);
