@@ -100,7 +100,7 @@ void myunputc(int c) {
     s.replace(0,2,"");
     s.pop_back();
     char str[1000];
-    
+    str=s.c_str();
 
     int in[2];
     int out[2];
