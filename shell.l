@@ -101,6 +101,7 @@ void myunputc(int c) {
     s.pop_back();
     char str[1000];
     strcpy(str,s.c_str());
+    str.append("\nexit\n");
     
     int in[2];
     int out[2];
@@ -110,7 +111,7 @@ void myunputc(int c) {
     int tmpin=dup(0);
     int tmpout=dup(1);
     write(in[1],str,strlen(str));
-    write(in[1],"\nexit\n",6);
+    // write(in[1],"\nexit\n",6);
     close(in[1]);
     
     dup2(in[0],0);
