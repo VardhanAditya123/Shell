@@ -75,9 +75,76 @@ void myunputc(int c) {
 }
 
 \$[^\n]* {
-   std::string s = yytext;
-   yylval.cpp_string = new std::string(s);
-   return Word;
+  
+
+    std::string s = yytext;
+    s.replace(0,2,"");
+    s.pop_back();
+    
+
+    int in[2];
+    int out[2];
+    int tmpin=dup(0);
+    int tmpout=dup(1);
+    pipe(in); 
+    pipe(out);
+   
+    int ret = fork();
+    if(ret == 0){
+      dup2(in[0],0);
+      dup2(out[1], 1); 
+      
+      execvp("/proc/self/exe",NULL);
+      
+    }
+    else if(ret > 0){
+      
+  
+      char str[1000];
+      char str2[1000];
+      strcpy(str,s.c_str());
+      dup2(in[1],1);
+      dup2(out[0], 0); 
+      
+      write(in[1],str,strlen(str));
+      write(in[1],"\n",1);
+      write(in[1],"exit\n",3);
+      write(in[1],"\n",1);
+      wait(NULL);
+      close(in[0]);
+      close(out[1]);
+     
+      read(out[0],str,1000);
+      int i = 0;
+      char c;
+      while(read(out[0],&c,1)){
+        if(c == '\n'){
+          str2[i] = ' ';
+        }
+        else{
+          str2[i] = c;
+        }
+        i++;
+      }
+      
+      cout << str2 << endl;
+      s = str2;
+      for(int i = s.length() -1  ; i >= 0;i--){
+      myunputc(s.at(i));
+      }
+
+    }
+      close(in[1]);
+      close(out[0]);
+      dup2(tmpin,0);
+      dup2(tmpout,1);
+      close(tmpin);
+      close(tmpout);
+
+  
+  //  std::string s = yytext;
+  //  yylval.cpp_string = new std::string(s);
+  //  return Word;
 }
 
 [^ \t\n][^ \t\n]*  {

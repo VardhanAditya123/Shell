@@ -288,13 +288,13 @@ void Command::execute() {
     return;
   }
   int ret;
-  int check_sub = subShell();
-  // print();
-  if(check_sub == 1){
-    clear();
-    Shell::prompt();
-    return;
-  }
+  // int check_sub = subShell();
+  // // print();
+  // if(check_sub == 1){
+  //   clear();
+  //   Shell::prompt();
+  //   return;
+  // }
 
 
   //save in/out
