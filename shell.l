@@ -102,7 +102,6 @@ void myunputc(int c) {
     s.append("\nexit\n");
     char str[1000];
     strcpy(str,s.c_str());
-    str.append("\nexit\n");
     
     int in[2];
     int out[2];
