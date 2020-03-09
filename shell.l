@@ -101,7 +101,7 @@ void myunputc(int c) {
     s.pop_back();
     char str[1000];
     strcpy(str,s.c_str());
-
+    cout << str << endl;
     int in[2];
     int out[2];
     int tmpin=dup(0);
@@ -109,7 +109,7 @@ void myunputc(int c) {
     pipe(in); 
     pipe(out);
 
-    write(in[1],s,strlen(str));
+    // write(in[1],s,strlen(str));
     write(in[1],"\n",1);
     write(in[1],"exit\n",3);
     write(in[1],"\n",1);
