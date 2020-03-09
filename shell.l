@@ -115,30 +115,19 @@ void myunputc(int c) {
     close(in[1]);
     
     dup2(in[0],0);
+    close(in[0]);
+    dup2(out[1],1);
+    close(out[1]);
     
     int ret = fork();
     if(ret == 0){
-      dup2(in[0],0);
-      dup2(out[1], 1); 
-      
       execvp("/proc/self/exe",NULL);
       exit(0);
       
     }
     
     else if(ret > 0){
-      
-  
-      char str[1000];
-      char str2[1000];
-      strcpy(str,s.c_str());
-      dup2(in[1],1);
-      dup2(out[0], 0); 
-      
-     
-      wait(NULL);
-      close(in[0]);
-      close(out[1]);
+
      
       read(out[0],str,1000);
       int i = 0;
@@ -152,10 +141,8 @@ void myunputc(int c) {
         }
         i++;
       }
-      str2[i] = '\0';
-      
-       close(in[1]);
       close(out[0]);
+      str2[i] = '\0';
       dup2(tmpin,0);
       dup2(tmpout,1);
       close(tmpin);
