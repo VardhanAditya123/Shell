@@ -99,7 +99,7 @@ void myunputc(int c) {
     std::string s = yytext;
     s.replace(0,2,"");
     s.pop_back();
-    cout << s << endl;
+   
 
     int in[2];
     int out[2];
@@ -117,6 +117,7 @@ void myunputc(int c) {
       exit(0);
       
     }
+     cout << "DEBUG" << endl;
     else if(ret > 0){
       
   
