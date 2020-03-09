@@ -155,6 +155,9 @@ void myunputc(int c) {
       printf("\n");
 
     }
+    else if(ret < 0){
+      perror("fork");
+    }
      
 
   
