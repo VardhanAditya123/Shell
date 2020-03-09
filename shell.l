@@ -155,7 +155,7 @@ void myunputc(int c) {
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
-      printf("\n");
+      // printf("\n");
 
     }
    
