@@ -149,7 +149,7 @@ void myunputc(int c) {
         i++;
       }
       close(out[0]);
-      // str2[i] = '\0';
+       str2[i] = '\0';
 
       s = str2;
       for(int i = s.length() -1  ; i >= 0;i--){
