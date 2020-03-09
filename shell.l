@@ -128,7 +128,7 @@ void myunputc(int c) {
     
     else if(ret > 0){
 
-     
+      char str2[1000];
       read(out[0],str,1000);
       int i = 0;
       char c;
