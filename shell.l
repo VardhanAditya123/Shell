@@ -121,7 +121,6 @@ void myunputc(int c) {
     
     int ret = fork();
     if(ret == 0){
-      
       execvp("/proc/self/exe",NULL);
       
     }
@@ -134,6 +133,7 @@ void myunputc(int c) {
       close(tmpout);
       
       char str2[1000];
+    
       int i = 0;
       char c;
       while(read(out[0],&c,1)){
@@ -149,7 +149,6 @@ void myunputc(int c) {
       str2[i] = '\0';
 
       s = str2;
-      cout << s << endl;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
