@@ -127,7 +127,7 @@ int Command::commandCheck(){
 
 
   if(s.compare(s2) == 0){
-    cout << "Good bye!!" << endl;
+    // cout << "Good bye!!" << endl;
     exit(0);
   }
 
