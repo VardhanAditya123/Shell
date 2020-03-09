@@ -216,21 +216,34 @@ int Command::subShell(){
       
       // s.append("\nexit\n");
       char str[1000];
+      char str2[1000];
       strcpy(str,s.c_str());
       // cout<< str << endl;
       dup2(in[1],1);
       dup2(out[0], 0); 
       
       write(in[1],str,1000);
-      write(in[1],"\n",1000);
-      write(in[1],"exit\n",1000);
+      write(in[1],"\n",1);
+      write(in[1],"exit\n",3);
+      write(in[1],"\n");
       wait(NULL);
       close(in[0]);
       close(out[1]);
      
       read(out[0],str,1000);
-      cout << str << endl;
-      s = str;
+      int i = 0;
+      while(read(out[0],&c,1)){
+        if(c == '\n'){
+          str2[i] = ' ';
+        }
+        else{
+          str2[i] = c;
+        }
+        i++;
+      }
+      
+      cout << str2 << endl;
+      s = str2;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
