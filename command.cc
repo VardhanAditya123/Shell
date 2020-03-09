@@ -229,6 +229,7 @@ int Command::subShell(){
       close(out[1]);
      
       read(out[0],str,1000);
+      cout << str << endl;
       s = str;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
