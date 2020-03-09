@@ -101,7 +101,7 @@ void myunputc(int c) {
     s.pop_back();
     char str[1000];
     strcpy(str,s.c_str());
-    cout << str << endl;
+    // cout << str << endl;
     int in[2];
     int out[2];
     int tmpin=dup(0);
@@ -111,11 +111,11 @@ void myunputc(int c) {
 
     write(in[1],str,strlen(str));
     write(in[1],"\n",1);
-    write(in[1],"exit\n",3);
-    write(in[1],"\n",1);
+    write(in[1],"exit\n",5);
+    close(in[1]);
     
     dup2(in[0],0);
-    close(in[1]);
+    
     int ret = fork();
     if(ret == 0){
       dup2(in[0],0);
