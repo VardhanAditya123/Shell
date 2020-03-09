@@ -117,9 +117,9 @@ void myunputc(int c) {
     int ret = fork();
     if(ret == 0){
        dup2(in[0],0);
-      close(in[0]);
-      dup2(out[1],1);
-      close(out[1]);
+       close(in[0]);
+       dup2(out[1],1);
+       close(out[1]);
       execvp("/proc/self/exe",NULL);
       
     }
@@ -128,8 +128,8 @@ void myunputc(int c) {
     }
     
     else if(ret > 0){
-       close(in[0]);
-        close(out[1]);
+      close(in[0]);
+      close(out[1]);
       dup2(tmpin,0);
       dup2(tmpout,1);
       close(tmpin);
