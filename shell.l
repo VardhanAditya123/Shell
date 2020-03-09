@@ -127,7 +127,10 @@ void myunputc(int c) {
     }
     
     else if(ret > 0){
-
+      dup2(tmpin,0);
+      dup2(tmpout,1);
+      close(tmpin);
+      close(tmpout);
       char str2[1000];
       read(out[0],str,1000);
       int i = 0;
@@ -143,10 +146,7 @@ void myunputc(int c) {
       }
       close(out[0]);
       str2[i] = '\0';
-      dup2(tmpin,0);
-      dup2(tmpout,1);
-      close(tmpin);
-      close(tmpout);
+
       s = str2;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
