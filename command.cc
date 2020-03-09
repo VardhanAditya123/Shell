@@ -232,6 +232,7 @@ int Command::subShell(){
      
       read(out[0],str,1000);
       int i = 0;
+      char c;
       while(read(out[0],&c,1)){
         if(c == '\n'){
           str2[i] = ' ';
