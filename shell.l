@@ -117,7 +117,7 @@ void myunputc(int c) {
       exit(0);
       
     }
-     cout << "DEBUG" << endl;
+    
     else if(ret > 0){
       
   
@@ -149,19 +149,19 @@ void myunputc(int c) {
       }
       str2[i] = '\0';
       
-      cout << str2 << endl;
+       close(in[1]);
+      close(out[0]);
+      dup2(tmpin,0);
+      dup2(tmpout,1);
+      close(tmpin);
+      close(tmpout);
       s = str2;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
 
     }
-      close(in[1]);
-      close(out[0]);
-      dup2(tmpin,0);
-      dup2(tmpout,1);
-      close(tmpin);
-      close(tmpout);
+     
 
   
   //  std::string s = yytext;
