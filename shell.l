@@ -114,17 +114,14 @@ void myunputc(int c) {
     write(in[1],"exit\n",5);
     close(in[1]);
     
-    // dup2(in[0],0);
-    // close(in[0]);
-    // dup2(out[1],1);
-    // close(out[1]);
-    
-    int ret = fork();
-    if(ret == 0){
-       dup2(in[0],0);
+    dup2(in[0],0);
     close(in[0]);
     dup2(out[1],1);
     close(out[1]);
+    
+    int ret = fork();
+    if(ret == 0){
+      
       execvp("/proc/self/exe",NULL);
       
     }
@@ -152,6 +149,7 @@ void myunputc(int c) {
       str2[i] = '\0';
 
       s = str2;
+      cout << s << endl;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
