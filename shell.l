@@ -104,11 +104,11 @@ void myunputc(int c) {
     
     int in[2];
     int out[2];
-    int tmpin=dup(0);
-    int tmpout=dup(1);
     pipe(in); 
     pipe(out);
 
+    int tmpin=dup(0);
+    int tmpout=dup(1);
     write(in[1],str,strlen(str));
     write(in[1],"\n",1);
     write(in[1],"exit\n",5);
