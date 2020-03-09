@@ -108,7 +108,7 @@ void myunputc(int c) {
     pipe(in); 
     pipe(out);
 
-    write(in[1],s,strlen(str));
+    write(in[1],s,strlen(s));
     write(in[1],"\n",1);
     write(in[1],"exit\n",3);
     write(in[1],"\n",1);
