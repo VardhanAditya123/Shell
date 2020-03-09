@@ -124,6 +124,9 @@ void myunputc(int c) {
       execvp("/proc/self/exe",NULL);
       
     }
+     else if(ret < 0){
+      perror("fork");
+    }
     
     else if(ret > 0){
       
@@ -155,9 +158,7 @@ void myunputc(int c) {
       printf("\n");
 
     }
-    else if(ret < 0){
-      perror("fork");
-    }
+   
      
 
   
