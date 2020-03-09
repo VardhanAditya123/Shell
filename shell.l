@@ -114,25 +114,29 @@ void myunputc(int c) {
     write(in[1],"exit\n",5);
     close(in[1]);
     
-    dup2(in[0],0);
-    close(in[0]);
-    dup2(out[1],1);
-    close(out[1]);
+    // dup2(in[0],0);
+    // close(in[0]);
+    // dup2(out[1],1);
+    // close(out[1]);
     
     int ret = fork();
     if(ret == 0){
+       dup2(in[0],0);
+    close(in[0]);
+    dup2(out[1],1);
+    close(out[1]);
       execvp("/proc/self/exe",NULL);
-      // exit(0);
       
     }
     
     else if(ret > 0){
+      
       dup2(tmpin,0);
       dup2(tmpout,1);
       close(tmpin);
       close(tmpout);
+      
       char str2[1000];
-      read(out[0],str,1000);
       int i = 0;
       char c;
       while(read(out[0],&c,1)){
