@@ -149,7 +149,7 @@ void myunputc(int c) {
        close(out[0]);
 
       s = str2;
-      cout << s << endl;
+      // cout << s << endl;
       for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
