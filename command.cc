@@ -251,10 +251,8 @@ int Command::subShell(){
 
     clear();
     Shell::prompt();
+     return 1;
     } 
-
-    return 1;
-  }
 
   return 0;
 }
