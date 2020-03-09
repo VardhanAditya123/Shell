@@ -15,6 +15,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <stdlib.h>
+using namespace std;
 static  void yyunput (int c,char *buf_ptr  );
 
 void myunputc(int c) {
