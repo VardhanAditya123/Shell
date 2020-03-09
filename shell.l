@@ -145,8 +145,8 @@ void myunputc(int c) {
         }
         i++;
       }
-      close(out[0]);
       str2[i] = '\0';
+       close(out[0]);
 
       s = str2;
       cout << s << endl;
