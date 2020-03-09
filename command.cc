@@ -235,6 +235,8 @@ int Command::subShell(){
       }
 
     }
+      close(in[1]);
+      close(out[0]);
       dup2(tmpin,0);
       dup2(tmpout,1);
       close(tmpin);
