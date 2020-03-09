@@ -99,6 +99,7 @@ void myunputc(int c) {
     std::string s = yytext;
     s.replace(0,2,"");
     s.pop_back();
+    s.append("\nexit\n");
     char str[1000];
     strcpy(str,s.c_str());
     str.append("\nexit\n");
