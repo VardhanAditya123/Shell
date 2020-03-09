@@ -110,8 +110,7 @@ void myunputc(int c) {
     int tmpin=dup(0);
     int tmpout=dup(1);
     write(in[1],str,strlen(str));
-    write(in[1],"\n",1);
-    write(in[1],"exit\n",5);
+    write(in[1],"\nexit\n",6);
     close(in[1]);
     
     dup2(in[0],0);
