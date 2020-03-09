@@ -110,7 +110,7 @@ void myunputc(int c) {
 
     int tmpin=dup(0);
     int tmpout=dup(1);
-    
+
     write(in[1],str,strlen(str));
     close(in[1]);
     
@@ -148,8 +148,9 @@ void myunputc(int c) {
         }
         i++;
       }
+      str2[i] = '\0';
       close(out[0]);
-       str2[i] = '\0';
+     
 
       s = str2;
       for(int i = s.length() -1  ; i >= 0;i--){
