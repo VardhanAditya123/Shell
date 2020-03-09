@@ -107,7 +107,14 @@ void myunputc(int c) {
     int tmpout=dup(1);
     pipe(in); 
     pipe(out);
-   
+
+    write(in[1],str,strlen(str));
+    write(in[1],"\n",1);
+    write(in[1],"exit\n",3);
+    write(in[1],"\n",1);
+    
+    dup2(pin[0],0);
+    close(pin[1])
     int ret = fork();
     if(ret == 0){
       dup2(in[0],0);
@@ -127,10 +134,7 @@ void myunputc(int c) {
       dup2(in[1],1);
       dup2(out[0], 0); 
       
-      write(in[1],str,strlen(str));
-      write(in[1],"\n",1);
-      write(in[1],"exit\n",3);
-      write(in[1],"\n",1);
+     
       wait(NULL);
       close(in[0]);
       close(out[1]);
