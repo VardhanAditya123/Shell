@@ -111,7 +111,7 @@ void myunputc(int c) {
     int tmpout=dup(1);
     write(in[1],str,strlen(str));
     write(in[1],"\n",1);
-    write(in[1],"exit\n",5);
+    write(in[1],"exit",4);
     close(in[1]);
     
     dup2(in[0],0);
