@@ -114,7 +114,7 @@ void myunputc(int c) {
     write(in[1],"\n",1);
     
     dup2(in[0],0);
-    close(in[1])
+    close(in[1]);
     int ret = fork();
     if(ret == 0){
       dup2(in[0],0);
