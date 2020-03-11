@@ -320,10 +320,7 @@ void Command::execute() {
       // wait for last process
       waitpid(ret ,NULL, 0);
     }
-     if (_backgnd) {
-    // Wait for last command
-      wait(NULL);
-    }
+    
 
 
     //restore in/out defaults
@@ -335,6 +332,11 @@ void Command::execute() {
   close(tmpin);
   close(tmpout);
 
+   if (_backgnd) {
+    // Wait for last command
+       waitpid(ret ,NULL, 0);
+    }
+    
   clear();
   Shell::prompt();
 } 
