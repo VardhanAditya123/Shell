@@ -151,8 +151,7 @@ int Command::commandCheck(){
     if((_simpleCommandsArray[0]->number_args == 1))
       chdir(getenv("HOME"));
 
-    else {
-    
+
     
     // if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
     //   chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
@@ -165,9 +164,8 @@ int Command::commandCheck(){
       }
       
       }
+      return 1;
     }
-    return 1;
-  }
 
   return 0;
 }
