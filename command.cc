@@ -164,7 +164,7 @@ int Command::commandCheck(){
       }
       
       }
-      return 1;
+      return ;
     }
 
   return 0;
