@@ -145,33 +145,28 @@ int Command::commandCheck(){
   }
 
   if(s.compare("cd") == 0){
-    // print();
+    
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
 
     if((_simpleCommandsArray[0]->number_args == 1))
       chdir(getenv("HOME"));
 
-    else if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
+    else {
+    if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
       chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
 
 
     else{
-      // cout << "FUCK" << endl;
-      int tmperr=dup(2);
-      int fderr;
-      fderr=open(_errFileName->c_str() , O_CREAT |O_WRONLY|O_TRUNC ,0666);
+      
+    
       int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
       if ( ret == -1){
-        dup2(fderr,2);
-        close(fderr);
         fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
-        dup2(tmperr,2);
-        close(tmperr);
       }
 
       return 1;
+      }
     }
-
     return 1;
   }
 
