@@ -152,17 +152,18 @@ int Command::commandCheck(){
       chdir(getenv("HOME"));
 
     else {
-    if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
-      chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
-
+    
+    
+    // if((_simpleCommandsArray[0]->number_args == 2) && !_errFileName )
+    //   chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
 
     else{
       
-    
       int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
       if ( ret == -1){
         fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
       }
+      
 
       return 1;
       }
