@@ -316,13 +316,6 @@ void Command::execute() {
     }
     // Parent shell continue
 
-    else{
-      // wait for last process
-      waitpid(ret ,NULL, 0);
-    }
-    
-
-
     //restore in/out defaults
     count += 1;
   } // for
