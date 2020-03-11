@@ -164,8 +164,6 @@ int Command::commandCheck(){
         fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
       }
       
-
-      return 1;
       }
     }
     return 1;
