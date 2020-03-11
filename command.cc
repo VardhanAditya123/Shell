@@ -332,11 +332,11 @@ void Command::execute() {
   close(tmpin);
   close(tmpout);
 
-   if (_backgnd) {
+   if (!_backgnd) {
     // Wait for last command
        waitpid(ret ,NULL, 0);
     }
-    
+
   clear();
   Shell::prompt();
 } 
