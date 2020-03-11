@@ -232,10 +232,7 @@ void Command::execute() {
   dup2(fderr,2);
   close(fderr);
 
-   if (_backgnd) {
-    // Wait for last command
-    waitpid(ret, NULL,0 );
-  }
+  
 
 
 
@@ -295,6 +292,11 @@ void Command::execute() {
 
 
     ret = fork();
+    
+     if (_backgnd) {
+    // Wait for last command
+     waitpid(ret, NULL,0 );
+    }
 
     if (ret == 0) {
       if(s.compare("printenv") == 0){
