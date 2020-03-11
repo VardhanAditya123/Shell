@@ -232,6 +232,12 @@ void Command::execute() {
   dup2(fderr,2);
   close(fderr);
 
+   if (_backgnd) {
+    // Wait for last command
+    waitpid(ret, NULL,0 );
+  }
+
+
 
 
   unsigned int count = 0;
@@ -325,11 +331,6 @@ void Command::execute() {
   dup2(tmpout,1);
   close(tmpin);
   close(tmpout);
-
-  if (_backgnd) {
-    // Wait for last command
-    waitpid(ret, NULL,0 );
-  }
 
   clear();
   Shell::prompt();
