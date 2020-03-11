@@ -188,7 +188,7 @@ void Command::execute() {
     return;
   }
  
-
+  print();
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
     clear();
@@ -196,14 +196,6 @@ void Command::execute() {
     return;
   }
   int ret;
-  // int check_sub = subShell();
-  // // print();
-  // if(check_sub == 1){
-  //   clear();
-  //   Shell::prompt();
-  //   return;
-  // }
-
 
   //save in/out
   int tmpin=dup(0);
