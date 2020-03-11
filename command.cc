@@ -293,11 +293,7 @@ void Command::execute() {
 
     ret = fork();
     
-     if (_backgnd) {
-    // Wait for last command
-      wait(NULL);
-    }
-
+    
     if (ret == 0) {
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
@@ -324,6 +320,11 @@ void Command::execute() {
       // wait for last process
       waitpid(ret ,NULL, 0);
     }
+     if (_backgnd) {
+    // Wait for last command
+      wait(NULL);
+    }
+
 
     //restore in/out defaults
     count += 1;
