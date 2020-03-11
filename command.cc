@@ -295,7 +295,7 @@ void Command::execute() {
     
      if (_backgnd) {
     // Wait for last command
-     waitpid(ret, NULL,0 );
+      wait(&ret);
     }
 
     if (ret == 0) {
