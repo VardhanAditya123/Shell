@@ -85,7 +85,7 @@ void myunputc(int c) {
   return AMPERSAND;
 }
 
-\"[^\n]*\" {
+\"[^\n\>\<]*\" {
    std::string s = yytext;
    s.replace(0,1,"");
    s.pop_back();
