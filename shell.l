@@ -166,12 +166,65 @@ void myunputc(int c) {
     
     while (1) 
     { 
-        getline(file,word);
-        if(word.compare("\0")!=0){
-         cout << word << endl; 
-        for(int i = word.length() -1  ; i >= 0;i--){
-        myunputc(word.at(i));
+    getline(file,word);
+    if(word.compare("\0")!=0){
+    cout << word << endl; 
+    int in[2];
+    int out[2];
+    pipe(in); 
+    pipe(out);
+
+    int tmpin=dup(0);
+    int tmpout=dup(1);
+
+    write(in[1],str,strlen(str));
+    close(in[1]);
+    
+    int ret = fork();
+    if(ret == 0){
+       dup2(in[0],0);
+       close(in[0]);
+       dup2(out[1],1);
+       close(out[1]);
+       execvp("/proc/self/exe",NULL);
+      
+    }
+     else if(ret < 0){
+      perror("fork");
+    }
+    
+    else if(ret > 0){
+      close(in[0]);
+      close(out[1]);
+      dup2(tmpin,0);
+      dup2(tmpout,1);
+      close(tmpin);
+      close(tmpout);
+      
+      char str2[1000];
+    
+      int i = 0;
+      char c;
+      while(read(out[0],&c,1)){
+        if(c == '\n'){
+          str2[i] = ' ';
         }
+        else{
+          str2[i] = c;
+        }
+        i++;
+      }
+      str2[i] = '\0';
+      close(out[0]);
+     
+
+      s = str2;
+      for(int i = s.length() -1  ; i >= 0;i--){
+      myunputc(s.at(i));
+      }
+
+    }
+        
         }
         else
         break;
