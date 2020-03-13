@@ -123,7 +123,9 @@ int Command::commandCheck(){
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
   string s2 = "exit";
 
-
+  if(s.compare("source")==0){
+    
+  }
 
 
   if(s.compare(s2) == 0){
