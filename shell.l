@@ -167,6 +167,9 @@ void myunputc(int c) {
     while (1) 
     { 
     getline(file,word);
+    
+    char str[1000];
+    strcpy(str,word.c_str());
     if(word.compare("\0")!=0){
     cout << word << endl; 
     int in[2];
