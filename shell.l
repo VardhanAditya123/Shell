@@ -162,20 +162,18 @@ void myunputc(int c) {
   s.erase(0,7);
   fstream file;
   file.open(s.c_str());
-  getline(file,word);
-  cout << word.compare("\0")<< endl;
-   getline(file,word);
-  cout << word.compare("\0")<< endl;
-   getline(file,word);
-  cout << word.compare("\n")<< endl;
-   getline(file,word);
-  cout << word.compare("\n")<< endl;
+  // getline(file,word);
+  // cout << word.compare("\0")<< endl;
+  //  getline(file,word);
+  // cout << word.compare("\0")<< endl;
+  //  getline(file,word);
+  
 
-    // while (word.compare("\0")!=0) 
-    // { 
-    //    getline(file,word);
-    //     cout << word << endl; 
-    // } 
+    while (word.compare("\0")!=0) 
+    { 
+        getline(file,word);
+        cout << word << endl; 
+    } 
   
 }
 
