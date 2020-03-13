@@ -116,6 +116,7 @@ char* esc(char* str) {
       c+=1;
     }
   }
+  delete(dst);
   return dst;
 }
 
