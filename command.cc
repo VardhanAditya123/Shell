@@ -189,7 +189,7 @@ int Command::commandCheck(){
         }
         i++;
       }
-      str2[i] = '\0';
+    
       cout << str2 << endl;
       close(out[0]);
     }
