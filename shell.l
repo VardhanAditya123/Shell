@@ -172,7 +172,7 @@ void myunputc(int c) {
         else
         break;
     } 
-    close(file);
+    file.close();
   
 } 
 
