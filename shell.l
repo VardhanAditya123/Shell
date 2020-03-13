@@ -226,7 +226,7 @@ void myunputc(int c) {
         else
         break;
     } 
-    file.close();
+   
   
 } 
 
