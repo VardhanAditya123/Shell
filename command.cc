@@ -116,7 +116,7 @@ char* esc(char* str) {
       c+=1;
     }
   }
-  delete(dst);
+  // delete(dst);
   return dst;
 }
 
@@ -359,6 +359,8 @@ void Command::execute() {
     
     
     if (ret == 0) {
+      close(tmpin);
+       close(tmpout);
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
@@ -382,7 +384,7 @@ void Command::execute() {
 
     //restore in/out defaults
     count += 1;
-    delete(final);
+    // delete(final);
   } // for
 
   dup2(tmpin,0);
