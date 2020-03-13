@@ -161,7 +161,11 @@ void myunputc(int c) {
   s.erase(0,7);
   fstream file;
   file.open(s.c_str());
-  cout << s << endl;
+  // cout << s << endl;
+    while (file >> word) 
+    {  
+        cout << word << endl; 
+    } 
   
 }
 
