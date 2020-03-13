@@ -381,6 +381,7 @@ void Command::execute() {
 
     //restore in/out defaults
     count += 1;
+    delete(final);
   } // for
 
   dup2(tmpin,0);
@@ -392,7 +393,6 @@ void Command::execute() {
     // Wait for last command
        waitpid(ret ,NULL, 0);
     }
-  delete(final);
   clear();
   Shell::prompt();
 } 
