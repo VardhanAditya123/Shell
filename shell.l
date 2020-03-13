@@ -166,6 +166,8 @@ void myunputc(int c) {
   cout << word << endl; 
   getline(file,word);
   cout << word << endl; 
+  getline(file,word);
+  cout << word << endl;
     // while (file >> word) 
     // {  
     //     cout << word << endl; 
