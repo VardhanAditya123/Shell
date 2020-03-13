@@ -190,7 +190,7 @@ int Command::commandCheck(){
         i++;
       }
     
-      cout << str2 ;
+      cout << str2 << "\n";
       close(out[0]);
     }
         
