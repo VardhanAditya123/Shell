@@ -156,24 +156,24 @@ void myunputc(int c) {
 }
 
 
-/*  "source "[^ \t\n\>\|]*  {
-//   std::string s = yytext;
-//   string word;
-//   s.erase(0,7);
-//   fstream file;
-//   file.open(s.c_str());
+  "source "[^ \t\n\>\|]*  {
+  std::string s = yytext;
+  string word;
+  s.erase(0,7);
+  fstream file;
+  file.open(s.c_str());
  
     
-//     while (1) 
-//     { 
-//         getline(file,word);
-//         if(word.compare("\0")!=0)
-//         cout << word << endl; 
-//         else
-//         break;
-//     } 
+    while (1) 
+    { 
+        getline(file,word);
+        if(word.compare("\0")!=0)
+        cout << word << endl; 
+        else
+        break;
+    } 
   
-// } */
+} 
 
 [^ \t\n\>\|]*  {
   /* Assume that file names have only alpha chars */
