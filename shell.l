@@ -164,6 +164,10 @@ void myunputc(int c) {
   file.open(s.c_str());
   getline(file,word);
   cout << word.compare("\0")<< endl;
+   getline(file,word);
+  cout << word.compare("\0")<< endl;
+   getline(file,word);
+  cout << word.compare("\0")<< endl;
 
     // while (word.compare("\0")!=0) 
     // { 
