@@ -144,7 +144,6 @@ int Command::commandCheck(){
     strcpy(str,word.c_str());
    
     if(word.compare("\0")!=0){
-    cout << word << endl;
     int in[2];
     int out[2];
     pipe(in); 
@@ -191,6 +190,7 @@ int Command::commandCheck(){
         i++;
       }
       str2[i] = '\0';
+      cout << str2 << endl;
       close(out[0]);
     }
         
