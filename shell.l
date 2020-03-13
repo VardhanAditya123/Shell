@@ -164,6 +164,8 @@ void myunputc(int c) {
   file.open(s.c_str());
   getline(file,word);
   cout << word << endl; 
+  getline(file,word);
+  cout << word << endl; 
     // while (file >> word) 
     // {  
     //     cout << word << endl; 
