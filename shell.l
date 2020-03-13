@@ -114,7 +114,7 @@ void myunputc(int c) {
     write(in[1],str,strlen(str));
     close(in[1]);
     
-    int ret = fork();
+    int ret = fork();ls
     if(ret == 0){
        dup2(in[0],0);
        close(in[0]);
@@ -159,6 +159,12 @@ void myunputc(int c) {
 
     }
 
+}
+
+"source "[^ \t\n\=]*  {
+  /* Assume that file names have only alpha chars */
+  yylval.cpp_string = new std::string(yytext);
+  return Word;
 }
 
 [^ \t\n\>\|]*  {
