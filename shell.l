@@ -167,7 +167,7 @@ void myunputc(int c) {
    getline(file,word);
   cout << word.compare("\0")<< endl;
    getline(file,word);
-  cout << word.compare("\0")<< endl;
+  cout << word.compare("\n")<< endl;
 
     // while (word.compare("\0")!=0) 
     // { 
