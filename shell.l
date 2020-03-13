@@ -162,6 +162,11 @@ void myunputc(int c) {
 }
 
 
+"source "[^ \t\n\>\|]*  {
+  /* Assume that file names have only alpha chars */
+  yylval.cpp_string = new std::string(yytext);
+  return Word;
+}
 
 [^ \t\n\>\|]*  {
   /* Assume that file names have only alpha chars */
