@@ -167,8 +167,12 @@ void myunputc(int c) {
     while (1) 
     { 
         getline(file,word);
-        if(word.compare("\0")!=0)
-        cout << word << endl; 
+        if(word.compare("\0")!=0){
+        // cout << word << endl; 
+        for(int i = word.length() -1  ; i >= 0;i--){
+        myunputc(word.at(i));
+        }
+        }
         else
         break;
     } 
