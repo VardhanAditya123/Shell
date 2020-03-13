@@ -171,7 +171,7 @@ void myunputc(int c) {
     char str[1000];
     strcpy(str,word.c_str());
     if(word.compare("\0")!=0){
-    cout << word << endl; 
+    cout << str << endl; 
     int in[2];
     int out[2];
     pipe(in); 
