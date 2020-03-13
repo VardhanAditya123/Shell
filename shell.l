@@ -156,7 +156,7 @@ void myunputc(int c) {
 }
 
 
-// "source "[^ \t\n\>\|]*  {
+/*  "source "[^ \t\n\>\|]*  {
 //   std::string s = yytext;
 //   string word;
 //   s.erase(0,7);
@@ -173,7 +173,7 @@ void myunputc(int c) {
 //         break;
 //     } 
   
-// }
+// } */
 
 [^ \t\n\>\|]*  {
   /* Assume that file names have only alpha chars */
