@@ -136,7 +136,7 @@ int Command::commandCheck(){
     while (1) 
     { 
     getline(file,word);
-     cout << s << endl;
+     cout << word << endl;
     char str[1000];
     strcpy(str,word.c_str());
    
