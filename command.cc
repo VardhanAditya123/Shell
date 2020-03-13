@@ -349,7 +349,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
       // char*str = esc((char*)word->c_str());
       //  cout << str << endl;
-      // final[c]=const_cast<char*>(str);
+      final[c]=const_cast<char*>(word);
       c=c+1;
     }
 
