@@ -124,7 +124,7 @@ int Command::commandCheck(){
   string s2 = "exit";
 
   if(s.compare("source")==0){
-    std::string s = yytext;
+  std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
   std::string word;
   s.erase(0,7);
   fstream file;
