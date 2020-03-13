@@ -127,6 +127,7 @@ int Command::commandCheck(){
   if(s.compare("source")==0){
   
   std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+  cout << s << endl;
   std::string word;
   fstream file;
   file.open(s.c_str());
