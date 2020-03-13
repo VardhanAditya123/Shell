@@ -392,7 +392,7 @@ void Command::execute() {
     // Wait for last command
        waitpid(ret ,NULL, 0);
     }
-
+  delete(final);
   clear();
   Shell::prompt();
 } 
