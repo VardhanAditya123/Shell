@@ -180,7 +180,7 @@ void myunputc(int c) {
     int tmpin=dup(0);
     int tmpout=dup(1);
 
-    write(in[1],str,strlen(str);
+    write(in[1],str,strlen(str));
     close(in[1]);
     
     int ret = fork();
