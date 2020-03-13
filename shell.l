@@ -162,8 +162,8 @@ void myunputc(int c) {
   s.erase(0,7);
   fstream file;
   file.open(s.c_str());
-  getline(file,word);
-    while (word.compare("\n")!=0) 
+ 
+    while (word.compare("\0")!=0) 
     { 
        getline(file,word);
         cout << word << endl; 
