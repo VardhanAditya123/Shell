@@ -172,6 +172,7 @@ void myunputc(int c) {
         else
         break;
     } 
+    fclose(file);
   
 } 
 
