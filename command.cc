@@ -136,6 +136,7 @@ int Command::commandCheck(){
     while (1) 
     { 
     getline(file,word);
+    if((word.compare("\0")!=0)
     word.append("\nexit\n");
     char str[1000];
     strcpy(str,word.c_str());
