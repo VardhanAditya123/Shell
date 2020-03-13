@@ -79,6 +79,12 @@ void myunputc(int c) {
   return AMPERSAND;
 }
 
+[^ \\]*  {
+  /* Assume that file names have only alpha chars */
+  yylval.cpp_string = new std::string(yytext);
+  return Word;
+}
+
 \"[^\n]*\" {
    std::string s = yytext;
    s.replace(0,1,"");
