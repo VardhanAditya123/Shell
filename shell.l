@@ -165,6 +165,8 @@ void myunputc(int c) {
 "source "[^ \t\n\>\|]*  {
   std::string s = yytext;
   s.erase(0,7);
+  fstream file;
+  file.open(s.c_str());
   cout << s << endl;
   
 }
