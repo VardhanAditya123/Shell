@@ -182,7 +182,7 @@ int Command::commandCheck(){
       char c;
       while(read(out[0],&c,1)){
         if(c == '\n'){
-          str2[i] = ' ';
+          str2[i] = " ";
         }
         else{
           str2[i] = c;
