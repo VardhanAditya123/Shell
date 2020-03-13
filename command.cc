@@ -192,9 +192,6 @@ int Command::commandCheck(){
       }
       str2[i] = '\0';
       close(out[0]);
-      cout << str2 << endl;
-
-
     }
         
         }
