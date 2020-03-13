@@ -220,9 +220,7 @@ void myunputc(int c) {
       str2[i] = '\0';
       close(out[0]);
         s = str2;
-      for(int i = s.length() -1  ; i >= 0;i--){
-      myunputc(s.at(i));
-      }
+      cout << str2 << endl;
 
 
     }
