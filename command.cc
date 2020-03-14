@@ -106,7 +106,7 @@ char* esc(char* str) {
   char* dst = (char*)malloc(strlen(str)+1);
   int c = 0;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
-    if(*(str+i)=='\\' && *(str+i+1)!='\0' && *(str+i-2)!='\0' ){
+    if(*(str+i)=='\\' && *(str+i+2)!='\0' && *(str+i-2)!='\0' ){
       *(dst + c) = *(str+i+1);
       c+=1;
       i+=1;
