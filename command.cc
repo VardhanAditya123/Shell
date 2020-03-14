@@ -117,7 +117,7 @@ char* esc(char* str) {
       c+=1;
     }
   }
-  cout << dst << " ";
+  // cout << dst << " ";
   return dst;
 }
 
