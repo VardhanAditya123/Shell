@@ -81,6 +81,14 @@ void myunputc(int c) {
 
 
 
+\"[^\n\\]*\" {
+   std::string s = yytext;
+   s.replace(0,1,"");
+   s.pop_back();
+   yylval.cpp_string = new std::string(s);
+   return Word;
+}
+
 \"[^\n]*\" {
    std::string s = yytext;
    s.replace(0,1,"");
@@ -88,6 +96,8 @@ void myunputc(int c) {
    yylval.cpp_string = new std::string(s);
    return Word;
 }
+
+
 
 \$[^\n]* {
   
