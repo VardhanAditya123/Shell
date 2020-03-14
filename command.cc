@@ -219,13 +219,13 @@ int Command::commandCheck(){
   if(s.compare("setenv") == 0){
 
     setenv(((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
-        const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
+        ((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
     return 1 ;
   }
 
   if(s.compare("unsetenv") == 0){
 
-    unsetenv(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    unsetenv((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
     return 1 ;
   }
 
