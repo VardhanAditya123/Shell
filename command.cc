@@ -225,7 +225,7 @@ int Command::commandCheck(){
 
   if(s.compare("unsetenv") == 0){
 
-    unsetenv((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+    unsetenv((_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
     return 1 ;
   }
 
