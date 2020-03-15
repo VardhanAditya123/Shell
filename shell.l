@@ -20,6 +20,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "command.hh"
+#include "command.cc"
 #include "shell.hh"
 #include <iostream>
 #include <assert.h>
