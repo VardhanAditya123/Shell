@@ -130,7 +130,7 @@ char* esc(char* str) {
 }
 
 string pecho (char* str){
-  cout << str << endl;
+  // cout << str << endl;
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -147,6 +147,7 @@ string pecho (char* str){
        i++;
      }
      fin+=getenv(tmp.c_str());
+     cout << fin << endl;
      tmp="";
   }
   }
