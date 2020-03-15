@@ -428,8 +428,8 @@ void Command::execute() {
 
    if (!_backgnd) {
     // Wait for last command
-       waitpid(ret ,&(Shell::last), 0);
-      
+       waitpid(ret ,NULL, 0);
+       Shell::last = 1;
     }
   clear();
   Shell::prompt();
