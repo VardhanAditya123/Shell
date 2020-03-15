@@ -138,7 +138,6 @@ string pecho (char* str){
    
     if(str[i]!='$'  ){
       fin += str[i];
-      i=i+1;
     }
     else{
      i=i+2; 
