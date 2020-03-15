@@ -382,7 +382,11 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
       char*str = esc((char*)word->c_str());
-
+        if(s.compare("${?}")== 0){
+        char id[6];   // ex. 34567
+        sprintf(id, "%d", WIFEXITED(last));
+        final[c] = id;
+      }
       final[c]=const_cast<char*>(str);
 
       c=c+1;
@@ -397,11 +401,7 @@ void Command::execute() {
       close(tmpin);
       close(tmpout);
 
-      if(s.compare("${?}")== 0){
-        char id[6];   // ex. 34567
-        sprintf(id, "%d", WIFEXITED(last));
-        final[c-1] = id;
-      }
+    
 
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
