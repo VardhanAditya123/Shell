@@ -14,7 +14,6 @@ void Shell::prompt() {
 
 int main(int argc, char** argv) {
   Shell::prompt();
-  Shell::pth = argv[0];
   yyparse();
 }
 
