@@ -109,11 +109,11 @@ char* esc(char* str) {
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
     if(*(str+i)=='\\' && *(str+i+1)=='\0' && *(str+i-1)=='\0'  ){
-      *(dst + c) = *(str+i);
-      c+=1;
-      continue;
+       *(dst + c) = *(str+i);
+       c+=1;
+       continue;
     }
-
+   
     if(*(str+i)=='\\'  ){
       *(dst + c) = *(str+i+1);
       c+=1;
@@ -132,19 +132,19 @@ const char* pecho (char* str){
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
-
+   
     if(str[i]!='$'  ){
       fin += str[i];
     }
     else{
-      i=i+2; 
-      while(str[i]!='}'){
-        tmp += str[i];
-        i++;
-      }
-      fin+=getenv(tmp.c_str());
-      tmp="";
-    }
+     i=i+2; 
+     while(str[i]!='}'){
+       tmp += str[i];
+       i++;
+     }
+     fin+=getenv(tmp.c_str());
+     tmp="";
+  }
   }
   cout << fin.c_str() << endl;
   return fin.c_str();
@@ -156,83 +156,83 @@ int Command::commandCheck(){
   string s2 = "exit";
 
   if(s.compare("source")==0){
-
-    std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-
-    std::string word;
-    fstream file;
-    file.open(s.c_str());
-
-
+  
+  std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+ 
+  std::string word;
+  fstream file;
+  file.open(s.c_str());
+ 
+    
     while (1) 
     { 
-      getline(file,word);
+    getline(file,word);
+   
+    if(word.compare("\0")!=0)
+    word.append("\nexit\n");
+   
+    char str[1000];
+    strcpy(str,word.c_str());
+   
+    if(word.compare("\0")!=0){
+    int in[2];
+    int out[2];
+    pipe(in); 
+    pipe(out);
 
-      if(word.compare("\0")!=0)
-        word.append("\nexit\n");
+    int tmpin=dup(0);
+    int tmpout=dup(1);
 
-      char str[1000];
-      strcpy(str,word.c_str());
-
-      if(word.compare("\0")!=0){
-        int in[2];
-        int out[2];
-        pipe(in); 
-        pipe(out);
-
-        int tmpin=dup(0);
-        int tmpout=dup(1);
-
-        write(in[1],str,strlen(str));
-        close(in[1]);
-
-        int ret = fork();
-        if(ret == 0){
-          dup2(in[0],0);
-          close(in[0]);
-          dup2(out[1],1);
-          close(out[1]);
-          execvp("/proc/self/exe",NULL);
-
+    write(in[1],str,strlen(str));
+    close(in[1]);
+    
+    int ret = fork();
+    if(ret == 0){
+       dup2(in[0],0);
+       close(in[0]);
+       dup2(out[1],1);
+       close(out[1]);
+       execvp("/proc/self/exe",NULL);
+      
+    }
+     else if(ret < 0){
+      perror("fork");
+    }
+    
+    else if(ret > 0){
+      close(in[0]);
+      close(out[1]);
+      dup2(tmpin,0);
+      dup2(tmpout,1);
+      close(tmpin);
+      close(tmpout);
+      
+      char str2[1000];
+    
+      int i = 0;
+      char c;
+      while(read(out[0],&c,1)){
+        if(c == '\n'){
+          str2[i] = ' ';
         }
-        else if(ret < 0){
-          perror("fork");
+        else{
+          str2[i] = c;
         }
-
-        else if(ret > 0){
-          close(in[0]);
-          close(out[1]);
-          dup2(tmpin,0);
-          dup2(tmpout,1);
-          close(tmpin);
-          close(tmpout);
-
-          char str2[1000];
-
-          int i = 0;
-          char c;
-          while(read(out[0],&c,1)){
-            if(c == '\n'){
-              str2[i] = ' ';
-            }
-            else{
-              str2[i] = c;
-            }
-            i++;
-          }
-          str2[i - 1] = '\0';
-          cout << str2 << "\n";
-          close(out[0]);
-        }
-
+        i++;
       }
-      else
+      str2[i - 1] = '\0';
+      cout << str2 << "\n";
+      close(out[0]);
+    }
+        
+        }
+        else
         break;
     } 
     return 1;
   }
 
-
+  
 
 
   if(s.compare(s2) == 0){
@@ -253,22 +253,22 @@ int Command::commandCheck(){
   }
 
   if(s.compare("cd") == 0){
-
+    
     string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
 
     if((_simpleCommandsArray[0]->number_args == 1))
       chdir(getenv("HOME"));
 
     else{
-
+      
       int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
       if ( ret == -1){
         fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
       }
-
+      
+      }
+      return 1;
     }
-    return 1;
-  }
 
   return 0;
 }
@@ -282,7 +282,7 @@ void Command::execute() {
     Shell::prompt();
     return;
   }
-
+ 
   // print();
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
@@ -327,11 +327,11 @@ void Command::execute() {
   dup2(fderr,2);
   close(fderr);
 
+  
 
 
 
 
-  int last;
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -373,33 +373,26 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
-    string s1 = *(simpleCommand->_argumentsArray[1]);
-
-
     char *a = &(s[0]);
 
     char **final  = new char*[1000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
 
-      char*str = esc((char*)word->c_str());
-      
-      final[c]=const_cast<char*>(str);
-
+       char*str = esc((char*)word->c_str());
+       final[c]=const_cast<char*>(str);
+     
       c=c+1;
     }
 
 
 
     ret = fork();
-
-
+    
+    
     if (ret == 0) {
       close(tmpin);
-      close(tmpout);
-
-    
-
+       close(tmpout);
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
@@ -407,7 +400,6 @@ void Command::execute() {
         }
         exit(1);
       }
-
       else{
         execvp(a, final);
         perror("execvp");
@@ -431,10 +423,11 @@ void Command::execute() {
   dup2(tmpout,1);
   close(tmpin);
   close(tmpout);
-  if (!_backgnd) {
+
+   if (!_backgnd) {
     // Wait for last command
-    waitpid(ret ,&last, 0);
-  }
+       waitpid(ret ,NULL, 0);
+    }
   clear();
   Shell::prompt();
 } 
