@@ -397,6 +397,12 @@ void Command::execute() {
       close(tmpin);
        close(tmpout);
 
+         if(s.compare("${?}")== 0){
+              char id[6];   // ex. 34567
+              sprintf(id, "%d", WIFEXITED(last));
+        final[c-1] = id;
+       }
+
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
