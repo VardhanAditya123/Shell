@@ -108,13 +108,6 @@ void myunputc(int c) {
    return Word;
 }
 
-\$\{\?\} {
-   
-   int a = Shell::last;
-  int p = WEXITSTATUS(a);
-   yylval.cpp_string = new std::string(std::to_string(p));
-   return Word;
-}
 
 
 \$\([^\n]*\) {
