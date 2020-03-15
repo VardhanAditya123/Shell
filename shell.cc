@@ -15,10 +15,11 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
+char** t;
 int main(int argc, char **argv) {
-  
+  t = argv;
   Shell::prompt();
   yyparse();
 }
-char**  Shell::arg=argv;
+char**  Shell::arg=t;
 Command Shell::_currentCommand;
