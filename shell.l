@@ -99,6 +99,20 @@ void myunputc(int c) {
    return Word;
 }
 
+\$\{\$\} {
+  
+   int pid = getpid();
+    char mypid[6];   // ex. 34567
+    sprintf(mypid, "%d", pid);
+   yylval.cpp_string = new std::string(mypid);
+   return Word;
+}
+
+\$\{\?\} {
+  
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
+}
 
 
 
