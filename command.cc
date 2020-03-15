@@ -397,8 +397,9 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-       str = (char*)pecho(str);
+       const char* str1 = (char*)pecho(str);
        str[strlen(str)+1]='\0';
+       cout << str1 << endl;
        final[c]=const_cast<char*>(str);
        c=c+1;
     }
