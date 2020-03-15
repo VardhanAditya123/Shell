@@ -282,6 +282,14 @@ int Command::commandCheck(){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
+
+      if(s2.compare("${$}")== 0){
+        int pid = getpid();
+        char mypid[6];   // ex. 34567
+        sprintf(mypid, "%d", pid);
+        cout << mypid <<endl;
+        return 1;
+      }
       
       
       
