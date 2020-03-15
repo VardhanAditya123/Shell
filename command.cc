@@ -417,4 +417,23 @@ void Command::execute() {
   Shell::prompt();
 } 
 
+char* pecho (char* str){
+  string fin ;
+  int c = 0;
+  for(unsigned int i = 0 ; i < strlen(str);i++ ){
+
+   
+    if(*(str+i)!='$'  ){
+      fin.append (*(str+i+1));
+      c+=1;
+      i+=1;
+    }
+    else{
+      *(dst + c) = *(str+i);
+      c+=1;
+    }
+  }
+  // cout << dst << " ";
+  return dst;
+}
 SimpleCommand * Command::_currSimpleCommand;
