@@ -113,6 +113,11 @@ void myunputc(int c) {
    yylval.cpp_string = new std::string(yytext);
    return Word;
 }
+\$\{\S\H\E\L\L\} {
+  
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
+}
 
 
 \$\([^\n]*\) {
