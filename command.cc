@@ -299,6 +299,7 @@ int Command::commandCheck(){
 
       if(s2.compare("${!}")==0){
         char* apath;
+        cout << "FUCK" << endl;
         cout << realpath("./shell",apath) << endl;
         return 1;
       }
