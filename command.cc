@@ -446,7 +446,7 @@ void Command::execute() {
    if (!_backgnd) {
     // Wait for last command
        waitpid(ret ,&last, 0);
-       last_id = getpid();
+       
     }
   clear();
   Shell::prompt();
