@@ -395,7 +395,6 @@ void Command::execute() {
        char*str = esc((char*)word->c_str());
 
        final[c]=const_cast<char*>(str);
-       cout << final[c] << endl;
      
       c=c+1;
     }
