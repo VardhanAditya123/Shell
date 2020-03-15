@@ -278,14 +278,14 @@ int Command::commandCheck(){
 
     if(s.compare("echo") == 0){
       string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-      // cout << s2 << endl;
+      
       if(s2.compare("${?}")==0){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
        if(s2.compare("/bin/bash")==0){
         char*temp =realpath(s2.c_str(),NULL);
-        cout << temp << endl;
+        // cout << temp << endl;
      
         return 1;
       }
