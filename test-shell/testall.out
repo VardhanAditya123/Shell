@@ -10,4 +10,3 @@ test_pipes1 Passed 2/2
 test_pipes2 Passed 2/2
 test_pipes_redirect_out Passed 2/2
 test_pipes_redirect_err Failed 0/2
-test_background Passed 2/2
