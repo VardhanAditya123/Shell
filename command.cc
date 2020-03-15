@@ -232,6 +232,8 @@ int Command::commandCheck(){
     return 1;
   }
 
+  
+
 
   if(s.compare(s2) == 0){
     exit(0);
@@ -398,6 +400,9 @@ void Command::execute() {
         }
         exit(1);
       }
+      else if(s.compare("${?}")==0){
+        cout << WIFEXITED(last) << endl;
+      }
       else{
         execvp(a, final);
         perror("execvp");
@@ -421,10 +426,10 @@ void Command::execute() {
   dup2(tmpout,1);
   close(tmpin);
   close(tmpout);
-
+  int last;
    if (!_backgnd) {
     // Wait for last command
-       waitpid(ret ,NULL, 0);
+       waitpid(ret ,&last, 0);
     }
   clear();
   Shell::prompt();
