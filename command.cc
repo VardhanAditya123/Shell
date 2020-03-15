@@ -281,6 +281,10 @@ int Command::commandCheck(){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
+       if(s2.compare("${!}")==0){
+        cout << last_id << endl;
+        return 1;
+      }
     }
 
   return 0;
