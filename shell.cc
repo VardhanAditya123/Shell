@@ -12,7 +12,7 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-int main() {
+int main(int argc, char** argv) {
   Shell::prompt();
   yyparse();
 }
