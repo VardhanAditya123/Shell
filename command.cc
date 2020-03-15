@@ -34,6 +34,7 @@
 
 
 using namespace std;
+int last;
 void myunputc(int );
 // int last;
 Command::Command() {
@@ -435,7 +436,7 @@ void Command::execute() {
 
    if (!_backgnd) {
     // Wait for last command
-       waitpid(ret ,NULL, 0);
+       waitpid(ret ,&last, 0);
     }
   clear();
   Shell::prompt();
