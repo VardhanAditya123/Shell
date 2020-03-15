@@ -162,6 +162,7 @@ int Command::commandCheck(){
     string s1 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
     if(s1.compare("${?}")==0){
       cout << WEXITSTATUS(last) << endl;
+      return 1;
     }
   }
   if(s.compare("source")==0){
