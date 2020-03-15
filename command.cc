@@ -148,7 +148,7 @@ const char* pecho (char* str){
      tmp="";
   }
   }
-  cout << fin.c_str() << endl;
+  
   return fin.c_str();
 }
 
@@ -399,6 +399,7 @@ void Command::execute() {
        char*str = esc((char*)word->c_str());
        str = (char*)pecho(str);
        str[strlen(str)+1]='\0';
+
        final[c]=const_cast<char*>(str);
       //  cout << final[c] << endl;
        c=c+1;
