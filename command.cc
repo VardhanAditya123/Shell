@@ -131,13 +131,13 @@ char* esc(char* str) {
   return dst;
 }
 
-const char* pecho (char* str){
-  string fin ;
-  string tmp;
-  for(unsigned int i = 0 ; i < strlen(str);i++ ){
-     if(str[i]!='$'  ){
-      fin += str[i];
-    }
+ char* pecho (char* str){
+    string fin ;
+        string tmp;
+      for(unsigned int i = 0 ; i < strlen(str);i++ ){
+         if(str[i]!='$'  ){
+       fin += str[i];
+       }
     else{
      i=i+2; 
      while(str[i]!='}'){
@@ -148,8 +148,9 @@ const char* pecho (char* str){
      tmp="";
   }
   }
-  // cout << fin.c_str() << endl;
-  return fin.c_str();
+  }
+  char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
+  return tmp2;
 }
 
 int Command::commandCheck(){
@@ -397,28 +398,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-      
-        string fin ;
-        string tmp;
-      for(unsigned int i = 0 ; i < strlen(str);i++ ){
-         if(str[i]!='$'  ){
-       fin += str[i];
-       }
-    else{
-     i=i+2; 
-     while(str[i]!='}'){
-       tmp += str[i];
-       i++;
-     }
-     fin+=getenv(tmp.c_str());
-     tmp="";
-  }
-  }
-    
-      //  str[strlen(str)+1]='\0';
-        // cout << fin << endl;
-        char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
-        // cout << tmp2 << endl;
+       char*tmp2=pecho(str);
        final[c]=const_cast<char*>(tmp2);
        c=c+1;
     }
