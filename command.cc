@@ -377,7 +377,7 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
 
-    char **final  = new char*[100];
+    char **final  = new char*[10000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
 
