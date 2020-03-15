@@ -296,6 +296,12 @@ int Command::commandCheck(){
         cout << last_id <<endl;
         return 1;
       }
+
+      if(s2.compare("${!}")==0){
+        char* apath;
+        cout << realpath("./shell",apath); << endl;
+        return 1;
+      }
       
       
       
