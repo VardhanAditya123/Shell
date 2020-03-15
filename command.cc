@@ -152,7 +152,7 @@ string pecho (char* str){
     }
   }
   
-  return tmp;
+  return fin;
 }
 
 int Command::commandCheck(){
