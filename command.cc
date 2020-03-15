@@ -407,7 +407,7 @@ void Command::execute() {
       }
     
       else{
-        waitpid(-1,&last,0);
+        waitpid(0,&last,0);
         execvp(a, final);
         perror("execvp");
         _exit(1); 
