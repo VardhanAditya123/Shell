@@ -274,6 +274,14 @@ int Command::commandCheck(){
       return 1;
     }
 
+    if(s.compare("echo") == 0){
+      string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+      if(s2.compare("${?}")==0){
+        *(_simpleCommandsArray[0]->_argumentsArray[1]) = WEXITSTATUS(last);
+        return 0;
+      }
+    }
+
   return 0;
 }
 
@@ -387,7 +395,7 @@ void Command::execute() {
        char*str = esc((char*)word->c_str());
 
        final[c]=const_cast<char*>(str);
-        cout << final[c] << endl;
+       cout << final[c] << endl;
      
       c=c+1;
     }
