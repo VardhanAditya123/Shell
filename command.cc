@@ -331,7 +331,7 @@ void Command::execute() {
 
 
 
-
+  int last;
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -374,7 +374,7 @@ void Command::execute() {
 
     string s = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
-    int last;
+    
     char **final  = new char*[1000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
