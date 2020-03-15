@@ -127,7 +127,7 @@ char* esc(char* str) {
   return dst;
 }
 
-char* pecho (char* str){
+const char* pecho (char* str){
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -378,11 +378,8 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-       std::string *t = &(pecho(str));
-       str = (char*)(s)->c_str());
-      //  cout << str << endl;
-      // cout << (pecho(str)).c_str() ;
-      final[c]=const_cast<char*>(str);
+       str = (char*)(pecho(str))->c_str());
+       final[c]=const_cast<char*>(str);
      
       c=c+1;
     }
