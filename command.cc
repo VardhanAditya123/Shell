@@ -135,9 +135,7 @@ const char* pecho (char* str){
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
-
-   
-    if(str[i]!='$'  ){
+     if(str[i]!='$'  ){
       fin += str[i];
     }
     else{
