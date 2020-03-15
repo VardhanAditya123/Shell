@@ -415,7 +415,7 @@ void Command::execute() {
   }
   }
         cout << fin.c_str() << endl;
-       final[c]=(fin.c_str());
+       final[c]=(char*)(fin.c_str());
        c=c+1;
     }
 
