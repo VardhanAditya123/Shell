@@ -129,6 +129,32 @@ char* esc(char* str) {
   return dst;
 }
 
+string pecho (char* str){
+  string fin ;
+  string tmp;
+  for(unsigned int i = 0 ; i < strlen(str);i++ ){
+
+   
+    if(*(str+i)!='$'  ){
+      fin += (*(str+i+1));
+      i+=1;
+    }
+    else{
+     i=i+2; 
+     while(str[i]!='}'){
+       tmp += str[i];
+       i++;
+     }
+     fin+=getenv(tmp.c_str());
+     tmp="";
+
+
+    }
+  }
+  
+  return tmp;
+}
+
 int Command::commandCheck(){
 
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
@@ -413,29 +439,5 @@ void Command::execute() {
   Shell::prompt();
 } 
 
-string pecho (char* str){
-  string fin ;
-  string tmp;
-  for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
-   
-    if(*(str+i)!='$'  ){
-      fin += (*(str+i+1));
-      i+=1;
-    }
-    else{
-     i=i+2; 
-     while(str[i]!='}'){
-       tmp += str[i];
-       i++;
-     }
-     fin+=getenv(tmp.c_str());
-     tmp="";
-
-
-    }
-  }
-  
-  return tmp;
-}
 SimpleCommand * Command::_currSimpleCommand;
