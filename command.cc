@@ -331,7 +331,7 @@ void Command::execute() {
 
 
 
-
+  int last;
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -388,7 +388,7 @@ void Command::execute() {
 
 
     ret = fork();
-    
+  
     
     if (ret == 0) {
       close(tmpin);
