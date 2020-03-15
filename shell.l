@@ -92,7 +92,7 @@ void myunputc(int c) {
 
 
 
-\$[^\n]* {
+\$\([^\n]* {
   
 
     std::string s = yytext;
