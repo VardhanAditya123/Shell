@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
 #include "command.hh"
 #include "command.cc"
 #include "shell.hh"
@@ -107,7 +108,11 @@ void myunputc(int c) {
    return Word;
 }
 
-
+\$\{\?\} {
+  
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
+}
 
 
 \$\([^\n]*\) {
