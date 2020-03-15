@@ -420,7 +420,6 @@ void Command::execute() {
 string pecho (char* str){
   string fin ;
   string tmp;
-  int c = 0;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
    
