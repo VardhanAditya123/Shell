@@ -91,7 +91,33 @@ void myunputc(int c) {
    return Word;
 }
 
+\$\{[A-Za-z\t]*\} {
+   std::string s = yytext;
+    s.replace(0,2,"");
+    s.pop_back();
+   yylval.cpp_string = new std::string(getenv(s.c_str()));
+   return Word;
+}
 
+\$\{\$\} {
+  
+   int pid = getpid();
+    char mypid[6];   // ex. 34567
+    sprintf(mypid, "%d", pid);
+   yylval.cpp_string = new std::string(mypid);
+   return Word;
+}
+
+\$\{\?\} {
+  
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
+}
+\$\{\S\H\E\L\L\} {
+  
+   yylval.cpp_string = new std::string(yytext);
+   return Word;
+}
 
 
 \$\([^\n]*\) {
