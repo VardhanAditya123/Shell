@@ -3,6 +3,7 @@
 #include "shell.hh"
 #include <cstdlib>
 #include <iostream>
+#include <string.h>
 using namespace std;
 int yyparse(void);
 
