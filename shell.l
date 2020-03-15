@@ -90,10 +90,10 @@ void myunputc(int c) {
    return Word;
 }
 
-\$\{[A-Za-z\t]*\} {
+\t\$\{[A-Za-z\t]*\} {
    std::string s = yytext;
    cout << s << "HEELO" << endl;
-    s.replace(0,2,"");
+    s.replace(0,3,"");
     s.pop_back();
    yylval.cpp_string = new std::string(getenv(s.c_str()));
    return Word;
