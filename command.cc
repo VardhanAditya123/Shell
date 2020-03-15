@@ -135,7 +135,7 @@ string pecho (char* str){
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
    
-    if(*(str+i)!='$'  ){
+    if(str[i]!='$'  ){
       fin += str[i];
       i=i+1;
     }
