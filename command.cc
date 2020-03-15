@@ -284,7 +284,7 @@ int Command::commandCheck(){
         return 1;
       }
        if(s2.compare("/bin/bash")==0){
-        cout << realpath(s2,NULL) << endl;
+        cout << realpath(s2.c_str(),NULL) << endl;
         return 1;
       }
       
