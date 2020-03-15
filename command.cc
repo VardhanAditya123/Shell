@@ -384,7 +384,7 @@ void Command::execute() {
       char*str = esc((char*)word->c_str());
      
       string temp =pecho(str);
-      cout << temp << endl;
+      // cout << temp << endl;
       str = (char*)(temp.c_str());
        
       final[c]=const_cast<char*>(str);
