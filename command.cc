@@ -458,8 +458,9 @@ void Command::execute() {
 
    if (!_backgnd) {
     // Wait for last command
+      last_id=getpid();
        waitpid(ret ,&last, 0);
-       last_id=getpid();
+
        
     }
   clear();
