@@ -35,7 +35,7 @@
 
 using namespace std;
 void myunputc(int );
-int last;
+// int last;
 Command::Command() {
   // Initialize a new vector of Simple Commands
   _simpleCommandsArray = std::vector<SimpleCommand *>();
