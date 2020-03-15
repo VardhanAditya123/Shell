@@ -146,7 +146,7 @@ const char* pecho (char* str){
      tmp="";
   }
   }
-
+  cout << fin.c_str() << endl;
   return fin.c_str();
 }
 
@@ -378,7 +378,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-       cout << pecho(str) << endl;
+      //  cout << pecho(str) << endl;
        str = (char*)(pecho(str));
        final[c]=const_cast<char*>(str);
      
