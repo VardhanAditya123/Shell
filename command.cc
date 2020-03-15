@@ -299,7 +299,7 @@ int Command::commandCheck(){
 
       if(s2.compare("${SHELL}")==0){
 
-        cout << char** Shell::arg[0] << endl;
+        cout << arg[0] << endl;
         return 1;
       }
       
