@@ -388,7 +388,7 @@ void Command::execute() {
     }
 
     if(s1.compare("${?}")==0){
-      cout << last << endl;
+      cout << WEXITSTATUS(last) << endl;
       exit(0);
     }
 
