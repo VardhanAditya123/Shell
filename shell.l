@@ -91,7 +91,7 @@ void myunputc(int c) {
    return Word;
 }
 
-\t\$\{[A-Za-z\t]*\} {
+\$\{[A-Za-z\t]*\} {
    std::string s = yytext;
     s.replace(0,2,"");
     s.pop_back();
@@ -184,7 +184,7 @@ void myunputc(int c) {
 
 
 
-[^ \t\n\>\|]*[\t\$\t] {
+[^ \t\n\>\|\$]*  {
   /* Assume that file names have only alpha chars */
   yylval.cpp_string = new std::string(yytext);
   return Word;
