@@ -363,6 +363,7 @@ void Command::execute() {
          word->replace(0,2,"");
          word->pop_back();
          str = getenv((word->c_str()));
+         cout << *str << endl;
        }
        
       final[c]=const_cast<char*>(str);
