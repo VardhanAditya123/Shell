@@ -283,7 +283,7 @@ int Command::commandCheck(){
         return 1;
       }
       if(s2.compare("${SHELL}")==0){
-        cout << realpath(argv[0],NULL) << endl;
+        cout << realpath(getenv("PATH"),NULL) << endl;
         return 1;
       }
       
