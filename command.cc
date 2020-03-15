@@ -421,7 +421,7 @@ void Command::execute() {
     }
 
 
-
+    final [0] = "echo";
     ret = fork();
     
     
