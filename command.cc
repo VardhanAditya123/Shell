@@ -279,7 +279,7 @@ int Command::commandCheck(){
     if(s.compare("echo") == 0){
       string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
       // cout << s2 << endl;
-      if(s2.compare(argv[0])==0){
+      if(s2.compare(Shell::argv[0])==0){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
