@@ -90,7 +90,7 @@ void myunputc(int c) {
    return Word;
 }
 
-\t\$\{[A-Za-z\t]*\} {
+\t$\{[A-Za-z\t]*\}\t {
    std::string s = yytext;
     s.replace(0,3,"");
     s.pop_back();
