@@ -419,7 +419,7 @@ void Command::execute() {
         // cout << fin << endl;
         char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
         cout << tmp2 << endl;
-       final[c]=const_cast<char*>(str);
+       final[c]=const_cast<char*>(tmp2);
        c=c+1;
     }
 
