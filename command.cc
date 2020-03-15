@@ -397,8 +397,24 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-       const char* str1 = pecho(str);
-        cout << str1 << endl;
+      
+        string fin ;
+        string tmp;
+      for(unsigned int i = 0 ; i < strlen(str);i++ ){
+         if(str[i]!='$'  ){
+       fin += str[i];
+       }
+    else{
+     i=i+2; 
+     while(str[i]!='}'){
+       tmp += str[i];
+       i++;
+     }
+     fin+=getenv(tmp.c_str());
+     tmp="";
+  }
+  }
+        cout << fin.c_str() << endl;
        str[strlen(str)+1]='\0';
        final[c]=const_cast<char*>(str);
        c=c+1;
