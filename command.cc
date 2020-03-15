@@ -125,12 +125,10 @@ char* esc(char* str) {
       c+=1;
     }
   }
-  // cout << dst << " ";
   return dst;
 }
 
 string pecho (char* str){
-  // cout << str << endl;
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -149,7 +147,6 @@ string pecho (char* str){
      tmp="";
   }
   }
-  //  cout << fin << endl;
   return fin;
 }
 
@@ -237,7 +234,6 @@ int Command::commandCheck(){
 
 
   if(s.compare(s2) == 0){
-    // cout << "Good bye!!" << endl;
     exit(0);
   }
 
