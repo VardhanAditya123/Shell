@@ -373,11 +373,11 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
 
-    char final  = new char[1000][1000];
+    char **final  = new char*[1000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
 
-       char*str = esc((char*)word->c_str());
+      char*str = esc((char*)word->c_str());
        cout << pecho(str) << endl;
        str = (char*)(pecho(str));
        final[c]=const_cast<char*>(str);
