@@ -161,7 +161,7 @@ int Command::commandCheck(){
   if(s.compare("echo") == 0){
     string s1 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
     if(s1.compare("${?}")==0){
-      *(_simpleCommandsArray[0]->_argumentsArray[1])= WEXITSTATUS(last);
+      *(_simpleCommandsArray[0]->_argumentsArray[1])= "LOl";
       return 1;
     }
   }
