@@ -358,7 +358,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
       char*str = esc((char*)word->c_str());
-       cout << word->at(0) << endl;
+      //  cout << word->at(0) << endl;
        if(word->at(0)=='$'){
          word->replace(0,2,"");
          word->pop_back();
