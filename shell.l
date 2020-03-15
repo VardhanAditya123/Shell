@@ -92,7 +92,6 @@ void myunputc(int c) {
 
 \$\{[A-Za-z\t]*\} {
    std::string s = yytext;
-  //  cout << s << "HEELO" <<endl;
     s.replace(0,2,"");
     s.pop_back();
    yylval.cpp_string = new std::string(getenv(s.c_str()));
@@ -175,6 +174,5 @@ void myunputc(int c) {
 [^ \t\n\>\|\$]*  {
   /* Assume that file names have only alpha chars */
   yylval.cpp_string = new std::string(yytext);
-  cout << yytext << endl;
   return Word;
 }
