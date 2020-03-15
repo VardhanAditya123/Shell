@@ -6,7 +6,6 @@
 #include <string.h>
 using namespace std;
 int yyparse(void);
-char** arg;
 
 void Shell::prompt() {
   if ( isatty(0) ) {
