@@ -51,6 +51,7 @@ test_redirect_out_err
 test_redirect_output
 test_robustness
 test_setenv
+test-shell
 test_source
 test_subshell
 test_tilde
