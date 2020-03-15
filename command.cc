@@ -356,8 +356,7 @@ void Command::execute() {
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
        if(word->at(0)=='$'){
-         char*temp = (char*)((word)->c_str());
-         word=getenv(temp);
+         word=getenv(word);
        }
        char*str = esc((char*)word->c_str());
       final[c]=const_cast<char*>(str);
