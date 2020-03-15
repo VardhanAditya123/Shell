@@ -99,7 +99,8 @@ void myunputc(int c) {
 }
 
 \$\{\$\} {
-   yylval.cpp_string = new std::string((string)getpid());
+   pid_t p = getpid();
+   yylval.cpp_string = new std::string(p);
    return Word;
 }
 
