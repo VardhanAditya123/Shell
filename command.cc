@@ -136,7 +136,7 @@ string pecho (char* str){
 
    
     if(*(str+i)!='$'  ){
-      fin += (*(str+i+1));
+      fin += str[i];
       i=i+1;
     }
     else{
