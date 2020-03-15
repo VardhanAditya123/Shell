@@ -331,7 +331,7 @@ void Command::execute() {
 
 
 
-
+  int last;
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -426,7 +426,7 @@ void Command::execute() {
 
    if (!_backgnd) {
     // Wait for last command
-       waitpid(ret ,NULL, 0);
+       waitpid(ret ,&last, 0);
     }
   clear();
   Shell::prompt();
