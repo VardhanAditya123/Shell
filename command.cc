@@ -388,7 +388,7 @@ void Command::execute() {
        str = (char*)((pecho(str)).c_str());
        
       final[c]=const_cast<char*>(str);
-      // cout << final[c] << endl;
+       cout << final[c] << endl;
       c=c+1;
     }
 
