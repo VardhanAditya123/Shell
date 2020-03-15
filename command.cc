@@ -300,7 +300,7 @@ int Command::commandCheck(){
       if(s2.compare("${SHELL}")==0){
         char* apath;
 
-        cout << realpath("/bin/bash",NULL) << endl;
+        cout << *realpath("/bin/bash",NULL) << endl;
         return 1;
       }
       
