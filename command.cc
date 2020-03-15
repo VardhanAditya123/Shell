@@ -163,7 +163,7 @@ int Command::commandCheck(){
     if(s1.compare("${?}")==0){
       cout << "HERE" << endl;
       *(_simpleCommandsArray[0]->_argumentsArray[1])= "LOl";
-      return 1;
+      return 0;
     }
   }
   if(s.compare("source")==0){
