@@ -12,7 +12,8 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-int main() {
+int main(int argc, char **argv) {
+  cout << argv[0] << endl;
   Shell::prompt();
   yyparse();
 }
