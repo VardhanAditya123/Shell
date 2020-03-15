@@ -424,7 +424,7 @@ char* pecho (char* str){
 
    
     if(*(str+i)!='$'  ){
-      fin.append (*(str+i+1));
+      fin += (*(str+i+1));
       c+=1;
       i+=1;
     }
