@@ -398,7 +398,7 @@ void Command::execute() {
        close(tmpout);
 
          if(s.compare("${?}")== 0){
-        final[c-1] = WIFEXITED(last)->c_str();
+        final[c-1] = WIFEXITED(last).c_str();
       }
 
       if(s.compare("printenv") == 0){
