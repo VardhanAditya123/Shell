@@ -110,8 +110,8 @@ void myunputc(int c) {
 
 \$\{\?\} {
    
-   
-   yylval.cpp_string = new std::string(WEXITSTATUS(Shell::last));
+   int a = Shell::last;
+   yylval.cpp_string = new std::string(WEXITSTATUS);
    return Word;
 }
 
