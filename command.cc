@@ -292,10 +292,8 @@ int Command::commandCheck(){
       }
 
        if(s2.compare("${!}")== 0){
-        int pid = getpid();
-        char mypid[6];   // ex. 34567
-        sprintf(mypid, "%d", pid);
-        cout << mypid <<endl;
+
+        cout << last_id <<endl;
         return 1;
       }
       
