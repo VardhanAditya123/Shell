@@ -414,7 +414,8 @@ void Command::execute() {
      tmp="";
   }
   }
-        cout << strcpy(str ,fin.c_str()) << endl;
+        strcpy(str ,fin.c_str())
+        cout << str << endl;
       //  str[strlen(str)+1]='\0';
        final[c]=const_cast<char*>(str);
        c=c+1;
