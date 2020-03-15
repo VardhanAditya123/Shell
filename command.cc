@@ -148,7 +148,7 @@ char* esc(char* str) {
      tmp="";
   }
   }
-  }
+
   char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
   return tmp2;
 }
