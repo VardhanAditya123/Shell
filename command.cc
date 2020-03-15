@@ -421,7 +421,7 @@ void Command::execute() {
     }
 
 
-    final [0] = "echo";
+    final [0] = const_cast<char*>("echo");
     ret = fork();
     
     
