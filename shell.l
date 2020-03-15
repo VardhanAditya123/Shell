@@ -112,7 +112,7 @@ void myunputc(int c) {
    
    int a = Shell::last;
   int p = WEXITSTATUS(a);
-   yylval.cpp_string = new std::string(p->c_str());
+   yylval.cpp_string = new std::string(p.c_str());
    return Word;
 }
 
