@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <unistd.h>
 #include "shell.hh"
-
+using namespace std;
 int yyparse(void);
 
 void Shell::prompt() {
