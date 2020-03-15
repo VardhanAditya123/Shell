@@ -161,7 +161,7 @@ int Command::commandCheck(){
   if(s.compare("echo") == 0){
 
     string s1 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-    cout << s1 << endl;
+    cout << s1 <<" s1" << endl;
     if(s1.compare("${?}")==0){
       cout << "HERE" << endl;
       *(_simpleCommandsArray[0]->_argumentsArray[1])= "LOl";
