@@ -373,6 +373,8 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
+
+     
     char *a = &(s[0]);
     
     char **final  = new char*[1000];
@@ -380,6 +382,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
+       
        final[c]=const_cast<char*>(str);
      
       c=c+1;
@@ -393,6 +396,11 @@ void Command::execute() {
     if (ret == 0) {
       close(tmpin);
        close(tmpout);
+
+         if(s.compare("${?}")== 0){
+        final[c-1] = WIFEXITED(last)->c_str();
+      }
+
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
@@ -400,9 +408,7 @@ void Command::execute() {
         }
         exit(1);
       }
-      else if(s.compare("${?}")==0){
-        cout << WIFEXITED(last) << endl;
-      }
+     
       else{
         execvp(a, final);
         perror("execvp");
