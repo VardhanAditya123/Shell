@@ -373,7 +373,7 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
-    string s = *(simpleCommand->_argumentsArray[1]);
+    string s1 = *(simpleCommand->_argumentsArray[1]);
 
     char *a = &(s[0]);
 
