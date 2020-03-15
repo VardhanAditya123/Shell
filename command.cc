@@ -331,7 +331,7 @@ void Command::execute() {
 
 
 
-  int last;
+
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -373,8 +373,6 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
-    string s1 = *(simpleCommand->_argumentsArray[1]);
-
     char *a = &(s[0]);
 
     char **final  = new char*[1000];
@@ -387,13 +385,10 @@ void Command::execute() {
       c=c+1;
     }
 
-    if(s1.compare("${?}")==0){
-      cout << WEXITSTATUS(last) << endl;
-      exit(0);
-    }
+
 
     ret = fork();
-  
+    
     
     if (ret == 0) {
       close(tmpin);
@@ -405,9 +400,7 @@ void Command::execute() {
         }
         exit(1);
       }
-    
       else{
-        
         execvp(a, final);
         perror("execvp");
         _exit(1); 
