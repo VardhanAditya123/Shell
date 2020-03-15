@@ -359,6 +359,7 @@ void Command::execute() {
        if(word->at(0)=='$'){
          char*temp = (char*)(word->c_str());
          word= (temp);
+       }
        char*str = esc((char*)word->c_str());
       final[c]=const_cast<char*>(str);
       c=c+1;
