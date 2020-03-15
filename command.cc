@@ -147,7 +147,6 @@ string pecho (char* str){
        i++;
      }
      fin+=getenv(tmp.c_str());
-     cout << fin << endl;
      tmp="";
   }
   }
