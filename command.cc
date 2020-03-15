@@ -283,6 +283,10 @@ int Command::commandCheck(){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
+       if(s2.compare("/bin/bash")==0){
+        cout << realpath(s2,NULL) << endl;
+        return 1;
+      }
       
       
     }
