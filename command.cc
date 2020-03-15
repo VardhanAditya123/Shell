@@ -386,12 +386,6 @@ void Command::execute() {
       
       final[c]=const_cast<char*>(str);
 
-        if(s1.compare("${?}")== 0){
-        char id[6];   // ex. 34567
-        sprintf(id, "%d", WIFEXITED(last));
-        final[c] = id;
-      }
-
       c=c+1;
     }
 
