@@ -364,6 +364,7 @@ void Command::execute() {
          word->pop_back();
          str = getenv((word->c_str()));
        }
+       
       final[c]=const_cast<char*>(str);
       c=c+1;
     }

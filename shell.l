@@ -93,7 +93,7 @@ void myunputc(int c) {
 \$\{[^\n]\} {
    std::string s = yytext;
    yylval.cpp_string = new std::string(yytext);
-   cout << yytext << endl;
+  //  cout << yytext << endl;
    return Word;
 }
 
