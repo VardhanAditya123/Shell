@@ -373,6 +373,7 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
+    string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
 
     char **final  = new char*[1000];
@@ -427,6 +428,7 @@ void Command::execute() {
    if (!_backgnd) {
     // Wait for last command
        waitpid(ret ,&last, 0);
+      
     }
   clear();
   Shell::prompt();
