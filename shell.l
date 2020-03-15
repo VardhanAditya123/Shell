@@ -95,7 +95,7 @@ void myunputc(int c) {
   //  s.replace(0,1,"");
   //  s.pop_back();
    yylval.cpp_string = new std::string(yytext);
-  
+   cout << yytext << endl;
    return Word;
 }
 
