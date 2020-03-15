@@ -360,7 +360,7 @@ void Command::execute() {
       char*str = esc((char*)word->c_str());
      
       string temp =pecho(str);
-      str = temp.c_str();
+      str = (char*)temp.c_str();
        
       final[c]=const_cast<char*>(str);
       c=c+1;
