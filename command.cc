@@ -361,6 +361,7 @@ void Command::execute() {
        if(word->at(0)=='$'){
          word->replace(0,2,"");
          word->pop_back();
+         cout << word << endl;
          str = getenv((word->c_str()));
        }
       final[c]=const_cast<char*>(str);
