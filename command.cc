@@ -374,7 +374,7 @@ void Command::execute() {
 
     string s = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
-
+    int last;
     char **final  = new char*[1000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
@@ -426,7 +426,6 @@ void Command::execute() {
   dup2(tmpout,1);
   close(tmpin);
   close(tmpout);
-  int last;
    if (!_backgnd) {
     // Wait for last command
        waitpid(ret ,&last, 0);
