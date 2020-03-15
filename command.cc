@@ -373,6 +373,7 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
+    string s1 = *(simpleCommand->_argumentsArray[1]);
 
 
     char *a = &(s[0]);
@@ -382,12 +383,14 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
       char*str = esc((char*)word->c_str());
-        if(s.compare("${?}")== 0){
+      
+      final[c]=const_cast<char*>(str);
+
+        if(s1.compare("${?}")== 0){
         char id[6];   // ex. 34567
         sprintf(id, "%d", WIFEXITED(last));
         final[c] = id;
       }
-      final[c]=const_cast<char*>(str);
 
       c=c+1;
     }
