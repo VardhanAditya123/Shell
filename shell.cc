@@ -16,9 +16,9 @@ void Shell::prompt() {
 }
 
 int main(int argc, char **argv) {
-  Shell::arg = argv;
+  
   Shell::prompt();
   yyparse();
 }
-
+char**  Shell::arg;
 Command Shell::_currentCommand;
