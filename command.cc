@@ -359,6 +359,8 @@ void Command::execute() {
 
       char*str = esc((char*)word->c_str());
        if(word->at(0)=='$'){
+         word->replace(0,2,"");
+         word->pop_back();
          str = getenv((word->c_str()));
        }
       final[c]=const_cast<char*>(str);
