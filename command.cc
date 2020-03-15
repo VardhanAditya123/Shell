@@ -359,12 +359,8 @@ void Command::execute() {
 
       char*str = esc((char*)word->c_str());
      
-       if(word->at(0)=='$'){
-         word->replace(0,2,"");
-         word->pop_back();
-         str = getenv((word->c_str()));
-        
-       }
+      string temp =pecho(str);
+      str = temp.c_str();
        
       final[c]=const_cast<char*>(str);
       c=c+1;
@@ -440,6 +436,6 @@ string pecho (char* str){
     }
   }
   
-  return str;
+  return tmp;
 }
 SimpleCommand * Command::_currSimpleCommand;
