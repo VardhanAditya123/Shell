@@ -414,14 +414,14 @@ void Command::execute() {
      tmp="";
   }
   }
-        // cout << fin.c_str() << endl;
-       final[c]=(char*)(fin.c_str());
-       cout << final[c] << endl;
+        cout << fin << endl;
+       str[strlen(str)+1]='\0';
+       final[c]=const_cast<char*>(str);
        c=c+1;
     }
 
 
-    final [0] = const_cast<char*>("echo");
+
     ret = fork();
     
     
