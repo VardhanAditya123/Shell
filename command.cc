@@ -358,8 +358,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
        if(word->at(0)=='$'){
          char*temp = (char*)(word->c_str());
-         word= &convertToString(temp, strlen(temp)); 
-       }
+         word= &(temp);
        char*str = esc((char*)word->c_str());
       final[c]=const_cast<char*>(str);
       c=c+1;
