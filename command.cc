@@ -355,7 +355,7 @@ void Command::execute() {
     char **final  = new char*[100];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
-       if(word.at(0)== "$"){
+       if(word->at(0)== "$"){
          word=getenv(word);
        }
        char*str = esc((char*)word->c_str());
