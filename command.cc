@@ -146,7 +146,7 @@ const char* pecho (char* str){
      tmp="";
   }
   }
-   cout << fin.c_str() <<" " ;
+  
   return fin.c_str();
 }
 
