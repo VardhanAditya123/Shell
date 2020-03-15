@@ -90,7 +90,7 @@ void myunputc(int c) {
    return Word;
 }
 
-\$\{\A\} {
+\$\{^\n\} {
    std::string s = yytext;
   //  s.replace(0,1,"");
   //  s.pop_back();
