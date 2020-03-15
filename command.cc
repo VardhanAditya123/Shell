@@ -356,11 +356,11 @@ void Command::execute() {
     char **final  = new char*[100];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
+
+      char*str = esc((char*)word->c_str());
        if(word->at(0)=='$'){
          char*temp = (char*)(word->c_str());
-         word= (temp);
        }
-       char*str = esc((char*)word->c_str());
       final[c]=const_cast<char*>(str);
       c=c+1;
     }
