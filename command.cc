@@ -149,7 +149,7 @@ string pecho (char* str){
      tmp="";
   }
   }
-  // cout << fin << endl;
+   cout << fin << endl;
   return fin;
 }
 
