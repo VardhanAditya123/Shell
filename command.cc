@@ -377,7 +377,7 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
 
-    char **final  = new char*[1000000];
+    char **final  = new char*[1000];
     int c =0;
     for(auto & word : simpleCommand->_argumentsArray){
 
@@ -386,9 +386,8 @@ void Command::execute() {
       
       // cout << temp << endl;
        str = (char*)((pecho(str)).c_str());
-       
-      final[c]=const_cast<char*>(str);
        cout << final[c] << endl;
+      final[c]=const_cast<char*>(str);
       c=c+1;
     }
 
