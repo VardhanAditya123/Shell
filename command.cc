@@ -373,6 +373,8 @@ void Command::execute() {
 
 
     string s = *(simpleCommand->_argumentsArray[0]);
+    string s = *(simpleCommand->_argumentsArray[1]);
+
     char *a = &(s[0]);
 
     char **final  = new char*[1000];
@@ -385,7 +387,10 @@ void Command::execute() {
       c=c+1;
     }
 
-
+    if(s1.compare("${$}")==0){
+      cout << WIFEXITED(last) << endl;
+      exit(0);
+    }
 
     ret = fork();
   
@@ -400,6 +405,7 @@ void Command::execute() {
         }
         exit(1);
       }
+    
       else{
         waitpid(-1,&last,0);
         execvp(a, final);
