@@ -282,6 +282,10 @@ int Command::commandCheck(){
         cout << WEXITSTATUS(last) << endl;
         return 1;
       }
+      if(s2.compare("${SHELL}")==0){
+        cout << realpath(argv[0],NULL) << endl;
+        return 1;
+      }
       
     }
 
