@@ -35,6 +35,7 @@
 
 using namespace std;
 void myunputc(int );
+int last;
 Command::Command() {
   // Initialize a new vector of Simple Commands
   _simpleCommandsArray = std::vector<SimpleCommand *>();
@@ -331,7 +332,7 @@ void Command::execute() {
 
 
 
-  int last;
+  
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
