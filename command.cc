@@ -428,7 +428,7 @@ void Command::execute() {
 
    if (!_backgnd) {
     // Wait for last command
-       waitpid(ret ,Shell::&last, 0);
+       waitpid(ret ,&(Shell::last), 0);
       
     }
   clear();
