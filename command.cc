@@ -276,17 +276,17 @@ int Command::commandCheck(){
       return 1;
     }
 
-    if(s.compare("echo") == 0){
-      string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+    // if(s.compare("echo") == 0){
+    //   string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
       
-      if(s2.compare("${?}")==0){
-        cout << WEXITSTATUS(last) << endl;
-        return 1;
-      }
+    //   if(s2.compare("${?}")==0){
+    //     cout << WEXITSTATUS(last) << endl;
+    //     return 1;
+    //   }
       
       
       
-    }
+    // }
 
   return 0;
 }
