@@ -92,7 +92,7 @@ void myunputc(int c) {
 
 \t\$\{[A-Za-z\t]*\} {
    std::string s = yytext;
-    s.replace(0,2,"");
+    s.replace(0,3,"");
     s.pop_back();
    yylval.cpp_string = new std::string(getenv(s.c_str()));
    return Word;
