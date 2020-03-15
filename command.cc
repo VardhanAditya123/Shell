@@ -156,6 +156,13 @@ int Command::commandCheck(){
   string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
   string s2 = "exit";
 
+
+  if(s.compare("echo") == 0){
+    string s1 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+    if(s1.compare("${?}")==0){
+      cout << WEXITSTATUS(last) << endl;
+    }
+  }
   if(s.compare("source")==0){
   
   std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
