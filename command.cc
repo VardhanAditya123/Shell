@@ -131,28 +131,28 @@ char* esc(char* str) {
   return dst;
 }
 
-// const char* pecho (char* str){
-//   string fin ;
-//   string tmp;
-//   for(unsigned int i = 0 ; i < strlen(str);i++ ){
+const char* pecho (char* str){
+  string fin ;
+  string tmp;
+  for(unsigned int i = 0 ; i < strlen(str);i++ ){
 
    
-//     if(str[i]!='$'  ){
-//       fin += str[i];
-//     }
-//     else{
-//      i=i+2; 
-//      while(str[i]!='}'){
-//        tmp += str[i];
-//        i++;
-//      }
-//      fin+=getenv(tmp.c_str());
-//      tmp="";
-//   }
-//   }
-//   cout << fin.c_str() << endl;
-//   return fin.c_str();
-// }
+    if(str[i]!='$'  ){
+      fin += str[i];
+    }
+    else{
+     i=i+2; 
+     while(str[i]!='}'){
+       tmp += str[i];
+       i++;
+     }
+     fin+=getenv(tmp.c_str());
+     tmp="";
+  }
+  }
+  cout << fin.c_str() << endl;
+  return fin.c_str();
+}
 
 int Command::commandCheck(){
 
