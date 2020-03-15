@@ -90,7 +90,7 @@ void myunputc(int c) {
    return Word;
 }
 
-\$\{[a-zA-Z]*\} {
+[\t]\$\{[a-zA-Z]*\}[\t] {
    std::string s = yytext;
    yylval.cpp_string = new std::string(yytext);
    return Word;
