@@ -6,7 +6,7 @@
 struct Shell {
 
   static void prompt();
-  static int last;
+
   static Command _currentCommand;
 };
 
