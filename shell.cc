@@ -1,6 +1,8 @@
 #include <cstdio>
 #include <unistd.h>
 #include "shell.hh"
+#include <cstdlib>
+#include <iostream>
 using namespace std;
 int yyparse(void);
 
