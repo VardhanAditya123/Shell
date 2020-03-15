@@ -137,7 +137,6 @@ string pecho (char* str){
    
     if(*(str+i)!='$'  ){
       fin += (*(str+i+1));
-      i+=1;
     }
     else{
      i=i+2; 
@@ -147,9 +146,7 @@ string pecho (char* str){
      }
      fin+=getenv(tmp.c_str());
      tmp="";
-
-
-    }
+  }
   }
   
   return fin;
