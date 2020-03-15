@@ -387,7 +387,7 @@ void Command::execute() {
       c=c+1;
     }
 
-    if(s1.compare("${$}")==0){
+    if(s1.compare("${?}")==0){
       cout << WIFEXITED(last) << endl;
       exit(0);
     }
