@@ -6,6 +6,7 @@
 #include <string.h>
 using namespace std;
 int yyparse(void);
+char** arg;
 
 void Shell::prompt() {
   if ( isatty(0) ) {
@@ -16,7 +17,7 @@ void Shell::prompt() {
 }
 
 int main(int argc, char **argv) {
-  strcpy(char** Shell::arg ,argv);
+  arg = argv;
   Shell::prompt();
   yyparse();
 }
