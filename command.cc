@@ -127,7 +127,7 @@ char* esc(char* str) {
   return dst;
 }
 
-string pecho (char* str){
+char* pecho (char* str){
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -147,7 +147,7 @@ string pecho (char* str){
   }
   }
 
-  return fin;
+  return fin.c_str();
 }
 
 int Command::commandCheck(){
