@@ -388,6 +388,7 @@ void Command::execute() {
       // str = (char*)(temp.c_str());
        
       final[c]=const_cast<char*>(str);
+      cout << final[c] << endl;
       c=c+1;
     }
 
