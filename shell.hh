@@ -8,5 +8,6 @@ struct Shell {
   static void prompt();
   static Command _currentCommand;
 };
+char** arg;
 
 #endif
