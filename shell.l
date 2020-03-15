@@ -93,6 +93,7 @@ void myunputc(int c) {
 \$\{[a-zA-Z]*\} {
    std::string s = yytext;
    yylval.cpp_string = new std::string(yytext);
+   cout << yytext << endl;
    return Word;
 }
 
