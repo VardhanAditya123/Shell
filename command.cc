@@ -378,7 +378,7 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
        char*str = esc((char*)word->c_str());
-       string *t = &pecho(str);
+       string *t = &(pecho(str));
        str = (char*)(s)->c_str());
       //  cout << str << endl;
       // cout << (pecho(str)).c_str() ;
