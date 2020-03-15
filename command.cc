@@ -397,10 +397,6 @@ void Command::execute() {
       close(tmpin);
        close(tmpout);
 
-         if(s.compare("${?}")== 0){
-        final[c-1] = WIFEXITED(last).c_str();
-      }
-
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
