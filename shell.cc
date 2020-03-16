@@ -15,7 +15,7 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-char** t;
+char* t;
 int main(int argc, char **argv) {
   t = *argv;
   // cout << *t << endl;
