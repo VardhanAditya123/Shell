@@ -22,4 +22,5 @@ int main(int argc, char **argv) {
   yyparse();
 }
 char**  Shell::arg=t;
+cout << t << endl;
 Command Shell::_currentCommand;
