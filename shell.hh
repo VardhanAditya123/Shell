@@ -6,7 +6,7 @@
 struct Shell {
 
   static void prompt();
-  static char** arg;
+  static char* arg;
   static Command _currentCommand;
 };
 
