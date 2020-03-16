@@ -297,16 +297,18 @@ int Command::commandCheck(){
         return 1;
       }
 
-      if(s2.compare("${SHELL}")==0){
-
-        cout  << realpath(Shell::arg,NULL) << endl;
-        return 1;
-      }
        if(s2.compare("${_}")==0){
 
         cout  << Shell::arg2 << endl;
         return 1;
       }
+
+      if(s2.compare("${SHELL}")==0){
+
+        cout  << realpath(Shell::arg,NULL) << endl;
+        return 1;
+      }
+      
       
       
       
