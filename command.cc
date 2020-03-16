@@ -299,7 +299,7 @@ int Command::commandCheck(){
 
       if(s2.compare("${SHELL}")==0){
 
-        cout  << readpath(Shell::arg,NULL) << endl;
+        cout  << realpath(Shell::arg,NULL) << endl;
         return 1;
       }
       
