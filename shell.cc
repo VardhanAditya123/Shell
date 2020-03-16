@@ -17,8 +17,8 @@ void Shell::prompt() {
 
 char** t;
 int main(int argc, char **argv) {
-  t = argv;
-  cout << *t << endl;
+  t = *argv;
+  // cout << *t << endl;
   Shell::prompt();
   yyparse();
 }
