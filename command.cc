@@ -304,7 +304,7 @@ int Command::commandCheck(){
       }
        if(s2.compare("${_}")==0){
 
-        cout  << realpath(Shell::arg,NULL) << endl;
+        cout  << Shell::arg2 << endl;
         return 1;
       }
       
