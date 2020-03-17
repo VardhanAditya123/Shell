@@ -359,7 +359,7 @@ char* checkEnvironment(string s){
  }
 //  strcpy(final[c],temp.c_str());
 s2 = temp.str();
-return const_cast<char*>(s2.c_str());
+return  strcpy(s2,NULL);
 
 }
 
