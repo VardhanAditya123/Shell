@@ -330,7 +330,7 @@ void checkEnvironment(string s){
      temp << getenv(s.c_str());
 
     if(s.compare("${?}")==0){
-      temp < WEXITSTATUS(last); 
+      temp << WEXITSTATUS(last); 
     }
 
     if(s.compare("${$}")== 0){
