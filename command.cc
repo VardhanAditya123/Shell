@@ -328,9 +328,6 @@ void Command::execute() {
     return;
   }
  
-  if(_backgnd){
-      last_id=getpid();
-    }
   // print();
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
@@ -477,9 +474,10 @@ void Command::execute() {
    if (!_backgnd) {
     // Wait for last command
        waitpid(ret ,&last, 0);
-
-       
-    }
+  }
+  if(_backgnd){
+      last_id=getpid();
+  }
 
     
   clear();
