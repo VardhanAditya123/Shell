@@ -324,7 +324,7 @@ char* checkEnvironment(string s){
   string s1 = string(s);
   string s2 = string(s);
   temp << s;
- if(s.at(0)== '$'){
+ if(s.at(0)== '$' && s.at(1)=='{'){
 
      s1.replace(0,2,"");
      s1.pop_back();
