@@ -440,6 +440,9 @@ void Command::execute() {
     if (ret == 0) {
       close(tmpin);
        close(tmpout);
+       if(_backgnd){
+       last_id=getpid();
+      }
       if(s.compare("printenv") == 0){
         for(int i = 0 ;environ[i]!=NULL; i++){
 
@@ -475,9 +478,7 @@ void Command::execute() {
     // Wait for last command
        waitpid(ret ,&last, 0);
   }
-  if(_backgnd){
-      last_id=getppid();
-  }
+  
 
     
   clear();
