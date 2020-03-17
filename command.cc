@@ -471,7 +471,7 @@ void Command::execute() {
       char*str = esc((char*)word->c_str());
       char*tmp2=pecho(str);
       final[c]=const_cast<char*>(tmp2);
-      final[c]= const_cast<char*>(checkEnvironment(final[c]));
+      // final[c]= const_cast<char*>(checkEnvironment(final[c]));
       
       c=c+1;
     }
