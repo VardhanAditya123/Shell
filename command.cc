@@ -38,6 +38,8 @@ using namespace std;
 int last;
 pid_t last_id;
 char* last_arg;
+char **final  = new char*[1000];
+int c =0;
 void myunputc(int );
 // int last;
 Command::Command() {
@@ -354,7 +356,7 @@ int checkEnvironment(string s){
 
      s.replace(0,2,"");
      s.pop_back();
-     getenv(s);
+     final[c] = getenv(s.c_str());
 
  }
 
@@ -460,13 +462,13 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
 
-    char **final  = new char*[1000];
-    int c =0;
+
     for(auto & word : simpleCommand->_argumentsArray){
 
       char*str = esc((char*)word->c_str());
       char*tmp2=pecho(str);
       final[c]=const_cast<char*>(tmp2);
+      checkEnvironment(final[c]);
       c=c+1;
     }
     last_arg = final[c-1];
