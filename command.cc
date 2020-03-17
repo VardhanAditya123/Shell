@@ -338,7 +338,7 @@ void checkEnvironment(string s){
     }
 
     if(s.compare("${!}")== 0){
-    temp+=last_pid; 
+    temp+=last_id; 
     }
 
     if(s.compare("${_}")==0){
@@ -352,9 +352,6 @@ void checkEnvironment(string s){
       
     }
 
-     s.replace(0,2,"");
-     s.pop_back();
-     final[c] = getenv(s.c_str());
 
  }
 
