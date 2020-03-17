@@ -163,9 +163,11 @@ void myunputc(int c) {
 
 
 [0-9]\&  {
-  /* Assume that file names have only alpha chars */
-  yylval.cpp_string = new std::string(yytext);
-  return Word;
+   std::string s = yytext;
+   s.pop_back();
+   yylval.cpp_string = new std::string(s);
+   return Word;
+
 }
 
 [^ \t\n\>\|]*  {
