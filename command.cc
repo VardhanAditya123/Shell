@@ -321,7 +321,7 @@ int Command::commandCheck(){
 void checkEnvironment(string s){
 
   ostringstream temp;
-  string s1 = s;
+  string s1 = string(s);
   string s2 = string(s);
  if(s.at(0)== '$'){
 
