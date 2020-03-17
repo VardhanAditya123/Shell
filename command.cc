@@ -329,7 +329,7 @@ char* checkEnvironment(string s){
      s1.pop_back();
      temp = getenv(s1.c_str());
      if(temp == NULL){
-       temp = s;
+       temp = s1;
      }
 
     if(s.compare("${?}")==0){
