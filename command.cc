@@ -476,7 +476,7 @@ void Command::execute() {
        waitpid(ret ,&last, 0);
   }
   if(_backgnd){
-      last_id=getpid();
+      last_id=getppid();
   }
 
     
