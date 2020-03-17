@@ -477,7 +477,7 @@ void Command::execute() {
 
        
     }
-    if(!_backgnd){
+    if(_backgnd){
       last_id=getpid();
     }
   clear();
