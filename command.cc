@@ -432,7 +432,9 @@ void Command::execute() {
     }
     last_arg = final[c-1];
 
-
+    if(_backgnd){
+      last_id=getpid();
+    }
 
     ret = fork();
     
@@ -477,9 +479,7 @@ void Command::execute() {
 
        
     }
-    if(_backgnd){
-      last_id=getpid();
-    }
+    
   clear();
   Shell::prompt();
 } 
