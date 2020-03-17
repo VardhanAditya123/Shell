@@ -275,44 +275,44 @@ int Command::commandCheck(){
     return 1;
   }
 
-  // if(s.compare("echo") == 0){
-  //   string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+  if(s.compare("echo") == 0){
+    string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
 
-  //   if(s2.compare("${?}")==0){
-  //     cout << WEXITSTATUS(last) << endl;
-  //     return 1;
-  //   }
+    if(s2.compare("${?}")==0){
+      cout << WEXITSTATUS(last) << endl;
+      return 1;
+    }
 
-  //   if(s2.compare("${$}")== 0){
-  //     int pid = getpid();
-  //     char mypid[6];   // ex. 34567
-  //     sprintf(mypid, "%d", pid);
-  //     cout << mypid <<endl;
-  //     return 1;
-  //   }
+    if(s2.compare("${$}")== 0){
+      int pid = getpid();
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      cout << mypid <<endl;
+      return 1;
+    }
 
-  //   if(s2.compare("${!}")== 0){
+    if(s2.compare("${!}")== 0){
 
-  //     cout << last_id <<endl;
-  //     return 1;
-  //   }
+      cout << last_id <<endl;
+      return 1;
+    }
 
-  //   if(s2.compare("${_}")==0){
+    if(s2.compare("${_}")==0){
 
-  //     cout  << last_arg << endl;
-  //     return 1;
-  //   }
+      cout  << last_arg << endl;
+      return 1;
+    }
 
-  //   if(s2.compare("${SHELL}")==0){
+    if(s2.compare("${SHELL}")==0){
 
-  //     cout  << realpath(Shell::arg,NULL) << endl;
-  //     return 1;
-  //   }
-
-
+      cout  << realpath(Shell::arg,NULL) << endl;
+      return 1;
+    }
 
 
-  // }
+
+
+  }
 
   return 0;
 }
