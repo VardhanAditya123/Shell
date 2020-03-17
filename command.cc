@@ -361,7 +361,7 @@ char* checkEnvironment(string s){
 s2 = temp.str();
 // cout << s2 << endl;
 cout << strcpy(new char[s2.length()+ 1],s2.c_str())<<endl;
-return strcpy(new char[s2.length()+ 1],s2.c_str())
+return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
 }
