@@ -327,7 +327,7 @@ char* checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     temp += getenv(s1.c_str());
+     temp = getenv(s1.c_str());
 
     if(s.compare("${?}")==0){
       temp += WEXITSTATUS(last); 
@@ -357,10 +357,8 @@ char* checkEnvironment(string s){
 
 
  }
-//  strcpy(final[c],temp.c_str());
+
 s2 = temp;
-// cout << s2 << endl;
-// cout << strcpy(new char[s2.length()+ 1],s2.c_str())<<endl;
 return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
