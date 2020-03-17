@@ -322,33 +322,33 @@ void checkEnvironment(string s){
   string temp;
  if(s.at(0)== '$'){
 
+     s.replace(0,2,"");
+     s.pop_back();
+     temp = getenv(s.c_str());
 
     if(s.compare("${?}")==0){
-      temp+=WEXITSTATUS(last); 
+      temp=WEXITSTATUS(last); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      temp+=mypid; 
+      temp=mypid; 
     }
 
     if(s.compare("${!}")== 0){
-
-     strcpy(final[c],last_id.c_str()); 
-    
+    temp+=last_pid; 
     }
 
     if(s.compare("${_}")==0){
 
-      strcpy(final[c],last_arg.c_str()); 
-      
+     temp=last_arg;  
+    
     }
 
     if(s.compare("${SHELL}")==0){
-
-       strcpy(final[c],realpath(Shell::arg,NULL).c_str()); 
+       temp=realpath(Shell::arg,NULL)
       
     }
 
