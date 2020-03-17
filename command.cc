@@ -294,7 +294,7 @@ int Command::commandCheck(){
 
        if(s2.compare("${!}")== 0){
 
-        cout << last_id <<endl;
+        cout << getpid()<<endl;
         return 1;
       }
 
