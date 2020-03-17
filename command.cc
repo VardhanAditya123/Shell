@@ -326,31 +326,31 @@ void checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     temp = getenv(s.c_str());
+     temp = string(getenv(s.c_str()));
 
     if(s.compare("${?}")==0){
-      temp=WEXITSTATUS(last); 
+      temp=string(WEXITSTATUS(last)); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      temp=mypid; 
+      temp=string(mypid); 
     }
 
     if(s.compare("${!}")== 0){
-    temp=last_id; 
+    temp=string(last_id); 
     }
 
     if(s.compare("${_}")==0){
 
-     temp=last_arg;  
+     temp=string(last_arg);  
     
     }
 
     if(s.compare("${SHELL}")==0){
-       temp=realpath(Shell::arg,NULL);
+       temp=string(realpath(Shell::arg,NULL));
       
     }
 
