@@ -162,7 +162,7 @@ void myunputc(int c) {
 }
 
 
-[[A-za-z]\&\t]*  {
+[{A-za-z}\&\t]*  {
   /* Assume that file names have only alpha chars */
   yylval.cpp_string = new std::string(yytext);
   return Word;
