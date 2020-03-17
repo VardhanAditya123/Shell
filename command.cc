@@ -318,14 +318,13 @@ int Command::commandCheck(){
 }
 
 
-int checkEnvironment(string s){
+void checkEnvironment(string s){
 
  if(s.at(0)== '$'){
 
 
     if(s.compare("${?}")==0){
       cout << WEXITSTATUS(last) << endl;
-      return 1;
     }
 
     if(s.compare("${$}")== 0){
@@ -333,25 +332,24 @@ int checkEnvironment(string s){
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
       cout << mypid <<endl;
-      return 1;
     }
 
     if(s.compare("${!}")== 0){
 
       cout << last_id <<endl;
-      return 1;
+    
     }
 
     if(s.compare("${_}")==0){
 
       cout  << last_arg << endl;
-      return 1;
+      
     }
 
     if(s.compare("${SHELL}")==0){
 
       cout  << realpath(Shell::arg,NULL) << endl;
-      return 1;
+      
     }
 
      s.replace(0,2,"");
