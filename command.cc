@@ -324,31 +324,31 @@ void checkEnvironment(string s){
 
 
     if(s.compare("${?}")==0){
-      cout << WEXITSTATUS(last) << endl;
+      strcpy(final[c],WEXITSTATUS(last).c_str()); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      cout << mypid <<endl;
+      strcpy(final[c],mypid.c_str()); 
     }
 
     if(s.compare("${!}")== 0){
 
-      cout << last_id <<endl;
+     strcpy(final[c],last_id.c_str()); 
     
     }
 
     if(s.compare("${_}")==0){
 
-      cout  << last_arg << endl;
+      strcpy(final[c],last_arg.c_str()); 
       
     }
 
     if(s.compare("${SHELL}")==0){
 
-      cout  << realpath(Shell::arg,NULL) << endl;
+       strcpy(final[c],realpath(Shell::arg,NULL).c_str()); 
       
     }
 
