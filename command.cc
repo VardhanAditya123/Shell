@@ -317,51 +317,51 @@ int Command::commandCheck(){
 }
 
 
-void checkEnvironment(string s){
+// void checkEnvironment(string s){
 
-  ostringstream temp;
-  string s1 = string(s);
-  string s2 = string(s);
-  temp << s;
- if(s.at(0)== '$'){
+//   ostringstream temp;
+//   string s1 = string(s);
+//   string s2 = string(s);
+//   temp << s;
+//  if(s.at(0)== '$'){
 
-     s1.replace(0,2,"");
-     s1.pop_back();
-     temp << getenv(s1.c_str());
+//      s1.replace(0,2,"");
+//      s1.pop_back();
+//      temp << getenv(s1.c_str());
 
-    if(s.compare("${?}")==0){
-      temp << WEXITSTATUS(last); 
-    }
+//     if(s.compare("${?}")==0){
+//       temp << WEXITSTATUS(last); 
+//     }
 
-    if(s.compare("${$}")== 0){
-      int pid = getpid();
-      char mypid[6];   // ex. 34567
-      sprintf(mypid, "%d", pid);
-      temp << mypid; 
-    }
+//     if(s.compare("${$}")== 0){
+//       int pid = getpid();
+//       char mypid[6];   // ex. 34567
+//       sprintf(mypid, "%d", pid);
+//       temp << mypid; 
+//     }
 
-    if(s.compare("${!}")== 0){
-    temp << last_id; 
-    }
+//     if(s.compare("${!}")== 0){
+//     temp << last_id; 
+//     }
 
-    if(s.compare("${_}")==0){
+//     if(s.compare("${_}")==0){
 
-     temp << last_arg;  
+//      temp << last_arg;  
     
-    }
+//     }
 
-    if(s.compare("${SHELL}")==0){
-       temp << realpath(Shell::arg,NULL);
+//     if(s.compare("${SHELL}")==0){
+//        temp << realpath(Shell::arg,NULL);
       
-    }
+//     }
 
 
- }
-//  strcpy(final[c],temp.c_str());
-s2 = temp.str();
- final[c] = const_cast<char*>(s2.c_str());
+//  }
+// //  strcpy(final[c],temp.c_str());
+// s2 = temp.str();
+//  final[c] = const_cast<char*>(s2.c_str());
 
-}
+// }
 
 void Command::execute() {
   // Don't do anything if there are no simple commands
