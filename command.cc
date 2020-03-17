@@ -321,6 +321,7 @@ int Command::commandCheck(){
 void checkEnvironment(string s){
   string temp;
   string s1 = s;
+  temp = s;
  if(s.at(0)== '$'){
 
      s1.replace(0,2,"");
@@ -355,6 +356,7 @@ void checkEnvironment(string s){
 
 
  }
+ strcpy(final[c],temp.c_str());
 
 }
 
