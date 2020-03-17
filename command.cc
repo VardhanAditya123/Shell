@@ -319,10 +319,10 @@ int Command::commandCheck(){
 char* checkEnvironment(string s){
 
 
-  ostringstream temp;
+  string temp;
   string s1 = string(s);
   string s2 = string(s);
-  temp << s;
+  temp+= s;
  if(s.at(0)== '$' && s.at(1)=='{'){
 
      s1.replace(0,2,"");
