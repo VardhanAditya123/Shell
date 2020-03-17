@@ -38,8 +38,7 @@ using namespace std;
 int last;
 pid_t last_id;
 char* last_arg;
-char **final  = new char*[1000];
-int c =0;
+
 void myunputc(int );
 // int last;
 Command::Command() {
@@ -419,7 +418,8 @@ void Command::execute() {
 
 
 
-
+  char **final  = new char*[1000];
+  int c =0;
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
