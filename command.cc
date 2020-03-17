@@ -326,38 +326,37 @@ void checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     temp = std::to_string(getenv(s.c_str()));
+     temp = getenv(s.c_str());
 
     if(s.compare("${?}")==0){
-      temp=std::to_string(WEXITSTATUS(last)); 
+      temp=WEXITSTATUS(last); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      temp=std::to_string(mypid); 
+      temp=mypid; 
     }
 
     if(s.compare("${!}")== 0){
-    temp=std::to_string(last_id); 
+    temp=last_id; 
     }
 
     if(s.compare("${_}")==0){
 
-     temp=std::to_string(last_arg);  
+     temp=last_arg;  
     
     }
 
     if(s.compare("${SHELL}")==0){
-       temp=std::to_string(realpath(Shell::arg,NULL));
+       temp=realpath(Shell::arg,NULL);
       
     }
 
 
  }
 //  strcpy(final[c],temp.c_str());
-  cout << temp << endl;
  final[c] = const_cast<char*>(temp.c_str());
 
 }
