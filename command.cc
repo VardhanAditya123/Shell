@@ -324,7 +324,7 @@ void checkEnvironment(string s){
 
 
     if(s.compare("${?}")==0){
-      strcpy(final[c],WEXITSTATUS(last).c_str()); 
+      strcpy(final[c],WEXITSTATUS(last)); 
     }
 
     if(s.compare("${$}")== 0){
