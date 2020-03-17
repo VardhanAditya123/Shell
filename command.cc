@@ -316,14 +316,16 @@ int Command::commandCheck(){
 }
 
 
+int checkEnvironment(string s){
 
+}
 
 void Command::execute() {
   // Don't do anything if there are no simple commands
   if ( _simpleCommandsArray.size() == 0 ) { 
     Shell::prompt();
     return;
-  }
+  } 
 
   //  print();
   int check_fun = Command::commandCheck();
