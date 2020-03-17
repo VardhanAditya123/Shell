@@ -320,10 +320,11 @@ int Command::commandCheck(){
 
 void checkEnvironment(string s){
   string temp;
+  string s1 = s;
  if(s.at(0)== '$'){
 
-     s.replace(0,2,"");
-     s.pop_back();
+     s1.replace(0,2,"");
+     s1.pop_back();
      temp = getenv(s.c_str());
 
     if(s.compare("${?}")==0){
