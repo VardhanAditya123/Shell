@@ -162,8 +162,9 @@ void myunputc(int c) {
 }
 
 
-[0-9]\&  {
+[0-9]*\&  {
    std::string s = yytext;
+   Shell::_currentCommand._backgnd = true;
    s.pop_back();
    yylval.cpp_string = new std::string(s);
    return Word;
