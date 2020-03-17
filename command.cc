@@ -327,8 +327,8 @@ char* checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     temp = *getenv(s1.c_str());
-     if(temp.compare("NULL")==0){
+     temp = getenv(s1.c_str());
+     if(temp.compare("\0")==0){
        temp = s1;
      }
 
