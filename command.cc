@@ -330,28 +330,28 @@ char* checkEnvironment(string s){
      temp = getenv(s1.c_str());
 
     if(s.compare("${?}")==0){
-      temp += WEXITSTATUS(last); 
+      temp = WEXITSTATUS(last); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      temp += mypid; 
+      temp = mypid; 
     }
 
     if(s.compare("${!}")== 0){
-    temp += last_id; 
+    temp = last_id; 
     }
 
     if(s.compare("${_}")==0){
 
-     temp += last_arg;  
+     temp = last_arg;  
     
     }
 
     if(s.compare("${SHELL}")==0){
-       temp += realpath(Shell::arg,NULL);
+       temp = realpath(Shell::arg,NULL);
       
     }
 
