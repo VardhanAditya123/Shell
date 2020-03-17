@@ -36,7 +36,7 @@
 
 using namespace std;
 int last;
-pid last_id;
+pid_t last_id;
 char* last_arg;
 void myunputc(int );
 // int last;
