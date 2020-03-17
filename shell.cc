@@ -19,7 +19,7 @@ void Shell::prompt() {
 char*  Shell::arg;
 
 int main(int argc, char **argv) {
-  cout << argc << endl;
+ 
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
