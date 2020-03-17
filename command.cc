@@ -359,7 +359,8 @@ char* checkEnvironment(string s){
  }
 //  strcpy(final[c],temp.c_str());
 s2 = temp.str();
-return  strcpy(s2,NULL);
+return strcpy(new char[s2.length()+ 1],s2.c_str());
+
 
 }
 
@@ -471,6 +472,7 @@ void Command::execute() {
       char*tmp2=pecho(str);
       final[c]=const_cast<char*>(tmp2);
       final[c]= const_cast<char*>(checkEnvironment(final[c]));
+      
       c=c+1;
     }
     last_arg = final[c-1];
