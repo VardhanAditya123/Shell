@@ -477,6 +477,9 @@ void Command::execute() {
 
        
     }
+    if(!_backgnd){
+      last_id=getpid();
+    }
   clear();
   Shell::prompt();
 } 
