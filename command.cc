@@ -323,6 +323,7 @@ void checkEnvironment(string s){
   ostringstream temp;
   string s1 = string(s);
   string s2 = string(s);
+  temp << s;
  if(s.at(0)== '$'){
 
      s1.replace(0,2,"");
