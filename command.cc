@@ -356,7 +356,7 @@ void checkEnvironment(string s){
 
 
  }
- strcpy(final[c],temp.c_str());
+//  strcpy(final[c],temp.c_str());
  final[c] = const_cast<char*>(temp.c_str());
 
 }
