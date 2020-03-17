@@ -318,7 +318,7 @@ int Command::commandCheck(){
 
 char* checkEnvironment(string s){
 
-  // cout << s << endl;
+
   ostringstream temp;
   string s1 = string(s);
   string s2 = string(s);
