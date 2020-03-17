@@ -319,19 +319,19 @@ int Command::commandCheck(){
 
 
 void checkEnvironment(string s){
-
+  string temp;
  if(s.at(0)== '$'){
 
 
     if(s.compare("${?}")==0){
-      strcpy(final[c],WEXITSTATUS(last)); 
+      temp+=WEXITSTATUS(last); 
     }
 
     if(s.compare("${$}")== 0){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      strcpy(final[c],mypid); 
+      temp+=mypid; 
     }
 
     if(s.compare("${!}")== 0){
