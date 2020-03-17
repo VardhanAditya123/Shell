@@ -17,11 +17,10 @@ void Shell::prompt() {
 
 
 char*  Shell::arg;
-char*  Shell::arg2;
+
 int main(int argc, char **argv) {
   cout << argc << endl;
   Shell::arg = argv[0];
-  Shell::arg2 = argv[argc];
   Shell::prompt();
   yyparse();
 }
