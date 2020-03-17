@@ -432,9 +432,7 @@ void Command::execute() {
     }
     last_arg = final[c-1];
 
-    if(_backgnd){
-      last_id=getppid();
-    }
+  
 
     ret = fork();
     
@@ -478,6 +476,10 @@ void Command::execute() {
        waitpid(ret ,&last, 0);
 
        
+    }
+
+      if(_backgnd){
+      last_id=getppid();
     }
     
   clear();
