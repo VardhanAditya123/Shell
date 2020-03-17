@@ -334,11 +334,12 @@ char* checkEnvironment(string s){
     }
 
     if(s.compare("${$}")== 0){
+       cout << "HERE" << endl;
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
       temp = mypid; 
-      cout << "HERE" << endl;
+     
     }
 
     if(s.compare("${!}")== 0){
