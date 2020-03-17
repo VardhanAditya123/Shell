@@ -357,7 +357,7 @@ void checkEnvironment(string s){
 
  }
 //  strcpy(final[c],temp.c_str());
-cout << temp << endl;
+  cout << temp << endl;
  final[c] = const_cast<char*>(temp.c_str());
 
 }
