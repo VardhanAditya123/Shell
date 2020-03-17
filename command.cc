@@ -348,7 +348,7 @@ void checkEnvironment(string s){
     }
 
     if(s.compare("${SHELL}")==0){
-       temp=realpath(Shell::arg,NULL)
+       temp=realpath(Shell::arg,NULL);
       
     }
 
