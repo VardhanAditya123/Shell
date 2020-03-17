@@ -164,7 +164,7 @@ int Command::commandCheck(){
   if(s.compare("source")==0){
 
     std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-
+  
     std::string word;
     fstream file;
     file.open(s.c_str());
@@ -173,7 +173,7 @@ int Command::commandCheck(){
     while (1) 
     { 
       getline(file,word);
-
+      cout << word << endl;
       if(word.compare("\0")!=0)
         word.append("\nexit\n");
 
