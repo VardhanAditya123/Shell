@@ -497,7 +497,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-        execlp(a,final, final);
+        execvp(a, final);
         perror("execvp");
         _exit(1); 
       }
