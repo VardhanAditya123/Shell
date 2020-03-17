@@ -352,6 +352,10 @@ int checkEnvironment(string s){
       return 1;
     }
 
+     s.replace(0,2,"");
+     s.pop_back();
+     getenv(s);
+
  }
 
 }
