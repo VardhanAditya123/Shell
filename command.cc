@@ -173,7 +173,7 @@ int Command::commandCheck(){
     while (1) 
     { 
       getline(file,word);
-      cout << word << endl;
+      // cout << word << endl;
       if(word.compare("\0")!=0)
         word.append("\nexit\n");
 
