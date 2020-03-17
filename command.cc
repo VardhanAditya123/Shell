@@ -174,7 +174,6 @@ int Command::commandCheck(){
     while (1) 
     { 
       getline(file,word);
-      // cout << word << endl;
       if(word.compare("\0")!=0)
         word.append("\nexit\n");
 
@@ -328,7 +327,7 @@ char* checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     temp << getenv(s1.c_str());
+     temp > getenv(s1.c_str());
 
     if(s.compare("${?}")==0){
       temp << WEXITSTATUS(last); 
