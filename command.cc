@@ -329,7 +329,7 @@ char* checkEnvironment(string s){
      s1.pop_back();
      temp = getenv(s1.c_str());
      if(temp == NULL){
-       temp = s1;
+       temp = s;
      }
 
     if(s.compare("${?}")==0){
@@ -471,6 +471,7 @@ void Command::execute() {
       int c =0;
 
     for(auto & word : simpleCommand->_argumentsArray){
+      cout << word << endl;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       // char*str = esc(tmp1);
       char*tmp2=pecho(tmp1);
