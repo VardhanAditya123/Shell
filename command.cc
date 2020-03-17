@@ -238,9 +238,6 @@ int Command::commandCheck(){
     return 1;
   }
 
-
-
-
   if(s.compare(s2) == 0){
     exit(0);
   }
