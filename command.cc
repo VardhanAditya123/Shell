@@ -328,7 +328,7 @@ void Command::execute() {
     return;
   }
  
-  print();
+  // print();
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
     clear();
