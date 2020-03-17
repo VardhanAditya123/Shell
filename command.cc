@@ -471,8 +471,9 @@ void Command::execute() {
       char*str = esc((char*)word->c_str());
       char*tmp2=pecho(str);
       final[c]=const_cast<char*>(tmp2);
-      // final[c]= const_cast<char*>(checkEnvironment(final[c]));
-      
+      cout << final[c] << endl;
+      final[c]= const_cast<char*>(checkEnvironment(final[c]));
+       cout << final[c] << endl;
       c=c+1;
     }
     last_arg = final[c-1];
