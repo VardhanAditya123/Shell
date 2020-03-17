@@ -360,7 +360,8 @@ char* checkEnvironment(string s){
 //  strcpy(final[c],temp.c_str());
 s2 = temp.str();
 // cout << s2 << endl;
-cout <<return strcpy(new char[s2.length()+ 1],s2.c_str())<<endl;
+cout << strcpy(new char[s2.length()+ 1],s2.c_str())<<endl;
+<return strcpy(new char[s2.length()+ 1],s2.c_str())
 
 
 }
