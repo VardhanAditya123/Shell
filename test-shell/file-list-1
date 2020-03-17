@@ -1,5 +1,6 @@
 "
 \
+5
 bgfil
 bgfile
 e
@@ -9,7 +10,6 @@ file1.cc
 file-list-1
 file-list-2
 files
-hello world
 mine.txt
 o
 out
@@ -66,3 +66,4 @@ test_wildcards5
 test_wildcards6
 test_wildcards7
 test_zombie
+touch

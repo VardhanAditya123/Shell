@@ -340,7 +340,7 @@ void checkEnvironment(string s){
     }
 
     if(s.compare("${!}")== 0){
-    temp+=last_id; 
+    temp=last_id; 
     }
 
     if(s.compare("${_}")==0){
