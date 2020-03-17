@@ -37,6 +37,7 @@
 using namespace std;
 int last;
 int last_id;
+char* last_arg;
 void myunputc(int );
 // int last;
 Command::Command() {
@@ -299,7 +300,7 @@ int Command::commandCheck(){
 
        if(s2.compare("${_}")==0){
 
-        // cout  << Shell::arg2 << endl;
+        cout  << last_arg << endl;
         return 1;
       }
 
@@ -429,6 +430,7 @@ void Command::execute() {
        final[c]=const_cast<char*>(tmp2);
        c=c+1;
     }
+    last_arg = final[c-1];
 
 
 
