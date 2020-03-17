@@ -331,7 +331,7 @@ void checkEnvironment(string s){
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
-      strcpy(final[c],mypid.c_str()); 
+      strcpy(final[c],mypid); 
     }
 
     if(s.compare("${!}")== 0){
