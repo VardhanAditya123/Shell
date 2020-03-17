@@ -328,6 +328,9 @@ void Command::execute() {
     return;
   }
  
+  if(_backgnd){
+      last_id=getpid();
+    }
   // print();
   int check_fun = Command::commandCheck();
   if(check_fun == 1){
@@ -478,9 +481,6 @@ void Command::execute() {
        
     }
 
-      if(_backgnd){
-      last_id=getppid();
-    }
     
   clear();
   Shell::prompt();
