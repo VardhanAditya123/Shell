@@ -337,8 +337,8 @@ char* checkEnvironment(string s){
   
 
     if(s.compare("${?}")==0){
-      
-      temp = (char*)WEXITSTATUS(last); 
+      cout << WEXITSTATUS(last) << endl;
+      // temp = WEXITSTATUS(last); 
     }
      
     if(s.compare("${$}")== 0){
