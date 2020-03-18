@@ -155,9 +155,9 @@ char* pecho (char* str){
   return tmp2;
 }
 
-int commandCheck(char**s){
+int commandCheck(char**final){
 
-  string s = *(_simpleCommandsArray[0]->_argumentsArray[0]);
+  string s = final[0];
   string s2 = "exit";
 
 
