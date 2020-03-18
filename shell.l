@@ -164,7 +164,7 @@ void myunputc(int c) {
 
 "source "[A-za-z0-9]* {
   
-
+    cout << "Working" << endl;
     std::string s = yytext;
     s.replace(0,7,"");
     std::string word;
