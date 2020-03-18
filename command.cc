@@ -230,7 +230,7 @@ int commandCheck(char**final , int c){
             i++;
           }
           str2[i - 1] = '\0';
-          cout << str2 << "\n";
+          // cout << str2 << "\n";
           close(out[0]);
         }
 
