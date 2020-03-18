@@ -340,7 +340,7 @@ char* checkEnvironment(string s){
       // cout << WEXITSTATUS(last) << endl;
       // exit(0);
        temp = WEXITSTATUS(last); 
-       cout << temp << endl;
+       cout << "HELLO" << temp << endl;
        exit(1);
     }
      
