@@ -403,8 +403,8 @@ void Command::execute() {
 
     for(auto & word : simpleCommand->_argumentsArray){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-      // char*str = esc(tmp1);
-      char*tmp2=pecho(tmp1);
+      char*str = esc(tmp1);
+      char*tmp2=pecho(str);
       // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
       // cout << "here:" << endl;
