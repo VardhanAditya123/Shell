@@ -164,7 +164,6 @@ void myunputc(int c) {
 
 "source "[A-za-z0-9]* {
   
-    cout << "Working" << endl;
     std::string s = yytext;
     s.replace(0,7,"");
     std::string word;
@@ -195,14 +194,14 @@ void myunputc(int c) {
         close(in[1]);
 
         int ret = fork();
-        if(ret == 0){
-          dup2(in[0],0);
-          close(in[0]);
-          dup2(out[1],1);
-          close(out[1]);
-          execvp("/proc/self/exe",NULL);
-
-        }
+         if(ret == 0){
+         dup2(in[0],0);
+         close(in[0]);
+         dup2(out[1],1);
+         close(out[1]);
+         execvp("/proc/self/exe",NULL);
+      
+    }
         else if(ret < 0){
           perror("fork");
         }
