@@ -183,7 +183,7 @@ int commandCheck(char**final , int c){
     //  cout << str << endl; 
     }
 
-     for(int j = 0; str[j]!='\0';j++){
+     for(int j = 0; str[j].length()!=0;j++){
        s = str[j];
      for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
