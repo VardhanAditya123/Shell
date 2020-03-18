@@ -169,7 +169,7 @@ int commandCheck(char**final , int c){
     fstream file;
     file.open(s1.c_str());
 
-     string str;
+     string str[100];
     while (1) 
     { 
       getline(file,word);
@@ -177,11 +177,7 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-       str = word;
-       cout << str << endl;
-       for(int i = str.length() -1  ; i >= 0;i--){
-       myunputc(str.at(i));
-      }
+       str[c] = word;
     //  cout << str << endl; 
     }
   
