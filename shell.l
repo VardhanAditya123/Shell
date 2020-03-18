@@ -186,7 +186,6 @@ void myunputc(int c) {
 
      for(int j = 0; j < count;j++){
       string s = str[j];
-      // cout << s << endl;
       myunputc('\n');
      for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
