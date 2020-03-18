@@ -165,7 +165,7 @@ int commandCheck(char**final , int c){
   if(s.compare("source")==0){
 
     string s1 = final[1];
-    cout << sh-in << endl;
+    cout << s1 << endl;
     std::string word;
     fstream file;
     file.open(s1.c_str());
