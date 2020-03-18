@@ -327,10 +327,10 @@ char* checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     cout << "DEBUG" << endl;
+    
      temp = getenv(s1.c_str());
-     cout << "DEBUG" << endl;
-     if(temp.compare("\0")==0){
+     
+     if(temp == NULL){
        temp = s1;
      }
    
