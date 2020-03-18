@@ -320,6 +320,7 @@ char* checkEnvironment(string s){
 
 // cout << s << endl;
   string temp;
+  char* temp2;
   string s1 = string(s);
   string s2 = string(s);
   temp = string(s);
@@ -333,7 +334,7 @@ char* checkEnvironment(string s){
      if(temp.empty()){
        temp = s1;
      }
-   cout << "DEBUG" << endl;
+  
 
     if(s.compare("${?}")==0){
       temp = WEXITSTATUS(last); 
