@@ -164,7 +164,8 @@ int commandCheck(char**final){
 
   if(s.compare("source")==0){
 
-    std::string s = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+    std::string s = final[1];
+    // *(_simpleCommandsArray[0]->_argumentsArray[1]);
   
     std::string word;
     fstream file;
@@ -244,8 +245,9 @@ int commandCheck(char**final){
 
   if(s.compare("setenv") == 0){
 
-    setenv(((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
-        ((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
+    // setenv(((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
+    //     ((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
+    setenv(final[1]->c_str(),final[2]->c_str(),1);
     return 1 ;
   }
 
