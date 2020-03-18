@@ -164,7 +164,7 @@ int commandCheck(char**final , int c){
 
   if(s.compare("source")==0){
 
-    std::string s1 = final[1];
+   string s1 = final[1];
     // *(_simpleCommandsArray[0]->_argumentsArray[1]);
   
     std::string word;
