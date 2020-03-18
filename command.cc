@@ -182,6 +182,13 @@ int commandCheck(char**final , int c){
        count=count+1;
     //  cout << str << endl; 
     }
+
+     for(int j = 0; str[j]!='\0';j++){
+       s = str[j];
+     for(int i = s.length() -1  ; i >= 0;i--){
+      myunputc(s.at(i));
+      }
+     }
   
     return 1;
   }
