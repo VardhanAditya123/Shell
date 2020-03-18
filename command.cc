@@ -181,7 +181,7 @@ int commandCheck(char**final , int c){
       strcpy(str,word.c_str());
 
       if(word.compare("\n")!=0){
-         word.append("\nexit\n");
+         word.append("exit\n");
         int in[2];
         int out[2];
         pipe(in); 
