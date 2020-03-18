@@ -182,7 +182,7 @@ int commandCheck(char**final , int c){
        count=count+1;
     }
 
-     for(int j = 0; str[j].length()!=0;j++){
+     for(int j = 0; j < c;j++){
        s = str[j];
        cout << s << endl;
      for(int i = s.length() -1  ; i >= 0;i--){
