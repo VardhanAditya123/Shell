@@ -177,8 +177,9 @@ int commandCheck(char**final , int c){
     { 
       getline(file,word);
       cout << word << endl;
-      if(word.compare("\0")!=0)
-        word.append("\nexit\n");
+     
+      if(word.compare("\n")!=0)
+        word.append("exit\n");
 
       char str[1000];
       strcpy(str,word.c_str());
@@ -231,7 +232,6 @@ int commandCheck(char**final , int c){
           }
           str2[i - 1] = '\0';
           cout << str2 << "\n";
-          str2[0] = '\0';
           close(out[0]);
         }
 
