@@ -182,7 +182,6 @@ int commandCheck(char**final , int c){
       char str[1000];
       strcpy(str,word.c_str());
 
-      if(word.compare("\0")!=0){
         int in[2];
         int out[2];
         pipe(in); 
@@ -234,9 +233,7 @@ int commandCheck(char**final , int c){
           close(out[0]);
         }
 
-      }
-      else
-        break;
+      
     } 
   return 1;
   }
