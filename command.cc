@@ -177,7 +177,8 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-      str = *word;
+       str = word;
+       cout << str << endl;
        for(int i = str.length() -1  ; i >= 0;i--){
        myunputc(str.at(i));
       }
