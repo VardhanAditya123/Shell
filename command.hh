@@ -19,7 +19,6 @@ struct Command {
   void clear();
   void print();
   void execute();
-  int commandCheck(char* );
   int subShell();
 
   static SimpleCommand *_currSimpleCommand;
