@@ -166,7 +166,6 @@ void myunputc(int c) {
   
     std::string s = yytext;
     s.replace(0,7,"");
-    cout << s << endl;
     std::string word;
     fstream file;
     file.open(s.c_str());
@@ -175,6 +174,7 @@ void myunputc(int c) {
     while (1) 
     { 
       getline(file,word);
+      cout << word << endl;
       if(word.length()!=0)
         word.append("\nexit\n");
         
