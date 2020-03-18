@@ -354,7 +354,11 @@ char* checkEnvironment(string s){
     }
 
     if(s.compare("${!}")== 0){
-    temp = last_id; 
+      int pid = last_id;
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      temp = mypid;
+      // temp = last_id; 
     }
 
     if(s.compare("${_}")==0){
