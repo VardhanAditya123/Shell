@@ -162,37 +162,6 @@ void myunputc(int c) {
 }
 
 
-"source "[A-za-z0-9]* {
-  
-    std::string s1 = yytext;
-    s1.replace(0,7,"");
-    // cout << s1 << endl;
-    std::string word;
-    fstream file;
-    file.open(s1.c_str());
-
-    string str[100];
-    int count  = 0;
-    while (1) 
-    { 
-      getline(file,word);
-     
-      if(word.length()==0)
-        break;
-
-       str[count] = word;
-       count=count+1;
-    }
-
-     for(int j = count-1; j >= 0;j--){
-      string s = str[j];
-      myunputc('\n');
-     for(int i = s.length() -1  ; i >= 0;i--){
-      myunputc(s.at(i));
-      }
-     }
-
-}
 
 
 
