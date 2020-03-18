@@ -160,84 +160,6 @@ int commandCheck(char**final , int c){
   string s = final[0];
   string s2 = "exit";
 
-
-
-  if(s.compare("source")==0){
-
-   string s1 = final[1];
-    std::string word;
-    fstream file;
-    file.open(s1.c_str());
-
-
-    while (1) 
-    { 
-      getline(file,word);
-      if(word.length()!=0)
-        word.append("\nexit\n");
-        else
-        break;
-
-      char str[1000];
-      strcpy(str,word.c_str());
-
-        int in[2];
-        int out[2];
-        pipe(in); 
-        pipe(out);
-
-        int tmpin=dup(0);
-        int tmpout=dup(1);
-
-        write(in[1],str,strlen(str));
-        close(in[1]);
-
-        int ret = fork();
-        if(ret == 0){
-          dup2(in[0],0);
-          close(in[0]);
-          dup2(out[1],1);
-          close(out[1]);
-          execvp("/proc/self/exe",NULL);
-
-        }
-        else if(ret < 0){
-          perror("fork");
-        }
-
-        else if(ret > 0){
-          close(in[0]);
-          close(out[1]);
-          dup2(tmpin,0);
-          dup2(tmpout,1);
-          close(tmpin);
-          close(tmpout);
-
-          char str2[1000];
-
-          int i = 0;
-          char c;
-          while(read(out[0],&c,1)){
-            if(c == '\n'){
-              str2[i] = ' ';
-            }
-            else{
-              str2[i] = c;
-            }
-            i++;
-          }
-          str2[i - 1] = '\0';
-          if(str2[0]!='\0')
-          cout << str2 << "\n";
-          str2[0] = '\0';
-          close(out[0]);
-        }
-
-      
-    } 
-  return 1;
-  }
-
   if(s.compare(s2) == 0){
     exit(0);
   }
@@ -276,46 +198,6 @@ int commandCheck(char**final , int c){
     return 1;
   }
 
-  // if(s.compare("echo") == 0){
-  //   string s2 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
-
-  //   if(s2.compare("${?}")==0){
-  //     cout << WEXITSTATUS(last) << endl;
-  //     return 1;
-  //   }
-
-  //   if(s2.compare("${$}")== 0){
-  //     int pid = getpid();
-  //     char mypid[6];   // ex. 34567
-  //     sprintf(mypid, "%d", pid);
-  //     cout << mypid <<endl;
-  //     return 1;
-  //   }
-
-  //   if(s2.compare("${!}")== 0){
-
-  //     cout << last_id <<endl;
-  //     return 1;
-  //   }
-
-  //   if(s2.compare("${_}")==0){
-
-  //     cout  << last_arg << endl;
-  //     return 1;
-  //   }
-
-  //   if(s2.compare("${SHELL}")==0){
-
-  //     cout  << realpath(Shell::arg,NULL) << endl;
-  //     return 1;
-  //   }
-
-
-
-
-  // }
-
-  // return 0;
 }
 
 
