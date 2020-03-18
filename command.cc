@@ -169,7 +169,8 @@ int commandCheck(char**final , int c){
     fstream file;
     file.open(s1.c_str());
 
-     string str[100];
+    string str[100];
+    int count  = 0;
     while (1) 
     { 
       getline(file,word);
@@ -177,7 +178,8 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-       str[c] = word;
+       str[count] = word;
+       count=count+1;
     //  cout << str << endl; 
     }
   
