@@ -488,7 +488,7 @@ void Command::execute() {
       // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
       string copy = tmp2;
-       simpleCommand->_argumentsArray[c] =&(copy);
+      simpleCommand->_argumentsArray[c] =&(copy);
       c=c+1;
     }
     last_arg = final[c-1];
