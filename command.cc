@@ -177,15 +177,14 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-      str=str+word+"\n";
-
+      str=word+"\n";
+       for(int i = str.length() -1  ; i >= 0;i--){
+      myunputc(str.at(i));
+    }
     }
     str.pop_back();
     // cout << str << endl; 
      
-   for(int i = str.length() -1  ; i >= 0;i--){
-      myunputc(str.at(i));
-    }
     cout << "DEBIG" << endl;
     return 1;
   }
