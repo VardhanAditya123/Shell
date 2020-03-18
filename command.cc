@@ -327,7 +327,7 @@ char* checkEnvironment(string s){
 
      s1.replace(0,2,"");
      s1.pop_back();
-     cout << s << endl;
+  
      temp = getenv(s1.c_str());
      if(temp.compare("\0")==0){
        temp = s1;
@@ -337,7 +337,7 @@ char* checkEnvironment(string s){
     if(s.compare("${?}")==0){
       temp = WEXITSTATUS(last); 
     }
-
+     cout << s << endl;
     if(s.compare("${$}")== 0){
       // cout << "HELLO" << endl;
       int pid = getpid();
