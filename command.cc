@@ -162,84 +162,84 @@ int commandCheck(char**final , int c){
 
 
 
-  // if(s.compare("source")==0){
+  if(s.compare("source")==0){
 
-  //  string s1 = final[1];
-  // //  cout << s1 << endl;
-  //   // *(_simpleCommandsArray[0]->_argumentsArray[1]);
+   string s1 = final[1];
+  //  cout << s1 << endl;
+    // *(_simpleCommandsArray[0]->_argumentsArray[1]);
   
-  //   std::string word;
-  //   fstream file;
-  //   file.open(s1.c_str());
+    std::string word;
+    fstream file;
+    file.open(s1.c_str());
 
 
-  //   while (1) 
-  //   { 
-  //     getline(file,word);
-  //     cout << word << endl;
-  //     if(word.compare("\0")!=0)
-  //       word.append("\nexit\n");
+    while (1) 
+    { 
+      getline(file,word);
+      cout << word << endl;
+      // if(word.compare("\0")!=0)
+      //   word.append("\nexit\n");
 
-  //     char str[1000];
-  //     strcpy(str,word.c_str());
+      char str[1000];
+      strcpy(str,word.c_str());
 
-  //     if(word.compare("\0")!=0){
-  //       int in[2];
-  //       int out[2];
-  //       pipe(in); 
-  //       pipe(out);
+      if(word.compare("\0")!=0){
+        int in[2];
+        int out[2];
+        pipe(in); 
+        pipe(out);
 
-  //       int tmpin=dup(0);
-  //       int tmpout=dup(1);
+        int tmpin=dup(0);
+        int tmpout=dup(1);
 
-  //       write(in[1],str,strlen(str));
-  //       close(in[1]);
+        write(in[1],str,strlen(str));
+        close(in[1]);
 
-  //       int ret = fork();
-  //       if(ret == 0){
-  //         dup2(in[0],0);
-  //         close(in[0]);
-  //         dup2(out[1],1);
-  //         close(out[1]);
-  //         execvp("/proc/self/exe",NULL);
+        int ret = fork();
+        if(ret == 0){
+          dup2(in[0],0);
+          close(in[0]);
+          dup2(out[1],1);
+          close(out[1]);
+          execvp("/proc/self/exe",NULL);
 
-  //       }
-  //       else if(ret < 0){
-  //         perror("fork");
-  //       }
+        }
+        else if(ret < 0){
+          perror("fork");
+        }
 
-  //       else if(ret > 0){
-  //         close(in[0]);
-  //         close(out[1]);
-  //         dup2(tmpin,0);
-  //         dup2(tmpout,1);
-  //         close(tmpin);
-  //         close(tmpout);
+        else if(ret > 0){
+          close(in[0]);
+          close(out[1]);
+          dup2(tmpin,0);
+          dup2(tmpout,1);
+          close(tmpin);
+          close(tmpout);
 
-  //         char str2[1000];
+          char str2[1000];
 
-  //         int i = 0;
-  //         char c;
-  //         while(read(out[0],&c,1)){
-  //           if(c == '\n'){
-  //             str2[i] = ' ';
-  //           }
-  //           else{
-  //             str2[i] = c;
-  //           }
-  //           i++;
-  //         }
-  //         str2[i - 1] = '\0';
-  //         cout << str2 << "\n";
-  //         close(out[0]);
-  //       }
+          int i = 0;
+          char c;
+          while(read(out[0],&c,1)){
+            if(c == '\n'){
+              str2[i] = ' ';
+            }
+            else{
+              str2[i] = c;
+            }
+            i++;
+          }
+          str2[i - 1] = '\0';
+          cout << str2 << "\n";
+          close(out[0]);
+        }
 
-  //     }
-  //     else
-  //       break;
-  //   } 
-  // return 1;
-  // }
+      }
+      else
+        break;
+    } 
+  return 1;
+  }
 
   if(s.compare(s2) == 0){
     exit(0);
