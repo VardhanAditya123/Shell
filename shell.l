@@ -166,6 +166,7 @@ void myunputc(int c) {
   
     std::string s1 = yytext;
     s1.replace(0,7,"");
+    cout << s1 << endl;
     std::string word;
     fstream file;
     file.open(s1.c_str());
