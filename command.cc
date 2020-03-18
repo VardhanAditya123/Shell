@@ -192,7 +192,7 @@ int commandCheck(char**final , int c){
      }
 
   
-    return 1;
+    exit(0);
   }
 
   if(s.compare(s2) == 0){
