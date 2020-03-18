@@ -387,12 +387,12 @@ void Command::execute() {
   } 
 
   //  print();
-  int check_fun = Command::commandCheck();
-  if(check_fun == 1){
-    clear();
-    Shell::prompt();
-    return;
-  }
+  // int check_fun = Command::commandCheck();
+  // if(check_fun == 1){
+  //   clear();
+  //   Shell::prompt();
+  //   return;
+  // }
   int ret;
 
   //save in/out
@@ -490,7 +490,12 @@ void Command::execute() {
       c=c+1;
     }
     last_arg = final[c-1];
-
+    int check_fun = Command::commandCheck();
+  if(check_fun == 1){
+    clear();
+    Shell::prompt();
+    return;
+  }
 
 
     ret = fork();
