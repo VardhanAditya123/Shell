@@ -169,7 +169,7 @@ int commandCheck(char**final , int c){
     fstream file;
     file.open(s1.c_str());
 
-     string str[1000];
+     string str;
     while (1) 
     { 
       getline(file,word);
