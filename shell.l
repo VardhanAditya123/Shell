@@ -176,8 +176,10 @@ void myunputc(int c) {
       getline(file,word);
       if(word.length()!=0)
         word.append("\nexit\n");
-        else
+        
+        else{
         break;
+        }
 
       char str[1000];
       strcpy(str,word.c_str());
