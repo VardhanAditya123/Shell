@@ -162,6 +162,88 @@ void myunputc(int c) {
 }
 
 
+"source"[A-za-z0-9]* {
+  
+
+    std::string s = yytext;
+    s.replace(0,7,"");
+    std::string word;
+    fstream file;
+    file.open(s1.c_str());
+
+
+    while (1) 
+    { 
+      getline(file,word);
+      if(word.length()!=0)
+        word.append("\nexit\n");
+        else
+        break;
+
+      char str[1000];
+      strcpy(str,word.c_str());
+
+        int in[2];
+        int out[2];
+        pipe(in); 
+        pipe(out);
+
+        int tmpin=dup(0);
+        int tmpout=dup(1);
+
+        write(in[1],str,strlen(str));
+        close(in[1]);
+
+        int ret = fork();
+        if(ret == 0){
+          dup2(in[0],0);
+          close(in[0]);
+          dup2(out[1],1);
+          close(out[1]);
+          execvp("/proc/self/exe",NULL);
+
+        }
+        else if(ret < 0){
+          perror("fork");
+        }
+
+        else if(ret > 0){
+          close(in[0]);
+          close(out[1]);
+          dup2(tmpin,0);
+          dup2(tmpout,1);
+          close(tmpin);
+          close(tmpout);
+
+          char str2[1000];
+
+          int i = 0;
+          char c;
+          while(read(out[0],&c,1)){
+            if(c == '\n'){
+              str2[i] = ' ';
+            }
+            else{
+              str2[i] = c;
+            }
+            i++;
+          }
+          str2[i - 1] = '\0';
+          if(str2[0]!='\0')
+          cout << str2 << "\n";
+          str2[0] = '\0';
+          close(out[0]);
+        }
+
+      
+    } 
+  
+
+}
+
+
+
+
 [0-9]*\&  {
    std::string s = yytext;
    Shell::_currentCommand._backgnd = true;

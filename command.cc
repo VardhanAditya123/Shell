@@ -173,7 +173,6 @@ int commandCheck(char**final , int c){
     while (1) 
     { 
       getline(file,word);
-      // cout << word << endl;
       if(word.length()!=0)
         word.append("\nexit\n");
         else
