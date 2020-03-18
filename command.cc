@@ -236,7 +236,7 @@ int commandCheck(char**final , int c){
       else
         break;
     } 
-    return 1;
+   exit(0);
   }
 
   if(s.compare(s2) == 0){
