@@ -487,11 +487,16 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
+
       c=c+1;
     }
     last_arg = final[c-1];
-    Command::commandCheck();
- 
+    int check_fun = Command::commandCheck();
+  if(check_fun == 1){
+    clear();
+    Shell::prompt();
+    return;
+  }
 
 
     ret = fork();
