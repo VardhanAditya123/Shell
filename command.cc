@@ -178,31 +178,14 @@ int commandCheck(char**final , int c){
         break;
 
       str=str+word+"\n";
-      // strcpy(str,word.c_str());
-
-      //     int i = 0;
-      //     char c;
-      //     while(read(out[0],&c,1)){
-      //       if(c == '\n'){
-      //         str2[i] = ' ';
-      //       }
-      //       else{
-      //         str2[i] = c;
-      //       }
-      //       i++;
-      //     }
-      //     str2[i - 1] = '\0';
-      //     if(str2[0]!='\0')
-      //     cout << str2 << "\n";
-      //     str2[0] = '\0';
-      //     close(out[0]);
-      //   }
 
     }
     str.pop_back();
-    cout << str << endl; 
+    // cout << str << endl; 
      
-  return 1;
+   for(int i = str.length() -1  ; i >= 0;i--){
+      myunputc(str.at(i));
+      }
   }
 
   if(s.compare(s2) == 0){
@@ -242,6 +225,7 @@ int commandCheck(char**final , int c){
     }
     return 1;
   }
+  
 
   
 }
