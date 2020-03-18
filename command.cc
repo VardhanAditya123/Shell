@@ -162,37 +162,37 @@ int commandCheck(char**final , int c){
 
 
 
-  if(s.compare("source")==0){
+  // if(s.compare("source")==0){
 
-   string s1 = final[1];
-    std::string word;
-    fstream file;
-    file.open(s1.c_str());
+  //  string s1 = final[1];
+  //   std::string word;
+  //   fstream file;
+  //   file.open(s1.c_str());
 
-    string str[100];
-    int count  = 0;
-    while (1) 
-    { 
-      getline(file,word);
+  //   string str[100];
+  //   int count  = 0;
+  //   while (1) 
+  //   { 
+  //     getline(file,word);
      
-      if(word.length()==0)
-        break;
+  //     if(word.length()==0)
+  //       break;
 
-       str[count] = word;
-       count=count+1;
-    }
+  //      str[count] = word;
+  //      count=count+1;
+  //   }
 
-     for(int j = 0; j < c;j++){
-       s = str[j];
-      //  cout << s << endl;
-      s+='\n';
-     for(int i = s.length() -1  ; i >= 0;i--){
-      myunputc(s.at(i));
-      }
-     }
+  //    for(int j = 0; j < c;j++){
+  //      s = str[j];
+  //     //  cout << s << endl;
+  //     s+='\n';
+  //    for(int i = s.length() -1  ; i >= 0;i--){
+  //     myunputc(s.at(i));
+  //     }
+  //    }
   
-    return 1;
-  }
+  //   return 1;
+  // }
 
   if(s.compare(s2) == 0){
     exit(0);
