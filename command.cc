@@ -491,7 +491,7 @@ void Command::execute() {
       c=c+1;
     }
     last_arg = final[c-1];
-    int check_fun = Command::commandCheck();
+    int check_fun = Command::commandCheck(final);
   if(check_fun == 1){
     clear();
     Shell::prompt();
