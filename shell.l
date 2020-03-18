@@ -166,7 +166,7 @@ void myunputc(int c) {
   
     std::string s1 = yytext;
     s1.replace(0,7,"");
-    cout << s1 << endl;
+    // cout << s1 << endl;
     std::string word;
     fstream file;
     file.open(s1.c_str());
@@ -186,8 +186,7 @@ void myunputc(int c) {
 
      for(int j = 0; j < count;j++){
       string s = str[j];
-      cout << s << endl;
-      // s+='\n';
+      // cout << s << endl;
      for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
