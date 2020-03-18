@@ -329,10 +329,11 @@ char* checkEnvironment(string s){
      s1.pop_back();
   
      temp = getenv(s1.c_str());
+     cout << "DEBUG" << endl;
      if(temp.compare("\0")==0){
        temp = s1;
      }
-    cout << s << endl;
+   
 
     if(s.compare("${?}")==0){
       temp = WEXITSTATUS(last); 
