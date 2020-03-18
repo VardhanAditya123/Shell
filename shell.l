@@ -233,7 +233,7 @@ void myunputc(int c) {
           str2[i - 1] = '\0';
           if(str2[0]!='\0')
           cout << str2 << "\n";
-          str2[0] = '\0';
+          // str2[0] = '\0';
           close(out[0]);
         }
 
