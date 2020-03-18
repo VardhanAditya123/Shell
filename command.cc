@@ -169,7 +169,7 @@ int commandCheck(char**final , int c){
     fstream file;
     file.open(s1.c_str());
 
-
+     string str[1000];
     while (1) 
     { 
       getline(file,word);
@@ -177,7 +177,6 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-      string str[1000];
       str._append(word);
       // strcpy(str,word.c_str());
 
