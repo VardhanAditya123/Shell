@@ -247,7 +247,7 @@ int commandCheck(char**final){
 
     // setenv(((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
     //     ((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
-    setenv(final[1]->c_str(),final[2]->c_str(),1);
+    setenv(final[1].c_str(),final[2]->c_str(),1);
     return 1 ;
   }
 
