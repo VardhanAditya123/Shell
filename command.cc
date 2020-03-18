@@ -199,7 +199,7 @@ int commandCheck(char**final , int c){
       //   }
 
     }
-
+    str.pop_back();
     cout << str << endl; 
      
   return 1;
