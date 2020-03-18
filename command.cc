@@ -270,7 +270,7 @@ int commandCheck(char**final){
 
       int ret = chdir(final[1]);
       if ( ret == -1){
-        fprintf(stderr,"cd: can't cd to %s\n",(final[1]);
+        fprintf(stderr,"cd: can't cd to %s\n",(final[1]));
       }
 
     }
