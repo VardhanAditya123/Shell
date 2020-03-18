@@ -164,7 +164,7 @@ int commandCheck(char**final , int c){
 
   if(s.compare("source")==0){
 
-   string s1 = *(_simpleCommandsArray[0]->_argumentsArray[1]);
+   string s1 = "shell-in"
   //  cout << s1 << endl;
     // *(_simpleCommandsArray[0]->_argumentsArray[1]);
   
