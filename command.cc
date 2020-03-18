@@ -192,8 +192,6 @@ int commandCheck(char**final , int c){
 
   if(s.compare("setenv") == 0){
 
-    // setenv(((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()),
-    //     ((_simpleCommandsArray[0]->_argumentsArray[2])->c_str()),1);
     setenv(final[1],final[2],1);
     return 1 ;
   }
