@@ -165,8 +165,8 @@ void myunputc(int c) {
 "source "[A-za-z0-9]* {
   
     std::string s = yytext;
-    cout << s << endl;
     s.replace(0,7,"");
+    cout << s << endl;
     std::string word;
     fstream file;
     file.open(s.c_str());
