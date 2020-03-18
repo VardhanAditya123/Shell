@@ -487,7 +487,7 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
-      string copy = tmp2;
+      string copy = final[c];
       simpleCommand->_argumentsArray[c] =&(copy);
       c=c+1;
     }
