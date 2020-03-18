@@ -175,16 +175,16 @@ int commandCheck(char**final , int c){
 
     while (1) 
     { 
-      getline(file,word);
+     int val= getline(file,word);
       cout << word << endl;
      
-      if(word.compare("\0")!=0)
-        word.append("\nexit\n");
+      if(val == -1)
+        word.append("exit\n");
 
       char str[1000];
       strcpy(str,word.c_str());
 
-      if(word.compare("\nexit\n")!=0){
+      if(word.compare("\0")!=0){
         int in[2];
         int out[2];
         pipe(in); 
