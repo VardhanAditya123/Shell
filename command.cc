@@ -338,6 +338,7 @@ char* checkEnvironment(string s){
     }
 
     if(s.compare("${$}")== 0){
+      cout << "HELLO" << endl;
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
@@ -364,7 +365,6 @@ char* checkEnvironment(string s){
  }
 
 s2 = temp;
-cout << temp << endl;
 return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
