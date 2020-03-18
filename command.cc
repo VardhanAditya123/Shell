@@ -341,7 +341,7 @@ char* checkEnvironment(string s){
       // exit(0);
        temp = WEXITSTATUS(last); 
        cout << temp << endl;
-       exit();
+       exit(1);
     }
      
     if(s.compare("${$}")== 0){
