@@ -330,7 +330,7 @@ char* checkEnvironment(string s){
     
      temp = getenv(s1.c_str());
      
-     if(temp == NULL){
+     if(temp.empty()){
        temp = s1;
      }
    
