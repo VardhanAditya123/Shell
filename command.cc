@@ -165,7 +165,6 @@ int commandCheck(char**final , int c){
   if(s.compare("source")==0){
 
     string s1 = final[1];
-    s1.replace(0,7,"");
     std::string word;
     fstream file;
     file.open(s1.c_str());
