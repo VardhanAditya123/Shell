@@ -177,7 +177,7 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-      str+=word;
+      str=str+word+"\n";
       // strcpy(str,word.c_str());
 
       //     int i = 0;
