@@ -318,7 +318,7 @@ int Command::commandCheck(){
 
 char* checkEnvironment(string s){
 
-cout << s << endl;
+// cout << s << endl;
   string temp;
   string s1 = string(s);
   string s2 = string(s);
@@ -327,6 +327,7 @@ cout << s << endl;
 
      s1.replace(0,2,"");
      s1.pop_back();
+     cout << s << endl;
      temp = getenv(s1.c_str());
      if(temp.compare("\0")==0){
        temp = s1;
