@@ -318,7 +318,7 @@ int Command::commandCheck(){
 
 char* checkEnvironment(string s){
 
-
+cout << s << endl;
   string temp;
   string s1 = string(s);
   string s2 = string(s);
@@ -338,7 +338,7 @@ char* checkEnvironment(string s){
     }
 
     if(s.compare("${$}")== 0){
-      cout << "HELLO" << endl;
+      // cout << "HELLO" << endl;
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
