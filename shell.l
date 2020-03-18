@@ -184,7 +184,7 @@ void myunputc(int c) {
        count=count+1;
     }
 
-     for(int j = 0; j < count;j++){
+     for(int j = count-1; j >= 0;j--){
       string s = str[j];
       myunputc('\n');
      for(int i = s.length() -1  ; i >= 0;i--){
