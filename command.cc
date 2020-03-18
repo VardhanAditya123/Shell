@@ -332,12 +332,12 @@ char* checkEnvironment(string s){
      if(temp.compare("\0")==0){
        temp = s1;
      }
-
+    cout << s << endl;
 
     if(s.compare("${?}")==0){
       temp = WEXITSTATUS(last); 
     }
-     cout << s << endl;
+     
     if(s.compare("${$}")== 0){
       // cout << "HELLO" << endl;
       int pid = getpid();
