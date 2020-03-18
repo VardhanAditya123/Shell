@@ -175,7 +175,7 @@ int commandCheck(char**final , int c){
 
     while (1) 
     { 
-     int val= getline(file,word);
+      getline(file,word);
       cout << word << endl;
      
       if(word.compare("\0")!=0)
