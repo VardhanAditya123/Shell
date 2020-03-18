@@ -337,11 +337,10 @@ char* checkEnvironment(string s){
   
 
     if(s.compare("${?}")==0){
-      // cout << WEXITSTATUS(last) << endl;
-      // exit(0);
-       temp = WEXITSTATUS(last); 
-       cout  << temp << endl;
-       exit(1);
+      int pid = WEXITSTATUS(last);
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      temp = mypid;
     }
      
     if(s.compare("${$}")== 0){
@@ -358,7 +357,6 @@ char* checkEnvironment(string s){
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
       temp = mypid;
-      // temp = last_id; 
     }
 
     if(s.compare("${_}")==0){
