@@ -263,14 +263,14 @@ int commandCheck(char**final){
     // string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
     string str = final[0];
 
-    if( sizeof(str)/sizeof(str[0]); == 1))
+    if( sizeof(str)/sizeof(str[0]) == 1))
       chdir(getenv("HOME"));
 
     else{
 
-      int ret = chdir(const_cast<char*>((_simpleCommandsArray[0]->_argumentsArray[1])->c_str()));
+      int ret = chdir(final[1]);
       if ( ret == -1){
-        fprintf(stderr,"cd: can't cd to %s\n",(_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
+        fprintf(stderr,"cd: can't cd to %s\n",(final[1]);
       }
 
     }
