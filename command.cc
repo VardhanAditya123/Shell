@@ -260,9 +260,10 @@ int commandCheck(char**final){
 
   if(s.compare("cd") == 0){
 
-    string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
+    // string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
+    string str = final[0];
 
-    if((_simpleCommandsArray[0]->number_args == 1))
+    if( sizeof(str)/sizeof(str[0]); == 1))
       chdir(getenv("HOME"));
 
     else{
