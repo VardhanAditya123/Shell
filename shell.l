@@ -183,8 +183,8 @@ void myunputc(int c) {
        count=count+1;
     }
 
-     for(int j = 0; j < c;j++){
-       s = str[j];
+     for(int j = 0; j < count;j++){
+      string s = str[j];
       //  cout << s << endl;
       s+='\n';
      for(int i = s.length() -1  ; i >= 0;i--){
