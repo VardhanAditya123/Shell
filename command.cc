@@ -177,10 +177,10 @@ int commandCheck(char**final , int c){
       if(word.length()==0)
         break;
 
-      str=word+"\nexit\n";
+      str=word+"";
        for(int i = str.length() -1  ; i >= 0;i--){
-      myunputc(str.at(i));
-    }
+       myunputc(str.at(i));
+      }
      cout << str << endl; 
     }
     str.pop_back();
