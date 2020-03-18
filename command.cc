@@ -178,8 +178,8 @@ int commandCheck(char**final , int c){
      int val= getline(file,word);
       cout << word << endl;
      
-      if(val == -1)
-        word.append("exit\n");
+      if(word.compare("\0")!=0)
+        word.append("\nexit\n");
 
       char str[1000];
       strcpy(str,word.c_str());
