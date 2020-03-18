@@ -337,7 +337,8 @@ char* checkEnvironment(string s){
   
 
     if(s.compare("${?}")==0){
-      temp = WEXITSTATUS(last); 
+      
+      temp = (char*)WEXITSTATUS(last); 
     }
      
     if(s.compare("${$}")== 0){
