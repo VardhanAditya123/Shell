@@ -183,7 +183,7 @@ int commandCheck(char**final , int c){
       }
     //  cout << str << endl; 
     }
-    str.pop_back();
+  
     // cout << str << endl; 
      
     // cout << "DEBIG" << endl;
