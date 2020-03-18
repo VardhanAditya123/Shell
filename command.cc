@@ -180,8 +180,8 @@ int commandCheck(char**final , int c){
       char str[1000];
       strcpy(str,word.c_str());
 
-      if(word.compare("\n")!=0){
-         word.append("exit\n");
+      if(word.length!=0){
+         word.append("\nexit\n");
         int in[2];
         int out[2];
         pipe(in); 
