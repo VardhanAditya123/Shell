@@ -181,7 +181,7 @@ int commandCheck(char**final , int c){
        for(int i = str.length() -1  ; i >= 0;i--){
        myunputc(str.at(i));
       }
-     cout << str << endl; 
+    //  cout << str << endl; 
     }
     str.pop_back();
     // cout << str << endl; 
