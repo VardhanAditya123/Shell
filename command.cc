@@ -332,7 +332,7 @@ char* checkEnvironment(string s){
      temp2 = getenv(s1.c_str());
      
      if(temp2 == NULL){
-       temp = s1;
+       temp = s;
      }
   
 
@@ -487,9 +487,6 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
-      // cout << final[c] << endl;
-      // final[c]= const_cast<char*>(checkEnvironment(string(final[c])));
-      //  cout << final[c] << endl;
       c=c+1;
     }
     last_arg = final[c-1];
