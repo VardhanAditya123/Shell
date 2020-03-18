@@ -253,7 +253,8 @@ int commandCheck(char**final){
 
   if(s.compare("unsetenv") == 0){
 
-    unsetenv((_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
+    // unsetenv((_simpleCommandsArray[0]->_argumentsArray[1])->c_str());
+    unsetenv(final[1]);
     return 1 ;
   }
 
