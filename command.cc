@@ -332,6 +332,7 @@ char* checkEnvironment(string s){
        temp = s1;
      }
 
+
     if(s.compare("${?}")==0){
       temp = WEXITSTATUS(last); 
     }
