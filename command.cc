@@ -364,6 +364,7 @@ char* checkEnvironment(string s){
  }
 
 s2 = temp;
+cout << temp << endl;
 return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
@@ -475,7 +476,7 @@ void Command::execute() {
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       // char*str = esc(tmp1);
       char*tmp2=pecho(tmp1);
-      cout << *word << endl;
+      // cout << *word << endl;
       final[c]=const_cast<char*>(tmp2);
       // cout << final[c] << endl;
       // final[c]= const_cast<char*>(checkEnvironment(string(final[c])));
