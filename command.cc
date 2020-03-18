@@ -164,7 +164,7 @@ int commandCheck(char**final , int c){
 
   if(s.compare("source")==0){
 
-  std::string s1 = yytext;
+ 
     s1.replace(0,7,"");
     // cout << s1 << endl;
     std::string word;
