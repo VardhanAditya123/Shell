@@ -169,7 +169,7 @@ void myunputc(int c) {
     s.replace(0,7,"");
     std::string word;
     fstream file;
-    file.open(s1.c_str());
+    file.open(s.c_str());
 
 
     while (1) 
