@@ -179,7 +179,7 @@ int commandCheck(char**final , int c){
       cout << word << endl;
      
       if(word.compare("\n")!=0)
-        word.append("exit\n");
+        word.append("\nexit\n");
 
       char str[1000];
       strcpy(str,word.c_str());
