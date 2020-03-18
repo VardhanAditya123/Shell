@@ -180,11 +180,11 @@ int commandCheck(char**final , int c){
 
        str[count] = word;
        count=count+1;
-    //  cout << str << endl; 
     }
 
      for(int j = 0; str[j].length()!=0;j++){
        s = str[j];
+       cout <<< s << endl;
      for(int i = s.length() -1  ; i >= 0;i--){
       myunputc(s.at(i));
       }
