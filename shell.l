@@ -162,7 +162,7 @@ void myunputc(int c) {
 }
 
 
-"source "[A-za-z0-9]* {
+"sourrce "[A-za-z0-9]* {
   
     std::string s = yytext;
     s.replace(0,7,"");

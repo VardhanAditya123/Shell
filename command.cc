@@ -160,6 +160,52 @@ int commandCheck(char**final , int c){
   string s = final[0];
   string s2 = "exit";
 
+
+
+  if(s.compare("source")==0){
+
+   string s1 = final[1];
+    std::string word;
+    fstream file;
+    file.open(s1.c_str());
+
+
+    while (1) 
+    { 
+      getline(file,word);
+     
+      if(word.length()==0)
+        break;
+
+      string str[1000];
+      str._append(word);
+      // strcpy(str,word.c_str());
+
+      //     int i = 0;
+      //     char c;
+      //     while(read(out[0],&c,1)){
+      //       if(c == '\n'){
+      //         str2[i] = ' ';
+      //       }
+      //       else{
+      //         str2[i] = c;
+      //       }
+      //       i++;
+      //     }
+      //     str2[i - 1] = '\0';
+      //     if(str2[0]!='\0')
+      //     cout << str2 << "\n";
+      //     str2[0] = '\0';
+      //     close(out[0]);
+      //   }
+
+    }
+
+    cout << str << endl; 
+     
+  return 1;
+  }
+
   if(s.compare(s2) == 0){
     exit(0);
   }
@@ -198,6 +244,7 @@ int commandCheck(char**final , int c){
     return 1;
   }
 
+  
 }
 
 
