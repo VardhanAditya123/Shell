@@ -178,7 +178,7 @@ int commandCheck(char**final , int c){
       getline(file,word);
       cout << word << endl;
      
-      if(word.compare("\n")!=0)
+      if(word.compare("\0")!=0)
         word.append("\nexit\n");
 
       char str[1000];
