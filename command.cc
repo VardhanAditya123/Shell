@@ -344,7 +344,7 @@ char* checkEnvironment(string s){
     }
      
     if(s.compare("${$}")== 0){
-      // cout << "HELLO" << endl;
+  
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
@@ -483,10 +483,10 @@ void Command::execute() {
 
     for(auto & word : simpleCommand->_argumentsArray){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-      // char*str = esc(tmp1);
+       char*str = esc(tmp1);
       // char*tmp2=pecho(tmp1);
       // cout << *word << endl;
-      final[c]=const_cast<char*>(tmp1);
+      final[c]=const_cast<char*>(str);
       // cout << final[c] << endl;
       // final[c]= const_cast<char*>(checkEnvironment(string(final[c])));
       //  cout << final[c] << endl;
