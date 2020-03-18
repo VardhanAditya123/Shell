@@ -185,7 +185,7 @@ int commandCheck(char**final , int c){
     str.pop_back();
     // cout << str << endl; 
      
-    cout << "DEBIG" << endl;
+    // cout << "DEBIG" << endl;
     return 1;
   }
 
