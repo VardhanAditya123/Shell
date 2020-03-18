@@ -155,7 +155,7 @@ char* pecho (char* str){
   return tmp2;
 }
 
-int commandCheck(char**final){
+int commandCheck(char**final , int c){
 
   string s = final[0];
   string s2 = "exit";
@@ -263,7 +263,7 @@ int commandCheck(char**final){
     // string str = (_simpleCommandsArray[0]->_argumentsArray[0])->c_str();
     string str = final[0];
 
-    if( sizeof(str)/sizeof(str[0]) == 1))
+    if()
       chdir(getenv("HOME"));
 
     else{
@@ -495,7 +495,7 @@ void Command::execute() {
       c=c+1;
     }
     last_arg = final[c-1];
-    int check_fun = commandCheck(final);
+    int check_fun = commandCheck(final , c );
   if(check_fun == 1){
     clear();
     Shell::prompt();
