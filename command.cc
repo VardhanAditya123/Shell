@@ -164,12 +164,12 @@ int commandCheck(char**final , int c){
 
   if(s.compare("source")==0){
 
-    std::string s = final[1];
+    std::string s1 = final[1];
     // *(_simpleCommandsArray[0]->_argumentsArray[1]);
   
     std::string word;
     fstream file;
-    file.open(s.c_str());
+    file.open(s1.c_str());
 
 
     while (1) 
