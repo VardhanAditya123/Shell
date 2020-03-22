@@ -180,7 +180,7 @@ string & tmp2;
 regmatch_t match;
 tmp = (ent->d_name);
 arg = (char*)(tmp.c_str());
-
+tmp2 = tmp;
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
