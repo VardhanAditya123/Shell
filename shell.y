@@ -185,7 +185,8 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
  
  cout << *tmp_ptr << "";
- arr[arr_c++] = tmp_ptr;
+ arr[arr_c] = tmp_ptr;
+ arr_c+=1;
  
 }
 
