@@ -33,11 +33,9 @@ number_args+=1;
 _argumentsArray.push_back(str);
 return;
 }
-
 string reg;
 string a = arg;
 reg+='^';
-
 for(unsigned int i = 0 ; i < a.length();i++){
   if(a.at(i)=='*'){
     reg+=".*";
