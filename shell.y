@@ -119,7 +119,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-
+#include <string.h>
 void expandWildcardsIfNecessary(char * arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
