@@ -176,7 +176,6 @@ while ( (ent = readdir(dir))!= NULL) {
 string tmp;
 regmatch_t match;
 tmp = ent->d_name;
-tmp_ptr = &tmp;
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
