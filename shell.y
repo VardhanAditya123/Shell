@@ -110,7 +110,7 @@ Word{Command::_currSimpleCommand = new SimpleCommand(); expandWildcardsIfNecessa
 
 
 arg_list:
-arg_list Word{Command::_currSimpleCommand-> insertArgument($2);}
+arg_list Word{ expandWildcardsIfNecessary($2);}
 | /*empty*/
 ;
 
