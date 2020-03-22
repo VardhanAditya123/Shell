@@ -26,7 +26,7 @@ void expandWildcardsIfNecessary(char * arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
 if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
-Command::_currentSimpleCommand->insertArgument(arg);
+insertArgument(arg);
 }
 }
 
