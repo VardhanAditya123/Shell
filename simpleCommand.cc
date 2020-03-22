@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-
+#include <string.h>
 #include <iostream>
 
 #include "simpleCommand.hh"
@@ -20,6 +20,13 @@ void SimpleCommand::insertArgument( std::string * argument ) {
   // simply add the argument to the vector
    number_args+=1;
   _argumentsArray.push_back(argument);
+}
+
+void expandWildcardsIfNecessary(char * arg)
+{
+// Return if arg does not contain ‘*’ or ‘?’
+if (arg has neither ‘*’ nor ‘?’ (use strchr) ) {
+Command::_currentSimpleCommand->insertArgument(arg);
 }
 
 // Print out the simple command
