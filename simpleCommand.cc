@@ -66,17 +66,18 @@ reg+='$';
 struct dirent * ent;
 string tmp;
 std::string *tmp_ptr;
+
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
- tmp = ent->d_name;
+tmp = ent->d_name;
 tmp_ptr = &tmp;
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
-  cout << *tmp_ptr << endl;
+ 
   number_args+=1;
   _argumentsArray.push_back(tmp_ptr);
 }
