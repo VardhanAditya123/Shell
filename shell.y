@@ -119,6 +119,16 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
+
+void expandWildcardsIfNecessary(char * arg)
+{
+// Return if arg does not contain ‘*’ or ‘?’
+if (arg has neither ‘*’ nor ‘?’ (use strchr) ) {
+Command::_currentSimpleCommand->insertArgument(arg);
+return;
+}
+}
+
 #if 0
 main()
 {
