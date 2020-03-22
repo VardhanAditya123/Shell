@@ -231,7 +231,7 @@ int commandCheck(char**final , int c){
     return 1;
   }
   
-
+return 0;
   
 }
 
