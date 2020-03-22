@@ -192,7 +192,8 @@ if (result == 0 ) {
 
 
 for(int i = 0 ; i < arr_c ; i++){
-  Command::_currSimpleCommand->insertArgument(&(arr[i]));
+  string t = arr[i];
+  Command::_currSimpleCommand->insertArgument(&t);
 }
 closedir(dir);
  regfree(&re);
