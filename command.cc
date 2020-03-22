@@ -244,6 +244,9 @@ char* checkEnvironment(string s){
   string s1 = string(s);
   string s2 = string(s);
   temp = string(s);
+  if(s.at(0)=='\0'){
+    return NULL;
+  }
  if(s.at(0)== '$'){
 
      s1.replace(0,2,"");
