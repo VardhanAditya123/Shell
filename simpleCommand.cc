@@ -50,20 +50,6 @@ for(unsigned int i = 0 ; i < a.length();i++){
   
 }
 reg+='$';
-// cout << reg << endl;
-// while (*a) {
-// if (*a == ‘*’) 
-// { *r=‘.’; r++; *r=‘*’; r++; }
-// else if (*a == ‘?’) 
-// { *r=‘.’ r++;}
-// else if (*a == ‘.’) 
-// { *r=‘\\’; r++; *r=‘.’; r++;}
-// else 
-// { *r=*a; r++;}
-// a++;
-// }
-
-// *r=‘$’; r++; *r=0;
 
   regex_t re;	
 	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
