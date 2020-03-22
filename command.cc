@@ -307,7 +307,7 @@ void Command::execute() {
   } 
 
   
-    // print();
+    print();
 
   //  print();
   // int check_fun = Command::commandCheck();
