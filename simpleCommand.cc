@@ -65,7 +65,7 @@ reg+='$';
 
 struct dirent * ent;
 string tmp;
-std::string *tmp_ptr;
+string *tmp_ptr;
  for (auto & arg : _argumentsArray) {
     delete arg;
  }
