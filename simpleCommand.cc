@@ -74,9 +74,8 @@ std::string tmp = (ent->d_name);
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
-
+cout << tmp << str;
 if (result == 0 ) {
-cout << *arg << str;
 number_args+=1;
 _argumentsArray.push_back(&tmp);
 }
