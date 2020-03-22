@@ -1,3 +1,10 @@
+
+
+              COMMAND TABLE                
+
+  #   Simple Commands
+  --- ----------------------------------------------------------
+  0   "ls" 	"." 	
 "
 \
 5
@@ -10,7 +17,6 @@ file1.cc
 file-list-1
 file-list-2
 files
-hello world
 mine.txt
 o
 out
