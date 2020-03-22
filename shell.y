@@ -190,7 +190,7 @@ if (result == 0 ) {
 
 for(int i = 0 ; i < vec.size() ; i++){
   // cout << *vec.at(i) << endl;
-  Command::_currSimpleCommand->insertArgument(const_cast<string*>(((vec.at(i)).c_str)));
+  Command::_currSimpleCommand->insertArgument(&(vec.at(i)));
 }
 closedir(dir);
  regfree(&re);
