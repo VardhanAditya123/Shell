@@ -4,6 +4,7 @@
 #include <iostream>
 #include <regex.h>
 #include "simpleCommand.hh"
+    #include <dirent.h>
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
