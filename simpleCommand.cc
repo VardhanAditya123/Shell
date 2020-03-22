@@ -34,9 +34,26 @@ _argumentsArray.push_back(str);
 return;
 }
 // char * reg = (char*)malloc(2*strlen(arg)+10);
+string reg;
 // char * a = arg;
+string a = arg;
 // char * r = reg;
 // *r = ‘^’; r++; // match beginning of line
+reg+='^';
+
+for(int i = 0 ; i < a.length();i++){
+  if(a.at(i)=='*'){
+    reg+='.*';
+  }
+  else if(a.at(i)=='?')
+  reg+='.';
+  else if(a.at(i)=='.')
+  reg+='.';
+  else
+  reg+=a.at(i);
+  
+}
+reg+='$';
 
 // while (*a) {
 // if (*a == ‘*’) 
