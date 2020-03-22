@@ -36,6 +36,7 @@
 #include <cstdio>
 #include "shell.hh"
 #include <string.h>
+#include <string>
 #include <stdio.h>
 #include "command.hh"
 #include "string.h"
