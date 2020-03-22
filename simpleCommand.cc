@@ -29,7 +29,7 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
- void SimpleCommand::insertArgument( std::string * argument ) {
+ void SimpleCommand::insertArgument( std::string & argument ) {
   
   // cout << argument[0] << " ";
    number_args+=1;
