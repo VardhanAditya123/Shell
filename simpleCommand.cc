@@ -29,7 +29,7 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
- void SimpleCommand::insertArgument(string* ) {
+ void SimpleCommand::insertArgument(string* argument ) {
   // simply add the argument to the vector
   // cout << argument[0] << " ";
    number_args+=1;
