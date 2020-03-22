@@ -53,7 +53,7 @@
 #include <bits/stdc++.h> 
 void yyerror(const char * s);
 int yylex();
-
+void expandWildcardsIfNecessary(char * arg)
 %}
 
 %%
