@@ -84,9 +84,8 @@ while ( (ent = readdir(dir))!= NULL) {
 regmatch_t match;
 result = regexec( &re, ent->d_name, 1, &match, 0 );
 if (result ==0 ) {
-// Add argument
-Command::_currentSimpleCommand->insertArgument(strdup(ent->d_name));
-
+number_args+=1;
+_argumentsArray.push_back(str);
 }
 }
 closedir(dir);
