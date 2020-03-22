@@ -11,7 +11,7 @@ struct SimpleCommand {
   SimpleCommand();
   int ambig_count=0;
   ~SimpleCommand();
-  void insertArgument( std::string * argument );
+  void insertArgument( std::string & argument );
   void expandWildcardsIfNecessary(std::string * str);
   void print();
   int number_args=0;
