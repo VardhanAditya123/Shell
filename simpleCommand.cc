@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "simpleCommand.hh"
+using namespace std;
 
 SimpleCommand::SimpleCommand() {
   _argumentsArray = std::vector<std::string *>();
@@ -22,7 +23,7 @@ void SimpleCommand::insertArgument( std::string * argument ) {
   _argumentsArray.push_back(argument);
 }
 
-void expandWildcardsIfNecessary(std::string * arg)
+void expandWildcardsIfNecessary(string * arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
 string str = *arg;
