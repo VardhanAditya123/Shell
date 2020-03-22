@@ -137,6 +137,7 @@ int arr_c=0;
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
 Command::_currSimpleCommand->insertArgument(str);
+
 return;
 }
 string reg;

@@ -418,7 +418,7 @@ void Command::execute() {
     return;
   }
 
-    // print();
+    print();
 
     ret = fork();
 
