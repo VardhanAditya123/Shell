@@ -183,16 +183,14 @@ result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
  
-  
- Command::_currSimpleCommand->insertArgument(tmp_ptr);
-//  cout << *tmp_ptr << endl;
+ cout << *tmp_ptr << endl;
 
 }
-regfree(&re);
+
 }
 
 closedir(dir);
-
+ regfree(&re);
  
 }
 
