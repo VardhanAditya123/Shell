@@ -34,7 +34,6 @@ number_args+=1;
 _argumentsArray.push_back(str);
 return;
 }
-
 string reg;
 string a = arg;
 reg+='^';
@@ -67,21 +66,20 @@ reg+='$';
 
 struct dirent * ent;
 while ( (ent = readdir(dir))!= NULL) {
-
+// Check if name matches
 regmatch_t match;
-std::string tmp = (ent->d_name);
+string tmp = ent->d_name;
 
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
-cout << tmp << str;
+
 if (result == 0 ) {
+  cout << tmp << endl;
 number_args+=1;
 _argumentsArray.push_back(&tmp);
 }
 }
-
-
 closedir(dir);
 }
 
