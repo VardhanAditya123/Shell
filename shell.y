@@ -183,7 +183,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
  
- cout << *tmp_ptr << endl;
+ cout << *tmp_ptr << "";
 
 }
 
