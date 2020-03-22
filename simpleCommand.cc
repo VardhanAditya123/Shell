@@ -76,6 +76,18 @@ cout << reg << endl;
   perror("opendir");
   return;
 }  
+
+struct dirent * ent;
+while ( (ent = readdir(dir))!= NULL) {
+// Check if name matches
+if (regexec(ent->d_name, expbuf ) ==0 ) {
+// Add argument
+Command::_currentSimpleCommand->
+insertArgument(strdup(ent->d_name));
+
+}
+}
+closedir(dir);
 }
 
 // Print out the simple command
