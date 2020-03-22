@@ -34,6 +34,7 @@ number_args+=1;
 _argumentsArray.push_back(str);
 return;
 }
+
 string reg;
 string a = arg;
 reg+='^';
@@ -70,9 +71,9 @@ while ( (ent = readdir(dir))!= NULL) {
 regmatch_t match;
 string tmp = ent->d_name;
 std::string *tmp_ptr = &tmp;
-arg = (char*)(tmp.c_str());
+char* arg1 = (char*)(tmp.c_str());
 
-result = regexec( &re, arg, 1, &match, 0 );
+result = regexec( &re, arg1, 1, &match, 0 );
 
 if (result == 0 ) {
   cout << *tmp_ptr << endl;
