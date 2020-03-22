@@ -66,13 +66,16 @@ cout << reg << endl;
 
   regex_t re;	
 	int result = regcomp( &re, reg,  REG_EXTENDED|REG_NOSUB);
-
-		char * toOpen = strdup((prefix)?prefix:".");
-		DIR * dir = opendir(toOpen);
 		if (dir == NULL) {
 			perror("opendir");
 			return;
 		}
+
+  DIR * dir = opendir(“.”);
+  if (dir == NULL) {
+  perror(“opendir”);
+  return;
+}  
 }
 
 // Print out the simple command
