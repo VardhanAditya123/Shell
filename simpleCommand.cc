@@ -64,7 +64,7 @@ cout << reg << endl;
 
 // *r=‘$’; r++; *r=0;
 
-
+    	regex_t re;
 		int expbuf = regcomp(&re, reg, REG_EXTENDED|REG_NOSUB);
 
 		char * toOpen = strdup((prefix)?prefix:".");
