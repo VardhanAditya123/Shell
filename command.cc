@@ -244,7 +244,7 @@ char* checkEnvironment(string s){
   string s1 = string(s);
   string s2 = string(s);
   temp = string(s);
-  if(s.at(0)=='\0'){
+  if(s==NULL){
     return NULL;
   }
  if(s.at(0)== '$'){
