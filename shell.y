@@ -134,15 +134,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-void expandWildcardsIfNecessary(char * arg)
-{
-// Return if arg does not contain ‘*’ or ‘?’
-string s = arg;
-if (!s.contains("*") && !s.contains("?")) {
-Command::_currentSimpleCommand->insertArgument(arg);
-return;
-}
-}
+
 
 #if 0
 main()
