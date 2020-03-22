@@ -189,7 +189,7 @@ if (result == 0 ) {
 
 
 for(int i = 0 ; i < vec.size() ; i++){
-  Command::_currSimpleCommand->insertArgument();
+  Command::_currSimpleCommand->insertArgument(vec.at(i));
 }
 closedir(dir);
  regfree(&re);
