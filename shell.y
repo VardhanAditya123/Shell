@@ -128,6 +128,7 @@ if (!s.contains("*") && !s.contains("?") ) {
 Command::_currentSimpleCommand->insertArgument(arg);
 return;
 }
+}
 
 
 #if 0
