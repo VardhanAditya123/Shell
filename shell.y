@@ -188,7 +188,7 @@ if (result == 0 ) {
 }
 
 
-for(int i = 0 ; i < arr_c ; i++){
+for(int i = 0 ; i < vec.size() ; i++){
   Command::_currSimpleCommand->insertArgument();
 }
 closedir(dir);
