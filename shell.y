@@ -177,8 +177,8 @@ while ( (ent = readdir(dir))!= NULL) {
 string *tmp;
 string tmp2;
 regmatch_t match;
-*tmp = (ent->d_name);
-tmp2 = *tmp;
+tmp2 = (ent->d_name);
+*tmp = tmp2;
 arg = (char*)(tmp2.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
