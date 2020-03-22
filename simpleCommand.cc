@@ -73,7 +73,7 @@ cout << reg << endl;
 
   DIR * dir = opendir(".");
   if (dir == NULL) {
-  perror(“opendir”);
+  perror("opendir");
   return;
 }  
 }
