@@ -50,7 +50,7 @@
 using namespace std;
 void yyerror(const char * s);
 int yylex();
-void expandWildcardsIfNecessary(string*s);
+void expandWildcardsIfNecessary(char* s);
 %}
 
 %%
