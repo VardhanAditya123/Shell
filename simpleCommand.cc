@@ -68,16 +68,16 @@ struct dirent * ent;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
-string tmp = ent->d_name;
+string *tmp = &((ent->d_name).c_str);
 
-arg = (char*)(tmp.c_str());
+arg = (char*)(tmp->c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
-  cout << tmp << endl;
+
 number_args+=1;
-_argumentsArray.push_back(&tmp);
+_argumentsArray.push_back(tmp);
 }
 }
 closedir(dir);
