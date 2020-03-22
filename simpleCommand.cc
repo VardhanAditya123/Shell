@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <string.h>
 #include <iostream>
-
+#include <regex.h>
 #include "simpleCommand.hh"
 using namespace std;
 
@@ -64,7 +64,7 @@ cout << reg << endl;
 
 // *r=‘$’; r++; *r=0;
 
-   regex_t re;	
+  regex_t re;	
 	int result = regcomp( &re, reg,  REG_EXTENDED|REG_NOSUB);
 
 		char * toOpen = strdup((prefix)?prefix:".");
