@@ -131,7 +131,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-void expandWildcardsIfNecessary(std::string * str){
+void expandWildcardsIfNecessary(char * str){
 // Return if arg does not contain ‘*’ or ‘?’
 std::vector<string> vec;
 char* arg = (char*)(str->c_str());
