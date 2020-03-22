@@ -35,7 +35,7 @@
 //#define yylex yylex
 #include <cstdio>
 #include "shell.hh"
-
+#include <string.h>
 void yyerror(const char * s);
 int yylex();
 
