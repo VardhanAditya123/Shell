@@ -46,6 +46,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <iostream>
+#include <vector>
 using namespace std;
 void yyerror(const char * s);
 int yylex();
@@ -188,9 +189,7 @@ if (result == 0 ) {
 
 
 for(int i = 0 ; i < arr_c ; i++){
-  string t = arr[i];
-  // cout << arr[i] << endl;
-  Command::_currSimpleCommand->insertArgument(&t);
+  Command::_currSimpleCommand->insertArgument();
 }
 closedir(dir);
  regfree(&re);
