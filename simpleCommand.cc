@@ -81,7 +81,9 @@ cout << reg << endl;
 struct dirent * ent;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-if (regexec(&re,ent->d_name ) ==0 ) {
+regmatch_t match;
+result = regexec( &re, ent->d_name, 1, &match, 0 );
+if (result ==0 ) {
 // Add argument
 Command::_currentSimpleCommand->insertArgument(strdup(ent->d_name));
 
