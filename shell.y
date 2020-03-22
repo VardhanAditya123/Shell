@@ -183,7 +183,7 @@ arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
-      Command::_currSimpleCommand->insertArgument(tmp);
+      Command::_currSimpleCommand->insertArgument(&tmp);
 }
 
 }
