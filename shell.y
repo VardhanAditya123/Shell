@@ -128,7 +128,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-void SimpleCommand::expandWildcardsIfNecessary(std::string * str){
+void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 
 char* arg = (char*)(str->c_str());
