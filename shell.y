@@ -189,7 +189,7 @@ if (result == 0 ) {
 
 
 for(int i = 0 ; i < vec.size() ; i++){
-  cout << vec.at(i) <<" "<< &(vec.at(i))<< endl;
+  cout << vec.at(i) << endl;
   
   string *s1  = &(vec.at(i));
   cout << s1 << endl;
