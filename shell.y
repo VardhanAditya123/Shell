@@ -49,7 +49,7 @@
 using namespace std;
 void yyerror(const char * s);
 int yylex();
-void expandWildcardsIfNecessary();
+void expandWildcardsIfNecessary(string*s);
 %}
 
 %%
