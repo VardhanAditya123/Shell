@@ -37,7 +37,7 @@
 #include "shell.hh"
 #include <string.h>
 #include <stdio.h>
-#include "command.h"
+#include "command.hh"
 #include "string.h"
 #include <sys/types.h>
 #include <regex.h>
