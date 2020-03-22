@@ -69,7 +69,7 @@ while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
 string tmp = ent->d_name;
-arg = (char*)(tmp->c_str());
+arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result ==0 ) {
