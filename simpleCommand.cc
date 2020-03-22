@@ -80,11 +80,11 @@ if (result == 0 ) {
   _argumentsArray.push_back(tmp_ptr);
 }
 
-
+ regfree(&re);
 }
 
 closedir(dir);
- regfree(&re);
+//  regfree(&re);
  
 }
 
