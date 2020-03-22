@@ -19,7 +19,7 @@
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
-  _argumentsArray = std::vector<std::string *>();
+  _argumentsArray = std::vector<std::string >();
 }
 
 SimpleCommand::~SimpleCommand() {
@@ -31,9 +31,9 @@ SimpleCommand::~SimpleCommand() {
 
  void SimpleCommand::insertArgument( std::string * argument ) {
   // simply add the argument to the vector
-   cout << *argument << "";
+   cout << *argument << "make";
    number_args+=1;
-  _argumentsArray.push_back(argument);
+  _argumentsArray.push_back(*argument);
 }
 
 // void SimpleCommand::expandWildcardsIfNecessary(std::string * str){
