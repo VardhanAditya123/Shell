@@ -193,7 +193,7 @@ for(int i = 0 ; i < vec.size() ; i++){
   
   string s1  = (vec.at(i));
    cout << &s1 <<" "<< s1 << endl;
-  Command::_currSimpleCommand->insertArgument(s1);
+  Command::_currSimpleCommand->insertArgument(&s1);
 }
 closedir(dir);
  regfree(&re);
