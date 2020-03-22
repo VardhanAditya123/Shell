@@ -133,7 +133,7 @@ yyerror(const char * s)
 
 void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
-std::vector<string> vec;
+std::vector<string*> vec;
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
 Command::_currSimpleCommand->insertArgument(str);
@@ -182,7 +182,7 @@ arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
- vec.push_back(tmp);
+ vec.push_back(&tmp);
 }
 
 }
@@ -191,7 +191,7 @@ if (result == 0 ) {
 for(int i = 0 ; i < vec.size() ; i++){
   // cout << vec.at(i) << endl;
   
-  string *s1  = &(vec.at(i));
+  string s1  = &(vec.at(i));
    cout << s1 <<" "<< *s1 << endl;
   Command::_currSimpleCommand->insertArgument(s1);
 }
