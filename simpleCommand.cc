@@ -17,7 +17,7 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
-static void SimpleCommand::insertArgument( std::string * argument ) {
+ void SimpleCommand::insertArgument( std::string * argument ) {
   // simply add the argument to the vector
    number_args+=1;
   _argumentsArray.push_back(argument);
@@ -28,8 +28,8 @@ void expandWildcardsIfNecessary(string * str)
 // Return if arg does not contain ‘*’ or ‘?’
 char* arg = (char*)(str);
 if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
-
-SimpleCommand::insertArgument(str);
+number_args+=1;
+_argumentsArray.push_back(argument);
 }
 }
 
