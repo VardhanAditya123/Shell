@@ -33,12 +33,9 @@ number_args+=1;
 _argumentsArray.push_back(str);
 return;
 }
-// char * reg = (char*)malloc(2*strlen(arg)+10);
+
 string reg;
-// char * a = arg;
 string a = arg;
-// char * r = reg;
-// *r = ‘^’; r++; // match beginning of line
 reg+='^';
 
 for(unsigned int i = 0 ; i < a.length();i++){
