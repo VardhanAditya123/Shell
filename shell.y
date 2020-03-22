@@ -112,7 +112,7 @@ AMPERSAND{Shell::_currentCommand._backgnd = true ;}
 
 
 %%
-
+#include <string.h>
 void
 yyerror(const char * s)
 {
