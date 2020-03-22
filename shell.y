@@ -169,10 +169,11 @@ reg+='$';
 }  
 
 struct dirent * ent;
-std::string tmp;
-std::string *tmp_ptr;
+
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
+std::string tmp;
+std::string *tmp_ptr;
 regmatch_t match;
 tmp = ent->d_name;
 tmp_ptr = &tmp;
