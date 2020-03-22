@@ -80,7 +80,7 @@ number_args+=1;
 _argumentsArray.push_back(tmp_ptr);
 }
 }
-closedir(dir);
+// closedir(dir);
 }
 
 // Print out the simple command
