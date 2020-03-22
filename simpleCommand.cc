@@ -77,7 +77,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
   cout << *tmp_ptr << endl;
 number_args+=1;
-_argumentsArray.push_back(tmp_ptr);
+ _argumentsArray.push_back(tmp_ptr);
 }
 }
 closedir(dir);
