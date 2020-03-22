@@ -23,7 +23,7 @@ SimpleCommand::~SimpleCommand() {
   _argumentsArray.push_back(argument);
 }
 
-void SimpleCommand::expandWildcardsIfNecessary(string * str)
+void SimpleCommand::expandWildcardsIfNecessary(std::string * str)
 {
 // Return if arg does not contain ‘*’ or ‘?’
 char* arg = (char*)(str);
