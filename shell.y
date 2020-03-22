@@ -44,6 +44,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <assert.h>
+using namespace std;
 void yyerror(const char * s);
 int yylex();
 
