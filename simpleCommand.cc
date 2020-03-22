@@ -19,7 +19,7 @@
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
-  _argumentsArray = std::vector<std::string &>();
+  _argumentsArray = std::vector<std::string *>();
 }
 
 SimpleCommand::~SimpleCommand() {
@@ -29,8 +29,8 @@ SimpleCommand::~SimpleCommand() {
   }
 }
 
- void SimpleCommand::insertArgument( std::string & argument ) {
-  
+ void SimpleCommand::insertArgument( std::string * argument ) {
+  // simply add the argument to the vector
   // cout << argument[0] << " ";
    number_args+=1;
   //  cout << *argument << endl;
