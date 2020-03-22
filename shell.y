@@ -123,7 +123,8 @@ yyerror(const char * s)
 void expandWildcardsIfNecessary(char * arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
-if (arg has neither ‘*’ nor ‘?’ (use strchr) ) {
+string s = arg;
+if (!s.contains("*") && !s.contains("?") ) {
 Command::_currentSimpleCommand->insertArgument(arg);
 return;
 }
