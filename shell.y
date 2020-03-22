@@ -132,7 +132,7 @@ yyerror(const char * s)
 
 void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
-string *arr[1000];
+string arr[1000];
 int arr_c=0;
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
