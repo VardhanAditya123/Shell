@@ -63,6 +63,12 @@ cout << reg << endl;
 // }
 
 // *r=‘$’; r++; *r=0;
+
+char * expbuf = regcomp( reg, ... );
+if (expbuf==NULL) {
+perror(“compile”);
+return;
+}
 }
 
 // Print out the simple command
