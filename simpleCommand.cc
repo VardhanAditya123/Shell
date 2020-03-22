@@ -29,7 +29,7 @@ void SimpleCommand::expandWildcardsIfNecessary(std::string * str)
 char* arg = (char*)(str);
 if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
 number_args+=1;
-_argumentsArray.push_back(arg);
+_argumentsArray.push_back(*str);
 }
 }
 
