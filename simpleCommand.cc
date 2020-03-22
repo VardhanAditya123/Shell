@@ -22,11 +22,12 @@ void SimpleCommand::insertArgument( std::string * argument ) {
   _argumentsArray.push_back(argument);
 }
 
-void expandWildcardsIfNecessary(char * arg)
+void expandWildcardsIfNecessary(string* arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
+string s = *arg;
 if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
-std::string*str = &arg;
+
 SimpleCommand::insertArgument(str);
 }
 }
