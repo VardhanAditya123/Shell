@@ -81,6 +81,7 @@ _argumentsArray.push_back(tmp_ptr);
 }
 }
 closedir(dir);
+	regfree(&re);
 }
 
 // Print out the simple command
