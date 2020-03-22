@@ -94,7 +94,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 
 cmd_and_args:
 
-Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); expandWildcardsIfNecessary($1); } arg_list  
 ;
 
 
@@ -110,6 +110,13 @@ AMPERSAND{Shell::_currentCommand._backgnd = true ;}
 | /*empty*/
 ;
 
+void expandWildcardsIfNecessary(char * arg)
+{
+// Return if arg does not contain ‘*’ or ‘?’
+if (arg has neither ‘*’ nor ‘?’ (use strchr) ) {
+Command::_currentSimpleCommand->insertArgument(arg);
+return;
+}
 
 %%
 
