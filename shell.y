@@ -174,17 +174,16 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-string *tmp;
-string tmp2;
+
+string tmp;
 regmatch_t match;
-tmp2 = (ent->d_name);
-*tmp = tmp2;
-arg = (char*)(tmp2.c_str());
+tmp = (ent->d_name);
+arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
-    //  Command::_currSimpleCommand->insertArgument(tmp);
+      Command::_currSimpleCommand->insertArgument(tmp);
 }
 
 }
