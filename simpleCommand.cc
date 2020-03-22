@@ -65,7 +65,7 @@ reg+='$';
 
 struct dirent * ent;
 string tmp;
-std::string *tmp_ptr
+std::string *tmp_ptr;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
