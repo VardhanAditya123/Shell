@@ -194,6 +194,7 @@ if (result == 0 ) {
 
 for(int i = 0 ; i < arr_c ; i++){
   string t = arr[i];
+  cout << t << endl;
   Command::_currSimpleCommand->insertArgument(&t);
 }
 closedir(dir);
