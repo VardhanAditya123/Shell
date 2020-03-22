@@ -65,7 +65,7 @@ cout << reg << endl;
 // *r=‘$’; r++; *r=0;
 
   regex_t re;	
-	int result = regcomp( &re, reg,  REG_EXTENDED|REG_NOSUB);
+	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
 	if (result!=0) {
   perror("compile");
   return;
