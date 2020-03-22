@@ -85,6 +85,7 @@ if (result == 0 ) {
 
 closedir(dir);
  regfree(&re);
+ 
 }
 
 // Print out the simple command
