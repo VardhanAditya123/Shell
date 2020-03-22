@@ -38,7 +38,7 @@
 
 void yyerror(const char * s);
 int yylex();
-
+void expandWildCardsIfNecessary(char * arg);
 %}
 
 %%
