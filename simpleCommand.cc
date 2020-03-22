@@ -74,7 +74,7 @@ tmp = ent->d_name;
 tmp_ptr = &tmp;
 arg = (char*)(tmp.c_str());
 
-result = regexec( &re, arg, 1, &match, 0 );
+result = regexec( &re, ent->d_name, 1, &match, 0 );
 
 if (result == 0 ) {
  
