@@ -64,11 +64,15 @@ cout << reg << endl;
 
 // *r=‘$’; r++; *r=0;
 
-char * expbuf = regcomp( reg, ... );
-if (expbuf==NULL) {
-perror(“compile”);
-return;
-}
+
+		int expbuf = regcomp(&re, reg, REG_EXTENDED|REG_NOSUB);
+
+		char * toOpen = strdup((prefix)?prefix:".");
+		DIR * dir = opendir(toOpen);
+		if (dir == NULL) {
+			perror("opendir");
+			return;
+		}
 }
 
 // Print out the simple command
