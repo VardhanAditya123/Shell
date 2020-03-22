@@ -54,7 +54,7 @@ for(unsigned int i = 0 ; i < a.length();i++){
   
 }
 reg+='$';
-
+cout << reg << endl;
 // while (*a) {
 // if (*a == ‘*’) 
 // { *r=‘.’; r++; *r=‘*’; r++; }
