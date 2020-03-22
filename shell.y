@@ -108,8 +108,7 @@ cmd_and_args:
 Word{Command::_currSimpleCommand = new SimpleCommand(); 
  if(strcmp(Command::_currentSimpleCommand->_arguments[0], "echo") == 0 && strchr($1, '?'))
       	Command::_currentSimpleCommand->insertArgument( $1 );
-	  else
-		expandWildCardsIfNecessary($1);} arg_list  
+	  else expandWildCardsIfNecessary($1);} arg_list  
 ;
 
 
