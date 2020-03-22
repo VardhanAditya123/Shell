@@ -134,10 +134,10 @@ void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 
 char* arg = (char*)(str->c_str());
-if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
-Command::_currSimpleCommand->insertArgument(str);
-return;
-}
+// if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
+// Command::_currSimpleCommand->insertArgument(str);
+// return;
+// }
 string reg;
 string a = arg;
 reg+='^';
