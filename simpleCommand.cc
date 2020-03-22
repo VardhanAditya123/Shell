@@ -81,6 +81,7 @@ if (result == 0 ) {
 }
 }
 regfree(&re);
+regfree(&match);
 closedir(dir);
 
 }
