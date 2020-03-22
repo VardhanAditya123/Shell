@@ -28,6 +28,7 @@ void expandWildcardsIfNecessary(char * arg)
 if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
 Command::_currentSimpleCommand->insertArgument(arg);
 }
+}
 
 // Print out the simple command
 void SimpleCommand::print() {
