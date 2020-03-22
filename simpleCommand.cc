@@ -69,7 +69,7 @@ struct dirent * ent;
 while ( (ent = readdir(dir))!= NULL) {
 
 regmatch_t match;
-string tmp = ((ent->d_name));
+string tmp = (ent->d_name);
 
 arg = (char*)(tmp->c_str());
 
@@ -78,7 +78,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
 
 number_args+=1;
-_argumentsArray.push_back(tmp);
+_argumentsArray.push_back(&tmp);
 }
 }
 
