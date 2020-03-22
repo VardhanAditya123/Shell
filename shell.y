@@ -179,7 +179,7 @@ string tmp2;
 regmatch_t match;
 *tmp = (ent->d_name);
 tmp2 = *tmp;
-arg = (char*)(tmp.c_str());
+arg = (char*)(tmp2.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
 
