@@ -66,9 +66,6 @@ reg+='$';
 struct dirent * ent;
 string tmp;
 string *tmp_ptr;
- for (auto & arg : _argumentsArray) {
-    delete arg;
- }
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
