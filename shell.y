@@ -127,7 +127,7 @@ yyerror(const char * s)
 {
   fprintf(stderr,"%s", s);
 }
-using namespace std;
+
 void SimpleCommand::expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 
