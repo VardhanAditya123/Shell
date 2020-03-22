@@ -15,7 +15,6 @@
 %code requires 
 {
 
-#include <string.h>
 #if __cplusplus > 199711L
 #define register      // Deprecated in C++11 so remove the keyword
 #endif
@@ -35,7 +34,7 @@
 //#define yylex yylex
 #include <cstdio>
 #include "shell.hh"
-
+#include <string.h>
 void yyerror(const char * s);
 int yylex();
 void expandWildCardsIfNecessary(char * arg);
