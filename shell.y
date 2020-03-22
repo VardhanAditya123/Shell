@@ -182,19 +182,20 @@ arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
-  vec.push_back(tmp);
+
+  // vec.push_back(tmp);
 }
 
 }
 
 
-for(int i = 0 ; i < vec.size() ; i++){
-  // cout << vec.at(i) << endl;
+// for(int i = 0 ; i < vec.size() ; i++){
+//   // cout << vec.at(i) << endl;
   
-  string *s1  = &(vec.at(i));
-  // cout << s1 << endl;
-  Command::_currSimpleCommand->insertArgument(s1);
-}
+//   string *s1  = &(vec.at(i));
+//   // cout << s1 << endl;
+//   Command::_currSimpleCommand->insertArgument(s1);
+// }
 closedir(dir);
  regfree(&re);
  
