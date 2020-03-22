@@ -182,10 +182,10 @@ result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
  
- cout << tmp << " ";
+ 
  arr[arr_c] = &tmp;
  arr_c+=1;
- 
+ cout << arr[arr_c] << " ";
 }
 
 }
