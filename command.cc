@@ -406,7 +406,7 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
       final[c]=const_cast<char*>(str);
-     
+      cout << final[c] << endl;
 
       c=c+1;
     }
@@ -418,8 +418,8 @@ void Command::execute() {
     return;
   }
 
-    print();
-    
+    // print();
+
     ret = fork();
 
 
