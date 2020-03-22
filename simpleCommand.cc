@@ -27,7 +27,7 @@ void expandWildcardsIfNecessary(string * arg)
 {
 // Return if arg does not contain ‘*’ or ‘?’
 string str = *arg;
-if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
+if (!str.contains("?")&&!str.contains("*")) {
 
 SimpleCommand::insertArgument(str);
 }
