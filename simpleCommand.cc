@@ -19,7 +19,7 @@
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
-  _argumentsArray = std::vector<std::string *>();
+  _argumentsArray = std::vector<const std::string&>();
 }
 
 SimpleCommand::~SimpleCommand() {
