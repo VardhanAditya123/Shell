@@ -35,8 +35,22 @@
 //#define yylex yylex
 #include <cstdio>
 #include "shell.hh"
-#include <string.h>
 #include <cstring>
+#include "y.tab.hh"
+#include "shell.hh"
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <cstdlib>
+#include <iostream>
+#include "command.hh"
+#include <iostream>
+#include <assert.h>
+#include <fcntl.h>
+#include <algorithm>
+#include <bits/stdc++.h> 
 void yyerror(const char * s);
 int yylex();
 
