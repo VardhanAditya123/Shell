@@ -1,10 +1,21 @@
 #include <cstdio>
 #include <cstdlib>
-#include <string.hh>
 #include <iostream>
-#include <regex.h>
-#include "simpleCommand.hh"
-#include <dirent.h>
+#include "command.hh"
+#include "shell.hh"
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <iostream>
+#include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <algorithm>
+#include <bits/stdc++.h> 
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
