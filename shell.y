@@ -173,8 +173,7 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-std::string tmp;
-std::string *tmp_ptr;
+string tmp;
 regmatch_t match;
 tmp = ent->d_name;
 tmp_ptr = &tmp;
@@ -185,7 +184,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
  
 //  cout << *tmp_ptr << "";
- arr[arr_c] = tmp_ptr;
+ arr[arr_c] = &tmp;
  arr_c+=1;
  
 }
