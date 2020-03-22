@@ -244,54 +244,54 @@ char* checkEnvironment(string s){
   string s1 = string(s);
   string s2 = string(s);
   temp = string(s);
-//  if(s.at(0)== '$'){
+ if(s.at(0)== '$'){
 
-//      s1.replace(0,2,"");
-//      s1.pop_back();
+     s1.replace(0,2,"");
+     s1.pop_back();
     
-//      temp2 = getenv(s1.c_str());
+     temp2 = getenv(s1.c_str());
      
-//      if(temp2 == NULL){
-//        temp = s;
-//      }
+     if(temp2 == NULL){
+       temp = s;
+     }
   
 
-//     if(s.compare("${?}")==0){
-//       int pid = WEXITSTATUS(last);
-//       char mypid[6];   // ex. 34567
-//       sprintf(mypid, "%d", pid);
-//       temp = mypid;
-//     }
+    if(s.compare("${?}")==0){
+      int pid = WEXITSTATUS(last);
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      temp = mypid;
+    }
      
-//     if(s.compare("${$}")== 0){
+    if(s.compare("${$}")== 0){
   
-//       int pid = getpid();
-//       char mypid[6];   // ex. 34567
-//       sprintf(mypid, "%d", pid);
-//       temp = mypid; 
+      int pid = getpid();
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      temp = mypid; 
      
-//     }
+    }
 
-//     if(s.compare("${!}")== 0){
-//       int pid = last_id;
-//       char mypid[6];   // ex. 34567
-//       sprintf(mypid, "%d", pid);
-//       temp = mypid;
-//     }
+    if(s.compare("${!}")== 0){
+      int pid = last_id;
+      char mypid[6];   // ex. 34567
+      sprintf(mypid, "%d", pid);
+      temp = mypid;
+    }
 
-//     if(s.compare("${_}")==0){
+    if(s.compare("${_}")==0){
 
-//      temp = last_arg;  
+     temp = last_arg;  
     
-//     }
+    }
 
-//     if(s.compare("${SHELL}")==0){
-//        temp = realpath(Shell::arg,NULL);
+    if(s.compare("${SHELL}")==0){
+       temp = realpath(Shell::arg,NULL);
       
-//     }
+    }
 
 
-//  }
+ }
 
 s2 = temp;
 return strcpy(new char[s2.length()+ 1],s2.c_str());
