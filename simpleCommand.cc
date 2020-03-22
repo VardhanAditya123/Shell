@@ -28,7 +28,7 @@ void SimpleCommand::expandWildcardsIfNecessary(std::string * str)
 // Return if arg does not contain ‘*’ or ‘?’
 
 char* arg = (char*)(str->c_str());
-if (strchr(arg,'?')==NULL && strchr(arg,'!')==NULL) {
+if (strchr(arg,'?')==NULL || strchr(arg,'*')==NULL) {
 number_args+=1;
 _argumentsArray.push_back(str);
 }
