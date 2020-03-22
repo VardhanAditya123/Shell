@@ -37,34 +37,16 @@
 #include "shell.hh"
 #include <string.h>
 #include <stdio.h>
-#include "command.hh"
+#include "command.h"
 #include "string.h"
 #include <sys/types.h>
 #include <regex.h>
 #include <dirent.h>
 #include <unistd.h>
 #include <assert.h>
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
-#include "command.hh"
-#include "shell.hh"
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <iostream>
-#include <string.h>
-#include <assert.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <algorithm>
-#include <bits/stdc++.h> 
 void yyerror(const char * s);
 int yylex();
-void expandWildcardsIfNecessary(std::string * )
+
 %}
 
 %%
@@ -145,7 +127,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-void expandWildcardsIfNecessary(std::string * str){
+void SimpleCommand::expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 
 char* arg = (char*)(str->c_str());
