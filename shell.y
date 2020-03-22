@@ -11,9 +11,10 @@
  *
  * NOTICE: This lab is property of Purdue University. You should not for any reason make this code public.
  */
- 
+
 %code requires 
 {
+#include <string>
 
 #if __cplusplus > 199711L
 #define register      // Deprecated in C++11 so remove the keyword
@@ -34,10 +35,10 @@
 //#define yylex yylex
 #include <cstdio>
 #include "shell.hh"
-#include <string.h>
+
 void yyerror(const char * s);
 int yylex();
-void expandWildCardsIfNecessary(char * arg);
+
 %}
 
 %%
@@ -93,7 +94,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 
 cmd_and_args:
 
-Word{Command::_currSimpleCommand = new SimpleCommand(); expandWildcardsIfNecessary($1); } arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleCommand->insertArgument($1);} arg_list  
 ;
 
 
@@ -117,18 +118,6 @@ yyerror(const char * s)
 {
   fprintf(stderr,"%s", s);
 }
-
-
-void expandWildcardsIfNecessary(char * arg)
-{
-// Return if arg does not contain ‘*’ or ‘?’
-string s = arg;
-if (!s.contains("*") && !s.contains("?") ) {
-Command::_currentSimpleCommand->insertArgument(arg);
-return;
-}
-}
-
 
 #if 0
 main()
