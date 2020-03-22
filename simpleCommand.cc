@@ -67,10 +67,10 @@ cout << reg << endl;
   regex_t re;	
 	int result = regcomp( &re, reg,  REG_EXTENDED|REG_NOSUB);
 	if (result!=0) {
-  perror(“compile”);
+  perror("compile");
   return;
   }
-  
+
   DIR * dir = opendir(".");
   if (dir == NULL) {
   perror("opendir");
