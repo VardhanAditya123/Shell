@@ -64,12 +64,13 @@ reg+='$';
 }  
 
 struct dirent * ent;
-
+string tmp;
+std::string *tmp_ptr
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
-string tmp = ent->d_name;
-std::string *tmp_ptr = &tmp;
+ tmp = ent->d_name;
+tmp_ptr = &tmp;
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
