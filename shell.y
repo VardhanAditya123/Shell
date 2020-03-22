@@ -47,7 +47,7 @@
 
 void yyerror(const char * s);
 int yylex();
-
+void expandWildcardsIfNecessary(std::string * )
 %}
 
 %%
