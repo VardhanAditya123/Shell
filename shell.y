@@ -188,11 +188,11 @@ if (result == 0 ) {
 //  cout << *tmp_ptr << endl;
 
 }
-
+regfree(&re);
 }
 
 closedir(dir);
-//  regfree(&re);
+
  
 }
 
