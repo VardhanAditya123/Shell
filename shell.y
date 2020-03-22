@@ -105,7 +105,8 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 
 cmd_and_args:
 
-Word{Command::_currSimpleCommand = new SimpleCommand(); expandWildcardsIfNecessary($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand(); 
+expandWildcardsIfNecessary($1);} arg_list  
 ;
 
 
