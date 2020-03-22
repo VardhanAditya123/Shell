@@ -83,7 +83,7 @@ if (result == 0 ) {
 }
 
 }
-
+cout << "LASST" << endl;
 closedir(dir);
  regfree(&re);
  
