@@ -12,7 +12,7 @@ struct SimpleCommand {
   int ambig_count=0;
   ~SimpleCommand();
   void insertArgument( string*);
-  void expandWildcardsIfNecessary( string*);
+  void expandWildcardsIfNecessary(std::string * str);
   void print();
   int number_args=0;
 };
