@@ -106,8 +106,7 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 cmd_and_args:
 
 Word{Command::_currSimpleCommand = new SimpleCommand();
-if (strchr($1, '*') == NULL && strchr($1, '?') == NULL)
-			Command::_currentSimpleCommand->insertArgument( $1 );
+if (strchr($1, '*') == NULL && strchr($1, '?') == NULL)  Command::_currentSimpleCommand->insertArgument( $1 );
       else
        expandWildcardsIfNecessary($1);} arg_list  
 ;
