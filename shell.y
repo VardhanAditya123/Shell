@@ -192,7 +192,7 @@ if (result == 0 ) {
 }
 
 closedir(dir);
- regfree(&re);
+//  regfree(&re);
  
 }
 
