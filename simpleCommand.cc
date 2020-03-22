@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include <string.h>
+#include <string.hh>
 #include <iostream>
 #include <regex.h>
 #include "simpleCommand.hh"
