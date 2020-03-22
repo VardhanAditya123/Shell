@@ -50,7 +50,7 @@
 using namespace std;
 void yyerror(const char * s);
 int yylex();
-void expandWildcardsIfNecessary(char* s);
+void expandWildcardsIfNecessary(string*s);
 %}
 
 %%
@@ -131,7 +131,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
-void expandWildcardsIfNecessary(char * str){
+void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 std::vector<string> vec;
 char* arg = (char*)(str->c_str());
