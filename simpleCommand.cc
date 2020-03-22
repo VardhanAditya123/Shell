@@ -31,7 +31,9 @@ char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL || strchr(arg,'*')==NULL) {
 number_args+=1;
 _argumentsArray.push_back(str);
+return;
 }
+
 }
 
 // Print out the simple command
