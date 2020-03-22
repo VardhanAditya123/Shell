@@ -99,7 +99,7 @@ Word{Command::_currSimpleCommand = new SimpleCommand(); Command::_currSimpleComm
 
 
 arg_list:
-arg_list Word{Command::_currSimpleCommand-> expandWildcardsIfNecessary($2);}
+arg_list Word{Command::_currSimpleCommand-> insertArgument($2);}
 | /*empty*/
 ;
 
