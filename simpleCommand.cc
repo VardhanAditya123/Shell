@@ -33,18 +33,24 @@ number_args+=1;
 _argumentsArray.push_back(str);
 return;
 }
-char * reg = (char*)malloc(2*strlen(arg)+10);
-char * a = arg;
-char * r = reg;
-*r = ‘^’; r++; // match beginning of line
-while (*a) {
-if (*a == ‘*’) { *r=‘.’; r++; *r=‘*’; r++; }
-else if (*a == ‘?’) { *r=‘.’ r++;}
-else if (*a == ‘.’) { *r=‘\\’; r++; *r=‘.’; r++;}
-else { *r=*a; r++;}
-a++;
-}
-*r=‘$’; r++; *r=0;
+// char * reg = (char*)malloc(2*strlen(arg)+10);
+// char * a = arg;
+// char * r = reg;
+// *r = ‘^’; r++; // match beginning of line
+
+// while (*a) {
+// if (*a == ‘*’) 
+// { *r=‘.’; r++; *r=‘*’; r++; }
+// else if (*a == ‘?’) 
+// { *r=‘.’ r++;}
+// else if (*a == ‘.’) 
+// { *r=‘\\’; r++; *r=‘.’; r++;}
+// else 
+// { *r=*a; r++;}
+// a++;
+// }
+
+// *r=‘$’; r++; *r=0;
 }
 
 // Print out the simple command
