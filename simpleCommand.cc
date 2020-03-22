@@ -25,7 +25,7 @@ SimpleCommand::SimpleCommand() {
 SimpleCommand::~SimpleCommand() {
   // iterate over all the arguments and delete them
   for (auto & arg : _argumentsArray) {
-    // delete arg;
+    delete arg;
   }
 }
 
