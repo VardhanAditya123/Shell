@@ -71,7 +71,7 @@ regmatch_t match;
 result = regexec( &re, ent->d_name, 1, &match, 0 );
 if (result ==0 ) {
 number_args+=1;
-_argumentsArray.push_back(ent->d_name);
+_argumentsArray.push_back(ent->d_name.c_str());
 }
 }
 closedir(dir);
