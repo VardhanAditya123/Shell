@@ -192,8 +192,9 @@ if (result == 0 ) {
 
 }
 
-cout << arr_c << endl;
+
 for(int i = 0 ; i < arr_c ; i++){
+  cout << arr[i] << " ";
   Command::_currSimpleCommand->insertArgument(arr[i]);
 }
 closedir(dir);
