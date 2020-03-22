@@ -134,8 +134,7 @@ void expandWildcardsIfNecessary(std::string * str){
 
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
-number_args+=1;
-_argumentsArray.push_back(str);
+Command::_currSimpleCommand->insertArgument(str);
 return;
 }
 string reg;
@@ -182,9 +181,8 @@ result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
  
-  number_args+=1;
   cout << *tmp_ptr << " ";
-  _argumentsArray.push_back(tmp_ptr);
+ Command::_currSimpleCommand->insertArgument(tmp_ptr);
   
 }
 
