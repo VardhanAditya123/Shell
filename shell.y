@@ -174,9 +174,9 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-string tmp;
+string *tmp;
 regmatch_t match;
-tmp = ent->d_name;
+*tmp = (ent->d_name);
 arg = (char*)(tmp.c_str());
 
 result = regexec( &re, arg, 1, &match, 0 );
