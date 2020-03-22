@@ -68,7 +68,7 @@ struct dirent * ent;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 regmatch_t match;
-string *tmp = &((ent->d_name).c_str);
+string *tmp = &((ent->d_name));
 
 arg = (char*)(tmp->c_str());
 
