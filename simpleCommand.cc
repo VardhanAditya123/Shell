@@ -63,11 +63,11 @@ return;
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
   if(vect.size == 0){
-    vect.add();
+    vect.push_back(pfix);
   }
   sort(vect.begin(),vect.end());
 
- int c1 = 0;
+
 
 for(auto str: vect){
 
