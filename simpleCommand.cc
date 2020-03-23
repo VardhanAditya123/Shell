@@ -102,9 +102,10 @@ if (result == 0 ) {
 
 }
 std::sort (vec.begin(), vec.end()); 
-for(int i = 0; i < vec.size(); i++)
+for(int i = 0; i < vec.size(); i++){
 std::string *myString = new std::string(vec.at(i));
     _argumentsArray.push_back(myString);
+    }
 }
 
 // Print out the simple command
