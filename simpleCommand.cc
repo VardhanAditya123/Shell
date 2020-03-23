@@ -198,7 +198,7 @@ if(ent->d_name[0] == '.')
 sort(vect.begin(),vect.end());
 //  cout << reg << endl;
  int c1 = 0;
-cout <<  vect.size() << endl;
+cout <<  vect.size()<<"HEREiu" << endl;
 for(auto str: vect){
   cout << str << " " << c1++ <<endl;
   if(reg.compare("^..*$")==0){
