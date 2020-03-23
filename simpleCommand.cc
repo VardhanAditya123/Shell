@@ -97,6 +97,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 std::string *myString = new std::string(tmp);
 if (result == 0 ) {
   number_args+=1;
+  vec.push_back(myString);
   _argumentsArray.push_back(myString);
 }
 
