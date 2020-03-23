@@ -100,11 +100,10 @@ if (result == 0 ) {
 }
  
 }
-// std::sort (vec.begin(), vec.end()); 
-// for(auto s1 : vec){
-
-//     _argumentsArray.push_back(new string(s1));
-//     }
+std::sort (vec.begin(), vec.end()); 
+for(auto s1 : vec){
+  _argumentsArray.push_back(new string(s1));
+    }
 }
 
 // Print out the simple command
