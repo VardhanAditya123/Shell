@@ -223,7 +223,23 @@ else { // Last part of path. Copy whole thing.
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
+
+string newPrefix[1024];
+if ( strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
+// component does not have wildcards
+sprintf(newPrefix,"%s/%s", prefix, component);
+expandWildcard(newPrefix, suffix);
+return;
 }
+// Component has wildcards
+// Convert component to regular expression
+// char * expbuf = compile(...)
+// char * dir;
+// // If prefix is empty then list current directory
+// if (prefix is empty) dir =“.”; else dir=prefix;
+// DIR * d=opendir(dir);
+// if (d==NULL) return;
+// }
 
 
 #if 0
