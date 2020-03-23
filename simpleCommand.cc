@@ -97,12 +97,15 @@ result = regexec( &re, arg, 1, &match, 0 );
 std::string *myString = new std::string(tmp);
 if (result == 0 ) {
   number_args+=1;
-  vec.push_back(myString);
+  vec.push_back(tmp);
   _argumentsArray.push_back(myString);
 }
 
 }
-std::sort (_argumentsArray.begin(), _argumentsArray.end()); 
+std::sort (vec.begin(), vec.end()); 
+for(int i = 0; i < vec.size(); i++)
+std::string *myString = new std::string(vec.at(i));
+    vec2.push_back(myString);
 }
 
 // Print out the simple command
