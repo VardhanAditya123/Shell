@@ -62,7 +62,7 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-
+  cout << vect.size();
 }
 }
 
@@ -192,6 +192,7 @@ if(ent->d_name[0] == '.')
     
 }
 }
+return;
 
 // sort(vect.begin(),vect.end());
 // cout << vect.size() << endl;
