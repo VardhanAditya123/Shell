@@ -63,10 +63,7 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-
-}
-
-sort(vect.begin(),vect.end());
+  sort(vect.begin(),vect.end());
 
  int c1 = 0;
 
@@ -82,6 +79,9 @@ for(auto str: vect){
   insertArgument(new string(str)); 
   }
 }
+}
+
+
 }
 
 
