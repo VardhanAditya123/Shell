@@ -63,7 +63,7 @@ return;
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
   if(vect.size == 0){
-    vect.add()
+    vect.add();
   }
   sort(vect.begin(),vect.end());
 
@@ -230,5 +230,5 @@ return;
 //   }
 // }
 
-
+pfix = prefix;
 }
