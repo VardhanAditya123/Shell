@@ -219,6 +219,7 @@ return;
 // Obtain the next component in the suffix
 // Also advance suffix.
 char * s = strchr(suffix, '/');
+char component[1024];
 cout << suffix << endl;
 if (s!=NULL){ // Copy up to the first “/”
 strncpy(component,suffix, s-suffix);
@@ -229,7 +230,7 @@ strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
 
-char component[1024];
+char newPrefix[1024];
 // cout << component << endl;
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 // component does not have wildcards
