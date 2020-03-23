@@ -224,7 +224,10 @@ char component[1024];
 if (s!=NULL){ // Copy up to the first “/”
 cout << s << endl;
 cout << suffix << endl;
+if(s!=suffix)
 strncpy(component,suffix, s-suffix);
+else
+component[0]='\0';
 // cout << component <<  endl;
 suffix = s + 1;
 }
