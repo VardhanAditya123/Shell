@@ -74,7 +74,7 @@ if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
 // if (std::find(vect.begin(), vect.end(), prefix) == vect.end())
 
- cout << prefix <<" "<< vector.size() << endl;
+ cout << prefix <<" "<< vect.size() << endl;
 //  vect.push_back(prefix);
 return;
 }
