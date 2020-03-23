@@ -186,7 +186,7 @@ if(ent->d_name[0] == '.')
 				else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 				
-				return expandWildcard(newPrefix,suffix);
+				 expandWildcard(newPrefix,suffix);
 			
     }
     
@@ -194,7 +194,7 @@ if(ent->d_name[0] == '.')
 }
 
 sort(vect.begin(),vect.end());
-
+cout << vect.size() << endl;
  int c1 = 0;
 
 for(auto str: vect){
