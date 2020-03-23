@@ -305,17 +305,6 @@ void Command::execute() {
     Shell::prompt();
     return;
   } 
-
-  
-    
-
-  //  print();
-  // int check_fun = Command::commandCheck();
-  // if(check_fun == 1){
-  //   clear();
-  //   Shell::prompt();
-  //   return;
-  // }
   int ret;
 
   //save in/out
