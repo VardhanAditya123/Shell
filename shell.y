@@ -217,9 +217,9 @@ regex_t re;
   perror("compile");
   return;
   }
-
+   DIR * dir;
   if(prefix == NULL){
-   DIR * dir = opendir(".");
+   dir = opendir(".");
   }
   else
   DIR * dir = opendir(prefix);
