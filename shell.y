@@ -179,7 +179,7 @@ suffix = s + 1;
 else { // Last part of path. Copy whole thing.
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
-}
+}464
 
 char newPrefix[1024];
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
@@ -267,13 +267,13 @@ for(auto str: vect){
   Command ::_currSimpleCommand->insertArgument(new string(str)); 
 }
 }
-else{
- for(auto str: vect){
+// else{
+//  for(auto str: vect){
 
-  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str)); 
-} 
-}
+//   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
+//   Command ::_currSimpleCommand->insertArgument(new string(str)); 
+// } 
+// }
 }
 
 
