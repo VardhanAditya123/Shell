@@ -97,7 +97,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 
 if (result == 0 ) {
   number_args+=1;
-  cout << tmp << endl;
+  cout << &tmp << endl;
   _argumentsArray.push_back(&tmp);
 }
 
