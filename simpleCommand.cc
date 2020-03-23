@@ -82,6 +82,7 @@ for(auto str: vect){
   insertArgument(new string(str)); 
   }
 }
+}
 
 
 
