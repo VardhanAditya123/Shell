@@ -240,7 +240,7 @@ if (result == 0  ) {
    
 }
 }
-sort(vect.begin(,vect.end()));
+sort(vect.begin(),vect.end());
 for(auto str: vect){
   Command ::_currSimpleCommand->insertArgument(new string(str));
 }
