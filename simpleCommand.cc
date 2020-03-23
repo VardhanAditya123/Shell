@@ -89,7 +89,7 @@ string arr[1000];
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
-  // vec.push_back(tmp);
+   vec.push_back(tmp);
    _argumentsArray.push_back(new string(tmp));
 }
  
