@@ -49,7 +49,6 @@ void SimpleCommand::print() {
 }
 
 std::vector<std::string> vect = std::vector<string>();
-string reg;
 
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
@@ -63,25 +62,8 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-  sort(vect.begin(),vect.end());
 
- int c1 = 0;
-
-for(auto str: vect){
-
-  if(reg.compare("^..*$")==0){
-  if( str.at(0) =='.'  )
-  insertArgument(new string(str)); 
-  }
-  else{
-    
-  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  insertArgument(new string(str)); 
-  }
 }
-}
-
-
 }
 
 
@@ -90,7 +72,7 @@ void SimpleCommand:: expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
-cout << prefix << endl;
+// if (std::find(vect.begin(), vect.end(), prefix) == vect.end())
  vect.push_back(prefix);
 return;
 }
@@ -126,7 +108,7 @@ return;
 
 }
 
-
+string reg;
 string a = component;
 
 reg+='^';
@@ -211,7 +193,22 @@ if(ent->d_name[0] == '.')
 }
 }
 
+sort(vect.begin(),vect.end());
 
+ int c1 = 0;
+
+for(auto str: vect){
+
+  if(reg.compare("^..*$")==0){
+  if( str.at(0) =='.'  )
+  insertArgument(new string(str)); 
+  }
+  else{
+    
+  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
+  insertArgument(new string(str)); 
+  }
+}
 
 
 }
