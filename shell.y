@@ -202,6 +202,8 @@ for (auto str : vect){
   Command::_currSimpleCommand->insertArgument(new string(str));
 }
 }
+
+
 #if 0
 main()
 {
