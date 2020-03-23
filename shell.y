@@ -47,7 +47,9 @@
 #include <assert.h>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
+
 void yyerror(const char * s);
 int yylex();
 void expandWildcardsIfNecessary(string*s);
