@@ -189,7 +189,7 @@ regmatch_t match;
 tmp += (ent->d_name);
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
-if (result == 0 && tmp.compare(".")!=0 ) {
+if (result == 0 && tmp.get(0) != '.' ) {
    
     string * myStr = new string(tmp);
     vect.push_back(tmp);
