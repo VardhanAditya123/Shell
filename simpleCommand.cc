@@ -96,14 +96,17 @@ suffix = suffix + strlen(suffix);
 char newPrefix[1024];
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 
-if(prefix==NULL){
-sprintf(newPrefix,"%s",  component);
-}
-else
-sprintf(newPrefix,"%s/%s", prefix, component);
+if(prefix == NULL && component[0] != '\0')
+			sprintf(newPrefix, "%s", component);
+		else if(component[0] != '\0')
+			sprintf(newPrefix,"%s/%s", prefix, component);
 
-expandWildcard(newPrefix, suffix);
-return;
+		if(component[0] != '\0')
+			expandWildcard(newPrefix, suffix);
+		else
+			expandWildcard("", suffix);
+		
+		return;
 
 }
 
