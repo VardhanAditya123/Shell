@@ -140,7 +140,7 @@ yyerror(const char * s)
    number_args+=1;
   _argumentsArray.push_back(argument);
 }
-
+std::vector<std::string> vect = std::vector<string>();
 void expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 std::vector<std::string> vect = std::vector<string>();
@@ -153,10 +153,11 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
+
 }
 }
 
-std::vector<std::string> vect = std::vector<string>();
+
 void expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
