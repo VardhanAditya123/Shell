@@ -275,7 +275,7 @@ regmatch_t match;
 tmp += (ent->d_name);
 char* arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
-if (result == 0 && tmp.at(0) != '.' ) {
+if (result == 0  ) {
    
    sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
    expandWildcard(newPrefix,suffix);
