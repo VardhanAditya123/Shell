@@ -53,7 +53,7 @@ using namespace std;
 void yyerror(const char * s);
 int yylex();
 void expandWildcardsIfNecessary(string*s);
-void expandWildcard(string prefix , string suffix);
+void expandWildcard(char* prefix , char* suffix);
 %}
 
 %%
@@ -205,16 +205,16 @@ for (auto str : vect){
 }
 
 
-void expandWildcard(string prefix, string suffix) {
-if (suffix.size()== 0) {
+void expandWildcard(char * prefix, char *suffix) {
+if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
-Command::_currSimpleCommand->insertArgument(strdup(prefix));
+ Command::_currSimpleCommand->insertArgument(strdup(prefix));
 return;
 }
 // Obtain the next component in the suffix
 // Also advance suffix.
-char * s = strchr((char8*suffix.c_str(), '/');
-string component;
+char * s = strchr(suffix, ‘/’);
+char component[MAXFILENAME];
 if (s!=NULL){ // Copy up to the first “/”
 strncpy(component,suffix, s-suffix);
 suffix = s + 1;
@@ -223,8 +223,8 @@ else { // Last part of path. Copy whole thing.
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
-
 }
+
 
 #if 0
 main()
