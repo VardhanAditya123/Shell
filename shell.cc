@@ -24,7 +24,8 @@ char*  Shell::arg;
 
 int main(int argc, char **argv) {
  
-  struct sigaction s1;;
+  struct sigaction s1;
+  s1.sa_handler = zombie;
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
