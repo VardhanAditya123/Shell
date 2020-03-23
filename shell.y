@@ -156,13 +156,12 @@ else{
 }
 }
 
-
-void expandWildcard(char * prefix, char *suffix) {
 vector<string>vect;
+void expandWildcard(char * prefix, char *suffix) {
+
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
- Command::_currSimpleCommand->insertArgument(new string(prefix));
-
+vect.push_back(prefix);
 return;
 }
 // Obtain the next component in the suffix
@@ -241,7 +240,10 @@ if (result == 0  ) {
    
 }
 }
-
+sort(vect.begin(,vect.end()));
+for(auto str: vect){
+  Command _currSimpleCommand ->insertArgument(new string(str));
+}
 }
 
 
