@@ -230,6 +230,7 @@ if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 sprintf(newPrefix,"%s/%s", prefix, component);
 expandWildcard(newPrefix, suffix);
 return;
+
 }
 // Component has wildcards
 // Convert component to regular expression
@@ -239,7 +240,7 @@ return;
 // if (prefix is empty) dir =“.”; else dir=prefix;
 // DIR * d=opendir(dir);
 // if (d==NULL) return;
-// }
+ }
 
 
 #if 0
