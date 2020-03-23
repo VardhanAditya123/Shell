@@ -190,11 +190,11 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    
     string * myStr = new string(tmp);
-    Command::_currSimpleCommand->insertArgument(myStr);
+    vect.push_back(tmp);
    
 }
 }
-for (int i = 0 ; i < c ; i++){
+for (auto str : vect){
   Command::_currSimpleCommand->insertArgument(new string(arr[i]));
 }
 }
