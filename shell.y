@@ -264,7 +264,7 @@ for(auto str: vect){
   Command ::_currSimpleCommand->insertArgument(new string(str));
   }
   else{
-  if(str.at(0) =='.'  )
+  if(str.at(0) !='.'  )
   Command ::_currSimpleCommand->insertArgument(new string(str));
   }
 }
