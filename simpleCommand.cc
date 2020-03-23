@@ -91,6 +91,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    string * myStr = new string(tmp);
    _argumentsArray.push_back(myStr);
+   number_args+=1;
     vec.push_back(ent->d_name);
 }
  
@@ -98,7 +99,7 @@ if (result == 0 ) {
 // std::sort (vec.begin(), vec.end()); 
 // for(auto s1 : vec){
 //      char* st = (char*)(s1.c_str());
-//       number_args+=1;
+//       q
 //   //  _argumentsArray.push_back(new string(string(st)));
 //     }
 }
