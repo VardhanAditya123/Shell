@@ -98,14 +98,14 @@ std::string *myString = new std::string(tmp);
 if (result == 0 ) {
   number_args+=1;
   vec.push_back(tmp);
-  _argumentsArray.push_back(myString);
+  // _argumentsArray.push_back(myString);
 }
 
 }
 std::sort (vec.begin(), vec.end()); 
 for(int i = 0; i < vec.size(); i++)
 std::string *myString = new std::string(vec.at(i));
-    vec2.push_back(myString);
+    _argumentsArray.push_back(myString);
 }
 
 // Print out the simple command
