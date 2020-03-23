@@ -61,7 +61,7 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-  
+  cout << vect.size() << endl;
   sort(vect.begin(),vect.end());
 
  int c1 = 0;
