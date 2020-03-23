@@ -103,7 +103,7 @@ if (result == 0 ) {
 }
 std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
-    const char* st = s1.c_str();
+     char* st = (char*)(s1.c_str());
     cout << st << endl;
   // _argumentsArray.push_back(new string(st));
     }
