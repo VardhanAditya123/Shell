@@ -223,7 +223,7 @@ regex_t re;
   }
   else
    dir = opendir(prefix);
-   
+
   if (dir == NULL) {
   perror("opendir");
   return;
@@ -239,8 +239,11 @@ tmp += (ent->d_name);
 char* arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0  ) {
-   
-   sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
+if(prefix==NULL){
+sprintf(newPrefix,"%s",  ent->d_name);
+}
+else
+sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
    expandWildcard(newPrefix,suffix);
    
 }
