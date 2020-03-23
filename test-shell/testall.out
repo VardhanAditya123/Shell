@@ -9,4 +9,3 @@ test_append_output Passed 1/1
 test_pipes1 Passed 2/2
 test_pipes2 Passed 2/2
 test_pipes_redirect_out Passed 2/2
-test_pipes_redirect_err Passed 2/2
