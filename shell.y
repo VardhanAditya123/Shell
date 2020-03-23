@@ -260,22 +260,21 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 sort(vect.begin(),vect.end());
  cout << reg << endl;
  
-if(reg.compare("^..*$")==0){
+
 for(auto str: vect){
   
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
   Command ::_currSimpleCommand->insertArgument(new string(str)); 
   }
-}
-}
-else{
- for(auto str: vect){
-
+  else{
+    
   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
   Command ::_currSimpleCommand->insertArgument(new string(str)); 
-} 
+  }
 }
+
+
 }
 
 
