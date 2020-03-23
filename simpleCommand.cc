@@ -213,22 +213,5 @@ if(ent->d_name[0] == '.')
 }
 return;
 
-// sort(vect.begin(),vect.end());
-// cout << vect.size() << endl;
-//  int c1 = 0;
 
-// for(auto str: vect){
-
-//   if(reg.compare("^..*$")==0){
-//   if( str.at(0) =='.'  )
-//   insertArgument(new string(str)); 
-//   }
-//   else{
-    
-//   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-//   insertArgument(new string(str)); 
-//   }
-// }
-
-pfix = prefix;
 }
