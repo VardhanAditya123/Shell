@@ -223,6 +223,7 @@ regex_t re;
   }
   else
    dir = opendir(prefix);
+   
   if (dir == NULL) {
   perror("opendir");
   return;
