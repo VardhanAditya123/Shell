@@ -94,13 +94,13 @@ if (result == 0 ) {
 }
  
 }
-std::sort (vec.begin(), vec.end()); 
-for(auto s1 : vec){
-     char* st = (char*)(s1.c_str());
-      number_args+=1;
-  //  _argumentsArray.push_back(new string(string(st)));
-    }
-}
+// std::sort (vec.begin(), vec.end()); 
+// for(auto s1 : vec){
+//      char* st = (char*)(s1.c_str());
+//       number_args+=1;
+//   //  _argumentsArray.push_back(new string(string(st)));
+//     }
+// }
 
 // Print out the simple command
 void SimpleCommand::print() {
