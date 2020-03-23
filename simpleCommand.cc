@@ -100,7 +100,7 @@ if (result == 0 ) {
 }
  
 }
- std::sort (vec.begin(), vec.end()); 
+// std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
     std::string s2 =  std::string(s1);
     string *myString =  new string(s2);
