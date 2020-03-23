@@ -190,6 +190,7 @@ if(ent->d_name[0] == '.')
     
 }
 }
+close(d);
 sort(vect.begin(),vect.end());
 //  cout << reg << endl;
  
