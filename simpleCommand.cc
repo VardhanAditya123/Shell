@@ -72,6 +72,7 @@ void SimpleCommand:: expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
+if (std::find(vect.begin(), vect.end(), prefix) != v.end())
 vect.push_back(prefix);
 return;
 }
@@ -179,6 +180,7 @@ if(ent->d_name[0] == '.')
     }
 			else
 			{
+       
 				if(prefix == NULL)
 					sprintf(newPrefix,"%s",ent->d_name);
 				else
