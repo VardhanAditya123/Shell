@@ -87,7 +87,7 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-
+std::vector<string*> vec;
 string tmp;
 string& tmp2 = tmp;
 regmatch_t match;
