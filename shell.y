@@ -222,7 +222,7 @@ char * s = strchr(suffix, '/');
 char component[1024];
 
 if (s!=NULL){ // Copy up to the first “/”
-// strncpy(component,suffix, s-suffix);
+strncpy(component,suffix, s-suffix);
 suffix = s + 1;
 }
 else { // Last part of path. Copy whole thing.
