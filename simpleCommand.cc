@@ -198,9 +198,9 @@ for(auto str: vect){
   // }
   // else{
     
-  // if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  // insertArgument(new string(str)); 
-  // }
+  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
+  insertArgument(new string(str)); 
+  }
   insertArgument(new string(str));
 }
 
