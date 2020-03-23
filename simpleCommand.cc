@@ -91,7 +91,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    string * myStr = new string(tmp);
    _argumentsArray.push_back(myStr);
-    vec.push_back(string(tmp));
+    vec.push_back(ent->d_name);
 }
  
 }
