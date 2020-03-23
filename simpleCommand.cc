@@ -50,6 +50,7 @@ void SimpleCommand::print() {
 
 std::vector<std::string> vect = std::vector<string>();
 string reg;
+
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 std::vector<std::string> vect = std::vector<string>();
