@@ -162,7 +162,7 @@ regex_t re;
 	{
 		dir2 = prefix;
 	}
-  pfix = dir2;
+  
   DIR *dir = opendir(dir2);
 
   if (dir == NULL) {
@@ -192,7 +192,7 @@ if(ent->d_name[0] == '.')
 						sprintf(newPrefix,"%s",ent->d_name);
 					else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
-					
+					pfix = newPrefix;
 					expandWildcard(newPrefix,suffix);
 				}
     }
@@ -203,7 +203,7 @@ if(ent->d_name[0] == '.')
 					sprintf(newPrefix,"%s",ent->d_name);
 				else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
-				
+				  pfix = newPrefix;
 				 expandWildcard(newPrefix,suffix);
 			
     }
