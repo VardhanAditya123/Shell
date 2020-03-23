@@ -100,10 +100,12 @@ if (result == 0 ) {
 
 }
  std::sort (vec.begin(), vec.end()); 
+  std::string *myString;
 for(unsigned int i = 0; i < vec.size(); i++){
     //  cout << vec.at(i) <<" ";
      string s = vec.at(i).c_str();
-     std::string *myString = new std::string(s);
+     s+="";
+     myString = new std::string(s);
      _argumentsArray.push_back(myString);
     }
 }
