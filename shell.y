@@ -195,7 +195,7 @@ if (result == 0 ) {
 }
 }
 for (auto str : vect){
-  Command::_currSimpleCommand->insertArgument(new string(arr[i]));
+  Command::_currSimpleCommand->insertArgument(new string(vect));
 }
 }
 #if 0
