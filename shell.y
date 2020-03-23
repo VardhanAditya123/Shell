@@ -156,7 +156,7 @@ else{
 }
 }
 
-vector<string>vect;
+std::vector<std::string> vect = std::vector<string>();
 void expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
@@ -259,6 +259,7 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 sort(vect.begin(),vect.end());
  cout << reg << endl;
+ 
 if(reg.compare("^..*$")==0){
 for(auto str: vect){
 
