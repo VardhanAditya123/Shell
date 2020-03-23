@@ -208,7 +208,7 @@ for (auto str : vect){
 void expandWildcard(char * prefix, char *suffix) {
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
- Command::_currSimpleCommand->insertArgument(strdup(prefix));
+ Command::_currSimpleCommand->insertArgument(new string(prefix));
 return;
 }
 // Obtain the next component in the suffix
