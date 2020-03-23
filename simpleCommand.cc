@@ -81,8 +81,10 @@ char * s = strchr(suffix, '/');
 char component[1024];
 
 if (s!=NULL){ // Copy up to the first “/”
-if(s!=suffix)
+if(s!=suffix){
 strncpy(component,suffix, s-suffix);
+cout << component << endl;
+}
 else
 component[0]='\0';
 suffix = s + 1;
