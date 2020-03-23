@@ -232,11 +232,10 @@ else { // Last part of path. Copy whole thing.
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
-// cout << component <<  endl;
+
 char newPrefix[1024];
-// cout << component << endl;
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
-// component does not have wildcards
+
 if(prefix==NULL){
 sprintf(newPrefix,"%s",  component);
 }
