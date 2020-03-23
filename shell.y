@@ -109,12 +109,12 @@ GREATGREAT Word{Shell::_currentCommand._outFileName = $2;Shell::_currentCommand.
 
 cmd_and_args:
 
-Word{Command::_currSimpleCommand = new SimpleCommand();Command _currSimpleCommand->expandWildcardsIfNecessary($1);} arg_list  
+Word{Command::_currSimpleCommand = new SimpleCommand();Command:: _currSimpleCommand->expandWildcardsIfNecessary($1);} arg_list  
 ;
 
 
 arg_list:
-arg_list Word{Command _currSimpleCommand->expandWildcardsIfNecessary($2);}
+arg_list Word{Command:: _currSimpleCommand->expandWildcardsIfNecessary($2);}
 | /*empty*/
 ;
 
