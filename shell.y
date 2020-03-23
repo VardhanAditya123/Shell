@@ -195,7 +195,7 @@ if (result == 0 ) {
    
 }
 
-for( auto str : _currSimpleCommand){
+for( auto str : SimpleCommand){
   Command::_currSimpleCommand->insertArgument(myStr);
 }
  
