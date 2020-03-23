@@ -222,7 +222,7 @@ regex_t re;
    dir = opendir(".");
   }
   else
-  DIR * dir = opendir(prefix);
+   dir = opendir(prefix);
   if (dir == NULL) {
   perror("opendir");
   return;
