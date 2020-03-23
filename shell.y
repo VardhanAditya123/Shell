@@ -242,6 +242,7 @@ if (result == 0  ) {
 }
 sort(vect.begin(),vect.end());
 for(auto str: vect){
+  if(str.at(str.size()-1) !='.')
   Command ::_currSimpleCommand->insertArgument(new string(str));
 }
 }
