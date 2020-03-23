@@ -219,8 +219,9 @@ regex_t re;
   }
 
   if(prefix == NULL){
-    strcpy(prefix,".");
+   DIR * dir = opendir(".");
   }
+  else
   DIR * dir = opendir(prefix);
   if (dir == NULL) {
   perror("opendir");
