@@ -229,7 +229,7 @@ strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
 
-char newPrefix[1024];
+char component[1024];
 // cout << component << endl;
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 // component does not have wildcards
