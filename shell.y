@@ -225,7 +225,7 @@ suffix = suffix + strlen(suffix);
 }
 
 string newPrefix[1024];
-if ( strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
+if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 // component does not have wildcards
 sprintf(newPrefix,"%s/%s", prefix, component);
 expandWildcard(newPrefix, suffix);
