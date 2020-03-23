@@ -7,7 +7,7 @@
 struct SimpleCommand {
 
   // Simple command is simply a vector of strings
-  std::vector<std::string *> _argumentsArray;
+  std::vector<std::string &> _argumentsArray;
   SimpleCommand();
   int ambig_count=0;
   ~SimpleCommand();
