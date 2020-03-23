@@ -27,7 +27,7 @@
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
-  _argumentsArray = std::vector<string&>();
+  _argumentsArray = std::vector<string*>();
 }
 
 SimpleCommand::~SimpleCommand() {
@@ -98,7 +98,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
   number_args+=1;
   cout << tmp << endl;
-  _argumentsArray.push_back(arg);
+  _argumentsArray.push_back(&arg);
 }
 
 }
