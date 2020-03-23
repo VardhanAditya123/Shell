@@ -190,7 +190,7 @@ if(ent->d_name[0] == '.')
     
 }
 }
-closedir(dir);
+
 sort(vect.begin(),vect.end());
 //  cout << reg << endl;
  
