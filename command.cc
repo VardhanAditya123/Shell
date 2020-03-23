@@ -475,4 +475,3 @@ void Command::execute() {
 
 
 SimpleCommand * Command::_currSimpleCommand;
-wi
