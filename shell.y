@@ -235,7 +235,7 @@ return;
 }
 
 string reg;
-string a = arg;
+string a = component;
 reg+='^';
 for(unsigned int i = 0 ; i < a.length();i++){
   if(a.at(i)=='*'){
