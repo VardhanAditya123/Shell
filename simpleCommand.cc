@@ -75,7 +75,7 @@ if (suffix[0]== 0) {
 // if (std::find(vect.begin(), vect.end(), prefix) == vect.end())
 
  cout << prefix <<" "<< vect.size() << endl;
-//  vect.push_back(prefix);
+ vect.push_back(prefix);
 return;
 }
 // Obtain the next component in the suffix
