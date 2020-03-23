@@ -258,6 +258,7 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 }
 sort(vect.begin(),vect.end());
+cout << regex << endl;
 for(auto str: vect){
 
     if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
