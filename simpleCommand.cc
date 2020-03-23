@@ -104,8 +104,7 @@ if (result == 0 ) {
 std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
      char* st = (char*)(s1.c_str());
-    cout << st << endl;
-  // _argumentsArray.push_back(new string(st));
+   _argumentsArray.push_back(new string(string(st)));
     }
 }
 
