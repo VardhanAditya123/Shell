@@ -166,7 +166,6 @@ if(ent->d_name[0] == '.')
     {   
 				if(component[0] == '.'){
          
-          cout << component << endl;
 					if(prefix == NULL)
 						sprintf(newPrefix,"%s",ent->d_name);
 					else
