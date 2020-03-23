@@ -78,7 +78,7 @@ reg+='$';
 }  
 
 struct dirent * ent;
-vector<string> vec ;
+vector<string> vect ;
 int c = 0;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
@@ -89,7 +89,7 @@ string arr[1000];
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
-   vec.push_back(ent->d_name);
+   vect.push_back(ent->d_name);
    string * myStr = new string(tmp);
    _argumentsArray.push_back(myStr);
    number_args+=1;
