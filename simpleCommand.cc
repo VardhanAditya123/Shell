@@ -98,7 +98,7 @@ std::sort (vec.begin(), vec.end());
 for(auto s1 : vec){
      char* st = (char*)(s1.c_str());
       number_args+=1;
-   _argumentsArray.push_back(new string(string(st)));
+  //  _argumentsArray.push_back(new string(string(st)));
     }
 }
 
