@@ -15,7 +15,15 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <algorithm>
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
+#include <cstdio>
+#include <string>
+#include <stdio.h>
+#include "string.h"
+#include <regex.h>
+#include <dirent.h>
+#include <unistd.h>
+#include <vector> 
 using namespace std;
 
 SimpleCommand::SimpleCommand() {
