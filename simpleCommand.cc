@@ -210,7 +210,7 @@ if(ent->d_name[0] == '.')
 }
 }
 cout << newPrefix <<endl;
-pfix = newPrefix;
+// pfix = newPrefix;
 return;
 
 
