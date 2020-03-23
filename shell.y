@@ -196,8 +196,8 @@ if (result == 0 ) {
    
 }
 }
-for (auto str : arr){
-  Command::_currSimpleCommand->insertArgument(new string(str));
+for (int i = 0 ; i < c ; i++){
+  Command::_currSimpleCommand->insertArgument(new string(arr[i]));
 }
 }
 #if 0
