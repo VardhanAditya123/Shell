@@ -454,7 +454,7 @@ void Command::execute() {
 
     //restore in/out defaults
     count += 1;
-    // delete(final);
+    // delete(final); 
   } // for
 
   dup2(tmpin,0);

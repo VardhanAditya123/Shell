@@ -98,11 +98,11 @@ if (result == 0 ) {
   vec.push_back(tmp);
   //  _argumentsArray.push_back(myString);
 }
-
+ 
 }
  std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
-    std::string s2 = new std::string(s1);
+    std::string s2 =  std::string(s1);
     string *myString =  string(s1);
     _argumentsArray.push_back(myString);
     }
