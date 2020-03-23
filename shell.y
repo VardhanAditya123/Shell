@@ -217,12 +217,26 @@ regex_t re;
   perror("compile");
   return;
   }
-   DIR * dir;
-  if(prefix == NULL){
-   dir = opendir(".");
-  }
-  else
-   dir = opendir(prefix);
+  //  DIR * dir;
+   char* dir2;
+	if(prefix == NULL)
+	{
+		dir2 = ".";
+	}else if(!strcmp("", prefix))
+	{
+		dir2 = strdup("/");
+	}
+	else
+	{
+		dir2 = prefix;
+	}
+
+  DIR *dir = opendir(dir2);
+  // if(prefix == NULL){
+  //  dir = opendir(".");
+  // }
+  // else
+  //  dir = opendir(prefix);
 
   if (dir == NULL) {
   perror("opendir");
