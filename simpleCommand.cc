@@ -94,8 +94,8 @@ regmatch_t match;
 tmp += (ent->d_name);
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
-std::string *myString = new std::string();
-myString = &tmp;
+std::string *myString = new std::string(tmp);
+// myString = &tmp;
 if (result == 0 ) {
   number_args+=1;
   cout << &tmp << endl;
