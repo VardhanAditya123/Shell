@@ -190,7 +190,6 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    
    string * myStr = new string(tmp);
-   vect.push_back(tmp);
    Command::_currSimpleCommand->insertArgument(myStr);
    
 }
