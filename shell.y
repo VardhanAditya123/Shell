@@ -259,7 +259,7 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 }
 sort(vect.begin(),vect.end());
- cout << reg << endl;
+//  cout << reg << endl;
  
 
 for(auto str: vect){
