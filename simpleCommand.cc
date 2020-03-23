@@ -92,6 +92,7 @@ if (result == 0 ) {
    
    string * myStr = new string(tmp);
    _argumentsArray.push_back(myStr);
+    vect.push_back(*myStr);
    number_args+=1;
    
 }
