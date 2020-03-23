@@ -90,7 +90,7 @@ void SimpleCommand:: expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
-// if (std::find(vect.begin(), vect.end(), prefix) == vect.end())
+cout << prefix << endl;
  vect.push_back(prefix);
 return;
 }
