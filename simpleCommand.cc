@@ -45,7 +45,7 @@ SimpleCommand::~SimpleCommand() {
   _argumentsArray.push_back(argument);
 }
 
-void expandWildcardsIfNecessary(std::string * str){
+void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 std::vector<string> vec;
 char* arg = (char*)(str->c_str());
