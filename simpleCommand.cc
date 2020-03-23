@@ -100,7 +100,7 @@ if (result == 0 ) {
 //       number_args+=1;
 //   //  _argumentsArray.push_back(new string(string(st)));
 //     }
-// }
+}
 
 // Print out the simple command
 void SimpleCommand::print() {
