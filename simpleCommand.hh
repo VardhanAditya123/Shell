@@ -13,7 +13,9 @@ struct SimpleCommand {
   ~SimpleCommand();
   void insertArgument( std::string * str);
   void expandWildcardsIfNecessary(std::string * str);
+  void expandWildcard(char*, char*);
   void print();
+
   int number_args=0;
 };
 
