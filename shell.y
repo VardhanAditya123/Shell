@@ -140,63 +140,63 @@ Command::_currSimpleCommand->insertArgument(str);
 
 return;
 }
-string reg;
-string a = arg;
-reg+='^';
-for(unsigned int i = 0 ; i < a.length();i++){
-  if(a.at(i)=='*'){
-    reg+=".*";
-  }
-  else if(a.at(i)=='?')
-  reg+='.';
-  else if(a.at(i)=='.')
-  reg+='.';
-  else
-  reg+=a.at(i);
+// string reg;
+// string a = arg;
+// reg+='^';
+// for(unsigned int i = 0 ; i < a.length();i++){
+//   if(a.at(i)=='*'){
+//     reg+=".*";
+//   }
+//   else if(a.at(i)=='?')
+//   reg+='.';
+//   else if(a.at(i)=='.')
+//   reg+='.';
+//   else
+//   reg+=a.at(i);
   
-}
-reg+='$';
-
-  regex_t re;	
-	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
-	if (result!=0) {
-  perror("compile");
-  return;
-  }
-
-  DIR * dir = opendir(".");
-  if (dir == NULL) {
-  perror("opendir");
-  return;
-}  
-
-struct dirent * ent;
-
-while ( (ent = readdir(dir))!= NULL) {
-// Check if name matches
-
-string tmp;
-regmatch_t match;
-tmp += (ent->d_name);
-arg = (char*)(tmp.c_str());
-result = regexec( &re, arg, 1, &match, 0 );
-
-if (result == 0 ) {
- vec.push_back(tmp);
-}
-
-}
-
-
-// for(int i = 0 ; i < vec.size() ; i++){
-//   // cout << vec.at(i) << endl;
- 
-//   string s1  = (vec.at(i));
-//    cout << &s1 <<" "<< s1 << endl;
-//   Command::_currSimpleCommand->insertArgument(&s1);
 // }
-closedir(dir);
- regfree(&re);
+// reg+='$';
+
+//   regex_t re;	
+// 	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
+// 	if (result!=0) {
+//   perror("compile");
+//   return;
+//   }
+
+//   DIR * dir = opendir(".");
+//   if (dir == NULL) {
+//   perror("opendir");
+//   return;
+// }  
+
+// struct dirent * ent;
+
+// while ( (ent = readdir(dir))!= NULL) {
+// // Check if name matches
+
+// string tmp;
+// regmatch_t match;
+// tmp += (ent->d_name);
+// arg = (char*)(tmp.c_str());
+// result = regexec( &re, arg, 1, &match, 0 );
+
+// if (result == 0 ) {
+//  vec.push_back(tmp);
+// }
+
+// }
+
+
+// // for(int i = 0 ; i < vec.size() ; i++){
+// //   // cout << vec.at(i) << endl;
+ 
+// //   string s1  = (vec.at(i));
+// //    cout << &s1 <<" "<< s1 << endl;
+// //   Command::_currSimpleCommand->insertArgument(&s1);
+// // }
+// closedir(dir);
+//  regfree(&re);
  
 }
 
