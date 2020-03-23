@@ -37,71 +37,61 @@ SimpleCommand::~SimpleCommand() {
   _argumentsArray.push_back(argument);
 }
 
-// void SimpleCommand::expandWildcardsIfNecessary(std::string * str){
-// // Return if arg does not contain ‘*’ or ‘?’
+void expandWildcardsIfNecessary(std::string * str){
+// Return if arg does not contain ‘*’ or ‘?’
+std::vector<string> vec;
+char* arg = (char*)(str->c_str());
+if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
+Command::_currSimpleCommand->insertArgument(str);
 
-// char* arg = (char*)(str->c_str());
-// if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
-// number_args+=1;
-// _argumentsArray.push_back(str);
-// return;
-// }
-// string reg;
-// string a = arg;
-// reg+='^';
-// for(unsigned int i = 0 ; i < a.length();i++){
-//   if(a.at(i)=='*'){
-//     reg+=".*";
-//   }
-//   else if(a.at(i)=='?')
-//   reg+='.';
-//   else if(a.at(i)=='.')
-//   reg+='.';
-//   else
-//   reg+=a.at(i);
+return;
+}
+string reg;
+string a = arg;
+reg+='^';
+for(unsigned int i = 0 ; i < a.length();i++){
+  if(a.at(i)=='*'){
+    reg+=".*";
+  }
+  else if(a.at(i)=='?')
+  reg+='.';
+  else if(a.at(i)=='.')
+  reg+='.';
+  else
+  reg+=a.at(i);
   
-// }
-// reg+='$';
+}
+reg+='$';
 
-//   regex_t re;	
-// 	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
-// 	if (result!=0) {
-//   perror("compile");
-//   return;
-//   }
+  regex_t re;	
+	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
+	if (result!=0) {
+  perror("compile");
+  return;
+  }
 
-//   DIR * dir = opendir(".");
-//   if (dir == NULL) {
-//   perror("opendir");
-//   return;
-// }  
+  DIR * dir = opendir(".");
+  if (dir == NULL) {
+  perror("opendir");
+  return;
+}  
 
-// struct dirent * ent;
-// string tmp;
-// string *tmp_ptr;
-// while ( (ent = readdir(dir))!= NULL) {
-// // Check if name matches
-// regmatch_t match;
-// tmp = ent->d_name;
-// tmp_ptr = &tmp;
-// arg = (char*)(tmp.c_str());
+struct dirent * ent;
 
-// result = regexec( &re, arg, 1, &match, 0 );
+while ( (ent = readdir(dir))!= NULL) {
+// Check if name matches
 
-// if (result == 0 ) {
- 
-//   number_args+=1;
-//   cout << *tmp_ptr << " ";
-//   _argumentsArray.push_back(tmp_ptr);
-  
-// }
+string tmp;
+regmatch_t match;
+tmp += (ent->d_name);
+arg = (char*)(tmp.c_str());
+result = regexec( &re, arg, 1, &match, 0 );
 
-// }
-// cout << "LASST" << endl;
-// closedir(dir);
-//  regfree(&re);
- 
-// }
+if (result == 0 ) {
+ vec.push_back(tmp);
+}
+
+}
 
 // Print out the simple command
 void SimpleCommand::print() {
