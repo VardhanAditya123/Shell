@@ -232,15 +232,54 @@ expandWildcard(newPrefix, suffix);
 return;
 
 }
-// Component has wildcards
-// Convert component to regular expression
-// char * expbuf = compile(...)
-// char * dir;
-// // If prefix is empty then list current directory
-// if (prefix is empty) dir =“.”; else dir=prefix;
-// DIR * d=opendir(dir);
-// if (d==NULL) return;
- }
+
+string reg;
+string a = arg;
+reg+='^';
+for(unsigned int i = 0 ; i < a.length();i++){
+  if(a.at(i)=='*'){
+    reg+=".*";
+  }
+  else if(a.at(i)=='?')
+  reg+='.';
+  else if(a.at(i)=='.')
+  reg+='.';
+  else
+  reg+=a.at(i);
+  
+}
+reg+='$';
+regex_t re;	
+	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
+	if (result!=0) {
+  perror("compile");
+  return;
+  }
+
+  DIR * dir = opendir(".");
+  if (dir == NULL) {
+  perror("opendir");
+  return;
+}  
+
+struct dirent * ent;
+int c = 0;
+while ( (ent = readdir(dir))!= NULL) {
+// Check if name matches
+string tmp;
+regmatch_t match;
+tmp += (ent->d_name);
+arg = (char*)(tmp.c_str());
+result = regexec( &re, arg, 1, &match, 0 );
+if (result == 0 && tmp.at(0) != '.' ) {
+   
+    string * myStr = new string(tmp);
+    vect.push_back(tmp);
+   
+}
+}
+
+}
 
 
 #if 0
