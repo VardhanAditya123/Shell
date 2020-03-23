@@ -145,7 +145,7 @@ regex_t re;
   DIR *dir = opendir(dir2);
 
   if (dir == NULL) {
-  perror("opendir");
+  // perror("opendir");
   return;
 }  
 
