@@ -232,11 +232,6 @@ regex_t re;
 	}
 
   DIR *dir = opendir(dir2);
-  // if(prefix == NULL){
-  //  dir = opendir(".");
-  // }
-  // else
-  //  dir = opendir(prefix);
 
   if (dir == NULL) {
   perror("opendir");
@@ -264,7 +259,7 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 sort(vect.begin(),vect.end());
 for(auto str: vect){
-  if(str.at(str.size()-1) !='.')
+  if(str.at(str.size()-1) !='.' || str.at(0) !='.' )
   Command ::_currSimpleCommand->insertArgument(new string(str));
 }
 }
