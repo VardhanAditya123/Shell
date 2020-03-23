@@ -198,9 +198,8 @@ if(ent->d_name[0] == '.')
 sort(vect.begin(),vect.end());
 //  cout << reg << endl;
  
-
+cout <<  vect.size() << endl;
 for(auto str: vect){
- cout <<  vect.size() << endl;
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
   insertArgument(new string(str)); 
