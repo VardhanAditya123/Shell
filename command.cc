@@ -393,15 +393,26 @@ void Command::execute() {
      char **final  = new char*[1000];
       int c =0;
 
+if(simpleCommand->w_check == false){
     for(auto & word : simpleCommand->_argumentsArray){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
-      final[c]=const_cast<char*>(tmp2);
+      final[c]=const_cast<char*>(str);
       // final[c]=const_cast<char*>(word->c_str());
     
 
       c=c+1;
+    }
+    }
+    else{
+       for(auto & word : simpleCommand->_argumentsArray){
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp2=pecho(tmp1);
+      // char*str = esc(tmp2);
+      final[c]=const_cast<char*>(tmp2);
+      c=c+1;
+    }
     }
     last_arg = final[c-1];
     int check_fun = commandCheck(final , c );
