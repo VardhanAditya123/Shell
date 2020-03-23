@@ -102,7 +102,7 @@ if (result == 0 ) {
 }
  std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
-    string s2 = new string(s1);
+    std::string s2 = new std::string(s1);
     string *myString =  string(s1);
     _argumentsArray.push_back(myString);
     }
