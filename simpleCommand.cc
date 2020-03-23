@@ -187,3 +187,9 @@ for(auto str: vect){
 
 
 }
+
+void SimpleCommand:: reset(){
+  for (auto  arg : vect) {
+    delete arg;
+  }
+}
