@@ -1,22 +1,16 @@
 #include <cstdio>
 #include <cstdlib>
-#include <iostream>
 #include "command.hh"
 #include "shell.hh"
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <iostream>
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include <algorithm>
 #include <bits/stdc++.h>
-#include <cstdio>
+
 #include <string>
 #include <stdio.h>
 #include "string.h"
