@@ -190,7 +190,7 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    
   //  string * myStr = new string(tmp);
-   arr[c] = tmp.c_str;
+   arr[c] = tmp.c_str();
    c+=1;
   //  Command::_currSimpleCommand->insertArgument(myStr);
    
