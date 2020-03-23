@@ -165,9 +165,10 @@ tmp += (ent->d_name);
 char* arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0  ) {
-  cout << ent->d_name << endl;
+ 
 if(ent->d_name[0] == '.')
-    {   
+    {    cout << ent->d_name << endl;
+          cout << component << endl;
 				if(component[0] == '.'){
          
 					if(prefix == NULL)
