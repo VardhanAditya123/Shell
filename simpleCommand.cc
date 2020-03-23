@@ -74,7 +74,7 @@ if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
 // if (std::find(vect.begin(), vect.end(), prefix) == vect.end())
 // cout << prefix << endl;
-vect.push_back(prefix);
+// vect.push_back(prefix);
 return;
 }
 // Obtain the next component in the suffix
@@ -199,7 +199,7 @@ sort(vect.begin(),vect.end());
  
 
 for(auto str: vect){
-  
+  cout << str << endl;
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
   insertArgument(new string(str)); 
