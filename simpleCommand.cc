@@ -200,7 +200,7 @@ for(auto str: vect){
     
   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
   insertArgument(new string(str)); 
-  }
+  
   // insertArgument(new string(str));
 }
 
