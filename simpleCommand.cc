@@ -99,7 +99,7 @@ myString = tmp;
 if (result == 0 ) {
   number_args+=1;
   cout << &tmp << endl;
-  _argumentsArray.push_back(tmp);
+  _argumentsArray.push_back(myString);
 }
 
 }
