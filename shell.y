@@ -221,7 +221,7 @@ regex_t re;
    char* dir2;
 	if(prefix == NULL)
 	{
-		strcpy(dir2 , '.');
+		strcpy(dir2 , ".");
 	}else if(!strcmp("", prefix))
 	{
 		dir2 = strdup("/");
