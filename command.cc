@@ -468,7 +468,7 @@ void Command::execute() {
   }
 
 
-
+  print();
   clear();
   Shell::prompt();
 } 
