@@ -186,14 +186,15 @@ if (result == 0  ) {
 // 				else
 // 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 				
-				// expandWildcard(newPrefix,suffix);
+            // expandWildcard(newPrefix,suffix)
+// }
 
   	if(prefix == NULL)
 						sprintf(newPrefix,"%s",ent->d_name);
 					else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 					
-					expandWildcard(newPrefix,suffix);		
+				expandWildcard(newPrefix,suffix);		
 }
 }
 }
