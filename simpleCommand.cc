@@ -49,7 +49,7 @@ void SimpleCommand::print() {
 }
 
 std::vector<std::string> vect = std::vector<string>();
-
+string reg;
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 char* arg = (char*)(str->c_str());
@@ -122,7 +122,7 @@ return;
 
 }
 
-string reg;
+
 string a = component;
 
 reg+='^';
