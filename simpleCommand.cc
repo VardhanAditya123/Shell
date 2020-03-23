@@ -85,17 +85,18 @@ reg+='$';
 
 struct dirent * ent;
 std::vector<string> vec = std::vector<string>();;
+int c = 0;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 string tmp;
 regmatch_t match;
 tmp += (ent->d_name);
-
+string arr[1000];
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
   number_args+=1;
-   vec.push_back(tmp);
+  arr[c++] = tmp;
     // _argumentsArray.push_back(new string(tmp));
 }
  
@@ -103,7 +104,8 @@ if (result == 0 ) {
 std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
     const char* st = s1.c_str();
-  _argumentsArray.push_back(new string(st));
+    cout << st << endl;
+  // _argumentsArray.push_back(new string(st));
     }
 }
 
