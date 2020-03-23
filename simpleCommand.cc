@@ -110,6 +110,7 @@ else { // Last part of path. Copy whole thing.
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
+ if(component[0]!=0)
  pfix = pfix +"/"+component;
 char newPrefix[1024];
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
