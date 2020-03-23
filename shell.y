@@ -134,12 +134,7 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
- void SimpleCommand::insertArgument(string* argument ) {
-  // simply add the argument to the vector
-  // cout << argument[0] << " ";
-   number_args+=1;
-  _argumentsArray.push_back(argument);
-}
+
 
 std::vector<std::string> vect = std::vector<string>();
 void expandWildcardsIfNecessary(std::string * str){

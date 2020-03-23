@@ -32,7 +32,12 @@ SimpleCommand::~SimpleCommand() {
 }
 
 
-
+ void SimpleCommand::insertArgument(string* argument ) {
+  // simply add the argument to the vector
+  // cout << argument[0] << " ";
+   number_args+=1;
+  _argumentsArray.push_back(argument);
+}
 
 // Print out the simple command
 void SimpleCommand::print() {
