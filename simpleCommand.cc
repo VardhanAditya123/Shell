@@ -70,7 +70,7 @@ sort(vect.begin(),vect.end());
 //  int c1 = 0;
 cout <<  vect.size()<<"HEREiu" << endl;
 for(auto str: vect){
-  cout << str << " " << c1++ <<endl;
+  cout << str << " "  <<endl;
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
   insertArgument(new string(str)); 
