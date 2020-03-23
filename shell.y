@@ -199,7 +199,7 @@ if (result == 0 ) {
 }
 
 for (auto str : vect){
-  Command::_currSimpleCommand->insertArgument(new string(vect));
+  Command::_currSimpleCommand->insertArgument(new string(str));
 }
 }
 #if 0
