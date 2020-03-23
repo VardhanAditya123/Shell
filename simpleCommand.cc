@@ -46,7 +46,7 @@ SimpleCommand::~SimpleCommand() {
 
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
-std::vector<string> vec;
+
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
 Command::_currSimpleCommand->insertArgument(str);
@@ -84,6 +84,7 @@ reg+='$';
 }  
 
 struct dirent * ent;
+std::vector<string> vec;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 string tmp;
@@ -99,7 +100,7 @@ if (result == 0 ) {
 }
 
 }
-//  std::sort (vec.begin(), vec.end()); 
+ std::sort (vec.begin(), vec.end()); 
 for(unsigned int i = 0; i < vec.size(); i++){
     //  cout << vec.at(i) <<" ";
      string s = vec.at(i);
