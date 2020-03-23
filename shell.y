@@ -259,14 +259,9 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 sort(vect.begin(),vect.end());
 for(auto str: vect){
-  if(strchr((char *)reg.c_str(),'.')== NULL){
+
     if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str));
-  }
-  else{
-  if(str.at(0) !='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str));
-  }
+  Command ::_currSimpleCommand->insertArgument(new string(str)); 
 }
 }
 
