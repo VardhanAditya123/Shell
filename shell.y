@@ -194,6 +194,10 @@ if (result == 0 ) {
   //  Command::_currSimpleCommand->insertArgument(myStr);
    
 }
+
+for( auto str : _currSimpleCommand){
+  Command::_currSimpleCommand->insertArgument(myStr);
+}
  
 }
 }
