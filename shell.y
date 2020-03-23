@@ -258,7 +258,7 @@ sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
 }
 sort(vect.begin(),vect.end());
-// cout << reg << endl;
+ cout << reg << endl;
 if(reg.compare("^..*$")==0){
 for(auto str: vect){
 
