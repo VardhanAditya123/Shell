@@ -131,6 +131,72 @@ yyerror(const char * s)
   fprintf(stderr,"%s", s);
 }
 
+ void SimpleCommand::insertArgument(string* argument ) {
+  // simply add the argument to the vector
+  // cout << argument[0] << " ";
+   number_args+=1;
+  _argumentsArray.push_back(argument);
+}
+
+void expandWildcardsIfNecessary(std::string * str){
+// Return if arg does not contain ‘*’ or ‘?’
+std::vector<std::string> vect = std::vector<string>();
+char* arg = (char*)(str->c_str());
+if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
+Command::_currSimpleCommand->insertArgument(str);
+
+return;
+}
+string reg;
+string a = arg;
+reg+='^';
+for(unsigned int i = 0 ; i < a.length();i++){
+  if(a.at(i)=='*'){
+    reg+=".*";
+  }
+  else if(a.at(i)=='?')
+  reg+='.';
+  else if(a.at(i)=='.')
+  reg+='.';
+  else
+  reg+=a.at(i);
+  
+}
+reg+='$';
+
+  regex_t re;	
+	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
+	if (result!=0) {
+  perror("compile");
+  return;
+  }
+
+  DIR * dir = opendir(".");
+  if (dir == NULL) {
+  perror("opendir");
+  return;
+}  
+
+struct dirent * ent;
+int c = 0;
+while ( (ent = readdir(dir))!= NULL) {
+// Check if name matches
+string tmp;
+regmatch_t match;
+tmp += (ent->d_name);
+string arr[1000];
+arg = (char*)(tmp.c_str());
+result = regexec( &re, arg, 1, &match, 0 );
+if (result == 0 ) {
+   
+   string * myStr = new string(tmp);
+  _argumentsArray.push_back(myStr);
+   vect.push_back(tmp);
+   number_args+=1;
+   
+}
+ 
+}
 #if 0
 main()
 {
