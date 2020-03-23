@@ -200,6 +200,7 @@ sort(vect.begin(),vect.end());
  
 cout <<  vect.size() << endl;
 for(auto str: vect){
+  cout << str << endl;
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
   insertArgument(new string(str)); 
