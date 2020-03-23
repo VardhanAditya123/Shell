@@ -232,8 +232,10 @@ suffix = suffix + strlen(suffix);
 char newPrefix[1024];
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
 // component does not have wildcards
-if(prefix==NULL)
+if(prefix==NULL){
 sprintf(newPrefix,"/%s",  component);
+cout << newPrefix << endl;
+}
 else
 sprintf(newPrefix,"%s/%s", prefix, component);
 
