@@ -162,7 +162,7 @@ regex_t re;
 	{
 		dir2 = prefix;
 	}
-
+  pfix = dir2;
   DIR *dir = opendir(dir2);
 
   if (dir == NULL) {
