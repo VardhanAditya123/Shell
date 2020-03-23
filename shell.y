@@ -267,13 +267,13 @@ for(auto str: vect){
   Command ::_currSimpleCommand->insertArgument(new string(str)); 
 }
 }
-else{
- for(auto str: vect){
+// else{
+//  for(auto str: vect){
 
-  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str)); 
-} 
-}
+//   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
+//   Command ::_currSimpleCommand->insertArgument(new string(str)); 
+// } 
+// }
 }
 
 
