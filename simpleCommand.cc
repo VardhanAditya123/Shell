@@ -201,9 +201,5 @@ for(auto str: vect){
   }
 }
 
-reset();
-}
 
-void SimpleCommand:: reset(){
-  vect = std::vector<string>();
 }
