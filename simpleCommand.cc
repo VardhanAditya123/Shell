@@ -62,7 +62,7 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-  if(vect.size == 0){
+  if(vect.size() == 0){
     vect.push_back(pfix);
   }
   sort(vect.begin(),vect.end());
