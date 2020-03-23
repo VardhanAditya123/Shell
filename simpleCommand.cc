@@ -99,7 +99,7 @@ if (result == 0 ) {
 }
 
 }
-// std::sort (vec.begin(), vec.end()); 
+ std::sort (vec.begin(), vec.end()); 
 for(unsigned int i = 0; i < vec.size(); i++){
     //  cout << vec.at(i) <<" ";
      string s = vec.at(i);
