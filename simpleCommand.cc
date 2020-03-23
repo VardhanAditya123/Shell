@@ -84,7 +84,7 @@ reg+='$';
 }  
 
 struct dirent * ent;
-std::vector<string> vec;
+std::vector<string> vec = std::vector<string>();;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 string tmp;
