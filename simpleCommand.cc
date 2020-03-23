@@ -49,7 +49,7 @@ void SimpleCommand::print() {
 }
 
 std::vector<std::string> vect = std::vector<string>();
-
+string reg_1;
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 char* arg = (char*)(str->c_str());
@@ -68,16 +68,16 @@ else{
 
 for(auto str: vect){
 
-  // if(reg.compare("^..*$")==0){
-  // if( str.at(0) =='.'  )
-  // insertArgument(new string(str)); 
-  // }
-  // else{
+  if(reg_1.compare("^..*$")==0){
+  if( str.at(0) =='.'  )
+  insertArgument(new string(str)); 
+  }
+  else{
     
   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
   insertArgument(new string(str)); 
   }
-// }
+}
 }
 }
 
@@ -140,6 +140,7 @@ for(unsigned int i = 0 ; i < a.length();i++){
   
 }
 reg+='$';
+reg_1=reg;
 regex_t re;	
 	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
 	if (result!=0) {
