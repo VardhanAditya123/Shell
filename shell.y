@@ -179,18 +179,18 @@ reg+='$';
 
 struct dirent * ent;
 int c = 0;
+string arr[1000];
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 string tmp;
 regmatch_t match;
 tmp += (ent->d_name);
-string arr[1000];
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    
   //  string * myStr = new string(tmp);
-   vect.push_back(arg);
+   arr[c++] = tmp;
   //  Command::_currSimpleCommand->insertArgument(myStr);
    
 }
@@ -198,7 +198,7 @@ if (result == 0 ) {
  
 }
 
-for (auto str : vect){
+for (auto str : arr){
   Command::_currSimpleCommand->insertArgument(new string(str.c_str()));
 }
 }
