@@ -176,7 +176,7 @@ for(auto str: vect){
   
   if(reg.compare("^..*$")==0){
   if( str.at(0) =='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str)); 
+  insertArgument(new string(str)); 
   }
   else{
     
