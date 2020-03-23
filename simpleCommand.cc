@@ -127,7 +127,7 @@ return;
 
 string reg;
 string a = component;
-
+pfix+=component;
 reg+='^';
 for(unsigned int i = 0 ; i < a.length();i++){
   if(a.at(i)=='*'){
@@ -164,7 +164,6 @@ regex_t re;
 	}
   
   DIR *dir = opendir(dir2);
-   pfix = dir2;
   if (dir == NULL) {
   return;
 }  
