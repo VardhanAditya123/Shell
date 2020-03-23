@@ -213,6 +213,7 @@ vector<string>vect;
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
  Command::_currSimpleCommand->insertArgument(new string(prefix));
+
 return;
 }
 // Obtain the next component in the suffix
@@ -260,7 +261,7 @@ regex_t re;
   return;
   }
 
-  DIR * dir = opendir(".");
+  DIR * dir = opendir(prefix);
   if (dir == NULL) {
   perror("opendir");
   return;
