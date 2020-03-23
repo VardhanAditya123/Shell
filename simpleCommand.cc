@@ -63,7 +63,7 @@ return;
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
   if(vect.size() == 0){
-    vect.push_back(pfix);
+    // vect.push_back(pfix);
   }
   sort(vect.begin(),vect.end());
 
@@ -166,7 +166,7 @@ regex_t re;
   DIR *dir = opendir(dir2);
 
   if (dir == NULL) {
-  // perror("opendir");
+  pfix = newPrefix;
   return;
 }  
 
