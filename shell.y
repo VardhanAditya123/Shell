@@ -222,16 +222,16 @@ char * s = strchr(suffix, '/');
 char component[1024];
 
 if (s!=NULL){ // Copy up to the first “/”
-cout <<"HERE 1" << endl;
+
 strncpy(component,suffix, s-suffix);
+cout << component <<  endl;
 suffix = s + 1;
 }
 else { // Last part of path. Copy whole thing.
-cout <<"HERE 2" << endl;
 strcpy(component, suffix);
 suffix = suffix + strlen(suffix);
 }
-cout << component <<  endl;
+// cout << component <<  endl;
 char newPrefix[1024];
 // cout << component << endl;
 if ( strchr(component,'?')==NULL && strchr(component,'*')==NULL) {
