@@ -194,7 +194,8 @@ if (result == 0 ) {
    
 }
 }
-sort(vect.begin(), vect.end());
+
+std::sort (vect.begin(), vect.end(), myobject);
 for (auto str : vect){
   Command::_currSimpleCommand->insertArgument(new string(str));
 }
