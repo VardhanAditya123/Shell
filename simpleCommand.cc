@@ -193,22 +193,22 @@ if(ent->d_name[0] == '.')
 }
 }
 
-sort(vect.begin(),vect.end());
-cout << vect.size() << endl;
- int c1 = 0;
+// sort(vect.begin(),vect.end());
+// cout << vect.size() << endl;
+//  int c1 = 0;
 
-for(auto str: vect){
+// for(auto str: vect){
 
-  if(reg.compare("^..*$")==0){
-  if( str.at(0) =='.'  )
-  insertArgument(new string(str)); 
-  }
-  else{
+//   if(reg.compare("^..*$")==0){
+//   if( str.at(0) =='.'  )
+//   insertArgument(new string(str)); 
+//   }
+//   else{
     
-  if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  insertArgument(new string(str)); 
-  }
-}
+//   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
+//   insertArgument(new string(str)); 
+//   }
+// }
 
 
 }
