@@ -103,8 +103,9 @@ if (result == 0 ) {
 for(unsigned int i = 0; i < vec.size(); i++){
     //  cout << vec.at(i) <<" ";
      string s = vec.at(i).c_str();
+     cout << s << " ";
      std::string *myString = new std::string(s);
-    _argumentsArray.push_back(myString);
+    // _argumentsArray.push_back(myString);
     }
 }
 
