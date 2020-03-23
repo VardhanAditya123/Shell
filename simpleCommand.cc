@@ -41,7 +41,6 @@ SimpleCommand::~SimpleCommand() {
   // simply add the argument to the vector
   // cout << argument[0] << " ";
    number_args+=1;
-  //  cout << *argument << endl;
   _argumentsArray.push_back(argument);
 }
 
