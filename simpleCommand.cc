@@ -89,7 +89,6 @@ while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
 std::vector<string*> vec;
 string tmp;
-string& tmp2 = tmp;
 regmatch_t match;
 tmp += (ent->d_name);
 arg = (char*)(tmp.c_str());
