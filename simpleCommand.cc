@@ -96,7 +96,7 @@ arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
   number_args+=1;
-  arr[c++] = tmp;
+  vec.push_back(tmp);
     // _argumentsArray.push_back(new string(tmp));
 }
  
