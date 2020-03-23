@@ -102,7 +102,7 @@ if (result == 0 ) {
 }
 
 }
-std::sort (vec.begin(), vec.end()); 
+std::sort (_argumentsArray.begin(), _argumentsArray.end()); 
 }
 
 // Print out the simple command
