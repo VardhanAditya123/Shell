@@ -189,8 +189,9 @@ arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
    
-   string * myStr = new string(tmp);
-   Command::_currSimpleCommand->insertArgument(myStr);
+  //  string * myStr = new string(tmp);
+   vect.push_back(arg);
+  //  Command::_currSimpleCommand->insertArgument(myStr);
    
 }
  
