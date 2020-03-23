@@ -185,11 +185,9 @@ for(auto str: vect){
   }
 }
 
-
+reset();
 }
 
 void SimpleCommand:: reset(){
-  for (auto & arg : vect) {
-    delete arg;
-  }
+  vect = std::vector<string>();
 }
