@@ -164,7 +164,7 @@ regex_t re;
 	}
   
   DIR *dir = opendir(dir2);
-   pfix = dir2
+   pfix = dir2;
   if (dir == NULL) {
   return;
 }  
