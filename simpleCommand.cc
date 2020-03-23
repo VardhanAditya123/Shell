@@ -78,7 +78,7 @@ reg+='$';
 }  
 
 struct dirent * ent;
-vector<string> vect = std::vector<string>();
+vector<int> vect = std::vector<int>();
 int c = 0;
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
@@ -92,7 +92,8 @@ if (result == 0 ) {
    
    string * myStr = new string(tmp);
    _argumentsArray.push_back(myStr);
-    // vect.push_back("HELLO");
+    vect.push_back(1);
+
    number_args+=1;
    
 }
