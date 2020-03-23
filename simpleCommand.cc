@@ -96,16 +96,16 @@ result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
   number_args+=1;
   vec.push_back(tmp);
-  //  _argumentsArray.push_back(myString);
+    _argumentsArray.push_back(myString);
 }
  
 }
-std::sort (vec.begin(), vec.end()); 
-for(auto s1 : vec){
+// std::sort (vec.begin(), vec.end()); 
+// for(auto s1 : vec){
 
-    _argumentsArray.push_back(new string(s1));
-    }
-}
+//     _argumentsArray.push_back(new string(s1));
+//     }
+// }
 
 // Print out the simple command
 void SimpleCommand::print() {
