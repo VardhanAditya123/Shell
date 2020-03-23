@@ -92,6 +92,7 @@ if (result == 0 ) {
 }
 
 }
+}
 
 // Print out the simple command
 void SimpleCommand::print() {
