@@ -55,7 +55,7 @@ void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 std::vector<std::string> vect = std::vector<string>();
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
-Command::_currSimpleCommand->insertArgument(str);
+insertArgument(str);
 
 return;
 }
@@ -181,7 +181,7 @@ for(auto str: vect){
   else{
     
   if(str.at(str.size()-1) !='.' && str.at(0) !='.'  )
-  Command ::_currSimpleCommand->insertArgument(new string(str)); 
+  insertArgument(new string(str)); 
   }
 }
 
