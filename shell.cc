@@ -20,7 +20,7 @@ char*  Shell::arg;
 
 int main(int argc, char **argv) {
  
-  struct sigaction a=s1;
+  struct sigaction s1;;
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
