@@ -97,7 +97,7 @@ if (result == 0 ) {
 }
  
 }
-vect.push_back(ent->d_name);
+vect.push_back("FUCK");
 // std::sort (vec.begin(), vec.end()); 
 // for(auto s1 : vec){
 //      char* st = (char*)(s1.c_str());
