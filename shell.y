@@ -196,6 +196,7 @@ if (result == 0 ) {
 }
  
 }
+}
 #if 0
 main()
 {
