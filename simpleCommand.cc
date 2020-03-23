@@ -53,7 +53,7 @@ string reg_1;
 string pfix;
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
-w_check = true;
+
 char* arg = (char*)(str->c_str());
 if (strchr(arg,'?')==NULL && strchr(arg,'*')==NULL) {
 insertArgument(str);
@@ -62,6 +62,7 @@ return;
 }
 
 else{
+  w_check = true;
   expandWildcard(NULL,(char*)(str->c_str()));
   if(vect.size() == 0){
     vect.push_back(pfix);
