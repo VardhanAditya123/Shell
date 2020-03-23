@@ -10,7 +10,7 @@ struct SimpleCommand {
   std::vector<std::string *> _argumentsArray;
   SimpleCommand();
   int ambig_count=0;
-  bool w_check;
+  bool w_check = false;
   ~SimpleCommand();
   void insertArgument( std::string * str);
   void expandWildcardsIfNecessary(std::string * str);
