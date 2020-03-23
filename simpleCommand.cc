@@ -100,8 +100,9 @@ if (result == 0 ) {
   vec.push_back(myString);
   _argumentsArray.push_back(myString);
 }
-std::sort (vec.begin(), vec.end(), vec); 
+
 }
+std::sort (vec.begin(), vec.end()); 
 }
 
 // Print out the simple command
