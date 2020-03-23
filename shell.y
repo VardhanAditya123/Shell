@@ -219,7 +219,7 @@ return;
 // Obtain the next component in the suffix
 // Also advance suffix.
 char * s = strchr(suffix, '/');
-char component[1024];
+char * component;
 if (s!=NULL){ // Copy up to the first “/”
 strncpy(component,suffix, s-suffix);
 suffix = s + 1;
