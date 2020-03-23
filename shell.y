@@ -195,10 +195,11 @@ if (result == 0 ) {
    
 }
 
-for( auto str : SimpleCommand){
-  Command::_currSimpleCommand->insertArgument(myStr);
-}
  
+}
+
+for (auto str : vect){
+  Command::_currSimpleCommand->insertArgument(new string(vect));
 }
 }
 #if 0
