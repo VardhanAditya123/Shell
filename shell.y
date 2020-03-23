@@ -203,7 +203,7 @@ return;
 //   Command::_currSimpleCommand->insertArgument(new string(str));
 // }
 else{
-  expandWildcardsIfNecessary(NULL,(char*)(str->c_str()));
+  expandWildcard(NULL,(char*)(str->c_str()));
 }
 }
 
