@@ -206,6 +206,7 @@ for (auto str : vect){
 
 
 void expandWildcard(char * prefix, char *suffix) {
+vector<string*>vect;
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
  Command::_currSimpleCommand->insertArgument(new string(prefix));
