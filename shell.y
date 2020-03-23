@@ -213,7 +213,7 @@ return;
 }
 // Obtain the next component in the suffix
 // Also advance suffix.
-char * s = strchr(suffix.c_str(), ‘/’);
+char * s = strchr(suffix.c_str(), '/'');
 string component;
 if (s!=NULL){ // Copy up to the first “/”
 strncpy(component,suffix, s-suffix);
