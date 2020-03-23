@@ -50,6 +50,7 @@ void SimpleCommand::print() {
 
 std::vector<std::string> vect = std::vector<string>();
 string reg_1;
+string pfix;
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 char* arg = (char*)(str->c_str());
@@ -61,7 +62,9 @@ return;
 
 else{
   expandWildcard(NULL,(char*)(str->c_str()));
-  cout << vect.size() << endl;
+  if(vect.size == 0){
+    vect.add()
+  }
   sort(vect.begin(),vect.end());
 
  int c1 = 0;
