@@ -266,7 +266,7 @@ regex_t re;
   perror("compile");
   return;
   }
-  cout << prefix << endl;
+
   DIR * dir = opendir(prefix);
   if (dir == NULL) {
   perror("opendir");
