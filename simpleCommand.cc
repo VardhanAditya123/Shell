@@ -191,6 +191,7 @@ if (result == 0  ) {
 						sprintf(newPrefix,"%s",ent->d_name);
 					else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
+          expandWildcard(newPrefix,suffix);
 }
 }
 sort(vect.begin(),vect.end());
