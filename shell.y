@@ -199,7 +199,7 @@ if (result == 0 ) {
 }
 
 for (auto str : arr){
-  Command::_currSimpleCommand->insertArgument(new string(str.c_str()));
+  Command::_currSimpleCommand->insertArgument(new string(str));
 }
 }
 #if 0
