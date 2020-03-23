@@ -95,8 +95,8 @@ result = regexec( &re, arg, 1, &match, 0 );
 std::string *myString = new std::string(tmp);
 if (result == 0 ) {
   number_args+=1;
-  vec.push_back(tmp);
-  // _argumentsArray.push_back(myString);
+  // vec.push_back(tmp);
+   _argumentsArray.push_back(myString);
 }
 
 }
@@ -105,7 +105,7 @@ for(auto s1 : vec){
     cout  << s1 << endl;
     string s2=s1;
     string *myString = new string(s2);
-     _argumentsArray.push_back(myString);
+    //  _argumentsArray.push_back(myString);
     }
 }
 
