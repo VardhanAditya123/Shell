@@ -95,7 +95,6 @@ string arr[1000];
 arg = (char*)(tmp.c_str());
 result = regexec( &re, arg, 1, &match, 0 );
 if (result == 0 ) {
-  number_args+=1;
   vec.push_back(tmp);
     // _argumentsArray.push_back(new string(tmp));
 }
@@ -104,6 +103,7 @@ if (result == 0 ) {
 std::sort (vec.begin(), vec.end()); 
 for(auto s1 : vec){
      char* st = (char*)(s1.c_str());
+      number_args+=1;
    _argumentsArray.push_back(new string(string(st)));
     }
 }
