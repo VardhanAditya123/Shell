@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 using namespace std;
 int yyparse(void);
+void zombie(int);
 
 void Shell::prompt() {
   if ( isatty(0) ) {
@@ -19,6 +20,10 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
+void zombie(int sig) {
+	int pid = wait3(0, 0, NULL);
+	while (waitpid(-1, NULL, WNOHANG) > 0);
+}
 
 char*  Shell::arg;
 
