@@ -238,7 +238,6 @@ return 0;
 
 char* checkEnvironment(string s){
 
- cout << s << endl;
   string temp;
   char* temp2;
   string s1 = string(s);
