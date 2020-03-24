@@ -444,7 +444,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-         cout << s_count << endl;
+
         execvp(a, final);
         perror("execvp");
         _exit(1); 
