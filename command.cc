@@ -110,6 +110,9 @@ void Command::print() {
 }
 
 char* esc(char* str) {
+  if(strchr(str,'\\') == NULL){
+    return str;
+  }
   char* dst = (char*)malloc(strlen(str)+1);
   int c = 0;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
