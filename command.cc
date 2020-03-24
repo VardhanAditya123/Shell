@@ -249,7 +249,7 @@ char* checkEnvironment(string s){
      s1.replace(0,2,"");
      s1.pop_back();
     
-     temp2 = getenv(s1.c_str());
+     temp = getenv(s1.c_str());
      
      if(temp2 == NULL){
        temp = s;
