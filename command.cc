@@ -251,7 +251,7 @@ char* checkEnvironment(string s){
     
      temp = getenv(s1.c_str());
      
-     if(temp == NULL){
+     if(temp.size() == 0){
        temp = s;
      }
   
