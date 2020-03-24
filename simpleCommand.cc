@@ -34,6 +34,7 @@ SimpleCommand::~SimpleCommand() {
     for (auto  arg : vect) {
     delete new string(arg);
    }
+   vect.clear();
 }
 
 
