@@ -64,6 +64,7 @@ return;
 else{
   w_check = true;
   expandWildcard(NULL,(char*)(str->c_str()));
+  cout << vect.size() << endl;
   if(vect.size() == 0){
     vect.push_back(pfix);
   }
