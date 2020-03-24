@@ -396,7 +396,7 @@ void Command::execute() {
      char **final  = new char*[1000];
       int c =0;
 
-// if(simpleCommand->w_check == false){
+ if(simpleCommand->w_check == false){
     for(auto & word : simpleCommand->_argumentsArray){
        s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
@@ -406,16 +406,16 @@ void Command::execute() {
       // cout << final[c] << endl;
       c=c+1;
     }
-    // }
-    // else{
-    //    for(auto & word : simpleCommand->_argumentsArray){
-    //   char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-    //   char*tmp2=pecho(tmp1);
-    //   // char*str = esc(tmp2);
-    //   final[c]=const_cast<char*>(tmp2);
-    //   c=c+1;
-    // }
-    // }
+    }
+    else{
+       for(auto & word : simpleCommand->_argumentsArray){
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp2=pecho(tmp1);
+      // char*str = esc(tmp2);
+      final[c]=const_cast<char*>(tmp2);
+      c=c+1;
+    }
+    }
     last_arg = final[c-1];
     int check_fun = commandCheck(final , c );
   if(check_fun == 1){
