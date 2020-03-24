@@ -238,6 +238,7 @@ return 0;
 
 char* checkEnvironment(string s){
 
+// cout << s << endl;
   string temp;
   char* temp2;
   string s1 = string(s);
@@ -248,9 +249,9 @@ char* checkEnvironment(string s){
      s1.replace(0,2,"");
      s1.pop_back();
     
-     temp = getenv(s1.c_str());
+     temp2 = getenv(s1.c_str());
      
-     if(temp.size() == 0){
+     if(temp2 == NULL){
        temp = s;
      }
   
