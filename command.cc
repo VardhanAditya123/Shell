@@ -440,6 +440,7 @@ void Command::execute() {
         exit(1);
       }
       else{
+        cout << a << endl;
         execvp(a, final);
         perror("execvp");
         _exit(1); 
