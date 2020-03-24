@@ -153,7 +153,7 @@ regex_t re;
   return;
   }
   //  DIR * dir;
-   char* dir2;
+  char* dir2;
 	if(prefix == NULL)
 	{
 		strcpy(dir2 , ".");
