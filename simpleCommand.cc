@@ -155,7 +155,7 @@ regex_t re;
   return;
   }
   //  DIR * dir;
-  char* dir2 = (char*)malloc(100);
+  char dir2[1000];
 	if(prefix == NULL)
 	{
 		strcpy(dir2 , ".");
