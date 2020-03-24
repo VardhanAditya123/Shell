@@ -301,7 +301,7 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
 }
-string s_count;
+int s_count;
 void Command::execute() {
   // Don't do anything if there are no simple commands
   if ( _simpleCommandsArray.size() == 0 ) { 
@@ -397,9 +397,8 @@ void Command::execute() {
       int c =0;
 
 // if(simpleCommand->w_check == false){
-  s_count = "";
     for(auto & word : simpleCommand->_argumentsArray){
-       s_count = s_count + *word +" ";
+       s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
@@ -445,7 +444,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-         
+         cout << s_count << endl;
         execvp(a, final);
         perror("execvp");
         _exit(1); 
@@ -476,7 +475,6 @@ void Command::execute() {
 
 
   // print();
-  cout << s_count << endl;
   clear();
   Shell::prompt();
 } 
