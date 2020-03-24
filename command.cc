@@ -399,8 +399,6 @@ if(simpleCommand-> w_check == false){
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
       final[c]=const_cast<char*>(str);
-      cout << final[c] << "  here" << endl;
-      // final[c]=const_cast<char*>(word->c_str());
     
 
       c=c+1;
@@ -412,7 +410,7 @@ if(simpleCommand-> w_check == false){
       char*tmp2=pecho(tmp1);
       // char*str = esc(tmp2);
       final[c]=const_cast<char*>(tmp2);
-      cout << final[c] << "  here" << endl;
+
       c=c+1;
     }
     }
