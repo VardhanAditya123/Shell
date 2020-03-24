@@ -62,7 +62,7 @@ return;
 }
 
 else{
-  w_check = true;
+ Command:: w_check = true;
   expandWildcard(NULL,(char*)(str->c_str()));
   // cout << vect.size() << endl;
 
