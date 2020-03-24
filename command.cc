@@ -443,7 +443,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-        // cout << a <<" "<< final[1] << endl;
+         cout << simpleCommand->number_args << endl;
         execvp(a, final);
         perror("execvp");
         _exit(1); 
