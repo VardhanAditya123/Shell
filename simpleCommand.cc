@@ -31,9 +31,7 @@ SimpleCommand::~SimpleCommand() {
   for (auto & arg : _argumentsArray) {
     delete arg;
   }
-    for (auto  arg : vect) {
-    delete &arg;
-  }
+    delete vect;
 }
 
 
