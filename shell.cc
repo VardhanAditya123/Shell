@@ -21,10 +21,10 @@ void Shell::prompt() {
 
 
 char*  Shell::arg;
- void zombie(int sig) {
-	int pid = waitpid(-1, status, 0);
-	while (waitpid(-1, NULL, WNOHANG) > 0);
-}
+//  void zombie(int sig) {
+// 	int pid = waitpid(-1, status, 0);
+// 	while (waitpid(-1, NULL, WNOHANG) > 0);
+// }
 
 int main(int argc, char **argv) {
  
