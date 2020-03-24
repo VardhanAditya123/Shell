@@ -20,10 +20,10 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-void sigintHandler(int sig_num) 
-{ 
-  while (waitpid(-1, NULL, WNOHANG) > 0);
-}
+// void sigintHandler(int sig_num) 
+// { 
+//   while (waitpid(-1, NULL, WNOHANG) > 0);
+// }
 
 char*  Shell::arg;
 
