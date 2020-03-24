@@ -401,7 +401,7 @@ void Command::execute() {
        s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
-      // char*str = esc(tmp2);
+      char*str = esc(tmp2);
       final[c]=const_cast<char*>(tmp2);
       // cout << final[c] << endl;
       c=c+1;
