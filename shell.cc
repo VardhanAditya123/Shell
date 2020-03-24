@@ -25,12 +25,6 @@ void sigintHandler(int sig_num)
   while (waitpid(-1, NULL, WNOHANG) > 0);
 }
 
-void CTRL_C(int sig_num) 
-{ 
-   if ( isatty(0) ) {
-  printf("myshell>");
-}
-}
 
 
 char*  Shell::arg;
@@ -38,7 +32,7 @@ char*  Shell::arg;
 int main(int argc, char **argv) {
 
   
-   signal(SIGCHLD, CTRL_C); 
+   
    signal(SIGINT, sigintHandler); 
   
   Shell::arg = argv[0];
