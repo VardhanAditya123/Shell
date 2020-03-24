@@ -22,11 +22,7 @@ void Shell::prompt() {
 
 void sigintHandler(int sig_num) 
 { 
-    /* Reset handler to catch SIGINT next time. 
-       Refer http://en.cppreference.com/w/c/program/signal */
-    signal(SIGCHLD, sigintHandler); 
-    printf("\n Cannot be terminated using Ctrl+C \n"); 
-    fflush(stdout); 
+   wait(NULL); 
 }
 
 char*  Shell::arg;
