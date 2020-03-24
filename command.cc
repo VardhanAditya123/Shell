@@ -134,22 +134,22 @@ char* esc(char* str) {
 }
 
 char* pecho (char* str){
-  // string fin ;
-  // string tmp;
-  // for(unsigned int i = 0 ; i < strlen(str);i++ ){
-  //   if(str[i]!='$'  ){
-  //     fin += str[i];
-  //   }
-  //   else{
-  //     i=i+2; 
-  //     while(str[i]!='}'){
-  //       // tmp += str[i];
-  //       i++;
-  //     }
-  //     // fin+=getenv(tmp.c_str());
-  //     tmp="";
-  //   }
-  // }
+  string fin ;
+  string tmp;
+  for(unsigned int i = 0 ; i < strlen(str);i++ ){
+    if(str[i]!='$'  ){
+      fin += str[i];
+    }
+    else{
+      i=i+2; 
+      while(str[i]!='}'){
+        tmp += str[i];
+        i++;
+      }
+      fin+=getenv(tmp.c_str());
+      tmp="";
+    }
+  }
 
   char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
   return tmp2;
@@ -406,10 +406,9 @@ if(simpleCommand-> w_check == false){
     }
     else{
        for(auto & word : simpleCommand->_argumentsArray){
-      // char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-       char*tmp1 = const_cast<char*>((char*)word->c_str());
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
        char*tmp2=pecho(tmp1);
-      //  char*str = esc(tmp2);
+       char*str = esc(tmp2);
       final[c]=const_cast<char*>(tmp1);
 
       c=c+1;
