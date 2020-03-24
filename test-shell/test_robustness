@@ -14,8 +14,8 @@ grep_str=$'echo /d*/* | grep k\n'
 
 # input_str=$ls_str
 # input_str+=$cat_str$cat_str$cat_str$cat_str$cat_str$cat_str$cat_str$cat_str$cat_str
-#  input_str+=$grep_str
-input_str+=$grep_str$grep_str$grep_str$grep_str$grep_str
+ input_str+=$grep_str
+# input_str+=$grep_str$grep_str$grep_str$grep_str$grep_str
 # input_str+=$none_str$none_str$none_str
 # input_str+=$ls_str$ls_str$ls_str$ls_str$ls_str$ls_str$ls_str$ls_str
 
