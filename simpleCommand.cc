@@ -19,7 +19,9 @@
 #include <unistd.h>
 #include <vector> 
 using namespace std;
-
+std::vector<std::string> vect = std::vector<string>();
+string reg_1;
+string pfix;
 SimpleCommand::SimpleCommand() {
   _argumentsArray = std::vector<string*>();
 }
@@ -48,9 +50,6 @@ void SimpleCommand::print() {
   std::cout << std::endl;
 }
 
-std::vector<std::string> vect = std::vector<string>();
-string reg_1;
-string pfix;
 void SimpleCommand:: expandWildcardsIfNecessary(std::string * str){
 // Return if arg does not contain ‘*’ or ‘?’
 
