@@ -405,6 +405,7 @@ void Command::execute() {
   
     
       final[c]=const_cast<char*>(str);
+      cout << final[c] << endl;
       // cout << final[c] << endl;
       c=c+1;
     }
@@ -444,7 +445,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-
+        
         execvp(a, final);
         perror("execvp");
         _exit(1); 
