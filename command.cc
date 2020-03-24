@@ -131,7 +131,7 @@ char* esc(char* str) {
       c+=1;
     }
   }
-  dst[c] = '\0';
+  // dst[c] = '\0';
   return dst;
 }
 
