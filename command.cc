@@ -399,7 +399,7 @@ void Command::execute() {
 // if(simpleCommand->w_check == false){
   s_count = "";
     for(auto & word : simpleCommand->_argumentsArray){
-       s_count = s_count + word +" ";
+       s_count = s_count + *word +" ";
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
