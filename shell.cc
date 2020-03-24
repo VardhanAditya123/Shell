@@ -30,7 +30,7 @@ char*  Shell::arg;
 int main(int argc, char **argv) {
 
   
-  // signal(SIGCHLD, sigintHandler); 
+   signal(SIGCHLD, sigintHandler); 
   
   Shell::arg = argv[0];
   Shell::prompt();
