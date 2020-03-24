@@ -143,7 +143,7 @@ char* pecho (char* str){
     else{
       i=i+2; 
       while(str[i]!='}'){
-        tmp += str[i];
+        // tmp += str[i];
         i++;
       }
       // fin+=getenv(tmp.c_str());
