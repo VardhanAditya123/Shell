@@ -20,19 +20,22 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-void zombie(int sig) {
-	int pid = wait3(0, 0, NULL);
-	while (waitpid(-1, NULL, WNOHANG) > 0);
+void sigintHandler(int sig_num) 
+{ 
+    /* Reset handler to catch SIGINT next time. 
+       Refer http://en.cppreference.com/w/c/program/signal */
+    signal(SIGINT, sigintHandler); 
+    printf("\n Cannot be terminated using Ctrl+C \n"); 
+    fflush(stdout); 
 }
 
 char*  Shell::arg;
 
 int main(int argc, char **argv) {
 
-   struct sigaction s2;
-   s2.sa_handler = zombie;
-   sigemptyset(&s2.sa_mask);
-   s2.sa_flags = SA_RESTART;
+  
+  signal(SIGINT, sigintHandler); 
+  
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
