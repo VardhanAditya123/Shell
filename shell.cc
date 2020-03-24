@@ -22,7 +22,7 @@ void Shell::prompt() {
 
 void sigintHandler(int sig_num) 
 { 
-  cout<< waitpid(-1, NULL, WNOHANG) << " exited."<< endl;
+  while (waitpid(-1, NULL, WNOHANG) > 0);
 }
 
 char*  Shell::arg;
