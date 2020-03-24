@@ -398,8 +398,7 @@ if(simpleCommand->w_check == false){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
-      final[c]=const_cast<char*>(word->c_str());
-      cout << final[c] << endl;
+      final[c]=const_cast<char*>(str);
       // final[c]=const_cast<char*>(word->c_str());
     
 
@@ -408,10 +407,10 @@ if(simpleCommand->w_check == false){
     }
     else{
        for(auto & word : simpleCommand->_argumentsArray){
-      // char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-      // char*tmp2=pecho(tmp1);
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp2=pecho(tmp1);
       // char*str = esc(tmp2);
-      final[c]=const_cast<char*>(word->c_str());
+      final[c]=const_cast<char*>(tmp2);
       c=c+1;
     }
     }
@@ -442,7 +441,7 @@ if(simpleCommand->w_check == false){
       }
       else{
         execvp(a, final);
-        // perror("execvp");
+        perror("execvp");
         _exit(1); 
       }
 
