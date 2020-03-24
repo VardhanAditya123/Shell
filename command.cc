@@ -146,7 +146,7 @@ char* pecho (char* str){
         tmp += str[i];
         i++;
       }
-      fin+=getenv(tmp.c_str());
+      // fin+=getenv(tmp.c_str());
       tmp="";
     }
   }
