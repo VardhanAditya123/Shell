@@ -476,6 +476,7 @@ void Command::execute() {
 
 
   // print();
+  cout << s_count << endl;
   clear();
   Shell::prompt();
 } 
