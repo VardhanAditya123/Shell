@@ -65,7 +65,9 @@ else{
   w_check = true;
   expandWildcard(NULL,(char*)(str->c_str()));
   cout << vect.size() << endl;
+  if (std::find(v.begin(), v.end(), "abc") != v.end())
   if(vect.size() == 0){
+    
     vect.push_back(pfix);
   }
   sort(vect.begin(),vect.end());
@@ -93,6 +95,7 @@ void SimpleCommand:: expandWildcard(char * prefix, char *suffix) {
 
 if (suffix[0]== 0) {
 // suffix is empty. Put prefix in argument.
+if (std::find(v.begin(), v.end(), prefix) == v.end())
  vect.push_back(prefix);
 return;
 }
