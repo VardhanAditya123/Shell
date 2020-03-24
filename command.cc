@@ -442,7 +442,7 @@ if(simpleCommand->w_check == false){
       }
       else{
         execvp(a, final);
-        perror("execvp");
+        // perror("execvp");
         _exit(1); 
       }
 
