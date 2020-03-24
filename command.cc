@@ -390,7 +390,7 @@ void Command::execute() {
 
     string s = *(simpleCommand->_argumentsArray[0]);
     string s2 = *(simpleCommand->_argumentsArray[0]);
-    char *a = &(s[0]);
+    char *a = (char*)(s.c_str());
      char **final  = new char*[1000];
       int c =0;
 
