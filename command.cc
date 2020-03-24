@@ -407,10 +407,10 @@ if(simpleCommand->w_check == false){
     }
     else{
        for(auto & word : simpleCommand->_argumentsArray){
-      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      // char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       // char*tmp2=pecho(tmp1);
       // char*str = esc(tmp2);
-      final[c]=const_cast<char*>(tmp1);
+      final[c]=const_cast<char*>(word->c_str());
       c=c+1;
     }
     }
