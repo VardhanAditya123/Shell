@@ -30,7 +30,7 @@ void CTRL_C(int sig_num)
    if ( isatty(0) ) {
   printf("myshell>");
 }
-
+}
 
 
 char*  Shell::arg;
