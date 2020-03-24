@@ -390,7 +390,7 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = &(s[0]);
-     char **final  = new char*[1000000];
+     char **final  = new char*[1000];
       int c =0;
 
 if(simpleCommand->w_check == false){
@@ -407,10 +407,10 @@ if(simpleCommand->w_check == false){
     }
     else{
        for(auto & word : simpleCommand->_argumentsArray){
-      // char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-      // char*tmp2=pecho(tmp1);
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp2=pecho(tmp1);
       // char*str = esc(tmp2);
-      final[c]=const_cast<char*>((char*)word->c_str());
+      final[c]=const_cast<char*>(tmp2);
       c=c+1;
     }
     }
