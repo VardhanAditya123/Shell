@@ -29,8 +29,10 @@ char*  Shell::arg;
 
 int main(int argc, char **argv) {
 
-   struct sigaction sigA2;
-   sigA2.sa_handler = zombie;
+   struct sigaction s2;
+   s2.sa_handler = zombie;
+   sigemptyset(&s2.sa_mask);
+   s2.sa_flags = SA_RESTART;
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
