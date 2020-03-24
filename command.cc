@@ -134,21 +134,21 @@ char* esc(char* str) {
 }
 
 char* pecho (char* str){
-  string fin ;
-  string tmp;
-  for(unsigned int i = 0 ; i < strlen(str);i++ ){
-    if(str[i]!='$'  ){
-      fin += str[i];
-    }
-    else{
-      i=i+2; 
-      while(str[i]!='}'){
-        // tmp += str[i];
-        i++;
-      }
-      // fin+=getenv(tmp.c_str());
-      tmp="";
-    }
+  // string fin ;
+  // string tmp;
+  // for(unsigned int i = 0 ; i < strlen(str);i++ ){
+  //   if(str[i]!='$'  ){
+  //     fin += str[i];
+  //   }
+  //   else{
+  //     i=i+2; 
+  //     while(str[i]!='}'){
+  //       // tmp += str[i];
+  //       i++;
+  //     }
+  //     // fin+=getenv(tmp.c_str());
+  //     tmp="";
+  //   }
   }
 
   char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
