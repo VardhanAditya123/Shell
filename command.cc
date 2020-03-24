@@ -134,7 +134,7 @@ char* esc(char* str) {
 }
 
 char* pecho (char* str){
-  
+  cout << str << endl;
   if(strchr(str,'{')==NULL){
   cout << str << endl;
   }
