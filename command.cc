@@ -393,7 +393,7 @@ void Command::execute() {
      char **final  = new char*[1000];
       int c =0;
 
-if(Command::w_check == false){
+if(simpleCommand-> w_check == false){
     for(auto & word : simpleCommand->_argumentsArray){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
