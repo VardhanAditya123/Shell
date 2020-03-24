@@ -397,8 +397,8 @@ if(simpleCommand-> w_check == false){
     for(auto & word : simpleCommand->_argumentsArray){
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
        char*tmp2=pecho((char*)word->c_str());
-      // char*str = esc(tmp2);
-      final[c]=const_cast<char*>(tmp2);
+       char*str = esc(tmp2);
+      final[c]=const_cast<char*>(str);
     
 
       c=c+1;
