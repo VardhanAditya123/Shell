@@ -135,6 +135,7 @@ char* esc(char* str) {
 
 char* pecho (char* str){
  
+  cout << str <<endl;
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
