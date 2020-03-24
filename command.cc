@@ -404,7 +404,7 @@ void Command::execute() {
   
     
       final[c]=const_cast<char*>(str);
-      cout << final[c] << endl;
+      // cout << final[c] << endl;
       c=c+1;
     }
     // }
