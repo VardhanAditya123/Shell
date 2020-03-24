@@ -12,7 +12,7 @@ struct Command {
   std::string * _errFileName;
   bool _append;
   bool _backgnd;
-  bool w_check = false;
+ static bool w_check = false;
   Command();
   void insertSimpleCommand( SimpleCommand * simpleCommand );
 
