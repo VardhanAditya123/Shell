@@ -149,7 +149,7 @@ char* pecho (char* str){
   //     // fin+=getenv(tmp.c_str());
   //     tmp="";
   //   }
-  }
+  // }
 
   char* tmp2 = strcpy(new char[fin.length()+ 1],fin.c_str());
   return tmp2;
