@@ -24,7 +24,7 @@ void sigintHandler(int sig_num)
 { 
     /* Reset handler to catch SIGINT next time. 
        Refer http://en.cppreference.com/w/c/program/signal */
-    signal(SIGINT, sigintHandler); 
+    signal(SIGCHILD, sigintHandler); 
     printf("\n Cannot be terminated using Ctrl+C \n"); 
     fflush(stdout); 
 }
@@ -34,7 +34,7 @@ char*  Shell::arg;
 int main(int argc, char **argv) {
 
   
-  signal(SIGINT, sigintHandler); 
+  signal(SIGCHILD, sigintHandler); 
   
   Shell::arg = argv[0];
   Shell::prompt();
