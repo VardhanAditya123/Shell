@@ -134,9 +134,9 @@ char* esc(char* str) {
 }
 
 char* pecho (char* str){
-  // if(strchr(str,'$')==NULL){
-  //   return str;
-  // }
+  if(strchr(str,'$')==NULL){
+    return str;
+  }
   string fin ;
   string tmp;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
