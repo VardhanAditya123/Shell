@@ -306,7 +306,7 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 char* tilde(char* s){
 if(strchr(s,'~')!=NULL){
   
-  strting str = s;
+  string str = s;
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
 }
