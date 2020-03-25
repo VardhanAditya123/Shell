@@ -458,7 +458,7 @@ void Command::execute() {
     ret = fork();
 
 
-    if (ret == 0) {
+    if (ret == 0) { 
       close(tmpin);
       close(tmpout);
       if(_backgnd){
