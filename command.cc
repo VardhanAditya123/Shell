@@ -440,7 +440,7 @@ void Command::execute() {
       
       c=c+1;
     }
-    char **final_arr  ;
+    char **final_arr = new char*[fin.size()]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     last_arg = final_arr[c-1];
     int check_fun = commandCheck(final_arr , c );
