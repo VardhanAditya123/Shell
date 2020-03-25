@@ -425,7 +425,6 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
     vector <char*> fin ;
-    char **final_arr  ;
     int c =0;
 
     for(auto & word : simpleCommand->_argumentsArray){
@@ -443,14 +442,13 @@ void Command::execute() {
       
     }  
 
-    // char **final_arr = new char*[c+1]  ;
-    final_arr = new char*[c+1]  ;
+    char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
   
     int check_fun = commandCheck(final_arr , c );
-    if(check_fun == 1){ 
+    if(check_fun == 1){
       clear();
       Shell::prompt();
       return;
@@ -489,10 +487,10 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-      for(int i = 0 ; i < c+1; i++){
-        free(final_arr[i]);
+      for(auto  w : final_arr){
+        free(w);
       }
-    // free(final_arr); 
+    free(final_arr); 
     // fin.clear();
     count += 1;
 
