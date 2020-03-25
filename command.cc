@@ -65,7 +65,7 @@ void Command::clear() {
   _simpleCommandsArray.clear();
 
   if ( _outFileName==NULL ) {
-    delete _outFileName;
+    delete _outFileName; 
   }
   _outFileName = NULL;
 
