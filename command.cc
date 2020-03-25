@@ -308,7 +308,7 @@ if(strchr(s,'~')!=NULL){
   
   strting str = s;
   str.replace(0, 1,getenv("HOME") ); 
-  s = (char*)(s1.c_str());
+  s = (char*)(str.c_str());
 }
 return s;
 }
