@@ -435,7 +435,7 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
-      fin.push_back(const_cast<char*>(str));
+      fin11.push_back(const_cast<char*>(str));
       final[c]=const_cast<char*>(str);
       
       c=c+1;
