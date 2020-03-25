@@ -307,7 +307,7 @@ char* tilde(char* s){
 if(strchr(s,'~')!=NULL){
   
   strting str = s;
-  s1.replace(0, 1,getenv("HOME") ); 
+  str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(s1.c_str());
 }
 return s;
