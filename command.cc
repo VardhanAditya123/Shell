@@ -310,7 +310,7 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
  
-} cout << s << " FUNTION"<< endl;
+} cout << s << ""<< endl;
 return s;
 }
 
@@ -415,17 +415,9 @@ void Command::execute() {
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*tmp3 = esc(tmp2);
-      // char*str = tilde(tmp3);
-      // cout << str << endl;
-      if(strchr(tmp3,'~')!=NULL){
-  
-      string str = tmp3;
-      str.replace(0, 1,getenv("HOME") ); 
-      tmp3 = (char*)(str.c_str());
- 
-      } 
-   
-      final[c]=const_cast<char*>(tmp3);
+      char*str = tilde(tmp3);
+      cout << str << endl;
+      final[c]=const_cast<char*>(str);
       
       c=c+1;
     }
