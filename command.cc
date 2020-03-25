@@ -487,8 +487,11 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-
+      for(auto  w : final_arr){
+        free(w);
+      }
     free(final_arr); 
+    // fin.clear();
     count += 1;
 
   } // for
