@@ -316,7 +316,7 @@ if(strchr(s,'~')!=NULL){
  
 } 
 char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
-getpwnam(nstr);
+getpwnam(s+1);
 return nstr;
 }
 
