@@ -310,8 +310,8 @@ if(strchr(s,'~')!=NULL){
   if(s[1] == '/')
   str.replace(0, 1,getenv("HOME") ); 
   else{
-  
-  str.replace(0, 1,(getenv("HOME") +"/") ); 
+  str.replace(0,1,"~/")
+  str.replace(0, 1,(getenv("HOME") ) ); 
   }
  
 } 
