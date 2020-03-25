@@ -307,7 +307,12 @@ char* tilde(char* s){
   string str = s;
 if(strchr(s,'~')!=NULL){
   
+  if(s[1] == '/')
   str.replace(0, 1,getenv("HOME") ); 
+  else{
+  
+  str.replace(0, 1,getenv("HOME") +"/" ); 
+  }
  
 } 
 return strcpy(new char[str.length()+ 1],str.c_str());
