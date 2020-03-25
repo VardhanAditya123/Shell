@@ -468,6 +468,7 @@ void Command::execute() {
       else{
 
         execvp(a, final_arr);
+        free(final_arr);
         perror("execvp");
         _exit(1); 
       }
