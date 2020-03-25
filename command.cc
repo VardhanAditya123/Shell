@@ -305,6 +305,7 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 char* tilde(char* s){
   string str = s;
+  string s2;
   
   for(int i = 1 ; i < strlen (s); i++){
    if(str[1]=='\\')
