@@ -27,7 +27,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <sys/types.h>
+#include <pwd.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <algorithm>
@@ -316,6 +316,7 @@ if(strchr(s,'~')!=NULL){
  
 } 
 char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
+get
 return nstr;
 }
 
