@@ -198,10 +198,10 @@ if(ent->d_name[0] == '.')
 						sprintf(newPrefix,"%s",ent->d_name);
 					else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
-				  closedir(dir);
+				
 					expandWildcard(newPrefix,suffix);
 				}
-        
+    
     }
 			else
 			{
@@ -210,7 +210,6 @@ if(ent->d_name[0] == '.')
 					sprintf(newPrefix,"%s",ent->d_name);
 				else
 					sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
-          closedir(dir);
 				 expandWildcard(newPrefix,suffix);
          
     }
