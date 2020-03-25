@@ -304,9 +304,13 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 }
 
 char* tilde(char* s){
-if(strchr(s,'~')==NULL){
-   
+if(strchr(s,'~')!=NULL){
+  
+  strting str = s;
+  s1.replace(0, 1,getenv("HOME") ); 
+  s = (char*)(s1.c_str());
 }
+return s;
 }
 
 int s_count;
