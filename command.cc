@@ -439,7 +439,6 @@ void Command::execute() {
       c=c+1;
     }
 
-    int size = fin.size();
     char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
