@@ -67,7 +67,7 @@ void Command::clear() {
   if ( _outFileName==NULL ) {
     delete _outFileName;  
   }
-  _outFileName = NULL;
+  _outFileName = NULL; 
 
   if ( _inFileName==NULL ) {
     delete _inFileName;
