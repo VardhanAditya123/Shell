@@ -158,19 +158,22 @@ regex_t re;
   }
   //  DIR * dir;
  char* dir2 = (char*)malloc(10000);
+ string dir3;
 	if(prefix == NULL)
 	{
 		strcpy(dir2 , ".");
+    dir3+=".";
 	}else if(!strcmp("", prefix))
 	{
 		dir2 = strdup("/");
+    dir3+="/";
 	}
 	else
 	{
-		dir2 = prefix;
+		dir3 = prefix;
 	}
   
-  DIR *dir = opendir(dir2);
+  DIR *dir = opendir(dir3.c_str());
   if (dir == NULL) {
   return;
 }  
