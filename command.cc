@@ -111,7 +111,7 @@ void Command::print() {
 }
 
 char* esc(char* str) {
- 
+
   char* dst = (char*)malloc(strlen(str)+1);
   int c = 0;
   for(unsigned int i = 0 ; i < strlen(str);i++ ){
@@ -179,24 +179,24 @@ int commandCheck(char**final , int c){
     while (1) 
     { 
       getline(file,word);
-     
+
       if(word.length()==0)
         break;
 
-       str[count] = word;
-       count=count+1;
+      str[count] = word;
+      count=count+1;
     }
 
-     for(int j = count-1; j >= 0;j--){
+    for(int j = count-1; j >= 0;j--){
       string s = str[j];
       myunputc('\n');
-     for(int i = s.length() -1  ; i >= 0;i--){
-      myunputc(s.at(i));
+      for(int i = s.length() -1  ; i >= 0;i--){
+        myunputc(s.at(i));
       }
-     }
+    }
 
-  
- return 1;
+
+    return 1;
   }
 
   if(s.compare(s2) == 0){
@@ -234,31 +234,31 @@ int commandCheck(char**final , int c){
     }
     return 1;
   }
-  
-return 0;
-  
+
+  return 0;
+
 }
 
 
 char* checkEnvironment(string s){
 
-// cout << s << endl;
+  // cout << s << endl;
   string temp;
   char* temp2;
   string s1 = string(s);
   string s2 = string(s);
   temp = string(s);
- if(s.at(0)== '$'){
+  if(s.at(0)== '$'){
 
-     s1.replace(0,2,"");
-     s1.pop_back();
-    
-     temp2 = getenv(s1.c_str());
-     
-     if(temp2 == NULL){
-       temp = s;
-     }
-  
+    s1.replace(0,2,"");
+    s1.pop_back();
+
+    temp2 = getenv(s1.c_str());
+
+    if(temp2 == NULL){
+      temp = s;
+    }
+
 
     if(s.compare("${?}")==0){
       int pid = WEXITSTATUS(last);
@@ -266,14 +266,14 @@ char* checkEnvironment(string s){
       sprintf(mypid, "%d", pid);
       temp = mypid;
     }
-     
+
     if(s.compare("${$}")== 0){
-  
+
       int pid = getpid();
       char mypid[6];   // ex. 34567
       sprintf(mypid, "%d", pid);
       temp = mypid; 
-     
+
     }
 
     if(s.compare("${!}")== 0){
@@ -285,20 +285,20 @@ char* checkEnvironment(string s){
 
     if(s.compare("${_}")==0){
 
-     temp = last_arg;  
-    
+      temp = last_arg;  
+
     }
 
     if(s.compare("${SHELL}")==0){
-       temp = realpath(Shell::arg,NULL);
-      
+      temp = realpath(Shell::arg,NULL);
+
     }
 
 
- }
+  }
 
-s2 = temp;
-return strcpy(new char[s2.length()+ 1],s2.c_str());
+  s2 = temp;
+  return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
 }
@@ -306,30 +306,30 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 char* tilde(char* s){
   string str = s;
   string s2;
-  
 
-if(strchr(s,'~')!=NULL){
 
-  for(unsigned int i = 1 ; i < strlen (s); i++){
-   if(str[i]=='/')
-   break;
-   else{
-   s2+=str[i];
-   }
-  }
-  
-  if(s[1] == '/' || s[1]=='\0')
-  str.replace(0, 1,getenv("HOME") ); 
-  else{
-  char* str2 = strchr(s,'/');
-  str = getpwnam(s2.c_str())->pw_dir ;
-  if(str2!=NULL)
-  str+=str2;
-  }
+  if(strchr(s,'~')!=NULL){
 
-} 
-char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
-return nstr;
+    for(unsigned int i = 1 ; i < strlen (s); i++){
+      if(str[i]=='/')
+        break;
+      else{
+        s2+=str[i];
+      }
+    }
+
+    if(s[1] == '/' || s[1]=='\0')
+      str.replace(0, 1,getenv("HOME") ); 
+    else{
+      char* str2 = strchr(s,'/');
+      str = getpwnam(s2.c_str())->pw_dir ;
+      if(str2!=NULL)
+        str+=str2;
+    }
+
+  } 
+  char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
+  return nstr;
 }
 
 int s_count;
@@ -380,7 +380,7 @@ void Command::execute() {
 
 
 
- 
+
   unsigned int count = 0;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -424,32 +424,32 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
-     vector <char*> fin ;
+    vector <char*> fin ;
     //  char **final  = new char*[10000];
-      int c =0;
-
+    int c =0;
 
     for(auto & word : simpleCommand->_argumentsArray){
-       s_count+=simpleCommand->number_args;
+      s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
       fin.push_back(str); 
       // final[c]=const_cast<char*>(str);
-      
       c=c+1;
     }
-    char **final_arr = new char*[fin.size()+1]  ;
+
+    int size = fin.size();
+    char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
     int check_fun = commandCheck(final_arr , c );
-  if(check_fun == 1){
-    clear();
-    Shell::prompt();
-    return;
-  }
+    if(check_fun == 1){
+      clear();
+      Shell::prompt();
+      return;
+    }
 
 
     ret = fork();
@@ -469,9 +469,9 @@ void Command::execute() {
         exit(1);
       }
       else{
-        
+
         execvp(a, final_arr);
-         perror("execvp");
+        perror("execvp");
         _exit(1); 
       }
 
@@ -486,7 +486,7 @@ void Command::execute() {
     //restore in/out defaults
 
     count += 1;
-   
+
   } // for
 
   dup2(tmpin,0);
