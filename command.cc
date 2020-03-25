@@ -489,9 +489,9 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-    for(int i = 0 ; i < c+1;i++){
-      free(final_arr[i]);
-    }
+    // for(int i = 0 ; i < c+1;i++){
+    //   free(final_arr[i]);
+    // }
     // free(final_arr); 
     // fin.clear();
     
