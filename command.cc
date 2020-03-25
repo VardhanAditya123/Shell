@@ -308,10 +308,9 @@ if(strchr(s,'~')!=NULL){
   
   string str = s;
   str.replace(0, 1,getenv("HOME") ); 
-  s = (char*)(str.c_str());
  
 } 
-return strcpy(new char[s.length()+ 1],s.c_str());
+return strcpy(new char[str.length()+ 1],str.c_str());
 
 }
 
