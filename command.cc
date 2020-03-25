@@ -485,7 +485,7 @@ void Command::execute() {
     count += 1;
 
   } // for
-
+ 
   dup2(tmpin,0);
   dup2(tmpout,1);
   close(tmpin);
