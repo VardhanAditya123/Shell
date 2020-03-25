@@ -307,6 +307,7 @@ char* tilde(char* s){
   string str = s;
   string s2 = s;
   s2.pop_back();
+  cout << s2 << endl;
   
 if(strchr(s,'~')!=NULL){
   
