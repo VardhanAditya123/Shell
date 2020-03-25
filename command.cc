@@ -309,9 +309,9 @@ if(strchr(s,'~')!=NULL){
   string str = s;
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
-  cout << s << endl;
+ 
 }
-// cout << s << endl;
+ cout << s << endl;
 return s;
 }
 
