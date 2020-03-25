@@ -307,6 +307,7 @@ char* tilde(char* s){
   string str = s;
   string s2 = s;
   s2.pop_back();
+  
 if(strchr(s,'~')!=NULL){
   
   if(s[1] == '/')
@@ -315,10 +316,9 @@ if(strchr(s,'~')!=NULL){
   str.replace(0,1,"~/");
   str.replace(0, 1,(getenv("HOME") ) ); 
   }
- 
+ cout << getpwnam(s2.c_str())->pw_dir << endl;
 } 
 char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
-cout << getpwnam(s2.c_str())->pw_dir << endl;
 return nstr;
 }
 
