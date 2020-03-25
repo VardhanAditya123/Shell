@@ -489,7 +489,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-      for(auto  w : final_arr){
+      for(char*  w : final_arr){
         free(w);
       }
     free(final_arr); 
