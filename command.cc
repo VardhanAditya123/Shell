@@ -302,6 +302,13 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 
 }
+
+char* tilde(char* s){
+if(strchr(s,'~')==NULL){
+   
+}
+}
+
 int s_count;
 void Command::execute() {
   // Don't do anything if there are no simple commands
@@ -403,6 +410,7 @@ void Command::execute() {
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
       char*str = esc(tmp2);
+      
       final[c]=const_cast<char*>(str);
       c=c+1;
     }
