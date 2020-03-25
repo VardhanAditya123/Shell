@@ -490,9 +490,9 @@ void Command::execute() {
 
     //restore in/out defaults
       for(int i = 0 ; i < c+1; i++){
-        // free(final_arr[i]);
+        free(final_arr[i]);
       }
-    free(final_arr); 
+    // free(final_arr); 
     // fin.clear();
     count += 1;
 
