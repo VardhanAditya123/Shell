@@ -483,6 +483,9 @@ void Command::execute() {
 
     //restore in/out defaults
      free(final_arr);
+     for(auto wor : fin){
+      free(wor);
+    }
     count += 1;
 
   } // for
@@ -499,9 +502,7 @@ void Command::execute() {
 
 
   // print();
-  for(auto wor : fin){
-      free(wor);
-    }
+  
   clear();
   Shell::prompt();
 } 
