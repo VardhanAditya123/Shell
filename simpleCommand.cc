@@ -156,8 +156,8 @@ regex_t re;
   perror("compile");
   return;
   }
-  //  DIR * dir;
-//  char* dir2 = (char*)malloc(10000);
+ 
+ 
 char* dir2;
 	if(prefix == NULL)
 	{
