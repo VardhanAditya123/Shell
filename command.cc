@@ -482,10 +482,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-     free(final_arr);
-     for(auto wor : fin){
-      free(wor);
-    }
+    
     count += 1;
 
   } // for
