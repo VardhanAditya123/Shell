@@ -163,7 +163,7 @@ char* dir2;
 	{
 		dir2 = strdup( ".");
 	}else if(!strcmp("", prefix))
-	{
+	{ 
 		dir2 = strdup("/");
 	}
 	else
