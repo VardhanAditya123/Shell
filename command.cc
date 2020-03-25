@@ -437,7 +437,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       fin.push_back(str); 
-      free(str);
+     
       c=c+1;
       
     }
@@ -487,6 +487,7 @@ void Command::execute() {
 
     //restore in/out defaults
     free(final_arr); 
+    fin.clear();
     count += 1;
 
   } // for
