@@ -311,7 +311,7 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   else{
   
-  str.replace(0, 1,getenv("HOME") +"/" ); 
+  str.replace(0, 1,(getenv("HOME") +"/") ); 
   }
  
 } 
