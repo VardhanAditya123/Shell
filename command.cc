@@ -468,7 +468,6 @@ void Command::execute() {
       else{
 
         execvp(a, final_arr);
-        free(final_arr);
         perror("execvp");
         _exit(1); 
       }
@@ -482,7 +481,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-
+     free(final_arr);
     count += 1;
 
   } // for
