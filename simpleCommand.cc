@@ -161,7 +161,7 @@ regex_t re;
 char* dir2;
 	if(prefix == NULL)
 	{
-		strdup(dir2 , ".");
+		dir2 = strdup( ".");
 	}else if(!strcmp("", prefix))
 	{
 		dir2 = strdup("/");
