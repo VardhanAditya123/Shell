@@ -307,6 +307,9 @@ char* tilde(char* s){
   string str = s;
   string s2;
   
+
+if(strchr(s,'~')!=NULL){
+
   for(unsigned int i = 1 ; i < strlen (s); i++){
    if(str[i]=='/')
    break;
@@ -314,15 +317,12 @@ char* tilde(char* s){
    s2+=str[i];
    }
   }
-
-if(strchr(s,'~')!=NULL){
   
   if(s[1] == '/' || s[1]=='\0')
   str.replace(0, 1,getenv("HOME") ); 
   else{
   char* str2 = strrchr(s,'/');
   str = getpwnam(s2.c_str())->pw_dir ;
-
   if(str2!=NULL)
   str+=str2;
   }
