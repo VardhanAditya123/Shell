@@ -152,7 +152,7 @@ reg+='$';
 reg_1=reg;
 regex_t re;	
 	int result = regcomp( &re, reg.c_str(),  REG_EXTENDED|REG_NOSUB);
-  regfree(&re);
+  regfree(re);
 	if (result!=0) {
   perror("compile");
   return;
