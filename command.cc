@@ -447,7 +447,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-    free(final);
+
     count += 1;
     // delete(final); 
   } // for
