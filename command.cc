@@ -310,8 +310,9 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
  
-} cout << s << ""<< endl;
-return s;
+} 
+return strcpy(new char[s.length()+ 1],s.c_str());
+
 }
 
 int s_count;
