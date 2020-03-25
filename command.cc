@@ -440,7 +440,7 @@ void Command::execute() {
      
       c=c+1;
       
-    }
+    }  
 
     char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
