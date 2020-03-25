@@ -172,7 +172,7 @@ string dir2 ;
 		dir2 = prefix;
 	}
   
-  DIR *dir = opendir((char*)dir2.c_str());
+  DIR *dir = opendir((char*)(dir2.c_str());
   if (dir == NULL) {
   return;
 }  
