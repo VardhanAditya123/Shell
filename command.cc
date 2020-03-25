@@ -305,7 +305,7 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 char* tilde(char* s){
   string str = s;
-  string s2 = s.pop_back;
+  string s2 = s.pop_back();
 if(strchr(s,'~')!=NULL){
   
   if(s[1] == '/')
