@@ -485,7 +485,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-    
+    free(final_arr);
     count += 1;
 
   } // for
