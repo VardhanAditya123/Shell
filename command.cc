@@ -443,7 +443,7 @@ void Command::execute() {
     char **final_arr  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     last_arg = final_arr[c-1];
-    int check_fun = commandCheck(final , c );
+    int check_fun = commandCheck(final_arr , c );
   if(check_fun == 1){
     clear();
     Shell::prompt();
