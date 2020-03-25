@@ -310,13 +310,13 @@ char* tilde(char* s){
   
 if(strchr(s,'~')!=NULL){
   
-  if(s[1] == '/')
+  if(s[1] == '/' || s[1]='\0')
   str.replace(0, 1,getenv("HOME") ); 
   else{
   str.replace(0,1,"~/");
   str.replace(0, 1,(getenv("HOME") ) ); 
   }
-//  cout << getpwnam(s2.c_str())->pw_dir << endl;
+  cout << getpwnam(s2.c_str())->pw_dir << endl;
 } 
 char* nstr = strcpy(new char[str.length()+ 1],str.c_str());
 return nstr;
