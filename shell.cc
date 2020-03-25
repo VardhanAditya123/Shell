@@ -27,7 +27,7 @@ void sigchildHandler(int sig_num)
 
 void sigintHandler(int sig_num) 
 { 
-   printf("\nmyshell>");
+   prompt();
 }
 char*  Shell::arg;
 
