@@ -435,13 +435,14 @@ void Command::execute() {
       char*str = tilde(tmp3);
       fin.push_back(str); 
       c=c+1;
-      // free(str);
-      // free(tmp2);
-      // free(tmp3);
+      
     }
 
     char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
+    for(auto wor : fin){
+      delete wor;
+    }
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
     int check_fun = commandCheck(final_arr , c );
