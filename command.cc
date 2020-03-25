@@ -440,11 +440,11 @@ void Command::execute() {
 
     char **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
-    for(auto wor : fin){
-      delete wor;
-    }
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
+    for(auto wor : fin){
+      free(wor);
+    }
     int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
       clear();
