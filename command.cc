@@ -321,7 +321,7 @@ if(strchr(s,'~')!=NULL){
   if(s[1] == '/' || s[1]=='\0')
   str.replace(0, 1,getenv("HOME") ); 
   else{
-  char* str2 = strrchr(s,'/');
+  char* str2 = strchr(s,'/');
   str = getpwnam(s2.c_str())->pw_dir ;
   if(str2!=NULL)
   str+=str2;
