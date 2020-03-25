@@ -27,7 +27,11 @@ void sigchildHandler(int sig_num)
 
 void sigintHandler(int sig_num) 
 { 
-   prompt();
+   if ( isatty(0) ) {
+  printf("myshell>");
+}
+
+  fflush(stdout);
 }
 char*  Shell::arg;
 
