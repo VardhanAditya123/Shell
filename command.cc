@@ -416,7 +416,6 @@ void Command::execute() {
       char*tmp2=pecho(tmp1);
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
-      cout << str << endl;
       final[c]=const_cast<char*>(str);
       
       c=c+1;
