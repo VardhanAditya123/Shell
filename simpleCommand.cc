@@ -178,6 +178,7 @@ regex_t re;
 }  
 
 struct dirent * ent;
+int c = 0;
 while ( (ent = readdir(dir))!= NULL) {
 
 
