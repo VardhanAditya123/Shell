@@ -157,7 +157,7 @@ regex_t re;
   return;
   }
 
-//  char* dir2 = (char*)malloc(10000);
+  char* dir2 = (char*)malloc(10000);
  string dir3;
 	if(prefix == NULL)
 	{
