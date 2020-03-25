@@ -435,6 +435,9 @@ void Command::execute() {
       char*str = tilde(tmp3);
       fin.push_back(str); 
       c=c+1;
+      free(str);
+     free(tmp2);
+     free(tmp3);
     }
 
     char **final_arr = new char*[c+1]  ;
@@ -482,9 +485,6 @@ void Command::execute() {
 
     //restore in/out defaults
      free(final_arr);
-     free(str);
-     free(tmp2);
-     free(tmp3);
     count += 1;
 
   } // for
