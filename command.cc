@@ -443,7 +443,7 @@ void Command::execute() {
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
     for(auto wor : fin){
-      free(wor);
+      free(&wor);
     }
     int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
