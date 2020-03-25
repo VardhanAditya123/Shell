@@ -157,7 +157,7 @@ regex_t re;
   return;
   }
  
- 
+  
 char* dir2;
 	if(prefix == NULL)
 	{

@@ -71,7 +71,7 @@ void Command::clear() {
 
   if ( _inFileName==NULL ) {
     delete _inFileName;
-  }
+  } 
   _inFileName = NULL;
 
   if ( _errFileName==NULL ) {
