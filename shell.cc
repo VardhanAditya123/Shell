@@ -20,18 +20,22 @@ void Shell::prompt() {
   fflush(stdout);
 }
 
-void sigintHandler(int sig_num) 
+void sigchildHandler(int sig_num) 
 { 
   while (waitpid(-1, NULL, WNOHANG) > 0);
 }
 
+void sigintHandler(int sig_num) 
+{ 
+  
+}
 char*  Shell::arg;
 
 int main(int argc, char **argv) {
 
   
-   signal(SIGCHLD, sigintHandler); 
-  
+   signal(SIGCHLD, sigchildHandler); 
+   signal(SIGINT, sigintHandler); 
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
