@@ -440,8 +440,8 @@ void Command::execute() {
       
       c=c+1;
     }
-    char **final  = new char*[c+1];
-    std::copy(fin.begin(),fin.end(),final);
+    char **final_arr  ;
+    std::copy(fin.begin(),fin.end(),final_arr);
     last_arg = final[c-1];
     int check_fun = commandCheck(final , c );
   if(check_fun == 1){
@@ -469,7 +469,7 @@ void Command::execute() {
       }
       else{
         
-        execvp(a, final);
+        execvp(a, final_arr);
          perror("execvp");
         _exit(1); 
       }
