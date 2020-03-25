@@ -179,9 +179,6 @@ char* dir2;
 struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
-
-
-
 // Check if name matches
 string tmp;
 regmatch_t match;
@@ -215,9 +212,9 @@ if(ent->d_name[0] == '.')
     }
     
 }
-close(dir);
-}
 
+}
+close(dir);
 return;
 
 
