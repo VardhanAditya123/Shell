@@ -431,6 +431,7 @@ void Command::execute() {
       s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
+      free(tmp1);
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
       fin.push_back(str); 
