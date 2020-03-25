@@ -310,7 +310,7 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
 }
-cout << s << endl;
+
 return s;
 }
 
@@ -418,6 +418,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       
       final[c]=const_cast<char*>(str);
+      cout << final[c] << endl;
       c=c+1;
     }
    
