@@ -315,8 +315,8 @@ if(strchr(s,'~')!=NULL){
   }
  
 } 
-return strcpy(new char[str.length()+ 1],str.c_str());
-
+char*new = strcpy(new char[str.length()+ 1],str.c_str());
+return  new;
 }
 
 int s_count;
