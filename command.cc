@@ -310,7 +310,7 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
 }
-
+cout << s << endl;
 return s;
 }
 
