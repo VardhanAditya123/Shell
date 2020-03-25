@@ -81,6 +81,7 @@ void Command::clear() {
 
   _append = false;
   _backgnd = false;
+  delete(final);
 
 }
 
