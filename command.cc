@@ -438,7 +438,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       fin.push_back(str); 
-     
+      
       c=c+1;
       
     }  
@@ -489,8 +489,12 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
+    for(int i = 0 ; i < c+1;i++){
+      free(final_arr[i]);
+    }
     free(final_arr); 
     // fin.clear();
+    
     count += 1;
 
   } // for
