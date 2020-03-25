@@ -487,7 +487,7 @@ void Command::execute() {
 
     //restore in/out defaults
     free(final_arr); 
-    vector<string>().swap(fin);
+    vector<char*>().swap(fin);
     fin.clear();
     count += 1;
 
