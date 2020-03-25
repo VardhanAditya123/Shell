@@ -156,16 +156,16 @@ regex_t re;
   perror("compile");
   return;
   }
-  //  DIR * dir;
- char* dir2 = (char*)malloc(10000);
+
+//  char* dir2 = (char*)malloc(10000);
  string dir3;
 	if(prefix == NULL)
 	{
-		strcpy(dir2 , ".");
+		// strcpy(dir2 , ".");
     dir3+=".";
 	}else if(!strcmp("", prefix))
 	{
-		dir2 = strdup("/");
+		// dir2 = strdup("/");
     dir3+="/";
 	}
 	else
