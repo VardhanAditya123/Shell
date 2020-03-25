@@ -308,7 +308,7 @@ char* tilde(char* s){
   string s2;
   
   for(unsigned int i = 1 ; i < strlen (s); i++){
-   if(str[1]=='/')
+   if(str[i]=='/')
    break;
    else{
    s2+=str[i];
