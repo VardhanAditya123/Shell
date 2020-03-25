@@ -307,7 +307,7 @@ char* tilde(char* s){
   string str = s;
   string s2;
   
-  for(int i = 1 ; i < strlen (s); i++){
+  for(unsigned int i = 1 ; i < strlen (s); i++){
    if(str[1]=='\\')
    break;
    else{
