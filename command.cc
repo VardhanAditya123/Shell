@@ -435,9 +435,9 @@ void Command::execute() {
       char*str = tilde(tmp3);
       fin.push_back(str); 
       c=c+1;
-      free(str);
-     free(tmp2);
-     free(tmp3);
+      // free(str);
+      // free(tmp2);
+      // free(tmp3);
     }
 
     char **final_arr = new char*[c+1]  ;
