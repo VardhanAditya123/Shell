@@ -425,6 +425,7 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
     vector <char*> fin ;
+    char **final_arr  ;
     int c =0;
 
     for(auto & word : simpleCommand->_argumentsArray){
@@ -442,7 +443,8 @@ void Command::execute() {
       
     }  
 
-    char **final_arr = new char*[c+1]  ;
+    // char **final_arr = new char*[c+1]  ;
+    **final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
