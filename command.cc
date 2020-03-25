@@ -436,8 +436,8 @@ void Command::execute() {
       fin.push_back(str); 
       c=c+1;
       free(str);
-    //  free(tmp2);
-    //  free(tmp3);
+     free(tmp2);
+     free(tmp3);
     }
 
     char **final_arr = new char*[c+1]  ;
