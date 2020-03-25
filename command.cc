@@ -425,7 +425,7 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
      vector <char*> fin ;
-     char **final  = new char*[10000];
+    //  char **final  = new char*[10000];
       int c =0;
 
 
@@ -436,11 +436,12 @@ void Command::execute() {
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
       fin.push_back(str); 
-      final[c]=const_cast<char*>(str);
+      // final[c]=const_cast<char*>(str);
       
       c=c+1;
     }
-   
+    char**final[c];
+    std::copy(fin.begin(),fin.end(),final);
     last_arg = final[c-1];
     int check_fun = commandCheck(final , c );
   if(check_fun == 1){
