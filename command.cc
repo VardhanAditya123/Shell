@@ -435,6 +435,7 @@ void Command::execute() {
       char*tmp3 = esc(tmp2);
       free(tmp2);
       char*str = tilde(tmp3);
+      free(tmp3);
       fin.push_back(str); 
       c=c+1;
       
