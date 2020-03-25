@@ -314,7 +314,8 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   else{
   char* str2 = strrchr(s,'~');
-  str = getpwnam(s2.c_str())->pw_dir + str2;
+  str = getpwnam(s2.c_str())->pw_dir ;
+  str+=str2;
   cout << str << endl;
   }
 
