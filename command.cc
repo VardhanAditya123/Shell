@@ -305,10 +305,15 @@ return strcpy(new char[s2.length()+ 1],s2.c_str());
 
 char* tilde(char* s){
   string str = s;
-  string s2 = s;
-  s2.replace(0,1,"");
-  cout << s2 << endl;
   
+  for(int i = 1 ; i < strlen (s); i++){
+   if(str[1]=='\\')
+   break;
+   else{
+   s2+=str[i];
+   }
+  }
+
 if(strchr(s,'~')!=NULL){
   
   if(s[1] == '/' || s[1]=='\0')
