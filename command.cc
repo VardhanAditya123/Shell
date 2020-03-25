@@ -425,7 +425,6 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
     vector <char*> fin ;
-    //  char **final  = new char*[10000];
     int c =0;
 
     for(auto & word : simpleCommand->_argumentsArray){
@@ -435,7 +434,6 @@ void Command::execute() {
       char*tmp3 = esc(tmp2);
       char*str = tilde(tmp3);
       fin.push_back(str); 
-      // final[c]=const_cast<char*>(str);
       c=c+1;
     }
 
