@@ -315,6 +315,7 @@ if(strchr(s,'~')!=NULL){
   else{
   char* str2 = strrchr(s,'/');
   str = getpwnam(s2.c_str())->pw_dir ;
+  if(str2!=NULL)
   str+=str2;
   cout << str << endl;
   }
