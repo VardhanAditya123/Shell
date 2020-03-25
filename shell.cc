@@ -28,7 +28,7 @@ void sigchildHandler(int sig_num)
 void sigintHandler(int sig_num) 
 { 
    if ( isatty(0) ) {
-  printf("myshell>");
+  printf("\nmyshell>");
 }
 
   fflush(stdout);
