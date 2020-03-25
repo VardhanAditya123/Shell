@@ -214,6 +214,7 @@ if(ent->d_name[0] == '.')
     }
     
 }
+closedir(dir);
 }
 
 return;
