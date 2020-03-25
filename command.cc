@@ -442,6 +442,7 @@ void Command::execute() {
     }
     char **final_arr = new char*[fin.size()+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
+    final_arr[c]='\0';
     last_arg = final_arr[c-1];
     int check_fun = commandCheck(final_arr , c );
   if(check_fun == 1){
