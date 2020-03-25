@@ -487,6 +487,9 @@ void Command::execute() {
 
     //restore in/out defaults
     free(final_arr); 
+    for ( auto &wor : fin ){
+      delete wor;
+    }
     fin.clear();
     count += 1;
 
