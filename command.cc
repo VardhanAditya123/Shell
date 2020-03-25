@@ -314,7 +314,6 @@ char* tilde(char* s){
    s2+=str[i];
    }
   }
-  cout << s2 << endl;
 
 if(strchr(s,'~')!=NULL){
   
