@@ -212,7 +212,7 @@ if(ent->d_name[0] == '.')
 				 expandWildcard(newPrefix,suffix);
 			
     }
-   closedir(dir); 
+    
 }
 
 }
