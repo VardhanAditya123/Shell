@@ -310,8 +310,7 @@ if(strchr(s,'~')!=NULL){
   str.replace(0, 1,getenv("HOME") ); 
   s = (char*)(str.c_str());
  
-}
- cout << s << endl;
+} cout << s << endl;
 return s;
 }
 
@@ -413,10 +412,10 @@ void Command::execute() {
 
     for(auto & word : simpleCommand->_argumentsArray){
        s_count+=simpleCommand->number_args;
-      // char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
-      // char*tmp2=pecho(tmp1);
-      // char*tmp3 = esc(tmp2);
-      char*str = tilde((char*)word->c_str());
+      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp2=pecho(tmp1);
+      char*tmp3 = esc(tmp2);
+      char*str = tilde(tmp3);
       cout << str << endl;
       final[c]=const_cast<char*>(str);
       
