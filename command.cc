@@ -482,6 +482,9 @@ void Command::execute() {
 
     //restore in/out defaults
      free(final_arr);
+     free(str);
+     free(tmp2);
+     free(tmp3);
     count += 1;
 
   } // for
