@@ -446,9 +446,7 @@ void Command::execute() {
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
-    for(auto  w : fin){
-      free(w);
-    }
+  
     int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
       clear();
@@ -489,6 +487,9 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
+      for(auto  w : fin){
+      free(w);
+    }
     free(final_arr); 
     // fin.clear();
     count += 1;
