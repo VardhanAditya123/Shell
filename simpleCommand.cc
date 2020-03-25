@@ -171,7 +171,7 @@ regex_t re;
 	else
 	{
 		dir3 = prefix;
-	}
+	} 
   
   DIR *dir = opendir(dir3.c_str());
   if (dir == NULL) {
