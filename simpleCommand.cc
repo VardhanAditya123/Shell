@@ -157,22 +157,20 @@ regex_t re;
   return;
   }
   //  DIR * dir;
- string dir2 ;
+ char* dir2 ;
 	if(prefix == NULL)
 	{
-		// strcpy(dir2 , ".");
-    dir2 = '.';
+		strcpy(dir2 , ".");
 	}else if(!strcmp("", prefix))
 	{
-		// dir2 = strdup("/");
-    dir2 = '/';
+		dir2 = strdup("/");
 	}
 	else
 	{
 		dir2 = prefix;
 	}
   
-  DIR *dir = opendir((char*)(dir2.c_str()));
+  DIR *dir = opendir(dir2);
   if (dir == NULL) {
   return;
 }  
