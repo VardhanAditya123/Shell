@@ -444,7 +444,7 @@ void Command::execute() {
     }  
 
     // char **final_arr = new char*[c+1]  ;
-    **final_arr = new char*[c+1]  ;
+    final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
