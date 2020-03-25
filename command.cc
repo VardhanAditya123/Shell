@@ -325,7 +325,6 @@ if(strchr(s,'~')!=NULL){
 
   if(str2!=NULL)
   str+=str2;
-     cout << str << endl;
   }
 
 } 
