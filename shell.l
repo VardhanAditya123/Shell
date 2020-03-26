@@ -32,7 +32,7 @@ using namespace std;
 void myunputc(int c) {
   unput(c);
 }
-extern “C” char * read_line();
+extern "C" char * read_line();
 
 
 int mygetc(FILE * f) {
