@@ -485,10 +485,10 @@ void Command::execute() {
       return;
     }
     
-    // for(int i = 0 ; i < c;i++){
-    //   // cout << final[i] << endl;
-    //   free(final[i]);
-    // }
+    for(int i = 0 ; i < c;i++){
+      cout << final[i] << endl;
+      free(final[i]);
+    }
   
    
     count += 1;
