@@ -485,12 +485,12 @@ void Command::execute() {
       return;
     }
    
-for ( i = 0; i < fin.size()+1; i++ )
+for (unsigned i = 0; i < fin.size()+1; i++ )
 {
-    free(fin[i]);
+    delete fin.at(i);
 }
 
-free(fin);
+delete fin;
     
     count += 1;
 
