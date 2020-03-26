@@ -371,6 +371,12 @@ void Command::execute() {
       fderr=open(_errFileName->c_str() ,O_APPEND | O_CREAT |O_RDWR ,0666);
     else
       fderr=open(_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
+      if(fderr == -1){
+      close(tmpin);
+      close(tmpout);
+      close(tmperr);
+      exit(1);
+    }
   }
   else {
     // Use default output
