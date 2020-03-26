@@ -70,7 +70,7 @@ char * read_line() {
         if(line_length > 0){
            write(1,&ch,1);
           //  ch = ' ';
-          line[line_length]='\0';
+          line_buffer[line_length]='\0';
            line_length--;
         }
       }
