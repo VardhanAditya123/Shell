@@ -485,8 +485,8 @@ void Command::execute() {
       return;
     }
     
-    for (char* & ptr: final){
-      free(ptr);
+    for(int i = 0 ; i < c;i++){
+      free(final[i]);
     }
   
    
