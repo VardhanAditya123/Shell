@@ -441,15 +441,15 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3);
       free(tmp3);
-      // final[c]=str;
-      v.push_back(str);
+      final[c]=str;
+      
 
       c=c+1;
       
       
     }  
     
-    std::copy(v.begin(),v.end(),final);
+   
     final[c]=NULL;
     last_arg = final[c-1];
   
