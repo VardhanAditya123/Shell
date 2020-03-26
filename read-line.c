@@ -70,7 +70,7 @@ char * read_line() {
 
       // add char to buffer.
       line_buffer[line_length]=ch;
-      line_length++;
+      line_length++; 
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
