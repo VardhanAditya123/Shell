@@ -17,8 +17,8 @@ struct SimpleCommand {
   void expandWildcard(char*, char*);
   void reset();
   void print();
-
   int number_args=0;
+  char**ans;
 };
 
 #endif
