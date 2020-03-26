@@ -106,7 +106,7 @@ char * read_line() {
       // Escape sequence. Read two chars more
       //
       // HINT: Use the program "keyboard-example" to
-      // see the ascii code for the different chars typed.
+      // see the ascii code for the different chars typed. 
       //
       char ch1; 
       char ch2;
