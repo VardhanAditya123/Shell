@@ -510,6 +510,7 @@ void Command::execute() {
   for( int i = 0 ; i < c+1; i++){
     free(final[i]);
   }
+  free(final);
   clear();
   
   Shell::prompt();
