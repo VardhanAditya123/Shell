@@ -492,7 +492,7 @@ void Command::execute() {
     }
     
    for(int i =0 ; i < c ;i++){
-     free(final[i]);
+     free(final_arr[i]);
    }
   
     count += 1;
