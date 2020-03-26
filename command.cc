@@ -487,10 +487,10 @@ void Command::execute() {
    
 for (unsigned i = 0; i < fin.size()+1; i++ )
 {
-    delete fin.at(i);
+    free(final_arr[i]);
 }
 
-delete fin;
+free(final_arr);
     
     count += 1;
 
