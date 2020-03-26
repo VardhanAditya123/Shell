@@ -57,7 +57,7 @@ char * read_line() {
 
     // Read one character in raw mode.
     char ch;
-    read(0, &ch, 1);
+    // read(0, &ch, 1);
 
     if (ch>=32) {
       // It is a printable character. 
