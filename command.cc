@@ -478,14 +478,14 @@ void Command::execute() {
 
     }
 
-    else if (ret < 0) {
+    else if (ret < 0) { 
       perror("fork");
       return;
     }
    
-   
-   free(final_arr);
    free(str);
+   free(final_arr);
+   
 
     count += 1;
 
