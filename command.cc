@@ -485,6 +485,13 @@ void Command::execute() {
       return;
     }
     
+  
+    for (int i = 0; i < c; i++)
+  	{
+  		free(final[i]);
+  	}
+    free(final);
+
    
 
     count += 1;
