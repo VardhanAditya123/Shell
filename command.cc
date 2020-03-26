@@ -382,8 +382,6 @@ void Command::execute() {
 
 
   unsigned int count = 0;
-  char **final;
-  int c;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
     close(fdin);
@@ -427,8 +425,8 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
   
-    c =0;
-    final = new char*[simpleCommand->number_args+1];
+    int c =0;
+    char **final = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
 
       s_count+=simpleCommand->number_args;
@@ -440,6 +438,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final[c]=strdup( str);
+    
       free(str);
   
       c=c+1;
@@ -507,10 +506,7 @@ void Command::execute() {
 
 
   // print();
-  for( int i = 0 ; i < c+1; i++){
-    free(final[i]);
-  }
-  free(final);
+  
   clear();
   
   Shell::prompt();
