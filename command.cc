@@ -491,9 +491,6 @@ void Command::execute() {
   		free(final[i]);
   	}
     free(final);
-
-   
-
     count += 1;
 
   } // for 
