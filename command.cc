@@ -475,7 +475,7 @@ void Command::execute() {
       else{
 
         // execvp(a, final_arr);
-        execvp(_simpleCommand->_arguments[0],_simpleCommands->_arguments);
+        execvp(_simpleCommand->_arguments[0],simpleCommand->_arguments);
         perror("execvp");
         _exit(1); 
       }
