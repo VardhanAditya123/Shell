@@ -484,10 +484,13 @@ void Command::execute() {
       perror("fork");
       return;
     }
-    // Parent shell continue
- 
-    //restore in/out defaults
+   
+for ( i = 0; i < fin.size()+1; i++ )
+{
+    free(fin[i]);
+}
 
+free(fin);
     
     count += 1;
 
@@ -507,6 +510,7 @@ void Command::execute() {
   // print();
   
   clear();
+  
   Shell::prompt();
 } 
 
