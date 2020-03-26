@@ -17,7 +17,6 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
-int line_clength;
 char line_copy[MAX_BUFFER_LINE];
 
 // Simple history array
@@ -117,6 +116,7 @@ char * read_line() {
       char ch2;
       read(0, &ch1, 1);
       read(0, &ch2, 1);
+      int lc = 0;
 
       if(ch1 == 91 && ch2== 68 ){
         if(line_length > 0){
@@ -127,7 +127,8 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_length--;
-          line_buffer[line_length -  1] = line_buffer[line_length];
+          
+          lc += 1;
         } 
         continue;
       }
