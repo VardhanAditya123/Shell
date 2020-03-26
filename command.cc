@@ -427,7 +427,7 @@ void Command::execute() {
   
     int c =0;
     // char **final = new char*[simpleCommand->number_args+1]  ;
-    char **final = new char**[][];
+    char **final = new char**;
     for(auto & word : simpleCommand->_argumentsArray){
       s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
