@@ -462,11 +462,11 @@ void Command::execute() {
     
   
     int check_fun = commandCheck(final_arr , c );
-    if(check_fun == 2){
-       close(tmpin); 
-       close(tmpout);
-       close(tmperr);
-    }
+    // if(check_fun == 2){
+    //    close(tmpin); 
+    //    close(tmpout);
+    //    close(tmperr);
+    // }
     if(check_fun == 1){
       clear();    
       Shell::prompt();
