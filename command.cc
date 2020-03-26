@@ -284,7 +284,7 @@ char* checkEnvironment(string s){
     }
 
     if(s.compare("${_}")==0){
-
+      cout << last_arg << endl;
       temp = last_arg;  
 
     }
