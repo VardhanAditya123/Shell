@@ -437,7 +437,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       fin.push_back(str); 
-      simpleCommand->_argumentsArray[c] = new string[str];
+      simpleCommand->_argumentsArray[c] = new string(str);
       
       c=c+1;
       
