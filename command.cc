@@ -449,7 +449,7 @@ void Command::execute() {
       
     }  
     
-     cout << final_arr[0] << endl;
+     cout << final_arr[1] << endl;
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
     
