@@ -471,7 +471,6 @@ void Command::execute() {
       }
       else{
         execvp(a, final);
-        cout << "LOL" << endl;
         perror("execvp");
         _exit(1); 
       }
