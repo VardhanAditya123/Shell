@@ -477,6 +477,8 @@ void Command::execute() {
     }
     if(check_fun == 1){
       clear();    
+      close(tmpin); 
+      close(tmpout);
       close(tmperr);
       Shell::prompt();
       return;
