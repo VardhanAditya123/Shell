@@ -119,8 +119,8 @@ char * read_line() {
 			write(1,&ch,1);
 			ch = 68;
 			write(1,&ch,1);
-			line_loc--;		
 		 }
+     continue;
       }
 
       if (ch1==91 && ch2==65) {
