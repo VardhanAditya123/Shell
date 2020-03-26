@@ -11,7 +11,6 @@
 
 #include <cstring>
 #include "y.tab.hh"
-#include "y.tab.h"
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
