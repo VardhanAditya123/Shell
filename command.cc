@@ -430,7 +430,9 @@ void Command::execute() {
     for(auto & word : simpleCommand->_argumentsArray){
 
       s_count+=simpleCommand->number_args;
-      char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*first = const_cast<char*>(checkEnvironment((char*)word->c_str()));
+      char*tmp1 = first;
+      free(first);
       char*tmp2=pecho(tmp1);
       free(tmp1);
       char*tmp3 = esc(tmp2);
