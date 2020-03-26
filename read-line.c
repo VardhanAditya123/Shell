@@ -54,7 +54,7 @@ char * read_line() {
   tty_raw_mode();
 
   line_length = 0;
-
+  int lc = 0;
   // Read one line until enter is typed
   while (1) {
 
@@ -67,13 +67,21 @@ char * read_line() {
 
       // Do echo
       write(1,&ch,1);
-
+      
       // If max number of character reached return.
       if (line_length==MAX_BUFFER_LINE-2) break; 
 
       // add char to buffer.
       line_buffer[line_length]=ch;
       line_length++; 
+
+      if(lc > 0){
+        for(char ch : line_copy){
+          write(1,&ch,1);
+          line_buffer[line_length]=ch;
+          line_length++; 
+        }
+      }
 
     }
     else if (ch==10) {
@@ -116,7 +124,7 @@ char * read_line() {
       char ch2;
       read(0, &ch1, 1);
       read(0, &ch2, 1);
-      int lc = 0;
+      lc = 0;
 
       if(ch1 == 91 && ch2== 68 ){
         if(line_length > 0){
@@ -127,7 +135,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_length--;
-          
+          line_copy[c] =line_buffer[line_length];
           lc += 1;
         } 
         continue;
