@@ -74,7 +74,7 @@ char * read_line() {
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
-      
+
       // Print newline
       write(1,&ch,1);
 
@@ -90,15 +90,15 @@ char * read_line() {
       // <backspace> was typed. Remove previous character read.
 
       if(line_length > 0){
-      ch = 8;
-      write(1,&ch,1);
-      ch = ' ';
-      write(1,&ch,1);
-      ch = 8;
-      write(1,&ch,1);
-      line_length--;
+        ch = 8;
+        write(1,&ch,1);
+        ch = ' ';
+        write(1,&ch,1);
+        ch = 8;
+        write(1,&ch,1);
+        line_length--;
       }
-        continue;
+      continue;
     }
     else if (ch==27) {
       // Escape sequence. Read two chars more
@@ -113,48 +113,48 @@ char * read_line() {
 
       if(ch1 == 91 && ch2== 68 ){
         if(line_length > 0){
-			ch = 27;
-			write(1,&ch,1);
-			ch = 91;
-			write(1,&ch,1);
-			ch = 68;
-			write(1,&ch,1);
-		 } 
-     continue;
+          ch = 27;
+          write(1,&ch,1);
+          ch = 91;
+          write(1,&ch,1);
+          ch = 68;
+          write(1,&ch,1);
+        } 
+        
       }
 
       if (ch1==91 && ch2==65) {
-	// Up arrow. Print next line in history.
+        // Up arrow. Print next line in history.
 
-	// Erase old line
-	// Print backspaces
-	int i = 0;
-	for (i =0; i < line_length; i++) {
-	  ch = 8;
-	  write(1,&ch,1);
-	}
+        // Erase old line
+        // Print backspaces
+        int i = 0;
+        for (i =0; i < line_length; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }
 
-	// Print spaces on top
-	for (i =0; i < line_length; i++) {
-	  ch = ' ';
-	  write(1,&ch,1);
-	}
+        // Print spaces on top
+        for (i =0; i < line_length; i++) {
+          ch = ' ';
+          write(1,&ch,1);
+        }
 
-	// Print backspaces
-	for (i =0; i < line_length; i++) {
-	  ch = 8;
-	  write(1,&ch,1);
-	}	
+        // Print backspaces
+        for (i =0; i < line_length; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }	
 
-	// Copy line from history
-	strcpy(line_buffer, history[history_index]);
-	line_length = strlen(line_buffer);
-	history_index=(history_index+1)%history_length;
+        // Copy line from history
+        strcpy(line_buffer, history[history_index]);
+        line_length = strlen(line_buffer);
+        history_index=(history_index+1)%history_length;
 
-	// echo line
-	write(1, line_buffer, line_length);
+        // echo line
+        write(1, line_buffer, line_length);
       }
-      
+
     }
 
   }
