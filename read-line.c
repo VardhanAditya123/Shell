@@ -136,6 +136,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_copy[lc] =line_buffer[line_length-1];
+          pritf("\n%c",line_copy[lc])
           line_length--;
           lc += 1;
         } 
