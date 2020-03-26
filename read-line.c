@@ -97,6 +97,7 @@ char * read_line() {
         ch = 8;
         write(1,&ch,1);
         line_length--;
+        line_buffer_
       }
       continue;
     }
@@ -122,7 +123,7 @@ char * read_line() {
           write(1,&ch,1);
           line_length--;
         } 
-        
+        continue;
       }
 
       if (ch1==91 && ch2==65) {
