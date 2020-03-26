@@ -372,7 +372,7 @@ void Command::execute() {
     else
       fderr=open(_errFileName->c_str() ,O_RDWR | O_CREAT | O_TRUNC,0666);
      
-      if(fderr == -1){
+    if(fderr == -1){
       close(tmpin);
       close(tmpout);
       close(tmperr);
