@@ -75,6 +75,7 @@ char * read_line() {
             write(1,&ch,1);
            line_length--;
         }
+        continue;
       }
 
       // If max number of character reached return.
