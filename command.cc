@@ -485,13 +485,6 @@ void Command::execute() {
       return;
     }
    
-for (unsigned i = 0; i < fin.size(); i++ )
-{   
-    free(final_arr[i]);
-}
-
-// free(final_arr);
-    
     count += 1;
 
   } // for
