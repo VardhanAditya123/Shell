@@ -446,7 +446,7 @@ void Command::execute() {
     }  
 
   
-    final[c]=NULL;
+    // final[c]=NULL;
     last_arg = final[c-1];
   
     int check_fun = commandCheck(final , c );
@@ -475,6 +475,7 @@ void Command::execute() {
       }
       else{
         char **final = new char*[simpleCommand->number_args+1];
+        final[c] = NULL;
         std::copy(v.begin(),v.end(),final);
         execvp(a, final);
         perror("execvp");
