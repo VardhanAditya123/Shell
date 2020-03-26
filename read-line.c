@@ -44,6 +44,8 @@ void read_line_print_usage()
   write(1, usage, strlen(usage));
 }
 
+
+
 /* 
  * Input a line with some basic editing.
  */
@@ -73,6 +75,7 @@ char * read_line() {
       // add char to buffer.
       line_buffer[line_length]=ch;
       line_length++; 
+
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
@@ -124,6 +127,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_length--;
+          line_buffer[line_length -  1] = line_buffer[line_length];
         } 
         continue;
       }
