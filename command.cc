@@ -391,7 +391,7 @@ void Command::execute() {
       cout<< "Ambiguous output redirect." <<endl;
       exit(1);
     }
-    //setup output
+    //setup output 
 
     if (count == _simpleCommandsArray.size()-1){
       // Last simple command
