@@ -504,6 +504,7 @@ void Command::execute() {
 
     else if (ret < 0) { 
       perror("fork");
+      close(tmperr);
       return;
     }
     
