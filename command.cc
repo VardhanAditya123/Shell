@@ -438,7 +438,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final[c]=strdup( str);
-    
+  
       free(str);
   
       c=c+1;
@@ -489,7 +489,11 @@ void Command::execute() {
     
    
   
-   
+    for(int i = 0 ; i < c ; i++){
+      if(final[i]!=NULL)
+      free(final[i]);
+
+    }
     count += 1;
    
   } // for 
