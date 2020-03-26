@@ -420,7 +420,7 @@ void Command::execute() {
     dup2(fdout,1);
     close(fdout);
 
-    ret = fork();
+
     string s = *(simpleCommand->_argumentsArray[0]);
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
@@ -454,7 +454,7 @@ void Command::execute() {
     }
 
 
-    
+    ret = fork();
 
 
     if (ret == 0) { 
