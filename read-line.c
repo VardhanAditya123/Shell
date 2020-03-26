@@ -65,6 +65,12 @@ char * read_line() {
       // Do echo
       write(1,&ch,1);
 
+      if(ch == 8){
+        if(line_length > 0){
+           write(ch);
+        }
+      }
+
       // If max number of character reached return.
       if (line_length==MAX_BUFFER_LINE-2) break; 
 
