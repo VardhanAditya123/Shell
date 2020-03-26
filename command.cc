@@ -490,9 +490,9 @@ void Command::execute() {
 
     //restore in/out defaults
     for(int i = 0 ; i < c+1;i++){
-      free(fin.at(i));
+      delete (fin.at(i));
     }
-    free(fin); 
+    delete fin;
     // fin.clear();
     
     count += 1;
