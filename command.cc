@@ -485,12 +485,6 @@ void Command::execute() {
       return;
     }
     
-  
-    for (int i = 0; i < c; i++)
-  	{
-  		delete final[i];
-  	}
-
    
 
     count += 1;
