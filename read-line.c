@@ -71,7 +71,8 @@ char * read_line() {
            write(1,&ch,1);
            ch = ' ';
            write(1,&ch,1);
-          line_buffer[line_length]='\0';
+           ch = 8;
+            write(1,&ch,1);
            line_length--;
         }
       }
