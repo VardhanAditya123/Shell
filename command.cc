@@ -426,7 +426,6 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    vector<char*>v;
     char **final = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
 
@@ -439,8 +438,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final[c]=str;
-      v.push_back(str);
-  
+
       c=c+1;
       
     }  
