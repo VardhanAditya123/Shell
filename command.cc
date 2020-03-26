@@ -489,11 +489,11 @@ void Command::execute() {
     
    
   
-    for(int i = 0 ; i < c ; i++){
-      if(final[i][0]!='\0')
-      free(final[i]);
+    // for(int i = 0 ; i < c ; i++){
+    //   if(final[i][0]!='\0')
+    //   free(final[i]);
 
-    }
+    // }
     count += 1;
    
   } // for 
