@@ -55,6 +55,7 @@ char * read_line() {
 
   line_length = 0;
   int lc = 0;
+  int rc = 0;
   // Read one line until enter is typed
   while (1) {
 
@@ -86,6 +87,21 @@ char * read_line() {
           // write(1,&ch,1);
         }
         for (int i =0; i < lc; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }	   
+        lc = 0;
+      }
+
+      if(rc > 0){
+        for( int i = 0 ; i < rc ; i++){
+          char ch = line_copy[i];
+          
+          line_buffer[line_length]=ch;
+          line_length++; 
+          write(1,&ch,1);
+        }
+        for (int i =0; i < rc; i++) {
           ch = 8;
           write(1,&ch,1);
         }	   
@@ -141,6 +157,21 @@ char * read_line() {
           ch = 91;
           write(1,&ch,1);
           ch = 68;
+          write(1,&ch,1);
+          line_copy[lc] =line_buffer[line_length-1];
+          line_length--;
+          lc += 1;
+        } 
+        continue;
+      }
+
+      if(ch1 == 91 && ch2== 67 ){ 
+        if(line_length > 0){
+          ch = 27;
+          write(1,&ch,1);
+          ch = 91;
+          write(1,&ch,1);
+          ch = 67;
           write(1,&ch,1);
           line_copy[lc] =line_buffer[line_length-1];
           line_length--;
