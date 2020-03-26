@@ -471,8 +471,9 @@ void Command::execute() {
 
 
     if (ret == 0) { 
-      close(tmpin);
-      close(tmpout);
+      close(tmpin); 
+       close(tmpout);
+       close(tmperr);
       if(_backgnd){
         last_id=getpid();
       }
@@ -481,6 +482,7 @@ void Command::execute() {
 
           cout << *(environ+i)<<endl;  
         }
+  
         exit(1);
       }
       else{
