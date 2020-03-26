@@ -200,7 +200,7 @@ int commandCheck(char**final , int c){
   }
 
   if(s.compare(s2) == 0){
-   return 2;
+   return 1;
   }
 
   if(s.compare("setenv") == 0){
