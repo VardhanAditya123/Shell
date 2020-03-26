@@ -383,6 +383,7 @@ void Command::execute() {
 
   unsigned int count = 0;
   char **final;
+  int c
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
     close(fdin);
@@ -426,7 +427,7 @@ void Command::execute() {
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
   
-    int c =0;
+    c =0;
     final = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
 
