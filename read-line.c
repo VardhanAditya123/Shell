@@ -17,7 +17,7 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
-int line_clenght;
+int line_clength;
 char line_copy[MAX_BUFFER_LINE];
 
 // Simple history array
