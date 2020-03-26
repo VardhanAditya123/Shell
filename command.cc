@@ -437,7 +437,6 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       fin.push_back(str); 
-      simpleCommand->_argumentsArray[c] = new string(str);
       
       c=c+1;
       
@@ -474,8 +473,7 @@ void Command::execute() {
       }
       else{
 
-        // execvp(a, final_arr);
-        execvp(a,(simpleCommand->_argumentsArray));
+        execvp(a, final_arr);
         perror("execvp");
         _exit(1); 
       }
