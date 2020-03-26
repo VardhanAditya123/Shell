@@ -485,6 +485,9 @@ void Command::execute() {
       return;
     }
     
+    for (char* ptr : final){
+      free(ptr);
+    }
   
    
     count += 1;
