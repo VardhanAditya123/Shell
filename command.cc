@@ -455,7 +455,6 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final_arr[c]=str;
-      cout << final_arr[c] << endl;
 
       c=c+1;
       
