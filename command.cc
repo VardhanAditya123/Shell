@@ -355,6 +355,8 @@ void Command::execute() {
   if (_inFileName) {
     fdin = open(_inFileName->c_str(), O_RDONLY,0666);
     if(fdin == -1){
+      close(tmpin);
+      close(tmpout);
       exit(1);
     }
   }
