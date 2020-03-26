@@ -453,7 +453,7 @@ void Command::execute() {
        for (int i = 0; i < c; i++)
   	{
   		free(final[i]);
-  	}
+  	} 
     
       Shell::prompt();
       return;
