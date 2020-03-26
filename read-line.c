@@ -139,10 +139,13 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_copy[lc] =line_buffer[line_length-1];
-          // printf("\n%c",line_copy[lc]);
           line_length--;
           lc += 1;
         } 
+        for (i =0; i < line_length; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }	   
         continue;
       }
 
