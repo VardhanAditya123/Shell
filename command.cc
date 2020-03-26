@@ -426,7 +426,7 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    char **final_arr = new char*[simpleCommand->number_args+1]  ;
+    char **final = new char*[simpleCommand->number_args+1]  ;
     for(auto & word : simpleCommand->_argumentsArray){
       s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
@@ -436,7 +436,7 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3);
       free(tmp3);
-      final_arr[c]=strdup( str);
+      final[c]=strdup( str);
       free(str);
   
       c=c+1;
@@ -444,10 +444,10 @@ void Command::execute() {
     }  
 
   
-    final_arr[c]=NULL;
-    last_arg = final_arr[c-1];
+    final[c]=NULL;
+    last_arg = final[c-1];
   
-    int check_fun = commandCheck(final_arr , c );
+    int check_fun = commandCheck(final , c );
     if(check_fun == 1){
       clear();
       Shell::prompt();
@@ -473,7 +473,7 @@ void Command::execute() {
       }
       else{
 
-        execvp(a, final_arr);
+        execvp(a, final);
         perror("execvp");
         _exit(1); 
       }
@@ -487,9 +487,9 @@ void Command::execute() {
     
   
   // for(int i = 0; i < c;i++){
-  //   free(final_arr[i]);
+  //   free(final[i]);
   // }
-  //  free(final_arr);
+  //  free(final);
    
 
     count += 1;
