@@ -442,7 +442,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final_arr[c]=str;
-      
+      last_arg = str;
 
       c=c+1;
       
@@ -451,7 +451,7 @@ void Command::execute() {
     
    
     final_arr[c]=NULL;
-    last_arg = final_arr[c-1];
+    // last_arg = final_arr[c-1];
   
     int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
