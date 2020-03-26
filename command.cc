@@ -452,7 +452,7 @@ void Command::execute() {
       free(tmp1);
       char*tmp3 = esc(tmp2);
       free(tmp2);
-      char*str = tilde(tmp3);
+      char*str = tilde(tmp3); 
       free(tmp3);
       final_arr[c]=str;
 
