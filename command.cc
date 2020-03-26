@@ -485,6 +485,7 @@ void Command::execute() {
    
    
    free(final_arr);
+   free(str);
 
     count += 1;
 
