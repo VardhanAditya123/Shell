@@ -90,7 +90,7 @@ char * read_line() {
           ch = 8;
           write(1,&ch,1);
         }	   
-        // lc = 0;
+        lc = 0;
       }
       continue;
       // if(rc > 0){
