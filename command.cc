@@ -511,6 +511,9 @@ void Command::execute() {
 
   // print();
   
+  for(int i = 0 ; i < count;i++){
+    free(final[i]);
+  }
   clear();
   
   Shell::prompt();
