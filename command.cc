@@ -487,9 +487,9 @@ void Command::execute() {
     
   
   for(int i = 0; i < c;i++){
-    delete final[i];
+    delete[] final[i];
   }
-   free(final);
+   
    
 
     count += 1;
