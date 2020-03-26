@@ -528,6 +528,7 @@ void Command::execute() {
 
   close(tmpin);
   close(tmpout);
+  close(tmperr);
  
 
   if (!_backgnd) {
