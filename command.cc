@@ -383,6 +383,7 @@ void Command::execute() {
 
   unsigned int count = 0;
   char **final = new char*[simpleCommand->number_args+1];
+
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
     close(fdin);
@@ -428,6 +429,7 @@ void Command::execute() {
   
     int c =0;
     // char **final = new char*[simpleCommand->number_args+1];
+    vector<char*>v;
     
     for(auto & word : simpleCommand->_argumentsArray){
 
@@ -439,11 +441,15 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3);
       free(tmp3);
-      final[c]=str;
+      // final[c]=str;
+      v.push_back(str);
 
       c=c+1;
       
+      
     }  
+    
+    std::copy(v.begin(),v.end(),final);
     final[c]=NULL;
     last_arg = final[c-1];
   
