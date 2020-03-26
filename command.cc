@@ -357,6 +357,7 @@ void Command::execute() {
     if(fdin == -1){
       close(tmpin);
       close(tmpout);
+      close(tmperr);
       exit(1);
     }
   }
