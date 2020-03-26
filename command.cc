@@ -37,7 +37,7 @@
 using namespace std;
 int last;
 pid_t last_id;
-char* last_arg;
+string last_arg;
 
 void myunputc(int );
 // int last;
@@ -449,7 +449,7 @@ void Command::execute() {
       
     }  
     
-     cout << final_arr[1] << endl;
+     
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
     
