@@ -427,7 +427,7 @@ void Command::execute() {
   
     int c =0;
     vector<char*>v;
-    // char **final = new char*[simpleCommand->number_args+1];
+    char **final = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
 
       s_count+=simpleCommand->number_args;
@@ -438,17 +438,14 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3);
       free(tmp3);
-      // final[c]=str;
+      final[c]=str;
       v.push_back(str);
   
       c=c+1;
       
     }  
-
-  
-    // final[c]=NULL;
-    // last_arg = final[c-1];
-    last_arg = v.at(c-1);
+    final[c]=NULL;
+    last_arg = final[c-1];
   
     int check_fun = commandCheck(final , c );
     if(check_fun == 1){
@@ -476,8 +473,6 @@ void Command::execute() {
       }
       else{
         char **final = new char*[simpleCommand->number_args+1];
-        final[c] = NULL;
-        std::copy(v.begin(),v.end(),final);
         execvp(a, final);
         perror("execvp");
         _exit(1); 
