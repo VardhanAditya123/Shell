@@ -382,7 +382,7 @@ void Command::execute() {
 
 
   unsigned int count = 0;
-  char **final = new char*[simpleCommand->number_args+1];
+  char **final = new char*[_simpleCommandsArray[count]->number_args+1];
 
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
