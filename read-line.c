@@ -142,7 +142,7 @@ char * read_line() {
           line_length--;
           lc += 1;
         } 
-        for (i =0; i < line_length; i++) {
+        for (int i =0; i < line_length; i++) {
           ch = 8;
           write(1,&ch,1);
         }	   
