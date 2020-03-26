@@ -486,6 +486,7 @@ void Command::execute() {
     }
     
     for(int i = 0 ; i < c;i++){
+      cout << final[i] << endl;
       free(final[i]);
     }
   
