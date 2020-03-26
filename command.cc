@@ -424,7 +424,7 @@ void Command::execute() {
     string s = *(simpleCommand->_argumentsArray[0]);
     string s2 = *(simpleCommand->_argumentsArray[0]);
     char *a = (char*)(s.c_str());
-    char*str ;
+  
     int c =0;
     char **final_arr = new char*[simpleCommand->number_args+1]  ;
     for(auto & word : simpleCommand->_argumentsArray){
@@ -434,7 +434,7 @@ void Command::execute() {
       free(tmp1);
       char*tmp3 = esc(tmp2);
       free(tmp2);
-      str = tilde(tmp3);
+      char*str = tilde(tmp3);
       free(tmp3);
       final_arr[c] = str;
       c=c+1;
@@ -483,7 +483,7 @@ void Command::execute() {
       return;
     }
     
-   free(str); 
+  
    free(final_arr);
    
 
