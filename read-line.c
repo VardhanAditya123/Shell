@@ -78,11 +78,12 @@ char * read_line() {
       if(lc > 0){
         for( int i = lc-1 ; i >=0 ; i--){
           char ch = line_copy[i];
-          write(1,&ch,1);
+          
           line_buffer[line_length]=ch;
           line_length++; 
-          ch = 8;
-        write(1,&ch,1);
+          write(1,&ch,1);
+          // ch = 8;
+          // write(1,&ch,1);
         }
         lc = 0;
       }
