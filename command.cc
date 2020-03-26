@@ -470,7 +470,6 @@ void Command::execute() {
         exit(1);
       }
       else{
-        char **final = new char*[simpleCommand->number_args+1];
         execvp(a, final);
         perror("execvp");
         _exit(1); 
