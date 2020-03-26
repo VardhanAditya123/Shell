@@ -482,10 +482,10 @@ void Command::execute() {
       return;
     }
    
-   for(int i = 0 ; i < simpleCommand->number_args;i++){
-     free(final_arr[i]);
+  //  for(int i = 0 ; i < simpleCommand->number_args;i++){
+  //    free(final_arr[i]);
 
-   }
+  //  }
    free(final_arr);
 
     count += 1;
