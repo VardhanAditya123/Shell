@@ -100,6 +100,7 @@ char * read_line() {
       }
       continue;
     }
+    
     else if (ch==27) {
       // Escape sequence. Read two chars more
       //
