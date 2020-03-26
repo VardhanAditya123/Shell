@@ -483,7 +483,7 @@ void Command::execute() {
       return;
     }
     
-   free(str);
+   free(str); 
    free(final_arr);
    
 
