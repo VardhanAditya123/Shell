@@ -32,7 +32,7 @@ SimpleCommand::~SimpleCommand() {
     delete arg;
   }
   
-}
+} 
 
 
  void SimpleCommand::insertArgument(string* argument ) {

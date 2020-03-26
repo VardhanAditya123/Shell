@@ -450,6 +450,11 @@ void Command::execute() {
     int check_fun = commandCheck(final , c );
     if(check_fun == 1){
       clear();
+       for (int i = 0; i < c; i++)
+  	{
+  		free(final[i]);
+  	}
+    
       Shell::prompt();
       return;
     }
@@ -486,11 +491,7 @@ void Command::execute() {
     }
     
   
-    for (int i = 0; i < c; i++)
-  	{
-  		free(&final[i]);
-  	}
-    free(final);
+   
     count += 1;
 
   } // for 
