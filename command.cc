@@ -427,7 +427,9 @@ void Command::execute() {
   
     int c =0;
     char **final = new char*[simpleCommand->number_args+1];
+    simpleCommand->ans = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
+
       s_count+=simpleCommand->number_args;
       char*tmp1 = const_cast<char*>(checkEnvironment((char*)word->c_str()));
       char*tmp2=pecho(tmp1);
@@ -437,6 +439,7 @@ void Command::execute() {
       char*str = tilde(tmp3);
       free(tmp3);
       final[c]=strdup( str);
+      // simpleCommand->
       free(str);
   
       c=c+1;
