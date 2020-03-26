@@ -482,6 +482,10 @@ void Command::execute() {
       return;
     }
    
+   for(int i = 0 ; i < simpleCommand->number_args;i++){
+     free(final_arr[i]);
+     
+   }
 
     count += 1;
 
