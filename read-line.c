@@ -77,7 +77,7 @@ char * read_line() {
 
       if(lc > 0){
         for( int i = lc-1 ; i >=0 ; i--){
-          char ch = line_buffer[i];
+          char ch = line_copy[i];
           write(1,&ch,1);
           line_buffer[line_length]=ch;
           line_length++; 
