@@ -66,7 +66,7 @@ char * read_line() {
       write(1,&ch,1);
 
       if(ch == 127){
-        ch = 'A';
+        ch = 8;
         if(line_length > 0){
            write(1,&ch,1);
         }
