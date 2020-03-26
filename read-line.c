@@ -81,6 +81,8 @@ char * read_line() {
           write(1,&ch,1);
           line_buffer[line_length]=ch;
           line_length++; 
+          ch = 8;
+          write(1,&ch,1);
         }
       }
       continue;
