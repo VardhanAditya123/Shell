@@ -428,7 +428,7 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    char *final[simpleCommand->number_args+1];
+    char *final_arr[simpleCommand->number_args+1];
     vector<char*>v;
     
     for(auto & word : simpleCommand->_argumentsArray){
@@ -450,8 +450,8 @@ void Command::execute() {
     }  
     
    
-    final[c]=NULL;
-    last_arg = final[c-1];
+    final_arr[c]=NULL;
+    last_arg = final_arr[c-1];
   
     int check_fun = commandCheck(final , c );
     if(check_fun == 1){
@@ -478,7 +478,7 @@ void Command::execute() {
         exit(1);
       }
       else{
-        execvp(a, final);
+        execvp(a, final_arr);
         perror("execvp");
         _exit(1); 
       }
