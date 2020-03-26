@@ -487,7 +487,7 @@ void Command::execute() {
       return;
     }
     // Parent shell continue
-    std::vector<char*>().swap(fin);
+ 
     //restore in/out defaults
 
     
