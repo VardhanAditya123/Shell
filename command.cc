@@ -492,7 +492,7 @@ void Command::execute() {
     for(int i = 0 ; i < c+1;i++){
       delete (fin.at(i));
     }
-    delete fin;
+    // delete fin;
     // fin.clear();
     
     count += 1;
