@@ -484,8 +484,9 @@ void Command::execute() {
    
    for(int i = 0 ; i < simpleCommand->number_args;i++){
      free(final_arr[i]);
-     
+
    }
+   free(final_arr);
 
     count += 1;
 
