@@ -390,6 +390,8 @@ void Command::execute() {
     dup2(fdin, 0);
     close(fdin);
     if(simpleCommand->ambig_count > 1){
+       close(tmpin);
+       close(tmpout);
       cout<< "Ambiguous output redirect." <<endl;
       exit(1);
     }
