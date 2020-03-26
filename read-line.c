@@ -65,11 +65,12 @@ char * read_line() {
       // Do echo
       write(1,&ch,1);
 
-      if(ch == 8){
+      if(ch == 127){
         ch = 8;
         if(line_length > 0){
            write(1,&ch,1);
           //  ch = ' ';
+          line[line_length]='\0';
            line_length--;
         }
       }
