@@ -383,7 +383,7 @@ void Command::execute() {
 
   unsigned int count = 0;
   char **final;
-  int c
+  int c;
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
     close(fdin);
