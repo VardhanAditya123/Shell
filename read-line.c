@@ -66,15 +66,16 @@ char * read_line() {
       write(1,&ch,1);
 
       if(ch == 127){
-        ch = 8;
-        if(line_length > 0){
-           write(1,&ch,1);
-           ch = ' ';
-           write(1,&ch,1);
-           ch = 8;
-            write(1,&ch,1);
-           line_length--;
-        }
+    
+      if(line_length > 0){
+      ch = 8;
+      write(1,&ch,1);
+      ch = ' ';
+      write(1,&ch,1);
+      ch = 8;
+      write(1,&ch,1);
+      line_length--;
+      }
         continue;
       }
 
