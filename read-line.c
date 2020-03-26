@@ -92,7 +92,7 @@ char * read_line() {
         }	   
         lc = 0;
       }
-
+      continue;
       // if(rc > 0){
       //   for( int i = 0 ; i < rc ; i++){
       //     char ch = line_copy[i];
