@@ -490,7 +490,7 @@ void Command::execute() {
   	{
   		delete[]final[i];
   	}
-	delete[]final;
+
    
 
     count += 1;
