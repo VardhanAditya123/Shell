@@ -451,8 +451,8 @@ void Command::execute() {
     
    
     final_arr[c]=NULL;
-    last_arg = final_arr[c-2];
-    cout << last_arg << endl;
+    last_arg = final_arr[c-1];
+    
   
     int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
