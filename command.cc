@@ -470,6 +470,7 @@ void Command::execute() {
     }
     if(check_fun == 1){
       clear();    
+      close(tmperr);
       Shell::prompt();
       return;
     }
