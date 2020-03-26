@@ -38,7 +38,7 @@ using namespace std;
 int last;
 pid_t last_id;
 char* last_arg;
-
+char **final_arr ;
 void myunputc(int );
 // int last;
 Command::Command() {
@@ -442,7 +442,7 @@ void Command::execute() {
       
     }  
 
-    char **final_arr = new char*[c+1]  ;
+    final_arr = new char*[c+1]  ;
     std::copy(fin.begin(),fin.end(),final_arr);
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
