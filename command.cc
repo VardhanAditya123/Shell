@@ -427,7 +427,6 @@ void Command::execute() {
   
     int c =0;
     char **final = new char*[simpleCommand->number_args+1];
-    simpleCommand->ans = new char*[simpleCommand->number_args+1]; 
     for(auto & word : simpleCommand->_argumentsArray){
 
       s_count+=simpleCommand->number_args;
