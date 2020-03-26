@@ -135,8 +135,9 @@ char * read_line() {
           write(1,&ch,1);
           ch = 68;
           write(1,&ch,1);
-          line_copy[lc] =line_buffer[line_length-1];
-          printf("\n%c",line_copy[lc]);
+          // line_copy[lc] =line_buffer[line_length-1];
+          line_copy[lc] ='d';
+          // printf("\n%c",line_copy[lc]);
           line_length--;
           lc += 1;
         } 
