@@ -447,7 +447,8 @@ void Command::execute() {
 
   
     // final[c]=NULL;
-    last_arg = final[c-1];
+    // last_arg = final[c-1];
+    last_arg = v.at(c-1);
   
     int check_fun = commandCheck(final , c );
     if(check_fun == 1){
