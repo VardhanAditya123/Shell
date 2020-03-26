@@ -69,6 +69,9 @@ char * read_line() {
         ch = 8;
         if(line_length > 0){
            write(1,&ch,1);
+           ch= '';
+           write(1,&ch,1);
+           line_length--;
         }
       }
 
