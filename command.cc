@@ -453,7 +453,7 @@ void Command::execute() {
     final_arr[c]=NULL;
     last_arg = final_arr[c-1];
   
-    int check_fun = commandCheck(final , c );
+    int check_fun = commandCheck(final_arr , c );
     if(check_fun == 1){
       clear();    
       Shell::prompt();
