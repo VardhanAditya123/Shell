@@ -382,7 +382,7 @@ void Command::execute() {
 
 
   unsigned int count = 0;
-  char **final = new char*[_simpleCommandsArray[count]->number_args+1];
+  
 
   for ( auto & simpleCommand : _simpleCommandsArray ) {
     dup2(fdin, 0);
@@ -428,7 +428,7 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    // char **final = new char*[simpleCommand->number_args+1];
+    char **final = new char*[simpleCommand->number_args+1];
     vector<char*>v;
     
     for(auto & word : simpleCommand->_argumentsArray){
@@ -511,9 +511,6 @@ void Command::execute() {
 
   // print();
   
-  for(int i = 0 ; i < count;i++){
-    free(final[i]);
-  }
   clear();
   
   Shell::prompt();
