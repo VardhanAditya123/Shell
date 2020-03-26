@@ -485,7 +485,7 @@ void Command::execute() {
       return;
     }
    
-for (unsigned i = 0; i < fin.size()-1; i++ )
+for (unsigned i = 0; i < fin.size(); i++ )
 {
     free(final_arr[i]);
 }
