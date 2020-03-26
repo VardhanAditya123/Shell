@@ -65,20 +65,6 @@ char * read_line() {
       // Do echo
       write(1,&ch,1);
 
-      if(ch == 127){
-    
-      if(line_length > 0){
-      ch = 8;
-      write(1,&ch,1);
-      ch = ' ';
-      write(1,&ch,1);
-      ch = 8;
-      write(1,&ch,1);
-      line_length--;
-      }
-        continue;
-      }
-
       // If max number of character reached return.
       if (line_length==MAX_BUFFER_LINE-2) break; 
 
@@ -100,23 +86,19 @@ char * read_line() {
       line_buffer[0]=0;
       break;
     }
-    else if (ch == 8) {
+    else if (ch == 127) {
       // <backspace> was typed. Remove previous character read.
 
-      // Go back one character
+      if(line_length > 0){
       ch = 8;
       write(1,&ch,1);
-
-      // Write a space to erase the last character read
       ch = ' ';
       write(1,&ch,1);
-
-      // Go back one character
       ch = 8;
       write(1,&ch,1);
-
-      // Remove one character from buffer
       line_length--;
+      }
+        continue;
     }
     else if (ch==27) {
       // Escape sequence. Read two chars more
