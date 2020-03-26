@@ -495,7 +495,7 @@ void Command::execute() {
      free(final_arr[i]);
    }
   
-    count += 1;
+    count += 1; 
    
   } // for 
  
