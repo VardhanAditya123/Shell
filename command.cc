@@ -426,7 +426,8 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    char **final = new char*[simpleCommand->number_args+1];
+    vector<char*>v;
+    // char **final = new char*[simpleCommand->number_args+1];
     for(auto & word : simpleCommand->_argumentsArray){
 
       s_count+=simpleCommand->number_args;
@@ -437,9 +438,8 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3);
       free(tmp3);
-      final[c]=strdup( str);
-  
-      free(str);
+      // final[c]=str;
+      v.push_back(str);
   
       c=c+1;
       
@@ -474,7 +474,8 @@ void Command::execute() {
         exit(1);
       }
       else{
-
+        char **final = new char*[simpleCommand->number_args+1];
+        std::copy(v.begin(),v.end(),final);
         execvp(a, final);
         perror("execvp");
         _exit(1); 
