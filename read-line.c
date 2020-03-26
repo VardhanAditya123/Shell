@@ -85,6 +85,10 @@ char * read_line() {
           // ch = 8;
           // write(1,&ch,1);
         }
+        for (int i =0; i < lc; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }	   
         lc = 0;
       }
       continue;
@@ -142,10 +146,6 @@ char * read_line() {
           line_length--;
           lc += 1;
         } 
-        for (int i =0; i < lc; i++) {
-          ch = 8;
-          write(1,&ch,1);
-        }	   
         continue;
       }
 
