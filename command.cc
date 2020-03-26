@@ -429,7 +429,7 @@ void Command::execute() {
   
     int c =0;
     char *final_arr[10000];
-    vector<char*>v;
+  
     
     for(auto & word : simpleCommand->_argumentsArray){
 
