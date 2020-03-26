@@ -482,7 +482,7 @@ void Command::execute() {
       perror("fork");
       return;
     }
-   
+    
    free(str);
    free(final_arr);
    
