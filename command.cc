@@ -486,7 +486,7 @@ void Command::execute() {
     }
    
 for (unsigned i = 0; i < fin.size(); i++ )
-{   cout << final_arr[i] << endl;
+{   
     free(final_arr[i]);
 }
 
