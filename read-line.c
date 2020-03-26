@@ -84,6 +84,7 @@ char * read_line() {
           ch = 8;
         write(1,&ch,1);
         }
+        lc = 0;
       }
       continue;
     }
@@ -127,7 +128,6 @@ char * read_line() {
       char ch2;
       read(0, &ch1, 1);
       read(0, &ch2, 1);
-      lc = 0;
 
       if(ch1 == 91 && ch2== 68 ){
         if(line_length > 0){
@@ -137,7 +137,7 @@ char * read_line() {
           write(1,&ch,1);
           ch = 68;
           write(1,&ch,1);
-          line_copy[lc] =line_buffer[line_length];
+          line_copy[lc] =line_buffer[line_length-1];
           // printf("\n%c",line_copy[lc]);
           line_length--;
           lc += 1;
