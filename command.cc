@@ -489,11 +489,7 @@ void Command::execute() {
     // Parent shell continue
 
     //restore in/out defaults
-    for(int i = 0 ; i < c+1;i++){
-      delete (fin.at(i));
-    }
-    // delete fin;
-    // fin.clear();
+
     
     count += 1;
 
