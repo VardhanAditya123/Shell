@@ -11,7 +11,7 @@
 
 #include <cstring>
 #include "y.tab.hh"
-#include "shell.hh"
+#include "y.tab.h"
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -19,7 +19,6 @@
 #include <stdlib.h>
 #include <cstdio>
 #include <cstdlib>
-#include <iostream>
 #include "command.hh"
 #include "shell.hh"
 #include <iostream>
