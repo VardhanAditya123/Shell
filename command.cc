@@ -428,8 +428,6 @@ void Command::execute() {
     char *a = (char*)(s.c_str());
   
     int c =0;
-    int len = simpleCommand->number_args+1;
-    // char *final_arr[simpleCommand->number_args+1];
     char *final_arr[10000];
     vector<char*>v;
     
