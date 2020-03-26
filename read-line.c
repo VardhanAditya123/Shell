@@ -80,7 +80,7 @@ char * read_line() {
 
       break;
     }
-    else if (ch == 31) {
+    else if (ch == 31) { 
       // ctrl-?
       read_line_print_usage();
       line_buffer[0]=0;
