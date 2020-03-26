@@ -76,14 +76,14 @@ char * read_line() {
       line_length++; 
 
       if(lc > 0){
-        for( int i = 0 ; i < lc ; i++){
+        for( int i = lc-1 ; i >=0 ; i--){
           char ch = line_buffer[i];
           write(1,&ch,1);
           line_buffer[line_length]=ch;
           line_length++; 
         }
       }
-
+      continue;
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
@@ -135,8 +135,8 @@ char * read_line() {
           write(1,&ch,1);
           ch = 68;
           write(1,&ch,1);
+          line_copy[lc] =line_buffer[line_length-1];
           line_length--;
-          line_copy[lc] =line_buffer[line_length];
           lc += 1;
         } 
         continue;
