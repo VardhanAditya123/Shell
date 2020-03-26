@@ -57,8 +57,11 @@ char * read_line() {
 
     // Read one character in raw mode.
     char ch;
+    char ch1; 
+    char ch2;
     read(0, &ch, 1);
-
+    read(0, &ch1, 1);
+    read(0, &ch2, 1);
     if (ch>=32 && ch < 127) {
       // It is a printable character.  
 
@@ -108,10 +111,7 @@ char * read_line() {
       // HINT: Use the program "keyboard-example" to
       // see the ascii code for the different chars typed.
       //
-      char ch1; 
-      char ch2;
-      read(0, &ch1, 1);
-      read(0, &ch2, 1);
+    
 
       if(ch1 == 91 && ch2== 68 ){
         if(line_length > 0){
