@@ -200,6 +200,9 @@ int commandCheck(char**final , int c){
   }
 
   if(s.compare(s2) == 0){
+    close(tmpin); 
+    close(tmpout);
+    close(tmperr);
     exit(0);
   }
 
