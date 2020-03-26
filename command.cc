@@ -486,7 +486,7 @@ void Command::execute() {
     }
     
   
-    for (int i = 0; i < row; i++)
+    for (int i = 0; i < c; i++)
   	{
   		delete[]final[i];
   	}
