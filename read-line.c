@@ -96,21 +96,7 @@ char * read_line() {
         lc = 0;
       }
       continue;
-      // if(rc > 0){
-      //   for( int i = 0 ; i < rc ; i++){
-      //     char ch = line_copy[i];
-          
-      //     line_buffer[line_length]=ch;
-      //     line_length++; 
-      //     write(1,&ch,1);
-      //   }
-      //   for (int i =0; i < rc; i++) {
-      //     ch = 8;
-      //     write(1,&ch,1);
-      //   }	   
-      //   lc = 0;
-      // }
-      // continue;
+
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
@@ -169,20 +155,7 @@ char * read_line() {
         continue;
       }
 
-      // if(ch1 == 91 && ch2== 67 ){ 
-      //   if(line_length > 0){
-      //     ch = 27;
-      //     write(1,&ch,1);
-      //     ch = 91;
-      //     write(1,&ch,1);
-      //     ch = 67;
-      //     write(1,&ch,1);
-      //     line_copy[lc] =line_buffer[line_length-1];
-      //     line_length--;
-      //     lc += 1;
-      //   } 
-      //   continue;
-      // }
+      
 
       if (ch1==91 && ch2==65) {
         // Up arrow. Print next line in history.
