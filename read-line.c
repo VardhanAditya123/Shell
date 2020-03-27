@@ -149,7 +149,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_copy[lc] =line_buffer[len-lc];
-          line_length--;
+          // line_length--;
           lc += 1;
         } 
         continue;
