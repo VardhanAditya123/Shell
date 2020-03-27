@@ -95,7 +95,6 @@ char * read_line() {
         }
         for (int i =0; i < lc; i++) {
           ch = 8;
-          line_length--;
           write(1,&ch,1);
         }	   
         // lc = 0;
