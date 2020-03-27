@@ -152,7 +152,7 @@ char * read_line() {
 
       if(ch1 == 91 && ch2== 68 ){
       
-        if(line_length >= 0){
+        if(line_length > 0){
           ch = 27;
           write(1,&ch,1);
           ch = 91;
@@ -167,7 +167,7 @@ char * read_line() {
 
       if(ch1 == 91 && ch2== 67 ){
       
-        if(line_length >= 0){
+        if(line_length > 0){
           ch = 27;
           write(1,&ch,1);
           ch = 91;
