@@ -117,9 +117,9 @@ char * read_line() {
       // <Enter> was typed. Return line
       
       // Print newline
-      strcpy(history[]);
+      strcpy(history[h_count],line_buffer);
+      h_count+=1;
       write(1,&ch,1);
-
       break;
     }
     else if (ch == 31) { 
