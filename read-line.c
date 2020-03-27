@@ -91,9 +91,11 @@ char * read_line() {
       }
       line_buffer[line_length]=ch;
       c++;
+      if(lc > 0){
       for(int i =0 ; i < c;i++){
         char ch = line_buffer[i];
         write(1,&ch,1);
+      }
       }
       line_length++;
       continue;
