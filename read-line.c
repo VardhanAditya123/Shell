@@ -111,7 +111,7 @@ char * read_line() {
       // Print newline
       history[h_count] = strdup(line_buffer);
       h_count+=1;
-      h_pointer=c-1;
+      h_pointer+=1;
       write(1,&ch,1);
       break;
     }
@@ -246,7 +246,7 @@ char * read_line() {
 
 
     }
- 
+
   }
 
   // Add eol and null char at the end of string
