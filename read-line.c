@@ -237,6 +237,7 @@ char * read_line() {
         strcpy(line_buffer, history[history_index]);
         c = strlen(line_buffer);
         history_index=(history_index+1)%history_length;
+        line_length =c-1;
 
         // echo line
         write(1, line_buffer, c);
