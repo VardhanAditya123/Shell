@@ -55,6 +55,7 @@ char * read_line() {
 
   line_length = 0;
   int line_temp = 0;
+  int len = 0;
   int lc = 0;
   int rc = 0;
   // Read one line until enter is typed
@@ -76,6 +77,7 @@ char * read_line() {
       // add char to buffer.
       line_buffer[line_length]=ch;
       line_length++; 
+      len++;
 
       if(lc > 0){
         for( int i = lc-1 ; i >=0 ; i--){
@@ -83,6 +85,7 @@ char * read_line() {
           
           line_buffer[line_length]=ch;
           line_length++; 
+          len++;
           write(1,&ch,1);
           // ch = 8;
           // write(1,&ch,1);
@@ -152,6 +155,9 @@ char * read_line() {
       read(0, &ch2, 1);
 
       if(ch1 == 91 && ch2== 68 ){
+        if(lc == 0){
+          line_temp =;
+        }
         if(line_length > 0){
           ch = 27;
           write(1,&ch,1);
@@ -159,7 +165,7 @@ char * read_line() {
           write(1,&ch,1);
           ch = 68;
           write(1,&ch,1);
-          line_copy[lc] =line_buffer[line_length-lc];
+          line_copy[lc] =line_buffer[len-lc];
           line_length--;
           lc += 1;
         } 
@@ -220,6 +226,7 @@ char * read_line() {
   // Add eol and null char at the end of string
   line_buffer[line_length]=10;
   line_length++;
+  len++;
   line_buffer[line_length]=0;
 
   return line_buffer;
