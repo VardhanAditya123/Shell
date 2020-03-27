@@ -116,7 +116,7 @@ char * read_line() {
       
       // Print newline
       // strcpy(history[h_count],line_buffer);
-      history[h_count] = strdup((char*)line_buffer);
+      strcpy(history[h_count] , malloc(strlen(ptr1)+1));
       h_count+=1;
       write(1,&ch,1);
       break;
