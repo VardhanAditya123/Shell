@@ -90,7 +90,7 @@ char * read_line() {
       line_length++;
       c++;
       if(lc > 0){
-      for(int i = 0 ; i < c;i++){
+      for(int i = line_length-1 ; i < c;i++){
         char ch = line_buffer[i];
         write(1,&ch,1);
       }
