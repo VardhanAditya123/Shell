@@ -17,12 +17,11 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
-
+int history_index = 0;
 
 // Simple history array
 // This history does not change. 
 // Yours have to be updated.
-int history_index = 0;
 // char * history [] = {
 //   "ls -al | grep x", 
 //   "ps -e",
