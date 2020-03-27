@@ -133,24 +133,23 @@ char * read_line() {
         ch = 8;
         write(1,&ch,1);
         line_length--;
-    
+        c--;
        
       
-      for(int i = line_length; i <=c-2;i++){
+      for(int i = line_length; i <=c;i++){
         line_buffer[i]=line_buffer[i+1];
       }
-       line_buffer[c-1]=line_buffer[c];
+  
 
-         for(int i = line_length ; i <= c-2;i++){
+         for(int i = line_length ; i <= c-1;i++){
            char ch = line_buffer[i];
            write(1,&ch,1);
            ch = 8;
            write(1,&ch,1);
       }
-      //  for (int i = 0; i < c-line_length; i++) {
-      //     ch = 8;
-      //     write(1,&ch,1);
-      //   }
+  
+
+
 
       }
 
