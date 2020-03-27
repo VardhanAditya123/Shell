@@ -73,15 +73,12 @@ char * read_line() {
       write(1,&ch,1);
       
       // If max number of character reached return.
-      if (line_length==MAX_BUFFER_LINE-2) break; 
+      if (line_length==MAX_BUFFER_LINE-2) 
+      break; 
 
-      // add char to buffer.
-      // line_buffer[line_length]=ch;
-      // line_length++; 
-      
-      
+  
       if(lc > 0){
-        int end = line_length+1;
+        int end = 1;
         for( int i = c ; i >=end ; i--){
           
           line_buffer[i]=line_buffer[i-1];
