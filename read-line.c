@@ -239,7 +239,7 @@ char * read_line() {
         history_index=(history_index+1)%history_length;
 
         // echo line
-        write(1, line_buffer, line_length);
+        write(1, line_buffer, c);
         continue;
       }
 
