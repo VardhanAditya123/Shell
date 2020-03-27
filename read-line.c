@@ -136,7 +136,7 @@ char * read_line() {
     
        
       
-      for(int i = line_buffer; i <=c-2;i++){
+      for(int i = line_length; i <=c-2;i++){
         line_buffer[i]=line_buffer[i+1];
       }
       // line_buffer[c-1]=0;
