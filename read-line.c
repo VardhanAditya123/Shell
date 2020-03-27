@@ -80,19 +80,18 @@ char * read_line() {
       // line_length++; 
       line_buffer[c]=ch;
       c++;
+      line_length++;
       
-      line_length++; 
-     
-
+    
       if(lc > 0){
+        
         for( int i = lc-1 ; i >=0 ; i--){
           char ch = line_copy[i];
           
           line_buffer[line_length]=ch;
           line_length++; 
           write(1,&ch,1);
-          // ch = 8;
-          // write(1,&ch,1);
+         
         }
         for (int i =0; i < lc; i++) {
           ch = 8;
