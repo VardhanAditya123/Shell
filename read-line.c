@@ -215,19 +215,13 @@ char * read_line() {
         }
         h_pointer-=1;
         }
-        
+
         if(ch2 == 66){
         if(h_pointer > h_count){
           continue;
         }
         h_pointer+=1;
         }
-
-        
-
-
-        if(ch2 == 65)
-        h_pointer-=1;
         
         
         // Erase old line
