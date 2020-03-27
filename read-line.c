@@ -74,7 +74,7 @@ char * read_line() {
       break; 
 
       // Do echo 
-      if(lc == 0)
+      if(lc == 0 && rc == 0)
       write(1,&ch,1);
       
       // If max number of character reached return
