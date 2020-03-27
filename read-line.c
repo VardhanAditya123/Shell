@@ -15,7 +15,7 @@
 extern void tty_raw_mode(void);
 
 // Buffer where line is stored
-// int line_length;
+int line_length;
 char line_buffer[MAX_BUFFER_LINE];
 
 
@@ -53,8 +53,8 @@ char * read_line() {
   // Set terminal in raw mode
   tty_raw_mode();
 
-  int line_length = 0;
-  char line_buffer[MAX_BUFFER_LINE];
+  line_length = 0;
+  charline_buffer[MAX_BUFFER_LINE];
   int line_temp = 0;
   int len = 0;
   int lc = 0;
