@@ -65,7 +65,7 @@ char * read_line() {
     // Read one character in raw mode.
     char ch;
     read(0, &ch, 1);
-    len = sizeof(line_buffer)/sizeof(char*);
+    len = c;
     if (ch>=32 && ch < 127) {
       // It is a printable character.  
 
