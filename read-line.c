@@ -70,7 +70,7 @@ char * read_line() {
     if (ch>=32 && ch < 127) {
       // It is a printable character.  
 
-      // Do echo
+      // Do echo 
       if(lc == 0)
       write(1,&ch,1);
       
