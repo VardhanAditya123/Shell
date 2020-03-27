@@ -89,6 +89,7 @@ char * read_line() {
       line_buffer[line_length]=ch;
       line_length++;
       c++;
+      
       if(lc > 0){
       for(int i = line_length-1 ; i < c;i++){
         char ch = line_buffer[i];
