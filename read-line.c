@@ -54,6 +54,7 @@ char * read_line() {
   tty_raw_mode();
 
   line_length = 0;
+  int line_temp = 0;
   int lc = 0;
   int rc = 0;
   // Read one line until enter is typed
@@ -158,7 +159,7 @@ char * read_line() {
           write(1,&ch,1);
           ch = 68;
           write(1,&ch,1);
-          line_copy[lc] =line_buffer[line_length-1];
+          line_copy[lc] =line_buffer[line_length-lc];
           line_length--;
           lc += 1;
         } 
