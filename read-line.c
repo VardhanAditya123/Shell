@@ -234,7 +234,7 @@ char * read_line() {
         }	
 
         // Copy line from history
-        strcpy(line_buffer, history[49-history_index]);
+        strcpy(line_buffer, history[h_pointer]);
         c = strlen(line_buffer);
         history_index=(history_index+1)%history_length;
         line_length =c-1;
