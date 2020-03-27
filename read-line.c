@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <stdio.h> 
 #include <string.h> 
-
+char *strdup(const char *src);
 #define MAX_BUFFER_LINE 2048
 
 extern void tty_raw_mode(void);
@@ -46,7 +46,12 @@ void read_line_print_usage()
   write(1, usage, strlen(usage));
 }
 
-
+char *strdup(const char *src) {
+    char *dst = malloc(strlen (src) + 1);  // Space for length plus nul
+    if (dst == NULL) return NULL;          // No memory
+    strcpy(dst, src);                      // Copy the characters
+    return dst;                            // Return the new string
+}
 
 /* 
  * Input a line with some basic editing.
