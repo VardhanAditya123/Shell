@@ -79,11 +79,11 @@ char * read_line() {
 
       if(lc > 0){
         int end = line_length+1;
-        for( int i = c ; i >=end ; i--){
+        // for( int i = c ; i >=end ; i--){
           
-          line_buffer[i]=line_buffer[i-1];
+        //   line_buffer[i]=line_buffer[i-1];
          
-        }
+        // }
         
       }
       line_buffer[line_length]=ch;
