@@ -209,7 +209,7 @@ char * read_line() {
         // Up arrow. Print next line in history.
         
         if(ch2 == 66){
-        if(h_pointer > c){
+        if(h_pointer >= c){
           continue;
         }
         h_pointer+=1;
