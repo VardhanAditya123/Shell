@@ -77,7 +77,7 @@ char * read_line() {
       if (line_length==MAX_BUFFER_LINE-2) 
       break; 
 
-      if(lc > 0){
+      if(lc > 0 || rc > 0){
         int end = line_length+1;
         for( int i = c ; i >=end ; i--){
           
@@ -86,11 +86,13 @@ char * read_line() {
         }
         
       }
+
+      
       line_buffer[line_length]=ch;
       line_length++;
       c++;
-      
-      if(lc > 0){
+
+      if(lc > 0 || rc > 0){
       for(int i = line_length-1 ; i < c;i++){
         char ch = line_buffer[i];
         write(1,&ch,1);
@@ -158,6 +160,21 @@ char * read_line() {
           write(1,&ch,1);
           line_length--;
           lc+=1;
+        } 
+        continue;
+      }
+
+      if(ch1 == 91 && ch2== 67 ){
+      
+        if(line_length > 0){
+          ch = 27;
+          write(1,&ch,1);
+          ch = 91;
+          write(1,&ch,1);
+          ch = 67;
+          write(1,&ch,1);
+          line_length++;
+          rc+=1;
         } 
         continue;
       }
