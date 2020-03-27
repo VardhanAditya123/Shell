@@ -54,7 +54,7 @@ char * read_line() {
   tty_raw_mode();
 
   line_length = 0;
-  charline_buffer[MAX_BUFFER_LINE];
+  char line_buffer[MAX_BUFFER_LINE];
   int line_temp = 0;
   int len = 0;
   int lc = 0;
