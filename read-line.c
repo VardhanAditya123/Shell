@@ -61,11 +61,10 @@ char * read_line() {
   for(int i = 0 ; i < MAX_BUFFER_LINE;i++){
     line_buffer[i] = 0;
   }
-  int line_temp = 0;
   int lc = 0;
   int rc = 0;
   int c = 0;
-  int bflag = 0;
+  
   // Read one line until enter is typed
   while (1) {
 
