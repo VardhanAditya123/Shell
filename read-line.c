@@ -31,7 +31,7 @@ int history_index = 0;
 //   "ls -al | grep xxx | grep yyy"
 // };
 
-char  history[50][1000];
+char * history[50];
 int h_count=0;
 
 int history_length = sizeof(history)/sizeof(char *);
