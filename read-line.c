@@ -89,19 +89,24 @@ char * read_line() {
       line_buffer[line_length]=ch;
       line_length++;
       c++;
-      if(lc > 0){
-      for(int i = 0 ; i < c;i++){
-        char ch = line_buffer[i];
-        write(1,&ch,1);
-      }
-      }
+      // if(lc > 0){
+      // for(int i = 0 ; i < c;i++){
+      //   char ch = line_buffer[i];
+      //   write(1,&ch,1);
+      // }
+      // }
 
       continue;
 
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
-
+       if(lc > 0){
+      for(int i = 0 ; i < c;i++){
+        char ch = line_buffer[i];
+        write(1,&ch,1);
+      }
+      }
       // Print newline
       write(1,&ch,1);
 
