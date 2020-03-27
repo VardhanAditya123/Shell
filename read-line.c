@@ -58,7 +58,6 @@ char * read_line() {
     line_buffer[i] = 0;
   }
   int line_temp = 0;
-  int len = 0;
   int lc = 0;
   int rc = 0;
   int c = 0;
@@ -157,7 +156,7 @@ char * read_line() {
           ch = 27;
           write(1,&ch,1);
           ch = 91;
-          write(1,&ch,1);
+          write(1,&ch,1); 
           ch = 68;
           write(1,&ch,1);
           line_length--;
