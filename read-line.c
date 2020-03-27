@@ -55,7 +55,7 @@ char * read_line() {
 
   line_length = 0;
   for(int i = 0 ; i < MAX_BUFFER_LINE;i++){
-    line_buffer[i] = NULL;
+    line_buffer[i] = null;
   }
   int line_temp = 0;
   int len = 0;
