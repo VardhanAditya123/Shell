@@ -58,6 +58,7 @@ char * read_line() {
   int len = 0;
   int lc = 0;
   int rc = 0;
+  int c = 0;
   // Read one line until enter is typed
   while (1) {
 
@@ -75,7 +76,11 @@ char * read_line() {
       if (line_length==MAX_BUFFER_LINE-2) break; 
 
       // add char to buffer.
-      line_buffer[line_length]=ch;
+      // line_buffer[line_length]=ch;
+      // line_length++; 
+      line_buffer[c]=ch;
+      c++;
+      
       line_length++; 
      
 
@@ -149,7 +154,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_copy[lc] =line_buffer[len-lc];
-          // line_length--;
+          line_length--;
           lc += 1;
         } 
         continue;
