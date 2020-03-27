@@ -78,7 +78,7 @@ char * read_line() {
       // add char to buffer.
       // line_buffer[line_length]=ch;
       // line_length++; 
-      line_buffer[c]=ch;
+      line_buffer[line_length]=ch;
       c++;
       line_length++;
       
