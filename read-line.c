@@ -79,15 +79,15 @@ char * read_line() {
 
       if(lc > 0){
         int end = line_length+1;
-        // for( int i = c ; i >=end ; i--){
+        for( int i = c ; i >=end ; i--){
           
-        //   line_buffer[i]=line_buffer[i-1];
+          line_buffer[i]=line_buffer[i-1];
          
-        // }
+        }
         
       }
       line_buffer[line_length]=ch;
-       line_length++;
+      line_length++;
       c++;
       if(lc > 0){
       for(int i = 0 ; i < c;i++){
@@ -195,9 +195,9 @@ char * read_line() {
   }
 
   // Add eol and null char at the end of string
-  line_buffer[line_length]=10;
+  line_buffer[c]=10;
   line_length++;
-  line_buffer[line_length]=0;
+  line_buffer[c]=0;
 
   return line_buffer;
 }
