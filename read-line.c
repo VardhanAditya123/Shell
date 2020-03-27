@@ -61,6 +61,7 @@ char * read_line() {
   int lc = 0;
   int rc = 0;
   int c = 0;
+  int bflag = 0;
   // Read one line until enter is typed
   while (1) {
 
@@ -69,14 +70,14 @@ char * read_line() {
     read(0, &ch, 1);
     if (ch>=32 && ch < 127) {
       // It is a printable character.  
+      if (line_length==MAX_BUFFER_LINE-2) 
+      break; 
 
       // Do echo 
       if(lc == 0)
       write(1,&ch,1);
       
-      // If max number of character reached return.
-      if (line_length==MAX_BUFFER_LINE-2) 
-      break; 
+      // If max number of character reached return
 
       if(lc > 0 || rc > 0){
         int end = line_length+1;
@@ -144,12 +145,12 @@ char * read_line() {
          for(int i = line_length ; i <= c-1;i++){
            char ch = line_buffer[i];
            write(1,&ch,1);
-           ch = 8;
-           write(1,&ch,1);
-      }
-  
-
-
+         }
+           for (int i = 0; i < c-line_length; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }
+      
 
       }
 
