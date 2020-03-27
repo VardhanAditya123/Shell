@@ -94,7 +94,12 @@ char * read_line() {
         char ch = line_buffer[i];
         write(1,&ch,1);
       }
+       for (i =0; i < line_length; i++) {
+          ch = 8;
+          write(1,&ch,1);
+        }
       }
+      
 
       continue;
 
