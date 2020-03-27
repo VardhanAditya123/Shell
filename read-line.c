@@ -18,18 +18,7 @@ extern void tty_raw_mode(void);
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
 int history_index = 0;
-
-// Simple history array
-// This history does not change. 
-// Yours have to be updated.
-// char * history [] = {
-//   "ls -al | grep x", 
-//   "ps -e",
-//   "cat read-line-example.c",
-//   "vi hello.c",
-//   "make",
-//   "ls -al | grep xxx | grep yyy"
-// };
+int h_pointer = 0;
 
 char * history[50];
 int h_count=0;
@@ -122,6 +111,7 @@ char * read_line() {
       // Print newline
       history[h_count] = strdup(line_buffer);
       h_count+=1;
+      h_pointer+=1;
       write(1,&ch,1);
       break;
     }
@@ -217,7 +207,12 @@ char * read_line() {
 
       if (ch1==91 && ch2==65) {
         // Up arrow. Print next line in history.
-
+        
+        if(h_pointer < 0){
+          continue;
+        }
+        h_pointer-=1;
+        
         // Erase old line
         // Print backspaces
         int i = 0;
