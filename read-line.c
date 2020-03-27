@@ -64,7 +64,7 @@ char * read_line() {
     // Read one character in raw mode.
     char ch;
     read(0, &ch, 1);
-
+    len = sizeof(line_buffer)/sizeof(char*);
     if (ch>=32 && ch < 127) {
       // It is a printable character.  
 
@@ -77,7 +77,7 @@ char * read_line() {
       // add char to buffer.
       line_buffer[line_length]=ch;
       line_length++; 
-      len++;
+     
 
       if(lc > 0){
         for( int i = lc-1 ; i >=0 ; i--){
@@ -85,7 +85,6 @@ char * read_line() {
           
           line_buffer[line_length]=ch;
           line_length++; 
-          len++;
           write(1,&ch,1);
           // ch = 8;
           // write(1,&ch,1);
@@ -224,7 +223,6 @@ char * read_line() {
   // Add eol and null char at the end of string
   line_buffer[line_length]=10;
   line_length++;
-  len++;
   line_buffer[line_length]=0;
 
   return line_buffer;
