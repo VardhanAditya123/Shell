@@ -110,8 +110,8 @@ char * read_line() {
       
       // Print newline
       history[h_count] = strdup(line_buffer);
-      h_pointer = h_count - 1;
       h_count+=1;
+      h_pointer = h_coinut - 1;
       write(1,&ch,1);
       break;
     }
