@@ -70,6 +70,7 @@ char * read_line() {
       // It is a printable character.  
 
       // Do echo
+      if(lc == 0)
       write(1,&ch,1);
       
       // If max number of character reached return.
