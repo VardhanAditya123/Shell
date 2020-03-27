@@ -17,7 +17,7 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
-char line_copy[MAX_BUFFER_LINE];
+
 
 // Simple history array
 // This history does not change. 
@@ -54,6 +54,7 @@ char * read_line() {
   tty_raw_mode();
 
   line_length = 0;
+  line_buffer[MAX_BUFFER_LINE];
   int line_temp = 0;
   int len = 0;
   int lc = 0;
