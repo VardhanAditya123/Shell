@@ -236,7 +236,7 @@ char * read_line() {
         // Copy line from history
         strcpy(line_buffer, history[h_pointer]);
         c = strlen(line_buffer);
-        line_length =c-1;
+        line_length =c;
 
         // echo line
         write(1, line_buffer, c);
