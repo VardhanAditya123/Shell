@@ -111,7 +111,7 @@ char * read_line() {
       // Print newline
       history[h_count] = strdup(line_buffer);
       h_count+=1;
-      h_pointer+=1;
+      h_pointer=c-1;
       write(1,&ch,1);
       break;
     }
@@ -236,7 +236,6 @@ char * read_line() {
         // Copy line from history
         strcpy(line_buffer, history[h_pointer]);
         c = strlen(line_buffer);
-        history_index=(history_index+1)%history_length;
         line_length =c-1;
 
         // echo line
