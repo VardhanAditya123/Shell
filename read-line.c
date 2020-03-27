@@ -208,7 +208,7 @@ char * read_line() {
       if (ch1==91 && (ch2==65 || ch2 == 66)) {
         // Up arrow. Print next line in history.
         
-        if(h_pointer>c || h_pointer <= 0){
+        if( h_pointer <= 0){
           continue;
         }
         if(ch2 == 65)
