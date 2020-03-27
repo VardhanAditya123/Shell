@@ -78,28 +78,21 @@ char * read_line() {
       // add char to buffer.
       // line_buffer[line_length]=ch;
       // line_length++; 
-      line_buffer[line_length]=ch;
-      c++;
-      line_length++;
       
-    
+      
       if(lc > 0){
-        c= line_length;
-        for( int i = lc-1 ; i >=0 ; i--){
-          char ch = line_copy[i];
+        int end = line_length+1;
+        for( int i = c ; i >=end ; i--){
           
-          line_buffer[line_length]=ch;
-          line_length++; 
-          c++;
+          line_buffer[i]=line_buffer[i-1];
           write(1,&ch,1);
          
         }
-        for (int i =0; i < lc; i++) {
-          ch = 8;
-          write(1,&ch,1);
-        }	   
-        // lc = 0;
+        
       }
+      line_buffer[line_length]=ch;
+      c++;
+      line_length++;
       continue;
 
     }
@@ -128,6 +121,7 @@ char * read_line() {
         ch = 8;
         write(1,&ch,1);
         line_length--;
+        lc+=1;
        
       }
       continue;
@@ -152,10 +146,7 @@ char * read_line() {
           ch = 91;
           write(1,&ch,1);
           ch = 68;
-          write(1,&ch,1);
-          line_copy[lc] =line_buffer[len-lc-1];
           line_length--;
-          lc += 1;
         } 
         continue;
       }
