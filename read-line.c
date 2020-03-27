@@ -81,12 +81,13 @@ char * read_line() {
         int end = line_length+1;
         for( int i = c ; i >=end ; i--){
           
-          // line_buffer[i]=line_buffer[i-1];
+          line_buffer[i]=line_buffer[i-1];
          
         }
         
       }
       line_buffer[line_length]=ch;
+       line_length++;
       c++;
       if(lc > 0){
       for(int i =0 ; i < c;i++){
@@ -94,7 +95,7 @@ char * read_line() {
         write(1,&ch,1);
       }
       }
-      line_length++;
+
       continue;
 
     }
@@ -123,7 +124,7 @@ char * read_line() {
         ch = 8;
         write(1,&ch,1);
         line_length--;
-        lc+=1;
+    
        
       }
       continue;
@@ -150,6 +151,7 @@ char * read_line() {
           ch = 68;
           write(1,&ch,1);
           line_length--;
+            lc+=1;
         } 
         continue;
       }
