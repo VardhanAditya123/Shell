@@ -141,7 +141,7 @@ char * read_line() {
       }
        line_buffer[c-1]=line_buffer[c];
 
-         for(int i = line_length-1 ; i < c-1;i++){
+         for(int i = line_length ; i <= c-2;i++){
            char ch = line_buffer[i];
            write(1,&ch,1);
            ch = 8;
