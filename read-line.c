@@ -85,13 +85,16 @@ char * read_line() {
         for( int i = c ; i >=end ; i--){
           
           line_buffer[i]=line_buffer[i-1];
-          write(1,&ch,1);
          
         }
         
       }
       line_buffer[line_length]=ch;
       c++;
+      for(int i =0 ; i < c;i++){
+        char ch = line_buffer[i];
+        write(1,&ch,1)
+      }
       line_length++;
       continue;
 
