@@ -31,7 +31,7 @@ int history_index = 0;
 //   "ls -al | grep xxx | grep yyy"
 // };
 
-char * history[50];
+char  history[50][1000];
 int h_count=0;
 
 int history_length = sizeof(history)/sizeof(char *);
@@ -116,7 +116,7 @@ char * read_line() {
       
       // Print newline
       // strcpy(history[h_count],line_buffer);
-      strcpy(history[h_count] , malloc(strlen(line_buffer)+1));
+      history[h_count] = line_buffer;
       h_count+=1;
       write(1,&ch,1);
       break;
