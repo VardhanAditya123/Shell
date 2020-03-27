@@ -121,7 +121,6 @@ char * read_line() {
       
       // Print newline
       history[h_count] = strdup(line_buffer);
-      history[h_count] = line_buffer;
       h_count+=1;
       write(1,&ch,1);
       break;
