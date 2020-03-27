@@ -146,6 +146,7 @@ char * read_line() {
           ch = 91;
           write(1,&ch,1);
           ch = 68;
+          write(1,&ch,1);
           line_length--;
         } 
         continue;
