@@ -142,10 +142,10 @@ char * read_line() {
        line_buffer[c-1]=line_buffer[c];
 
          for(int i = line_length-1 ; i < c-1;i++){
-        char ch = line_buffer[i];
-        write(1,&ch,1);
-        ch = 8;
-          write(1,&ch,1);
+           char ch = line_buffer[i];
+           write(1,&ch,1);
+           ch = 8;
+           write(1,&ch,1);
       }
       //  for (int i = 0; i < c-line_length; i++) {
       //     ch = 8;
