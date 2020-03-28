@@ -289,6 +289,45 @@ char * read_line() {
       }
 
 
+       if (ch1 == 91 && ch2 == 51) {
+      // <backspace> was typed. Remove previous character read.
+
+      if(line_length > 0){
+       
+        ch = ' ';
+        write(1,&ch,1);
+        ch = 8;
+        write(1,&ch,1);
+        c--;
+       
+      
+      for(int i = line_length; i <=c;i++){
+        line_buffer[i]=line_buffer[i+1];
+      }
+  
+
+         for(int i = line_length; i < c;i++){
+           char ch = line_buffer[i];
+           write(1,&ch,1);
+         }
+
+             ch = ' ';
+            write(1,&ch,1);
+            ch = 8;
+            write(1,&ch,1);
+          
+            
+           for (int i = 0; i < c-line_length; i++) {
+            ch = 8;
+            write(1,&ch,1);
+          }
+      
+
+      }
+
+      continue;
+    }
+
     }
 
   }
