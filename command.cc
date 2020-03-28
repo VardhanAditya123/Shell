@@ -457,7 +457,8 @@ void Command::execute() {
       free(tmp2);
       char*str = tilde(tmp3); 
       free(tmp3);
-      final_arr[c]=strdup(str);
+      // final_arr[c]=strdup(str);
+      final_arr[c]=strcpy(new char[strlen(str)+ 1],str);
       free(str);
       c=c+1;
       
