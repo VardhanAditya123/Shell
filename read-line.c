@@ -181,7 +181,7 @@ regex_t re;
 	int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
 	if (result!=0) {
   perror("compile");
-  return;
+  return '\0';
   }
 regmatch_t match;
 char* tmp = strdup((ent->d_name));
