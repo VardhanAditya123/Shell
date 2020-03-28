@@ -215,11 +215,11 @@ char * read_line() {
       strcat(line_tab,".*$");
       char* dir2 = strdup(".");
       DIR *dir = opendir(dir2);
-
+      regex_t re;
       struct dirent * ent;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
-        regex_t re;	
+        	
         int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
         if (result!=0) {
           break;
