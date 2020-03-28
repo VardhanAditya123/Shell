@@ -215,7 +215,7 @@ if(ent->d_name[0] == '.')
 
 }
 regfree(&re);
-closedir(dir);
+closedir(dir); 
 return;
 
 
