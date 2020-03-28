@@ -161,6 +161,10 @@ char * read_line() {
 
       continue;
     }
+
+    else if (ch == 9){
+      strcat(line_buffer,".*$")
+    }
     
     else if (ch==27) {
       // Escape sequence. Read two chars more
