@@ -179,11 +179,11 @@ regmatch_t match;
 char* tmp = strdup((ent->d_name));
 int result = regexec( &re, tmp, 1, &match, 0 );
 if (result == 0  ) {
- sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
+
 }
 
 }
- }
+}
     
     else if (ch==27) {
       // Escape sequence. Read two chars more
