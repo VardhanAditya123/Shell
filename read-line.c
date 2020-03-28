@@ -174,10 +174,10 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-
+regex re;
 regmatch_t match;
 char* tmp = strdup((ent->d_name));
-result = regexec( &re, tmp, 1, &match, 0 );
+int result = regexec( &re, tmp, 1, &match, 0 );
 if (result == 0  ) {
  sprintf(newPrefix,"%s/%s", prefix, ent->d_name);
 }
