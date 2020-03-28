@@ -226,7 +226,7 @@ char * read_line() {
         
         int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
         if (result!=0) {
-          printf("CHECK");
+    
           break;
         }
        
@@ -235,6 +235,7 @@ char * read_line() {
         
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
+          printf("CHECK");
          common[common_count] =strdup((ent->d_name));
          common_count++;
         }
