@@ -87,6 +87,7 @@ for(auto str: vect){
   }
 }
 }
+delete str;
 }
 
 
