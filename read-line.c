@@ -234,7 +234,7 @@ char * read_line() {
         
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
-        printf("%s",tmp);
+        printf("%s",line_tab);
          common[common_count] =strdup((ent->d_name));
          common_count++;
         }
