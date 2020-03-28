@@ -302,7 +302,7 @@ char * read_line() {
         c--;
        
       
-      for(int i = line_length; i <=c;i++){
+      for(int i = line_length; i < c;i++){
         line_buffer[i]=line_buffer[i+1];
       }
   
