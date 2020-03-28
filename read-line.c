@@ -223,7 +223,7 @@ char * read_line() {
       struct dirent * ent;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
-        	
+        printf("HELLO");
         int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
         if (result!=0) {
           break;
