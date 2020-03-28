@@ -258,8 +258,7 @@ char * read_line() {
         c = strlen(line_buffer);
         line_length =c;
         }
-        c = strlen(line_buffer);
-        line_length =c;
+       
 
         // echo line
         write(1, line_buffer, c);
