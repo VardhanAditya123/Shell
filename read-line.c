@@ -202,7 +202,7 @@ char * read_line() {
       char line_tab[MAX_BUFFER_LINE];
       for(int i = 0;i<MAX_BUFFER_LINE;i++){
         line_tab[i]=0;
-        line_buffer[i]=0;
+        line_buffer2[i]=0;
         common[i]=NULL;
       }
       int common_count=0;
