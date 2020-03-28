@@ -237,27 +237,28 @@ char * read_line() {
       }
       char tmp2[MAX_BUFFER_LINE];
       for(int i = 0 ;i<c_len;i++){
-        tmp2[i] = common[0][i];
+        // tmp2[i] = common[0][i];
+        line_buffer[l2] = common[0][i];
       }
 
           int i = 0;
-          for (i =0; i < c; i++) {
+          for (i =0; i < l2; i++) {
             ch = 8;
             write(1,&ch,1);
           }
 
           // Print spaces on top
-          for (i =0; i < c; i++) {
+          for (i =0; i < l2; i++) {
             ch = ' ';
             write(1,&ch,1);
           }
 
           // Print backspaces
-          for (i =0; i < c; i++) {
+          for (i =0; i < l2; i++) {
             ch = 8;
             write(1,&ch,1);
           }
-          strcpy(line_buffer ,tmp2);
+          // strcpy(line_buffer ,tmp2);
           c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
