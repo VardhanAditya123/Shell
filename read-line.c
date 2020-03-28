@@ -292,7 +292,7 @@ char * read_line() {
        if (ch1 == 91 && ch2 == 51) {
       // delete was typed. Remove current character read.
 
-      if(line_length > 0 && line_length!=c){
+      if(line_length >=0 && line_length!=c){
        
         ch = ' ';
         write(1,&ch,1);
