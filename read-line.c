@@ -163,7 +163,7 @@ char * read_line() {
     }
 
     else if (ch == 9){
-      strcat(line_buffer,".*$")
+      strcat(line_buffer,".*$");
     }
     
     else if (ch==27) {
