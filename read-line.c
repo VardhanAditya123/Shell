@@ -185,7 +185,7 @@ regex_t re;
   }
 regmatch_t match;
 char* tmp = strdup((ent->d_name));
-int result = regexec( &re, tmp, 1, &match, 0 );
+ result = regexec( &re, tmp, 1, &match, 0 );
 if (result == 0  ) {
 
   int i = 0;
