@@ -168,7 +168,7 @@ char* dir2;
 	}
 	else
 	{
-		dir2 = prefix;
+		dir2 = strdup(prefix);
 	}
   
   DIR *dir = opendir(dir2);
