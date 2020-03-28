@@ -12,7 +12,7 @@
 #include <regex.h>
 #include <dirent.h>
 #include <unistd.h>
-char *strdup(const char *src);
+char *strdup2(const char *src);
 #define MAX_BUFFER_LINE 2048
 
 extern void tty_raw_mode(void);
@@ -37,7 +37,7 @@ void read_line_print_usage()
   write(1, usage, strlen(usage));
 }
 
-char *strdup(const char *src) {
+char *strdup2(const char *src) {
   char *dst = malloc(strlen (src) + 1);  // Space for length plus nul
   if (dst == NULL) return NULL;          // No memory
   strcpy(dst, src);                      // Copy the characters
@@ -143,7 +143,7 @@ char * read_line() {
       // <Enter> was typed. Return line
 
       // Print newline
-      history[h_count] = strdup(line_buffer);
+      history[h_count] = strdup2(line_buffer);
       h_count+=1;
       h_pointer = h_count ;
       write(1,&ch,1);
@@ -222,7 +222,7 @@ char * read_line() {
      
       strcat(line_tab,line_buffer2);
       strcat(line_tab,".*$");
-      char* dir2 = strdup(".");
+      char* dir2 = strdup2(".");
       DIR *dir = opendir(dir2);
       regex_t re;
       struct dirent * ent;
@@ -236,10 +236,10 @@ char * read_line() {
         }
        
         regmatch_t match;
-        char* tmp = strdup((ent->d_name));
+        char* tmp = strdup2((ent->d_name));
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
-         common[common_count] =strdup((ent->d_name));
+         common[common_count] =strdup2((ent->d_name));
          common_count++;
         }
       }
