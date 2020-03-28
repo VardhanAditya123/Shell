@@ -250,9 +250,13 @@ char * read_line() {
          for(int i = 0 ; i < c;i++){
            line_buffer[i] = 0;
          }
+        c = strlen(line_buffer);
+        
         }
         else{
         strcpy(line_buffer, history[h_pointer]);
+        c = strlen(line_buffer);
+        line_length =c;
         }
         c = strlen(line_buffer);
         line_length =c;
