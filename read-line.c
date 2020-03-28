@@ -151,7 +151,7 @@ char * read_line() {
             write(1,&ch,1);
           
             
-           for (int i = 0; i < c-line_length; i++) {
+           for (int i = 0; i < c-line_length; i++) { 
             ch = 8;
             write(1,&ch,1);
           }
