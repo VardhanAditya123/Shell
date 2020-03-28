@@ -226,6 +226,16 @@ char * read_line() {
          strcpy(common[common_count],tmp);
          common_count++;
         }
+      }
+      int c_len = 0;
+      for(int i = 0 ; i < common_count-1;i++){
+          c_len=LCSubStr(common[i],common[i+1]);
+      }
+      char tmp2[MAX_BUFFER_LINE];
+      for(int i = 0 ;i<c_len;i++){
+        tmp2[i] = common[0][i];
+      }
+
           int i = 0;
           for (i =0; i < c; i++) {
             ch = 8;
@@ -243,15 +253,11 @@ char * read_line() {
             ch = 8;
             write(1,&ch,1);
           }
-          strcpy(line_buffer ,tmp);
-          c=strlen(tmp);
+          strcpy(line_buffer ,tmp2);
+          c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
-          break; 
-
-        
-
-      }
+          continue;
     }
 
     else if (ch==27) {
