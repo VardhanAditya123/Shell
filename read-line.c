@@ -164,6 +164,7 @@ char * read_line() {
 
     else if (ch == 9){
       strcat(line_buffer,".*$");
+      char* dir2 = strdup(".");
     }
     
     else if (ch==27) {
