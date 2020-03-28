@@ -254,10 +254,22 @@ char * read_line() {
         continue;
       }
 
-      if(ch1 == 91 && ch2==72){
-        
+       if(ch1 == 91 && ch2== 72 ){
+      
+        for(int i = 0; i < c ; i++){
+        if(line_length > 0){
+          ch = 27;
+          write(1,&ch,1);
+          ch = 91;
+          write(1,&ch,1); 
+          ch = 68;
+          write(1,&ch,1);
+          line_length--;
+          lc+=1;
+        } 
+        }
+        continue;
       }
-
 
 
     }
