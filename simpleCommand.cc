@@ -172,7 +172,7 @@ char* dir2;
 	}
   
   DIR *dir = opendir(dir2);
-  free(dir2);
+  
   if (dir == NULL) {
   return;
 }  
@@ -215,8 +215,10 @@ if(ent->d_name[0] == '.')
 }
 
 }
+
 regfree(&re);
 closedir(dir); 
+free(dir2);
 return;
  
 
