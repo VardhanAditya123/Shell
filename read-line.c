@@ -247,7 +247,9 @@ char * read_line() {
 
         // Copy line from history
         if(h_pointer == h_count){
-         strcpy(line_buffer,"\0");
+         for(int i = 0 ; i < c;i++){
+           line_buffer[i] = 0;
+         }
         }
         else{
         strcpy(line_buffer, history[h_pointer]);
