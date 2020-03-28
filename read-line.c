@@ -200,6 +200,11 @@ char * read_line() {
       char *common[1000];
       char line_buffer2[MAX_BUFFER_LINE];
       char line_tab[MAX_BUFFER_LINE];
+      for(int i = 0;i<MAX_BUFFER_LINE;i++){
+        line_tab[i]=0;
+        line_buffer[i]=0;
+        common[i]=NULL;
+      }
       int common_count=0;
       strcat(line_tab,"^"); 
      
@@ -232,7 +237,6 @@ char * read_line() {
        
         regmatch_t match;
         char* tmp = strdup((ent->d_name));
-        printf("\n%s",line_tab);
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
          common[common_count] =strdup((ent->d_name));
