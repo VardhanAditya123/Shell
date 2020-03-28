@@ -25,7 +25,7 @@ int history_index = 0;
 int h_pointer = 0;
 
 char * history[50];
-char *common[1000];
+
 int h_count=0;
 
 int history_length = sizeof(history)/sizeof(char *);
@@ -200,6 +200,8 @@ char * read_line() {
     }
 
     else if (ch == 9){
+      char *common[1000];
+      int common_count=0;
       strcat(line_tab,"^");
       strcat(line_tab,line_buffer);
       strcat(line_tab,".*$");
@@ -221,8 +223,8 @@ char * read_line() {
         char* tmp = strdup((ent->d_name));
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
-          a=LCSubStr(copy,tmp,strlen(copy),strlen(tmp));
-          
+         strcpy(common[common_count],tmp);
+         common_count++;
         }
           int i = 0;
           for (i =0; i < c; i++) {
