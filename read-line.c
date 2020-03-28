@@ -203,6 +203,7 @@ char * read_line() {
       char *common[1000];
       int common_count=0;
       strcat(line_tab,"^");
+     
       char* a =strchr(line_buffer,' ');
       char line_buffer2[MAX_BUFFER_LINE];
       int l2 = 0;
@@ -211,6 +212,7 @@ char * read_line() {
         line_buffer2[l2++]=line_buffer[i];
       }
       line_buffer2[l2]='\0';
+     
       strcat(line_tab,line_buffer2);
       strcat(line_tab,".*$");
       char* dir2 = strdup(".");
@@ -236,7 +238,7 @@ char * read_line() {
       for(int i = 0 ; i < common_count-1;i++){
           c_len=LCSubStr(common[i],common[i+1],strlen(common[i]),strlen(common[i]));
       }
-       l3+=1;
+       l3-=1;
           for(int i = 0 ;i<c_len;i++){
         // tmp2[i] = common[0][i];
         line_buffer[l3] = common[0][i];
@@ -244,19 +246,19 @@ char * read_line() {
       }
 
           int i = 0;
-          for (i =0; i < l2; i++) {
+          for (i =0; i < c; i++) {
             ch = 8;
             write(1,&ch,1);
           }
 
           // Print spaces on top
-          for (i =0; i < l2; i++) {
+          for (i =0; i < c; i++) {
             ch = ' ';
             write(1,&ch,1);
           }
 
           // Print backspaces
-          for (i =0; i < l2; i++) {
+          for (i =0; i < c; i++) {
             ch = 8;
             write(1,&ch,1);
           }
