@@ -239,6 +239,7 @@ char * read_line() {
       for(int i = 0 ;i<c_len;i++){
         // tmp2[i] = common[0][i];
         line_buffer[l2] = common[0][i];
+        l2++;
       }
 
           int i = 0;
