@@ -202,7 +202,7 @@ char * read_line() {
       char *common[1000];
       char line_tab[MAX_BUFFER_LINE];
       int common_count=0;
-      strcat(line_tab,"^");
+      strcat(line_tab,"^"); 
      
       char* a =strchr(line_buffer,' ');
       char line_buffer2[MAX_BUFFER_LINE];
