@@ -264,7 +264,8 @@ char * read_line() {
           c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
-          rc+=1;
+          regfree(&re);
+          closedir(dir); 
           continue;
          
     }
