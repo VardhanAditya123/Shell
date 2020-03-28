@@ -223,7 +223,7 @@ char * read_line() {
         char* tmp = strdup((ent->d_name));
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
-         strcpy(common[common_count],tmp);
+         common[common_count] =strdup((ent->d_name));
          common_count++;
         }
       }
