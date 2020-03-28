@@ -209,7 +209,7 @@ char * read_line() {
       DIR *dir = opendir(dir2);
 
       struct dirent * ent;
-      char copy[MAX_BUFFER_LINE];
+    
       int a;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
@@ -229,7 +229,7 @@ char * read_line() {
       }
       int c_len = 0;
       for(int i = 0 ; i < common_count-1;i++){
-          c_len=LCSubStr(common[i],common[i+1]);
+          c_len=LCSubStr(common[i],common[i+1],strlen(common[i]),strlen(common[i]));
       }
       char tmp2[MAX_BUFFER_LINE];
       for(int i = 0 ;i<c_len;i++){
