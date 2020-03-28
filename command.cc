@@ -474,14 +474,21 @@ void Command::execute() {
       close(tmpin); 
       close(tmpout);
       close(tmperr);
+      for(int i =0 ; i <c ;i++){
+      free(final_arr[i]);
+      }
       clear();
       exit(0);
+
     }
     if(check_fun == 1){
       clear();    
       close(tmpin); 
       close(tmpout);
       close(tmperr);
+      for(int i =0 ; i <c ;i++){
+      free(final_arr[i]);
+      }
       Shell::prompt();
       return;
     }
