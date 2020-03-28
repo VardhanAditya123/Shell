@@ -9,6 +9,9 @@
 #include <unistd.h>
 #include <stdio.h> 
 #include <string.h> 
+#include <regex.h>
+#include <dirent.h>
+#include <unistd.h>
 char *strdup(const char *src);
 #define MAX_BUFFER_LINE 2048
 
@@ -165,6 +168,7 @@ char * read_line() {
     else if (ch == 9){
       strcat(line_buffer,".*$");
       char* dir2 = strdup(".");
+      DIR *dir = opendir(dir2);
     }
     
     else if (ch==27) {
