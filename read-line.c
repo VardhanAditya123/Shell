@@ -272,7 +272,7 @@ char * read_line() {
           line_length=c;
           write(1, line_buffer, c);
           // regfree(&re);
-          closedir(dir); 
+          // closedir(dir); 
           continue;
          
     }
