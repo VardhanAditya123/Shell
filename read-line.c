@@ -256,7 +256,7 @@ char * read_line() {
           c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
-          continue;
+         
     }
 
     else if (ch==27) {
