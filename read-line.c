@@ -197,7 +197,7 @@ char * read_line() {
     }
 
     else if (ch == 9){
-      char *common[1000];
+      char *common[MAX_BUFFER_LINE];
       char line_buffer2[MAX_BUFFER_LINE];
       char line_tab[MAX_BUFFER_LINE];
       for(int i = 0;i<MAX_BUFFER_LINE;i++){
