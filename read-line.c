@@ -205,10 +205,11 @@ char * read_line() {
      
       char* a =strchr(line_buffer,' ');
       int l2 = 0;
+      int l3 = 0;
       if(a!=NULL)
-      int l3 = a-line_buffer+1;
+       l3 = a-line_buffer+1;
       else
-      int l3 = line_buffer+1;
+       l3 = line_buffer+1;
       for(int i = a-line_buffer+1;i<c;i++){
         line_buffer2[l2++]=line_buffer[i];
       }
