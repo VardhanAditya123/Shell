@@ -358,6 +358,7 @@ void Command::execute() {
       close(tmpin);
       close(tmpout);
       close(tmperr);
+      clear();
       exit(1);
     }
   }
@@ -376,6 +377,7 @@ void Command::execute() {
       close(tmpin);
       close(tmpout);
       close(tmperr);
+      clear();
       exit(1);
     }
   }
@@ -402,6 +404,7 @@ void Command::execute() {
        close(tmpout);
        close(tmperr);
       cout<< "Ambiguous output redirect." <<endl;
+      clear();
       exit(1);
     }
     //setup output 
@@ -499,7 +502,7 @@ void Command::execute() {
 
           cout << *(environ+i)<<endl;  
         }
-  
+        clear();
         exit(1);
       }
       else{
