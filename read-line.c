@@ -209,7 +209,7 @@ char * read_line() {
           c=strlen(tmp);
           line_length=c;
           write(1, line_buffer, c);
-          continue;
+          break; 
 
         }
 
