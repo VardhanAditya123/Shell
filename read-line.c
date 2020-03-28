@@ -167,8 +167,8 @@ char * read_line() {
     }
 
     else if (ch == 9){
-       strcat(line_tab,"^");
-        strcat(line_tab,line_buffer);
+      strcat(line_tab,"^");
+      strcat(line_tab,line_buffer);
       strcat(line_tab,".*$");
       char* dir2 = strdup(".");
       DIR *dir = opendir(dir2);
@@ -177,7 +177,12 @@ struct dirent * ent;
 
 while ( (ent = readdir(dir))!= NULL) {
 // Check if name matches
-regex_t re;
+regex_t re;	
+	int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
+	if (result!=0) {
+  perror("compile");
+  return;
+  }
 regmatch_t match;
 char* tmp = strdup((ent->d_name));
 int result = regexec( &re, tmp, 1, &match, 0 );
