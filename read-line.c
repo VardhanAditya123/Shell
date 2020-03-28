@@ -22,9 +22,7 @@ int line_length;
 char line_buffer[MAX_BUFFER_LINE];
 int history_index = 0;
 int h_pointer = 0;
-
 char * history[50];
-
 int h_count=0;
 
 int history_length = sizeof(history)/sizeof(char *);
