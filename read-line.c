@@ -142,7 +142,7 @@ char * read_line() {
 
          for(int i = line_length; i < c;i++){
            char ch = line_buffer[i];
-           write(1,&ch,1);
+           write(1,&ch,1); 
          }
 
              ch = ' ';
