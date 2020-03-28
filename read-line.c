@@ -223,13 +223,15 @@ char * read_line() {
       struct dirent * ent;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
-        printf("HELLO");
+        printf("%s",l);
         int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
         if (result!=0) {
           break;
         }
+       
         regmatch_t match;
         char* tmp = strdup((ent->d_name));
+         printf("%s",tmp);
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
          common[common_count] =strdup((ent->d_name));
