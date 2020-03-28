@@ -25,6 +25,7 @@ int history_index = 0;
 int h_pointer = 0;
 
 char * history[50];
+char *common[1000];
 int h_count=0;
 
 int history_length = sizeof(history)/sizeof(char *);
@@ -47,6 +48,12 @@ char *strdup(const char *src) {
 }
 
 
+int max(int a , int b){
+  if(a>b){
+    return a;
+  }
+  return b;
+}
 int LCSubStr(char *X, char *Y, int m, int n) 
 { 
    
@@ -200,7 +207,8 @@ char * read_line() {
       DIR *dir = opendir(dir2);
 
       struct dirent * ent;
-
+      char copy[MAX_BUFFER_LINE];
+      int a;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
         regex_t re;	
@@ -213,7 +221,9 @@ char * read_line() {
         char* tmp = strdup((ent->d_name));
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
-
+          a=LCSubStr(copy,tmp,strlen(copy),strlen(tmp));
+          
+        }
           int i = 0;
           for (i =0; i < c; i++) {
             ch = 8;
@@ -237,7 +247,7 @@ char * read_line() {
           write(1, line_buffer, c);
           break; 
 
-        }
+        
 
       }
     }
