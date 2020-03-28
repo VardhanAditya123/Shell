@@ -217,6 +217,7 @@ char * read_line() {
         }
 
         if(ch2 == 66){
+        
         if(h_pointer >= h_count - 1){
           continue;
         }
