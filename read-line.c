@@ -203,6 +203,13 @@ char * read_line() {
       char *common[1000];
       int common_count=0;
       strcat(line_tab,"^");
+      int a =strchr(line_buffer,' ');
+      char line_buffer2[MAX_BUFFER_LINE];
+      int l2 = 0;
+      for(int i = a+1;i<c;i++){
+        line_buffer2[l2++]=line_buffer[i];
+      }
+      line_buffer2[l2]='\0';
       strcat(line_tab,line_buffer);
       strcat(line_tab,".*$");
       char* dir2 = strdup(".");
