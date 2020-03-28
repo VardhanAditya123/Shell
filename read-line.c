@@ -20,7 +20,6 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
-char line_tab[MAX_BUFFER_LINE];
 int history_index = 0;
 int h_pointer = 0;
 
@@ -201,6 +200,7 @@ char * read_line() {
 
     else if (ch == 9){
       char *common[1000];
+      char line_tab[MAX_BUFFER_LINE];
       int common_count=0;
       strcat(line_tab,"^");
      
