@@ -473,7 +473,7 @@ void Command::execute() {
     if(check_fun == 2){
       close(tmpin); 
       close(tmpout);
-      close(tmperr);
+      close(tmperr); 
       for(int i =0 ; i <c ;i++){
       free(final_arr[i]);
       }
