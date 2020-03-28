@@ -232,7 +232,7 @@ char * read_line() {
        
         regmatch_t match;
         char* tmp = strdup((ent->d_name));
-        printf("\n%s",tmp);
+        printf("\n%s",line_tab);
         result = regexec( &re, tmp, 1, &match, 0 );
         if (result == 0  ) {
          common[common_count] =strdup((ent->d_name));
