@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
 
   
    signal(SIGCHLD, sigchildHandler); 
-  //  signal(SIGINT, sigintHandler); 
+   signal(SIGINT, sigintHandler); 
   Shell::arg = argv[0];
   Shell::prompt();
   yyparse();
