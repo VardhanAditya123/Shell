@@ -208,7 +208,7 @@ char * read_line() {
       int common_count=0;
       strcat(line_tab,"^"); 
      
-      char* a =strchr(line_buffer,' ');
+      char* a =strrchr(line_buffer,' ');
       int l2 = 0;
       int l3 = 0;
       if(a!=NULL)
