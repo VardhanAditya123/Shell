@@ -200,7 +200,7 @@ if(ent->d_name[0] == '.')
 				}
     
     }
-			else
+			else 
 			{
        
 				if(prefix == NULL)
