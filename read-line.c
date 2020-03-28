@@ -197,7 +197,7 @@ if (result == 0  ) {
           ch = 8;
           write(1,&ch,1);
         }
-line_buffer = tmp;
+strcpy(line_buffer ,tmp);
 c=strlen(tmp);
 line_length=c;
 write(1, line_buffer, c);
