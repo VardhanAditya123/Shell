@@ -218,7 +218,7 @@ char * read_line() {
 
         if(ch2 == 66){
         
-        if(h_pointer >= h_count - 1){
+        if(h_pointer >= h_count ){
           continue;
         }
         h_pointer+=1;
@@ -246,6 +246,10 @@ char * read_line() {
         }	
 
         // Copy line from history
+        if(h_pointer == h_count){
+          write(1, line_buffer, c);
+          continue;
+        }
         strcpy(line_buffer, history[h_pointer]);
         c = strlen(line_buffer);
         line_length =c;
