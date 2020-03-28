@@ -64,7 +64,7 @@ char * read_line() {
     // Read one character in raw mode.
     char ch;
     read(0, &ch, 1);
-    if (ch>=32 && ch < 127) {
+    if (ch>=32 && ch < 126) {
       // It is a printable character.  
       if (line_length==MAX_BUFFER_LINE-2) 
       break; 
