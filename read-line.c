@@ -207,7 +207,7 @@ char * read_line() {
       char* a =strchr(line_buffer,' ');
       char line_buffer2[MAX_BUFFER_LINE];
       int l2 = 0;
-      int l3 = a-line_buffer+2;
+      int l3 = a-line_buffer+1;
       for(int i = a-line_buffer+1;i<c;i++){
         line_buffer2[l2++]=line_buffer[i];
       }
@@ -238,11 +238,10 @@ char * read_line() {
       for(int i = 0 ; i < common_count-1;i++){
           c_len=LCSubStr(common[i],common[i+1],strlen(common[i]),strlen(common[i]));
       }
-       l3-=1;
+   
           for(int i = 0 ;i<c_len;i++){
-        // tmp2[i] = common[0][i];
-        line_buffer[l3] = common[0][i];
-        l3++;
+          line_buffer[l3] = common[0][i];
+          l3++;
       }
 
           int i = 0;
