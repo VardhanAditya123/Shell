@@ -209,7 +209,7 @@ char * read_line() {
       if(a!=NULL)
        l3 = a-line_buffer+1;
       else
-       l3 = c;
+       l3 = 0;
       for(int i =l3;i<c;i++){
         line_buffer2[l2++]=line_buffer[i];
       }
