@@ -40,10 +40,10 @@ void read_line_print_usage()
 }
 
 char *strdup(const char *src) {
-    char *dst = malloc(strlen (src) + 1);  // Space for length plus nul
-    if (dst == NULL) return NULL;          // No memory
-    strcpy(dst, src);                      // Copy the characters
-    return dst;                            // Return the new string
+  char *dst = malloc(strlen (src) + 1);  // Space for length plus nul
+  if (dst == NULL) return NULL;          // No memory
+  strcpy(dst, src);                      // Copy the characters
+  return dst;                            // Return the new string
 }
 
 /* 
@@ -61,7 +61,7 @@ char * read_line() {
   int lc = 0;
   int rc = 0;
   int c = 0;
-  
+
   // Read one line until enter is typed
   while (1) {
 
@@ -71,47 +71,47 @@ char * read_line() {
     if (ch>=32 && ch < 126) {
       // It is a printable character.  
       if (line_length==MAX_BUFFER_LINE-2) 
-      break; 
+        break; 
 
       // Do echo 
       if(lc == 0 && rc == 0)
-      write(1,&ch,1);
-      
+        write(1,&ch,1);
+
       // If max number of character reached return
 
       if(lc > 0 || rc > 0){
         int end = line_length+1;
         for( int i = c ; i >=end ; i--){
-          
+
           line_buffer[i]=line_buffer[i-1];
-         
+
         }
-        
+
       }
 
-      
+
       line_buffer[line_length]=ch;
       line_length++;
       c++;
 
       if(lc > 0 || rc > 0){
-      for(int i = line_length-1 ; i < c;i++){
-        char ch = line_buffer[i];
-        write(1,&ch,1);
-      }
-       for (int i = 0; i < c-line_length; i++) {
+        for(int i = line_length-1 ; i < c;i++){
+          char ch = line_buffer[i];
+          write(1,&ch,1);
+        }
+        for (int i = 0; i < c-line_length; i++) {
           ch = 8;
           write(1,&ch,1);
         }
       }
-      
+
 
       continue;
 
     }
     else if (ch==10) {
       // <Enter> was typed. Return line
-      
+
       // Print newline
       history[h_count] = strdup(line_buffer);
       h_count+=1;
@@ -137,29 +137,29 @@ char * read_line() {
         write(1,&ch,1);
         line_length--;
         c--;
-       
-      
-      for(int i = line_length; i <=c;i++){
-        line_buffer[i]=line_buffer[i+1];
-      }
-  
 
-         for(int i = line_length; i < c;i++){
-           char ch = line_buffer[i];
-           write(1,&ch,1); 
-         }
 
-             ch = ' ';
-            write(1,&ch,1);
-            ch = 8;
-            write(1,&ch,1);
-          
-            
-           for (int i = 0; i < c-line_length; i++) { 
-            ch = 8;
-            write(1,&ch,1);
-          }
-      
+        for(int i = line_length; i <=c;i++){
+          line_buffer[i]=line_buffer[i+1];
+        }
+
+
+        for(int i = line_length; i < c;i++){
+          char ch = line_buffer[i];
+          write(1,&ch,1); 
+        }
+
+        ch = ' ';
+        write(1,&ch,1);
+        ch = 8;
+        write(1,&ch,1);
+
+
+        for (int i = 0; i < c-line_length; i++) { 
+          ch = 8;
+          write(1,&ch,1);
+        }
+
 
       }
 
@@ -173,49 +173,49 @@ char * read_line() {
       char* dir2 = strdup(".");
       DIR *dir = opendir(dir2);
 
-struct dirent * ent;
+      struct dirent * ent;
 
-while ( (ent = readdir(dir))!= NULL) {
-// Check if name matches
-regex_t re;	
-	int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
-	if (result!=0) {
-  perror("compile");
-  return '\0';
-  }
-regmatch_t match;
-char* tmp = strdup((ent->d_name));
- result = regexec( &re, tmp, 1, &match, 0 );
-if (result == 0  ) {
+      while ( (ent = readdir(dir))!= NULL) {
+        // Check if name matches
+        regex_t re;	
+        int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
+        if (result!=0) {
+          perror("compile");
+          return '\0';
+        }
+        regmatch_t match;
+        char* tmp = strdup((ent->d_name));
+        result = regexec( &re, tmp, 1, &match, 0 );
+        if (result == 0  ) {
 
-  int i = 0;
-        for (i =0; i < c; i++) {
-          ch = 8;
-          write(1,&ch,1);
+          int i = 0;
+          for (i =0; i < c; i++) {
+            ch = 8;
+            write(1,&ch,1);
+          }
+
+          // Print spaces on top
+          for (i =0; i < c; i++) {
+            ch = ' ';
+            write(1,&ch,1);
+          }
+
+          // Print backspaces
+          for (i =0; i < c; i++) {
+            ch = 8;
+            write(1,&ch,1);
+          }
+          strcpy(line_buffer ,tmp);
+          c=strlen(tmp);
+          line_length=c;
+          write(1, line_buffer, c);
+          continue;
+
         }
 
-        // Print spaces on top
-        for (i =0; i < c; i++) {
-          ch = ' ';
-          write(1,&ch,1);
-        }
+      }
+    }
 
-        // Print backspaces
-        for (i =0; i < c; i++) {
-          ch = 8;
-          write(1,&ch,1);
-        }
-strcpy(line_buffer ,tmp);
-c=strlen(tmp);
-line_length=c;
-write(1, line_buffer, c);
-        continue;
-
-}
-
-}
-}
-    
     else if (ch==27) {
       // Escape sequence. Read two chars more
       //
@@ -228,7 +228,7 @@ write(1, line_buffer, c);
       read(0, &ch2, 1);
 
       if(ch1 == 91 && ch2== 68 ){
-      
+
         if(line_length > 0){
           ch = 27;
           write(1,&ch,1);
@@ -243,7 +243,7 @@ write(1, line_buffer, c);
       }
 
       if(ch1 == 91 && ch2== 67 ){
-      
+
         if(line_length >= 0 && line_length <=c-1){
           ch = 27;
           write(1,&ch,1);
@@ -257,28 +257,28 @@ write(1, line_buffer, c);
         continue;
       }
 
-      
+
 
       if (ch1==91 && (ch2==65 || ch2 == 66)) {
         // Up arrow. Print next line in history.
-        
+
 
         if(ch2 == 65){
           if(  h_pointer <= 0){
-          continue;
-        }
-        h_pointer-=1;
+            continue;
+          }
+          h_pointer-=1;
         }
 
         if(ch2 == 66){
-        
-        if(h_pointer >= h_count ){
-          continue;
+
+          if(h_pointer >= h_count ){
+            continue;
+          }
+          h_pointer+=1;
         }
-        h_pointer+=1;
-        }
-        
-        
+
+
         // Erase old line
         // Print backspaces
         int i = 0;
@@ -301,12 +301,12 @@ write(1, line_buffer, c);
 
         // Copy line from history
         if(h_pointer == h_count){
-         for(int i = 0 ; i < c;i++){
-           line_buffer[i] = 0;
-         }
+          for(int i = 0 ; i < c;i++){
+            line_buffer[i] = 0;
+          }
         }
         else{
-        strcpy(line_buffer, history[h_pointer]);
+          strcpy(line_buffer, history[h_pointer]);
         }
         c = strlen(line_buffer);
         line_length =c;
@@ -316,80 +316,80 @@ write(1, line_buffer, c);
         continue;
       }
 
-       if(ch1 == 91 && ch2== 72 ){
-      
+      if(ch1 == 91 && ch2== 72 ){
+
         for(int i = 0; i < c ; i++){
-        if(line_length > 0){
-          ch = 27;
-          write(1,&ch,1);
-          ch = 91;
-          write(1,&ch,1); 
-          ch = 68;
-          write(1,&ch,1);
-          line_length--;
-          lc+=1;
-        } 
+          if(line_length > 0){
+            ch = 27;
+            write(1,&ch,1);
+            ch = 91;
+            write(1,&ch,1); 
+            ch = 68;
+            write(1,&ch,1);
+            line_length--;
+            lc+=1;
+          } 
         }
         continue;
       }
 
       if(ch1 == 91 && ch2== 70 ){
-      
+
         for(int i = 0; i < c ; i++){
-        if(line_length < c){
-          ch = 27;
-          write(1,&ch,1);
-          ch = 91;
-          write(1,&ch,1); 
-          ch = 67;
-          write(1,&ch,1);
-          line_length++;
-          rc+=1;
-        } 
+          if(line_length < c){
+            ch = 27;
+            write(1,&ch,1);
+            ch = 91;
+            write(1,&ch,1); 
+            ch = 67;
+            write(1,&ch,1);
+            line_length++;
+            rc+=1;
+          } 
         } 
         continue;
       }
 
 
-       if (ch1 == 91 && ch2 == 51) {
-      // delete was typed. Remove current character read.
+      if (ch1 == 91 && ch2 == 51) {
+        // delete was typed. Remove current character read.
 
-      if(line_length >=0 && line_length!=c){
-       
-        ch = ' ';
-        write(1,&ch,1);
-        ch = 8;
-        write(1,&ch,1);
+        if(line_length >=0 && line_length!=c){
 
-        c--;
-       
-      
-      for(int i = line_length; i <=c;i++){
-        line_buffer[i]=line_buffer[i+1];
-      }
-  
+          ch = ' ';
+          write(1,&ch,1);
+          ch = 8;
+          write(1,&ch,1);
 
-         for(int i = line_length; i < c;i++){
-           char ch = line_buffer[i];
-           write(1,&ch,1);
-         }
+          c--;
 
-             ch = ' ';
+
+          for(int i = line_length; i <=c;i++){
+            line_buffer[i]=line_buffer[i+1];
+          }
+
+
+          for(int i = line_length; i < c;i++){
+            char ch = line_buffer[i];
             write(1,&ch,1);
-            ch = 8;
-            write(1,&ch,1);
-          
-            
-           for (int i = 0; i < c-line_length; i++) {
+          }
+
+          ch = ' ';
+          write(1,&ch,1);
+          ch = 8;
+          write(1,&ch,1);
+
+
+          for (int i = 0; i < c-line_length; i++) {
             ch = 8;
             write(1,&ch,1);
           }
-      
 
+
+        }
+
+        continue;
       }
-
-      continue;
-    }
 
     }
 
