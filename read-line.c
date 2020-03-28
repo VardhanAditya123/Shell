@@ -20,6 +20,7 @@ extern void tty_raw_mode(void);
 // Buffer where line is stored
 int line_length;
 char line_buffer[MAX_BUFFER_LINE];
+char line_tab[MAX_BUFFER_LINE];
 int history_index = 0;
 int h_pointer = 0;
 
@@ -166,7 +167,9 @@ char * read_line() {
     }
 
     else if (ch == 9){
-      strcat(line_buffer,".*$");
+       strcat(line_tab,"^");
+        strcat(line_tab,line_buffer);
+      strcat(line_tab,".*$");
       char* dir2 = strdup(".");
       DIR *dir = opendir(dir2);
 
