@@ -200,12 +200,12 @@ char * read_line() {
 
     else if (ch == 9){
       char *common[1000];
+      char line_buffer2[MAX_BUFFER_LINE];
       char line_tab[MAX_BUFFER_LINE];
       int common_count=0;
       strcat(line_tab,"^"); 
      
       char* a =strchr(line_buffer,' ');
-      char line_buffer2[MAX_BUFFER_LINE];
       int l2 = 0;
       int l3 = a-line_buffer+1;
       for(int i = a-line_buffer+1;i<c;i++){
@@ -266,6 +266,7 @@ char * read_line() {
           c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
+          rc+=1;
           continue;
          
     }
