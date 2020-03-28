@@ -216,7 +216,7 @@ char * read_line() {
         regex_t re;	
         int result = regcomp( &re, line_tab,  REG_EXTENDED|REG_NOSUB);
         if (result!=0) {
-          return;
+          continue;
         }
         regmatch_t match;
         char* tmp = strdup((ent->d_name));
@@ -356,7 +356,7 @@ char * read_line() {
 
         // echo line
         write(1, line_buffer, c);
-        
+        continue;
       }
 
       if(ch1 == 91 && ch2== 72 ){
