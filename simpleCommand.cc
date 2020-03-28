@@ -215,10 +215,9 @@ if(ent->d_name[0] == '.')
 }
 
 }
-
+free(dir2);
 regfree(&re);
 closedir(dir); 
-free(dir2);
 return;
  
 
