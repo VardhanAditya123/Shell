@@ -24,8 +24,7 @@ int history_index = 0;
 int h_pointer = 0;
 char * history[50];
 int h_count=0;
-regmatch_t match;
-regex_t re;
+
 int history_length = sizeof(history)/sizeof(char *);
 
 void read_line_print_usage()
@@ -220,7 +219,7 @@ char * read_line() {
       strcat(line_tab,".*$");
       char* dir2 = strdup(".");
       DIR *dir = opendir(dir2);
-      // regex_t re;
+      regex_t re;
       struct dirent * ent;
       while ( (ent = readdir(dir))!= NULL) {
         // Check if name matches
@@ -230,7 +229,7 @@ char * read_line() {
           break;
         }
        
-      
+        regmatch_t match;
         char* tmp = strdup((ent->d_name));
         
         result = regexec( &re, tmp, 1, &match, 0 );
@@ -271,8 +270,8 @@ char * read_line() {
           c=strlen(line_buffer);
           line_length=c;
           write(1, line_buffer, c);
-          // regfree(&re);
-          // closedir(dir); 
+          regfree(&re);
+          closedir(dir); 
           continue;
          
     }
