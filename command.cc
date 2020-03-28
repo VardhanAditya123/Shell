@@ -520,7 +520,7 @@ void Command::execute() {
       return;
     }
     
-   for(int i =0 ; i < 100 ;i++){
+   for(int i =0 ; i < c ;i++){
      free(final_arr[i]);
    }
   
