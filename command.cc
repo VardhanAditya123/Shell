@@ -482,7 +482,7 @@ void Command::execute() {
 
     }
     if(check_fun == 1){
-      clear();    
+      clear();      
       close(tmpin); 
       close(tmpout);
       close(tmperr);
